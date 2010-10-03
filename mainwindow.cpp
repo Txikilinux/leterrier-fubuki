@@ -3,6 +3,8 @@
 #include <QtCore>
 #include <QLocale>
 #include <QMessageBox>
+#include <QDialog>
+#include "dialogapropos.h"
 
 bool isIn(int i, QList<int> s);
 
@@ -34,6 +36,12 @@ MainWindow::MainWindow(QWidget *parent) :
 
     actuelBtnNbre = -1; // pas de nombre sélectionné
     actuelBtnCase = -1; // pas de nombre sur cette case sélectionnée
+
+    // Connexions fenêtre APropos
+    connect(ui->actionAideRapide,SIGNAL(triggered()),this,SLOT(montreAide()));  //
+    connect(ui->actionContacts,SIGNAL(triggered()),this,SLOT(montreContacts()));//
+    connect(ui->actionAPropos,SIGNAL(triggered()),this,SLOT(montreAPropos()));  //
+    connect(ui->actionTraduire,SIGNAL(triggered()),this,SLOT(montreTraduire()));  //
 }
 
 MainWindow::~MainWindow()
@@ -346,4 +354,48 @@ void MainWindow::setAide() {
         ui->btnAide->setDisabled(true);
     else
         ui->btnAide->setDisabled(false);
+}
+
+//--------------------------------------------------------------------------------------
+//
+//------------------------------Gestion fenêtre A Propos--------------------------------
+//
+//--------------------------------------------------------------------------------------
+
+
+/**
+  *les fonctions montreAide(), montreContacts(), montreTraduire(), montreAPropos()
+  *créent la fenêtre d'APropos en mode modal et positionnent le bon onglet
+  *en émettant le signal setIndex(int)
+  */
+void MainWindow::montreAide()                                                   //
+{
+    QDialog * fenetreAPropos=new DialogApropos(this);
+    connect(this, SIGNAL(setindex(int)),fenetreAPropos,SLOT(changeTab(int)));
+    emit setindex(0);
+    fenetreAPropos->exec();  // exec : pour avoir une fenêtre modale
+}
+
+void MainWindow::montreContacts()
+{
+    QDialog * fenetreAPropos=new DialogApropos(this);
+    connect(this, SIGNAL(setindex(int)),fenetreAPropos,SLOT(changeTab(int)));
+    emit setindex(1);
+    fenetreAPropos->exec();
+}
+
+void MainWindow::montreTraduire()
+{
+    QDialog * fenetreAPropos=new DialogApropos(this);
+    connect(this, SIGNAL(setindex(int)),fenetreAPropos,SLOT(changeTab(int)));
+    emit setindex(2);
+    fenetreAPropos->exec();
+}
+
+void MainWindow::montreAPropos()
+{
+    QDialog * fenetreAPropos=new DialogApropos(this);
+    connect(this, SIGNAL(setindex(int)),fenetreAPropos,SLOT(changeTab(int)));
+    emit setindex(3);
+    fenetreAPropos->exec();
 }
