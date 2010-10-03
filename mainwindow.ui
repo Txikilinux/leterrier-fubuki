@@ -668,7 +668,7 @@ soient justes.</string>
      <x>0</x>
      <y>0</y>
      <width>600</width>
-     <height>23</height>
+     <height>25</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuFichier">
@@ -681,8 +681,13 @@ soient justes.</string>
     <property name="title">
      <string>Aide</string>
     </property>
-    <addaction name="action_propos"/>
-    <addaction name="actionAide_en_local"/>
+    <addaction name="actionAide_en_ligne"/>
+    <addaction name="separator"/>
+    <addaction name="actionAideRapide"/>
+    <addaction name="actionContacts"/>
+    <addaction name="actionTraduire"/>
+    <addaction name="separator"/>
+    <addaction name="actionAPropos"/>
    </widget>
    <addaction name="menuFichier"/>
    <addaction name="menuAide"/>
@@ -701,14 +706,38 @@ soient justes.</string>
     <string>Quitter</string>
    </property>
   </action>
-  <action name="action_propos">
+  <action name="actionAideRapide">
    <property name="text">
-    <string>À propos</string>
+    <string>Aide intégrée...</string>
+   </property>
+   <property name="shortcut">
+    <string>F1</string>
    </property>
   </action>
-  <action name="actionAide_en_local">
+  <action name="actionContacts">
    <property name="text">
-    <string>Aide en local</string>
+    <string>Contacter un auteur...</string>
+   </property>
+  </action>
+  <action name="actionTraduire">
+   <property name="text">
+    <string>Traduire le logiciel...</string>
+   </property>
+  </action>
+  <action name="actionAPropos">
+   <property name="text">
+    <string>À propos de ce logiciel...</string>
+   </property>
+   <property name="toolTip">
+    <string>À propos de ce logiciel</string>
+   </property>
+  </action>
+  <action name="actionAide_en_ligne">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="text">
+    <string>Aide en ligne...</string>
    </property>
   </action>
  </widget>
