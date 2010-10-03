@@ -15,8 +15,6 @@ MainWindow::MainWindow(QWidget *parent) :
     fontBIG.setPointSize(25);
     fontMEDIUM.setPointSize(15);
     fontMINUS.setPointSize(10);
-    colorPLACEE.setRgb(255,0,0); // red
-    colorAPLACER.setRgb(0,0,255); // blue
 
     QRegExp nomCasesRegExp("btnCase");
     nomBtnCase = ui->centralWidget->findChildren <QPushButton *> (nomCasesRegExp);
@@ -148,9 +146,9 @@ void MainWindow::initFubuki()
             nomBtnNbre[k]->setDisabled(true);
         }
     }
-    // autoriser l'aide
+    // gerer l'aide
     setAide();
-}
+} // fin initFubuki
 
 bool isIn(int i, QList<int> s) {
     for (int j = 0; j < s.length(); j++) {
@@ -186,11 +184,13 @@ void MainWindow::_btnCase(int i) {
         actuelBtnCase = -1; 
         if (actuelBtnNbre >= 0) {
             // déposer actuelBtnNbre sur cette case
+            nomBtnCase[i]->setStyleSheet("color : #2020C0");
             nomBtnCase[i]->setProperty("text", QString::number(casesInitial[actuelBtnNbre]));
             actuelBtnNbre = -1;
         }
     } else if (actuelBtnNbre >= 0) {
         // déposer actuelBtnNbre sur cette case
+        nomBtnCase[i]->setStyleSheet("color : #2020C0");
         nomBtnCase[i]->setProperty("text", QString::number(casesInitial[actuelBtnNbre]));
         actuelBtnNbre = -1;
         actuelBtnCase = -1;
@@ -221,6 +221,7 @@ void MainWindow::_btnNbre(int i) {
     actuelBtnNbre = i;
     if (actuelBtnCase > 0) {
         // déposer le nombe de ce btnNbre sur le actuelBtnCase
+        nomBtnCase[actuelBtnCase]->setStyleSheet("color : #2020C0");
         nomBtnCase[actuelBtnCase]->setProperty("text", QString::number(casesInitial[actuelBtnNbre]));
         actuelBtnCase = -1;
         actuelBtnNbre = -1;
@@ -237,6 +238,14 @@ void MainWindow::restaurerBtnNbre(int i) {
 
 void MainWindow::on_btnVerifier_clicked()
 {
+    QList<int> connus;
+    for (int i = 0; i < 9; i++) {
+        if (nomBtnCase[i]->text() != "") connus << i;
+    }
+    if (connus.length() <= (4 - niveau)) {
+        QMessageBox::critical(this, trUtf8("Vérification"), trUtf8("Vérification réfusée.\n\nCommence à remplir la grille de gauche !"));
+        return;
+    }
     bool ok = true;
         ok = ok && nomBtnCase[0]->text().toInt()+nomBtnCase[1]->text().toInt()+nomBtnCase[2]->text().toInt() == ui->lblH0->text().toInt();
         ok = ok && nomBtnCase[3]->text().toInt()+nomBtnCase[4]->text().toInt()+nomBtnCase[5]->text().toInt() == ui->lblH1->text().toInt();
@@ -246,12 +255,19 @@ void MainWindow::on_btnVerifier_clicked()
         ok = ok && nomBtnCase[2]->text().toInt()+nomBtnCase[5]->text().toInt()+nomBtnCase[8]->text().toInt() == ui->lblV2->text().toInt();
     if (ok)
     {
-        QMessageBox::information(this, tr("Mon verdict"), tr("Bravo, tout est parfait !\n\nNouvelle grille..."));
+        QMessageBox::information(this, trUtf8("Vérification"), trUtf8("Bravo, tout est parfait !\n\nNouvelle grille..."));
         initFubuki();
     }
     else
     {
-        QMessageBox::critical(this, tr("Mon Verdict"), tr("Une ou des erreurs ...\n\nJe te prie de corriger !"));
+        int iFaute = -1;
+        for (int i = 0; i < 9; i++) {
+            if (nomBtnCase[i]->text().toInt() != cases[i] && nomBtnCase[i]->text() != "") {
+                iFaute = i;
+                break;
+            }
+        }
+        QMessageBox::critical(this, trUtf8("Vérification"), trUtf8("Une ou des erreurs ...\n\nPar exemple le nombre : %1 \n\nJe te prie de corriger !").arg(nomBtnCase[iFaute]->text()));
     }
 }
 
@@ -273,7 +289,7 @@ void MainWindow::on_btnCorrige_clicked()
         if (nomBtnCase[i]->text().toInt() != cases[i]) {
             nomBtnCase[i]->setStyleSheet("color : red");
         } else {
-            nomBtnCase[i]->setStyleSheet("color : black");
+            nomBtnCase[i]->setStyleSheet("color : #20C020");
         }
         nomBtnCase[i]->setProperty("text", QString::number(cases[i]));
         nomBtnCase[i]->setDisabled(true);
@@ -282,13 +298,13 @@ void MainWindow::on_btnCorrige_clicked()
 
 void MainWindow::on_action_propos_triggered()
 {
-    QMessageBox::information(this, "Fubuki : A propos", "AbulEdu-Le terrier\n\nGPL\n\nVersion du :\n1er octobre 2010");
+    QMessageBox::information(this, trUtf8("Fubuki : A propos"), trUtf8("AbulEdu-Le terrier\n\nGPL\n\nVersion du :\n3 octobre 2010"));
 }
 
 void MainWindow::on_actionAide_en_local_triggered()
 {
 
-    QMessageBox::critical(this, "Fubuki", "Aide en local non implantee");
+    QMessageBox::critical(this, trUtf8("Fubuki"), trUtf8("Aide en local non implantée"));
 }
 
 void MainWindow::on_btnAide_clicked()
@@ -301,7 +317,7 @@ void MainWindow::on_btnAide_clicked()
     int iBtn = rand() % inconnus.length();
     //qDebug() << "Je prends le " << iBtn << "ieme bouton inconnu : " << inconnus[iBtn];
     //qDebug() << "AIDE : Je propose la btnCase " << inconnus[iBtn] << " de valeur " << cases[inconnus[iBtn]] << cases;
-    QMessageBox::information(this, "Aide proposee", "Je propose le nombre ...\n\n   " + QString::number(cases[inconnus[iBtn]]));
+    QMessageBox::information(this, trUtf8("Aide proposée"), trUtf8("Je propose le nombre ...\n\n   %1").arg(QString::number(cases[inconnus[iBtn]])));
     nomBtnCase[inconnus[iBtn]]->setStyleSheet("color : #C02020");
     //nomBtnCase[inconnus[iBtn]]->setFont(fontBIG);
     nomBtnCase[inconnus[iBtn]]->setProperty("text", QString::number(cases[inconnus[iBtn]]));
@@ -312,9 +328,8 @@ void MainWindow::on_btnAide_clicked()
     nomBtnNbre[k]->setStyleSheet("color : #C02020");
     nomBtnNbre[k]->setFont(fontMINUS);
     nomBtnNbre[k]->setDisabled(true);
-    // désactiver l'aide si pas assez de nombres non placés
+
     setAide();
-    //if (inconnus.length() < 5) ui->btnAide->setDisabled(true);
 }
 
 void MainWindow::on_btnNouveau_clicked()

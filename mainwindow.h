@@ -37,8 +37,6 @@ private:
     QFont fontBIG; // 30
     QFont fontMEDIUM; // 20
     QFont fontMINUS; //12
-    QColor colorPLACEE; // red
-    QColor colorAPLACER; // blue
 
     QList<int> casesInitial;
     QList<int> cases;
