@@ -154,6 +154,9 @@ void MainWindow::initFubuki()
             nomBtnNbre[k]->setDisabled(true);
         }
     }
+
+    // rappeler la règle
+    ui->lblRegle->setText(trUtf8("Complète la grille de gauche avec\nles nombres de la grille de droite\nde sorte que les sommes :\n   - horizontales\n    - verticales\nsoient justes."));
     // gerer l'aide
     setAide();
 } // fin initFubuki
@@ -253,7 +256,7 @@ void MainWindow::on_btnVerifier_clicked()
     if (connus.length() <= (4 - niveau)) {
         QMessageBox::critical(this, trUtf8("Vérification"), trUtf8("Vérification réfusée.\n\nCommence à remplir la grille de gauche !"));
         return;
-    }
+    }    
     bool ok = true;
         ok = ok && nomBtnCase[0]->text().toInt()+nomBtnCase[1]->text().toInt()+nomBtnCase[2]->text().toInt() == ui->lblH0->text().toInt();
         ok = ok && nomBtnCase[3]->text().toInt()+nomBtnCase[4]->text().toInt()+nomBtnCase[5]->text().toInt() == ui->lblH1->text().toInt();
@@ -275,7 +278,11 @@ void MainWindow::on_btnVerifier_clicked()
                 break;
             }
         }
-        QMessageBox::critical(this, trUtf8("Vérification"), trUtf8("Une ou des erreurs ...\n\nPar exemple le nombre : %1 \n\nJe te prie de corriger !").arg(nomBtnCase[iFaute]->text()));
+        if (iFaute != -1) {
+            QMessageBox::critical(this, trUtf8("Vérification"), trUtf8("Une ou des erreurs ...\n\nPar exemple le nombre : %1 \n\nJe te prie de corriger !").arg(nomBtnCase[iFaute]->text()));
+        } else {
+            QMessageBox::information(this, trUtf8("Vérification"), trUtf8("Pas d'erreur !\n\nComplète la grille..."));
+        }
     }
 }
 
@@ -306,7 +313,7 @@ void MainWindow::on_btnCorrige_clicked()
 
 void MainWindow::on_action_propos_triggered()
 {
-    QMessageBox::information(this, trUtf8("Fubuki : A propos"), trUtf8("AbulEdu-Le terrier\n\nGPL\n\nVersion du :\n3 octobre 2010"));
+    QMessageBox::information(this, trUtf8("Fubuki : A propos"), trUtf8("AbulEdu-Le terrier\n\nGPL\n\nVersion du :\n4 octobre 2010"));
 }
 
 void MainWindow::on_actionAide_en_local_triggered()
