@@ -34,9 +34,9 @@ private:
     /**
       fontes utilisées
     */
-    QFont fontBIG; // 30
-    QFont fontMEDIUM; // 20
-    QFont fontMINUS; //12
+    QFont fontBIG; // 35
+    QFont fontMEDIUM; // 25
+    QFont fontMINUS; //10
 
     QList<int> casesInitial;
     QList<int> cases;

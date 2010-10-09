@@ -156,7 +156,7 @@ void MainWindow::initFubuki()
     }
 
     // rappeler la règle
-    ui->lblRegle->setText(trUtf8("Complète la grille de gauche avec\nles nombres de la grille de droite\nde sorte que les sommes :\n   - horizontales\n    - verticales\nsoient justes."));
+    ui->lblRegle->setText(trUtf8("  Complète la grille de gauche avec\n  les nombres de la grille de droite\n  de sorte que les sommes :\n     - horizontales\n      - verticales\n  soient justes."));
     // gerer l'aide
     setAide();
 } // fin initFubuki
