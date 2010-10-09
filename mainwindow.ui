@@ -19,7 +19,7 @@
   <widget class="QWidget" name="centralWidget">
    <property name="styleSheet">
     <string notr="true">QWidget#centralWidget {	background-color: rgb(230, 85, 0);										
-											background-image: url(:/images/vignetteTerrier.png);
+											background-image: url(:/data_images/data/images/vignetteTerrierLite.png);
 											background-repeat: repeat-no;
    											background-position: top right;
 }
@@ -423,7 +423,7 @@ QLabel#lblRegle { background-color : lightgreen; color : purple; border-radius :
    <widget class="QPushButton" name="btnNbre0">
     <property name="geometry">
      <rect>
-      <x>390</x>
+      <x>360</x>
       <y>120</y>
       <width>40</width>
       <height>40</height>
@@ -447,7 +447,7 @@ QLabel#lblRegle { background-color : lightgreen; color : purple; border-radius :
    <widget class="QPushButton" name="btnNbre1">
     <property name="geometry">
      <rect>
-      <x>440</x>
+      <x>410</x>
       <y>120</y>
       <width>40</width>
       <height>40</height>
@@ -471,7 +471,7 @@ QLabel#lblRegle { background-color : lightgreen; color : purple; border-radius :
    <widget class="QPushButton" name="btnNbre2">
     <property name="geometry">
      <rect>
-      <x>490</x>
+      <x>460</x>
       <y>120</y>
       <width>40</width>
       <height>40</height>
@@ -495,7 +495,7 @@ QLabel#lblRegle { background-color : lightgreen; color : purple; border-radius :
    <widget class="QPushButton" name="btnNbre3">
     <property name="geometry">
      <rect>
-      <x>390</x>
+      <x>360</x>
       <y>70</y>
       <width>40</width>
       <height>40</height>
@@ -519,7 +519,7 @@ QLabel#lblRegle { background-color : lightgreen; color : purple; border-radius :
    <widget class="QPushButton" name="btnNbre4">
     <property name="geometry">
      <rect>
-      <x>440</x>
+      <x>410</x>
       <y>70</y>
       <width>40</width>
       <height>40</height>
@@ -543,7 +543,7 @@ QLabel#lblRegle { background-color : lightgreen; color : purple; border-radius :
    <widget class="QPushButton" name="btnNbre5">
     <property name="geometry">
      <rect>
-      <x>490</x>
+      <x>460</x>
       <y>70</y>
       <width>40</width>
       <height>40</height>
@@ -567,7 +567,7 @@ QLabel#lblRegle { background-color : lightgreen; color : purple; border-radius :
    <widget class="QPushButton" name="btnNbre6">
     <property name="geometry">
      <rect>
-      <x>390</x>
+      <x>360</x>
       <y>20</y>
       <width>40</width>
       <height>40</height>
@@ -591,7 +591,7 @@ QLabel#lblRegle { background-color : lightgreen; color : purple; border-radius :
    <widget class="QPushButton" name="btnNbre7">
     <property name="geometry">
      <rect>
-      <x>440</x>
+      <x>410</x>
       <y>20</y>
       <width>40</width>
       <height>40</height>
@@ -615,7 +615,7 @@ QLabel#lblRegle { background-color : lightgreen; color : purple; border-radius :
    <widget class="QPushButton" name="btnNbre8">
     <property name="geometry">
      <rect>
-      <x>490</x>
+      <x>460</x>
       <y>20</y>
       <width>40</width>
       <height>40</height>

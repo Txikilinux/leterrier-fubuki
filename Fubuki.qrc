@@ -1,6 +1,6 @@
 <RCC>
     <qresource prefix="/data_images">
         <file>data/images/vignetteTerrier.png</file>
-        <file>data/images/fond.png</file>
+        <file>data/images/vignetteTerrierLite.png</file>
     </qresource>
 </RCC>
