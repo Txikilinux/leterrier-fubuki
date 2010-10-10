@@ -18,15 +18,13 @@
   </property>
   <widget class="QWidget" name="centralWidget">
    <property name="styleSheet">
-    <string notr="true">QWidget#centralWidget {	background-color: rgb(230, 85, 0);										
-											background-image: url(:/data_images/data/images/vignetteTerrierLite.png);
+    <string notr="true">QWidget#centralWidget {	background-image: url(:/data_images/data/images/fond.png);
 											background-repeat: repeat-no;
    											background-position: top right;
 }
 
 QLabel { background-color : green; color : yellow }
-QLabel#lblRegle { background-color : lightgreen; color : purple; border-radius : 8px }
-QTextEdit#tedAffiche {background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgba(0, 255, 0, 255), stop:1 rgba(255, 255, 255, 255));
+QTextEdit#tedAffiche {background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgba(0, 255, 50, 255), stop:1 rgba(255, 255, 255, 255));
 			border-radius : 8px; 
 			background-image: url(:/data_images/data/images/pagefold.png);
 			background-repeat: repeat-no;
@@ -48,7 +46,7 @@ QTextEdit#tedAffiche {background-color: qlineargradient(spread:pad, x1:0, y1:0, 
     <property name="geometry">
      <rect>
       <x>30</x>
-      <y>20</y>
+      <y>10</y>
       <width>60</width>
       <height>60</height>
      </rect>
@@ -75,7 +73,7 @@ QTextEdit#tedAffiche {background-color: qlineargradient(spread:pad, x1:0, y1:0, 
     <property name="geometry">
      <rect>
       <x>110</x>
-      <y>20</y>
+      <y>10</y>
       <width>60</width>
       <height>60</height>
      </rect>
@@ -99,7 +97,7 @@ QTextEdit#tedAffiche {background-color: qlineargradient(spread:pad, x1:0, y1:0, 
     <property name="geometry">
      <rect>
       <x>190</x>
-      <y>20</y>
+      <y>10</y>
       <width>60</width>
       <height>60</height>
      </rect>
@@ -195,7 +193,7 @@ QTextEdit#tedAffiche {background-color: qlineargradient(spread:pad, x1:0, y1:0, 
     <property name="geometry">
      <rect>
       <x>30</x>
-      <y>160</y>
+      <y>170</y>
       <width>60</width>
       <height>60</height>
      </rect>
@@ -219,7 +217,7 @@ QTextEdit#tedAffiche {background-color: qlineargradient(spread:pad, x1:0, y1:0, 
     <property name="geometry">
      <rect>
       <x>110</x>
-      <y>160</y>
+      <y>170</y>
       <width>60</width>
       <height>60</height>
      </rect>
@@ -243,7 +241,7 @@ QTextEdit#tedAffiche {background-color: qlineargradient(spread:pad, x1:0, y1:0, 
     <property name="geometry">
      <rect>
       <x>190</x>
-      <y>160</y>
+      <y>170</y>
       <width>60</width>
       <height>60</height>
      </rect>
@@ -267,7 +265,7 @@ QTextEdit#tedAffiche {background-color: qlineargradient(spread:pad, x1:0, y1:0, 
     <property name="geometry">
      <rect>
       <x>270</x>
-      <y>20</y>
+      <y>10</y>
       <width>61</width>
       <height>61</height>
      </rect>
@@ -321,7 +319,7 @@ QTextEdit#tedAffiche {background-color: qlineargradient(spread:pad, x1:0, y1:0, 
     <property name="geometry">
      <rect>
       <x>270</x>
-      <y>160</y>
+      <y>170</y>
       <width>61</width>
       <height>61</height>
      </rect>
@@ -429,7 +427,7 @@ QTextEdit#tedAffiche {background-color: qlineargradient(spread:pad, x1:0, y1:0, 
     <property name="geometry">
      <rect>
       <x>360</x>
-      <y>120</y>
+      <y>110</y>
       <width>40</width>
       <height>40</height>
      </rect>
@@ -453,7 +451,7 @@ QTextEdit#tedAffiche {background-color: qlineargradient(spread:pad, x1:0, y1:0, 
     <property name="geometry">
      <rect>
       <x>410</x>
-      <y>120</y>
+      <y>110</y>
       <width>40</width>
       <height>40</height>
      </rect>
@@ -477,7 +475,7 @@ QTextEdit#tedAffiche {background-color: qlineargradient(spread:pad, x1:0, y1:0, 
     <property name="geometry">
      <rect>
       <x>460</x>
-      <y>120</y>
+      <y>110</y>
       <width>40</width>
       <height>40</height>
      </rect>
@@ -501,7 +499,7 @@ QTextEdit#tedAffiche {background-color: qlineargradient(spread:pad, x1:0, y1:0, 
     <property name="geometry">
      <rect>
       <x>360</x>
-      <y>70</y>
+      <y>60</y>
       <width>40</width>
       <height>40</height>
      </rect>
@@ -525,7 +523,7 @@ QTextEdit#tedAffiche {background-color: qlineargradient(spread:pad, x1:0, y1:0, 
     <property name="geometry">
      <rect>
       <x>410</x>
-      <y>70</y>
+      <y>60</y>
       <width>40</width>
       <height>40</height>
      </rect>
@@ -549,7 +547,7 @@ QTextEdit#tedAffiche {background-color: qlineargradient(spread:pad, x1:0, y1:0, 
     <property name="geometry">
      <rect>
       <x>460</x>
-      <y>70</y>
+      <y>60</y>
       <width>40</width>
       <height>40</height>
      </rect>
@@ -573,7 +571,7 @@ QTextEdit#tedAffiche {background-color: qlineargradient(spread:pad, x1:0, y1:0, 
     <property name="geometry">
      <rect>
       <x>360</x>
-      <y>20</y>
+      <y>10</y>
       <width>40</width>
       <height>40</height>
      </rect>
@@ -597,7 +595,7 @@ QTextEdit#tedAffiche {background-color: qlineargradient(spread:pad, x1:0, y1:0, 
     <property name="geometry">
      <rect>
       <x>410</x>
-      <y>20</y>
+      <y>10</y>
       <width>40</width>
       <height>40</height>
      </rect>
@@ -621,7 +619,7 @@ QTextEdit#tedAffiche {background-color: qlineargradient(spread:pad, x1:0, y1:0, 
     <property name="geometry">
      <rect>
       <x>460</x>
-      <y>20</y>
+      <y>10</y>
       <width>40</width>
       <height>40</height>
      </rect>
@@ -788,9 +786,9 @@ QTextEdit#tedAffiche {background-color: qlineargradient(spread:pad, x1:0, y1:0, 
     <property name="geometry">
      <rect>
       <x>350</x>
-      <y>170</y>
+      <y>160</y>
       <width>241</width>
-      <height>91</height>
+      <height>101</height>
      </rect>
     </property>
     <property name="styleSheet">
