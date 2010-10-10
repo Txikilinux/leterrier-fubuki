@@ -26,6 +26,11 @@
 
 QLabel { background-color : green; color : yellow }
 QLabel#lblRegle { background-color : lightgreen; color : purple; border-radius : 8px }
+QTextEdit#tedAffiche {background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgba(0, 255, 0, 255), stop:1 rgba(255, 255, 255, 255));
+			border-radius : 8px; 
+			background-image: url(:/data_images/data/images/pagefold.png);
+			background-repeat: repeat-no;
+   			background-position: top right;}
 
  *[flat=&quot;true&quot;]{ color : red; background-color : yellow; border-radius : 8px; 
 						border-width : 4px;
@@ -270,7 +275,7 @@ QLabel#lblRegle { background-color : lightgreen; color : purple; border-radius :
     <property name="font">
      <font>
       <family>Bitstream Charter</family>
-      <pointsize>26</pointsize>
+      <pointsize>30</pointsize>
       <weight>75</weight>
       <bold>true</bold>
      </font>
@@ -297,7 +302,7 @@ QLabel#lblRegle { background-color : lightgreen; color : purple; border-radius :
     <property name="font">
      <font>
       <family>Bitstream Charter</family>
-      <pointsize>26</pointsize>
+      <pointsize>30</pointsize>
       <weight>75</weight>
       <bold>true</bold>
      </font>
@@ -324,7 +329,7 @@ QLabel#lblRegle { background-color : lightgreen; color : purple; border-radius :
     <property name="font">
      <font>
       <family>Bitstream Charter</family>
-      <pointsize>26</pointsize>
+      <pointsize>30</pointsize>
       <weight>75</weight>
       <bold>true</bold>
      </font>
@@ -351,7 +356,7 @@ QLabel#lblRegle { background-color : lightgreen; color : purple; border-radius :
     <property name="font">
      <font>
       <family>Bitstream Charter</family>
-      <pointsize>26</pointsize>
+      <pointsize>30</pointsize>
       <weight>75</weight>
       <bold>true</bold>
      </font>
@@ -378,7 +383,7 @@ QLabel#lblRegle { background-color : lightgreen; color : purple; border-radius :
     <property name="font">
      <font>
       <family>Bitstream Charter</family>
-      <pointsize>26</pointsize>
+      <pointsize>30</pointsize>
       <weight>75</weight>
       <bold>true</bold>
      </font>
@@ -405,7 +410,7 @@ QLabel#lblRegle { background-color : lightgreen; color : purple; border-radius :
     <property name="font">
      <font>
       <family>Bitstream Charter</family>
-      <pointsize>26</pointsize>
+      <pointsize>30</pointsize>
       <weight>75</weight>
       <bold>true</bold>
      </font>
@@ -715,27 +720,6 @@ QLabel#lblRegle { background-color : lightgreen; color : purple; border-radius :
      <string>Aide</string>
     </property>
    </widget>
-   <widget class="QLabel" name="lblRegle">
-    <property name="geometry">
-     <rect>
-      <x>360</x>
-      <y>170</y>
-      <width>231</width>
-      <height>91</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <pointsize>9</pointsize>
-     </font>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-    <property name="scaledContents">
-     <bool>false</bool>
-    </property>
-   </widget>
    <widget class="QComboBox" name="cBoxSuite">
     <property name="geometry">
      <rect>
@@ -798,6 +782,19 @@ QLabel#lblRegle { background-color : lightgreen; color : purple; border-radius :
     </property>
     <property name="text">
      <string>Nouveau</string>
+    </property>
+   </widget>
+   <widget class="QTextEdit" name="tedAffiche">
+    <property name="geometry">
+     <rect>
+      <x>350</x>
+      <y>170</y>
+      <width>241</width>
+      <height>91</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true"/>
     </property>
    </widget>
   </widget>

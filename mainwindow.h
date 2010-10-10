@@ -63,8 +63,6 @@ signals:
 private slots:
     void on_btnNouveau_clicked();
     void on_btnAide_clicked();
-    void on_actionAide_en_local_triggered();
-    void on_action_propos_triggered();
     void on_btnCorrige_clicked();
     void on_cBoxSuite_activated(int index);
     void on_cBoxNiveau_activated(int index);

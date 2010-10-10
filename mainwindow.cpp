@@ -14,8 +14,8 @@ MainWindow::MainWindow(QWidget *parent) :
 {
     ui->setupUi(this);
 
-    fontBIG.setPointSize(25);
-    fontMEDIUM.setPointSize(15);
+    fontBIG.setPointSize(30);
+    fontMEDIUM.setPointSize(18);
     fontMINUS.setPointSize(10);
 
     QRegExp nomCasesRegExp("btnCase");
@@ -155,8 +155,8 @@ void MainWindow::initFubuki()
         }
     }
 
-    // rappeler la règle
-    ui->lblRegle->setText(trUtf8("  Complète la grille de gauche avec\n  les nombres de la grille de droite\n  de sorte que les sommes :\n     - horizontales\n      - verticales\n  soient justes."));
+    // effacer l'affichage
+    ui->tedAffiche->clear();
     // gerer l'aide
     setAide();
 } // fin initFubuki
@@ -254,7 +254,7 @@ void MainWindow::on_btnVerifier_clicked()
         if (nomBtnCase[i]->text() != "") connus << i;
     }
     if (connus.length() <= (4 - niveau)) {
-        QMessageBox::critical(this, trUtf8("Vérification"), trUtf8("Vérification réfusée.\n\nCommence à remplir la grille de gauche !"));
+        ui->tedAffiche->setText(trUtf8("Vérification réfusée.\n\nCommence à remplir la grille de gauche !"));
         return;
     }    
     bool ok = true;
@@ -266,8 +266,7 @@ void MainWindow::on_btnVerifier_clicked()
         ok = ok && nomBtnCase[2]->text().toInt()+nomBtnCase[5]->text().toInt()+nomBtnCase[8]->text().toInt() == ui->lblV2->text().toInt();
     if (ok)
     {
-        QMessageBox::information(this, trUtf8("Vérification"), trUtf8("Bravo, tout est parfait !\n\nNouvelle grille..."));
-        initFubuki();
+        ui->tedAffiche->setText(trUtf8("Bravo, tout est parfait !\n\nTu peux choisir une nouvelle grille..."));
     }
     else
     {
@@ -279,9 +278,9 @@ void MainWindow::on_btnVerifier_clicked()
             }
         }
         if (iFaute != -1) {
-            QMessageBox::critical(this, trUtf8("Vérification"), trUtf8("Une ou des erreurs ...\n\nPar exemple le nombre : %1 \n\nJe te prie de corriger !").arg(nomBtnCase[iFaute]->text()));
+            ui->tedAffiche->setText(trUtf8("Une ou des erreurs ...\nPar exemple le nombre : %1 \n\nJe te prie de corriger !").arg(nomBtnCase[iFaute]->text()));
         } else {
-            QMessageBox::information(this, trUtf8("Vérification"), trUtf8("Pas d'erreur !\n\nComplète la grille..."));
+            ui->tedAffiche->setText(trUtf8("Pas d'erreur !\n\nComplète la grille..."));
         }
     }
 }
@@ -311,17 +310,6 @@ void MainWindow::on_btnCorrige_clicked()
     }
 }
 
-void MainWindow::on_action_propos_triggered()
-{
-    QMessageBox::information(this, trUtf8("Fubuki : A propos"), trUtf8("AbulEdu-Le terrier\n\nGPL\n\nVersion du :\n4 octobre 2010"));
-}
-
-void MainWindow::on_actionAide_en_local_triggered()
-{
-
-    QMessageBox::critical(this, trUtf8("Fubuki"), trUtf8("Aide en local non implantée"));
-}
-
 void MainWindow::on_btnAide_clicked()
 {
     QList<int> inconnus;
@@ -332,7 +320,7 @@ void MainWindow::on_btnAide_clicked()
     int iBtn = rand() % inconnus.length();
     //qDebug() << "Je prends le " << iBtn << "ieme bouton inconnu : " << inconnus[iBtn];
     //qDebug() << "AIDE : Je propose la btnCase " << inconnus[iBtn] << " de valeur " << cases[inconnus[iBtn]] << cases;
-    QMessageBox::information(this, trUtf8("Aide proposée"), trUtf8("Je propose le nombre ...\n\n   %1").arg(QString::number(cases[inconnus[iBtn]])));
+    ui->tedAffiche->setText(trUtf8("Je propose le nombre ... %1").arg(QString::number(cases[inconnus[iBtn]])));
     nomBtnCase[inconnus[iBtn]]->setStyleSheet("color : #C02020");
     //nomBtnCase[inconnus[iBtn]]->setFont(fontBIG);
     nomBtnCase[inconnus[iBtn]]->setProperty("text", QString::number(cases[inconnus[iBtn]]));
