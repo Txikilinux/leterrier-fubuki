@@ -4,6 +4,7 @@
 #include <QLocale>
 #include <QMessageBox>
 #include <QDialog>
+#include <QInputDialog>
 #include "dialogapropos.h"
 
 bool isIn(int i, QList<int> s);
@@ -31,7 +32,7 @@ MainWindow::MainWindow(QWidget *parent) :
 
     niveau = 0; // défaut
     alea = 0; // défaut
-
+    borneSup = 9; // défaut
     initFubuki();
 
     actuelBtnNbre = -1; // pas de nombre sélectionné
@@ -63,15 +64,20 @@ void MainWindow::changeEvent(QEvent *e)
 
 void MainWindow::initFubuki()
 {
+    // effacer l'affichage
+    ui->tedAffiche->clear();
     // les nombres à manipuler
     casesInitial.clear();
     if (alea == 0)
         casesInitial << 1 << 2 << 3 << 4 << 5 << 6 << 7 << 8 << 9;
     else {
+        ui->tedAffiche->setText(trUtf8("Plus grand nombre : %1").arg(borneSup));
+        casesInitial << borneSup;
         while( casesInitial.length() < 9) {
-            int r = rand() % 35;
+            int r = rand() % borneSup+1;
             if (! isIn(r, casesInitial)) casesInitial << r;
         }
+        qSort(casesInitial.begin(),casesInitial.end() );
     }
     // remplir les boutons à placer (par défaut : tous)
     for (int i = 0; i < 9; i++) {
@@ -154,11 +160,9 @@ void MainWindow::initFubuki()
             nomBtnNbre[k]->setDisabled(true);
         }
     }
-
-    // effacer l'affichage
-    ui->tedAffiche->clear();
     // gerer l'aide
     setAide();
+
 } // fin initFubuki
 
 bool isIn(int i, QList<int> s) {
@@ -294,6 +298,16 @@ void MainWindow::on_cBoxNiveau_activated(int index)
 void MainWindow::on_cBoxSuite_activated(int index)
 {
     alea = index;
+    if (index > 0) {
+        bool ok = false;
+        int n = QInputDialog::getInteger(this, trUtf8("A toi de choisir"), trUtf8("Nombre entier\nplus petit que 34"), 10, 10, 34, 1, &ok);
+        if (ok)
+            borneSup = n;
+        else {
+            ui->cBoxSuite->setCurrentIndex(0);
+            alea = 0;
+        }
+    }
     initFubuki();
 }
 

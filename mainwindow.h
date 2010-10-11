@@ -30,6 +30,7 @@ private:
     */
     int niveau;
     int alea;
+    int borneSup;
 
     /**
       fontes utilisées

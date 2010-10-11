@@ -740,7 +740,7 @@ QTextEdit#tedAffiche {background-color: qlineargradient(spread:pad, x1:0, y1:0, 
     </item>
     <item>
      <property name="text">
-      <string>Nombres aléatoires de 0 à 34</string>
+      <string>Choix des nombres</string>
      </property>
     </item>
    </widget>
