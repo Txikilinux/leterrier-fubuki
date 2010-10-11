@@ -31,12 +31,12 @@ QTextEdit#tedAffiche {background-color: qlineargradient(spread:pad, x1:0, y1:0, 
    			background-position: top right;}
 
  *[flat=&quot;true&quot;]{ color : red; background-color : yellow; border-radius : 8px; 
-						border-width : 4px;
+						border-width : 2px;
 						border-style : solid ;
 						border-color : black; }
 
  *[flat=&quot;true&quot;]:hover{ color : red; background-color : yellow; border-radius : 8px; 
-						border-width : 4px;
+						border-width : 2px;
 						border-style : solid ;
 						border-color : white; }
 
