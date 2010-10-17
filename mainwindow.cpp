@@ -1,9 +1,35 @@
+/**
+  * Fubuki (le terrier d'AbulEdu)
+  *
+  * @warning aucun traitement d'erreur n'est pour l'instant implémenté
+  * @see https://redmine.ryxeo.com/projects/
+  * @author 2009-2010 Andre Connes <andre dot connes at wanadoo dot fr>
+  * @see The GNU Public License (GPL)
+  */
+
+/*
+ * This program is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation; either version 2 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful, but
+ * WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY
+ * or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License
+ * for more details.
+ *
+ * You should have received a copy of the GNU General Public License along
+ * with this program; if not, write to the Free Software Foundation, Inc.,
+ * 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA
+ */
+
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 #include <QtCore>
 #include <QLocale>
 #include <QMessageBox>
 #include <QDialog>
+#include <QInputDialog>
 #include <QInputDialog>
 #include "dialogapropos.h"
 
@@ -26,9 +52,6 @@ MainWindow::MainWindow(QWidget *parent) :
     //}
     QRegExp nomNombresRegExp("btnNbre");
     nomBtnNbre = ui->centralWidget->findChildren <QPushButton *> (nomNombresRegExp);
-    //for (int i = 0; i < nomBtnNbre.length(); i++) { // DEBUG
-    //    qDebug() << nomBtnNbre[i]->objectName();
-    //}
 
     niveau = 0; // défaut
     alea = 0; // défaut
@@ -66,12 +89,16 @@ void MainWindow::initFubuki()
 {
     // effacer l'affichage
     ui->tedAffiche->clear();
+    ui->cBoxSuite->setDisabled(false);
     // les nombres à manipuler
     casesInitial.clear();
-    if (alea == 0)
+    if (alea == 0 && niveau < 5)
         casesInitial << 1 << 2 << 3 << 4 << 5 << 6 << 7 << 8 << 9;
     else {
-        ui->tedAffiche->setText(trUtf8("Plus grand nombre : %1").arg(borneSup));
+        if (niveau >= 5) {
+            borneSup = 15 + rand() %20;
+            ui->cBoxSuite->setDisabled(true);
+        }
         casesInitial << borneSup;
         while( casesInitial.length() < 9) {
             int r = rand() % borneSup+1;
@@ -136,12 +163,12 @@ void MainWindow::initFubuki()
             case 5 : casesDonnees << 2 << 4 << 6; break;
             }
     } else {
-        int maxDonnees = 4 - niveau;
+        int maxDonnees = (4 - niveau < 0)? 0 : 4 - niveau; // max de 4-niveau et 0
         while (casesDonnees.length() < maxDonnees) {
             int r = rand() % 9;
             if (! isIn(r, casesDonnees)) casesDonnees << r;
         }
-        qDebug() << casesDonnees;
+        //qDebug() << casesDonnees;
     }
     for (int i = 0; i < casesDonnees.length(); i++) {
         nomBtnCase[casesDonnees[i]]->setStyleSheet("color :#C02020");
@@ -152,14 +179,23 @@ void MainWindow::initFubuki()
     // qDebug() << "casesInitial cases casesDonnees " << casesInitial << cases << casesDonnees;
 
     // réduire la taille des nombres déjà placés de btnNombres
-    for (int i = 0; i < 9; i++) {
-        if (isIn(i, casesDonnees)) {
-            int k = indexInCasesInitial(cases[i]);
-            nomBtnNbre[k]->setStyleSheet("color :#C02020");
-            nomBtnNbre[k]->setFont(fontMINUS);
-            nomBtnNbre[k]->setDisabled(true);
+    if (niveau <= 4) {
+        for (int i = 0; i < 9; i++) {
+            if (isIn(i, casesDonnees)) {
+                int k = indexInCasesInitial(cases[i]);
+                nomBtnNbre[k]->setStyleSheet("color :#C02020");
+                nomBtnNbre[k]->setFont(fontMINUS);
+                nomBtnNbre[k]->setDisabled(true);
+            }
+        }
+    } else {
+        // mais tout effacer si niveau > 4
+        for (int i = 0; i < 9; i++) {
+            nomBtnNbre[i]->setDisabled(true);
+            nomBtnNbre[i]->setProperty("text", "");
         }
     }
+
     // gerer l'aide
     setAide();
 
@@ -190,14 +226,26 @@ void MainWindow::on_btnCase7_clicked() { _btnCase(7); }
 void MainWindow::on_btnCase8_clicked() { _btnCase(8); }
 
 void MainWindow::_btnCase(int i) {
+    if (niveau > 4) {
+        if (nomBtnCase[i]->text() != "") {
+            //le btnCase n'est pas vide, vider !
+            nomBtnCase[i]->setText("");
+            return;
+        }
+        // valuer le btnCase
+        bool ok = false;
+        while (!ok)
+            // astuce (ben oui) puisque actuelBtnNbre désigne normalement un indice pas une valeur
+            actuelBtnNbre = QInputDialog::getInteger(this, trUtf8("Ton choix"), trUtf8("Nombre entier entre 1 et 34"), 16, 1, 34, 1, &ok);
+    }
     int k = indexInCasesInitial(nomBtnCase[i]->text().toInt());
     if (k >= 0) {
         // bouton déjà occupé : restaurer le btnNbre
-        restaurerBtnNbre(k);
+        if (niveau <= 4) restaurerBtnNbre(k);
         // effacer le bouton
         nomBtnCase[i]->setText("");
         actuelBtnCase = -1; 
-        if (actuelBtnNbre >= 0) {
+        if (actuelBtnNbre >= 0 && niveau < 5) {
             // déposer actuelBtnNbre sur cette case
             nomBtnCase[i]->setStyleSheet("color : #2020C0");
             nomBtnCase[i]->setProperty("text", QString::number(casesInitial[actuelBtnNbre]));
@@ -206,7 +254,10 @@ void MainWindow::_btnCase(int i) {
     } else if (actuelBtnNbre >= 0) {
         // déposer actuelBtnNbre sur cette case
         nomBtnCase[i]->setStyleSheet("color : #2020C0");
-        nomBtnCase[i]->setProperty("text", QString::number(casesInitial[actuelBtnNbre]));
+        if (niveau > 4)
+            nomBtnCase[i]->setProperty("text", QString::number(actuelBtnNbre));
+        else
+            nomBtnCase[i]->setProperty("text", QString::number(casesInitial[actuelBtnNbre]));
         actuelBtnNbre = -1;
         actuelBtnCase = -1;
     } else {
@@ -227,7 +278,7 @@ void MainWindow::on_btnNbre7_clicked() { _btnNbre(7); }
 void MainWindow::on_btnNbre8_clicked() { _btnNbre(8); }
 
 void MainWindow::_btnNbre(int i) {
-    if (actuelBtnNbre >= 0) {
+    if (actuelBtnNbre >= 0 && niveau <= 4) {
         restaurerBtnNbre(actuelBtnNbre);
     }
     nomBtnNbre[i]->setStyleSheet("color :#2020C0");
@@ -300,7 +351,7 @@ void MainWindow::on_cBoxSuite_activated(int index)
     alea = index;
     if (index > 0) {
         bool ok = false;
-        int n = QInputDialog::getInteger(this, trUtf8("A toi de choisir"), trUtf8("Nombre entier\nplus petit que 34"), 10, 10, 34, 1, &ok);
+        int n = QInputDialog::getInteger(this, trUtf8("A toi de choisir"), trUtf8("Nombre entier\n  plus grand que 15\n  plus petit que 35"), 25, 16, 34, 1, &ok);
         if (ok)
             borneSup = n;
         else {

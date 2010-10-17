@@ -698,6 +698,11 @@ QTextEdit#tedAffiche {background-color: qlineargradient(spread:pad, x1:0, y1:0, 
       <string>Diabolique</string>
      </property>
     </item>
+    <item>
+     <property name="text">
+      <string>Infernal</string>
+     </property>
+    </item>
    </widget>
    <widget class="QPushButton" name="btnAide">
     <property name="geometry">
