@@ -90,6 +90,8 @@ void MainWindow::initFubuki()
     // effacer l'affichage
     ui->tedAffiche->clear();
     ui->cBoxSuite->setDisabled(false);
+    // pas de nombre placé par l'uilisateur
+    placement = false;
     // les nombres à manipuler
     casesInitial.clear();
     if (alea == 0 && niveau < 5)
@@ -304,15 +306,22 @@ void MainWindow::restaurerBtnNbre(int i) {
 
 void MainWindow::on_btnVerifier_clicked()
 {
+    // vérifier que la grile est suffisamment remplie sinon return
     QList<int> connus;
     for (int i = 0; i < 9; i++) {
         if (nomBtnCase[i]->text() != "") connus << i;
     }
-    if (connus.length() <= (4 - niveau)) {
+    if (connus.length() <= (4 - niveau) || (connus.length() == 0 && niveau > 4)) {
         ui->tedAffiche->setText(trUtf8("Vérification réfusée.\n\nCommence à remplir la grille de gauche !"));
         return;
-    }    
+    }
+
+    // vérifier la grobalité d la grille ; si ok, return
     bool ok = true;
+    /*
+     la vérification est faite en utilisant les cases remplies, pas en comparant avec la solution connue
+     en effet, il peut y avoir plusieurs solutions (en particulier niveau infernal)
+    */
         ok = ok && nomBtnCase[0]->text().toInt()+nomBtnCase[1]->text().toInt()+nomBtnCase[2]->text().toInt() == ui->lblH0->text().toInt();
         ok = ok && nomBtnCase[3]->text().toInt()+nomBtnCase[4]->text().toInt()+nomBtnCase[5]->text().toInt() == ui->lblH1->text().toInt();
         ok = ok && nomBtnCase[6]->text().toInt()+nomBtnCase[7]->text().toInt()+nomBtnCase[8]->text().toInt() == ui->lblH2->text().toInt();
@@ -322,9 +331,14 @@ void MainWindow::on_btnVerifier_clicked()
     if (ok)
     {
         ui->tedAffiche->setText(trUtf8("Bravo, tout est parfait !\n\nTu peux choisir une nouvelle grille..."));
+        return;
     }
-    else
+
+    // grille incomplète ; vérification en fonction du niveau
+
+    if (niveau < 5)
     {
+    // vérification terme à terme si niveau < infernal
         int iFaute = -1;
         for (int i = 0; i < 9; i++) {
             if (nomBtnCase[i]->text().toInt() != cases[i] && nomBtnCase[i]->text() != "") {
@@ -337,6 +351,31 @@ void MainWindow::on_btnVerifier_clicked()
         } else {
             ui->tedAffiche->setText(trUtf8("Pas d'erreur !\n\nComplète la grille..."));
         }
+    } else {
+    // vérification ligne /colonne si pleine
+        for (int i = 0; i < 3 ; i++ ) { //ligne i
+            int nVides = 0, somme = 0;
+            for (int j = 0; j < 3; j++) {
+                nVides += (nomBtnCase[3*i+j]->text() == "" ? 1 : 0);
+                somme += nomBtnCase[3*i+j]->text().toInt();
+            }
+            if (nVides == 0 && somme != ligSomme[i]) {
+                    ui->tedAffiche->setText(trUtf8("Une ou des erreurs ...\nPar exemple la ligne %1\n\nJe te prie de corriger !").arg(i+1));
+                    return;
+            }
+        }
+        for (int i = 0; i < 3 ; i++ ) { //colonne i
+            int nVides = 0, somme = 0;
+            for (int j = 0; j < 3; j++) {
+                nVides += (nomBtnCase[i+3*j]->text() == "" ? 1 : 0);
+                somme += nomBtnCase[i+3*j]->text().toInt();
+            }
+            if (nVides == 0 && somme != colSomme[i]) {
+                    ui->tedAffiche->setText(trUtf8("Une ou des erreurs ...\nPar exemple la colonne %1\n\nJe te prie de corriger !").arg(i+1));
+                    return;
+            }
+        }
+        ui->tedAffiche->setText(trUtf8("Pas d'erreur !\n\nComplète la grille..."));
     }
 }
 
@@ -406,6 +445,10 @@ void MainWindow::on_btnNouveau_clicked()
 }
 
 void MainWindow::setAide() {
+    if (niveau >4) {
+        ui->btnAide->setDisabled(true);
+        return;
+    }
     QList<int> inconnus;
     for (int i = 0; i < 9; i++) {
         if (nomBtnCase[i]->text() == "") inconnus << i;

@@ -52,10 +52,21 @@ private:
         difficile (2)
         très difficile (1)
         diabolique (0)
+        infernal (0 et le choix des nombres n'est pas fixé)
+        RMQ : ça fait peur mais c'est plus facile que le niveau précédent
+        (6 équations à 9 inconnues => infinité (théorique) de solutions)
     */
     int niveau;
     int alea;
+    /**
+      plus grand nombre utilisé (9 par défaut)
+    */
     int borneSup;
+    /**
+      vrai si un nombre a été placé par l'utilisateur
+      (utilisé dans le niveau infernal)
+    */
+    bool placement;
 
     /**
       fontes utilisées
