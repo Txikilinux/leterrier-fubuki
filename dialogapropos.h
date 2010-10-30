@@ -1,4 +1,4 @@
-/**
+/*
   * Fubuki (le terrier d'AbulEdu)
   *
   * @warning aucun traitement d'erreur n'est pour l'instant implémenté
