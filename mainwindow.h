@@ -29,12 +29,14 @@
 #include <QMainWindow>
 #include <QList>
 #include <QPushButton>
+#include "abuleduexercicev0.h"
+
 
 namespace Ui {
     class MainWindow;
 }
 
-class MainWindow : public QMainWindow {
+class MainWindow : public AbulEduExerciceV0 {
     Q_OBJECT
 public:
     MainWindow(QWidget *parent = 0);

@@ -23,14 +23,23 @@
  * 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA
  */
 
+
+
 #include <QtGui/QApplication>
 #include "mainwindow.h"
+
+void debugOutput(QtMsgType type, const char *msg);
 
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
 
+    qApp->setApplicationName("Fubuki");
+    qApp->setApplicationVersion("10.08");
+
+
     MainWindow w;
+    w.setFixedSize(600, 390);
     w.show();
     return a.exec();
 }

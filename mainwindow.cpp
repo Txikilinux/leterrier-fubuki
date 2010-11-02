@@ -23,20 +23,20 @@
  * 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA
  */
 
+
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 #include <QtCore>
-#include <QLocale>
 #include <QMessageBox>
 #include <QDialog>
 #include <QInputDialog>
-#include <QInputDialog>
 #include "dialogapropos.h"
+#include "abuleduexercicev0.h"
 
 bool isIn(int i, QList<int> s);
 
 MainWindow::MainWindow(QWidget *parent) :
-    QMainWindow(parent),
+    AbulEduExerciceV0(parent),
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
@@ -87,6 +87,11 @@ void MainWindow::changeEvent(QEvent *e)
 
 void MainWindow::initFubuki()
 {
+    setAbeExerciceName(trUtf8("de 1 à 9"));
+    setAbeLevel(trUtf8("niveau %1").arg(QString::number(niveau)));
+    setAbeNbTotalQuestions(1);
+    setAbeSkill(trUtf8("anticiper 6 totaux de 3 nombres"));
+
     // effacer l'affichage
     ui->tedAffiche->clear();
     ui->cBoxSuite->setDisabled(false);
@@ -267,7 +272,7 @@ void MainWindow::_btnCase(int i) {
         actuelBtnCase = i;
     }
     setAide();
-}
+} //fin _btnCase(int i)
 
 void MainWindow::on_btnNbre0_clicked() { _btnNbre(0); }
 void MainWindow::on_btnNbre1_clicked() { _btnNbre(1); }
@@ -316,7 +321,7 @@ void MainWindow::on_btnVerifier_clicked()
         return;
     }
 
-    // vérifier la grobalité d la grille ; si ok, return
+    // vérifier la globalité de la grille ; si ok, return
     bool ok = true;
     /*
      la vérification est faite en utilisant les cases remplies, pas en comparant avec la solution connue
@@ -331,6 +336,7 @@ void MainWindow::on_btnVerifier_clicked()
     if (ok)
     {
         ui->tedAffiche->setText(trUtf8("Bravo, tout est parfait !\n\nTu peux choisir une nouvelle grille..."));
+        setAbeLineLog("Complète la grille","ok", 1, 0 , "a");
         return;
     }
 
@@ -441,6 +447,7 @@ void MainWindow::on_btnAide_clicked()
 
 void MainWindow::on_btnNouveau_clicked()
 {
+    pushAbulEduLogs();
     initFubuki();
 }
 

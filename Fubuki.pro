@@ -5,9 +5,11 @@ TARGET = Fubuki
 TEMPLATE = app
 SOURCES += main.cpp \
     mainwindow.cpp \
-    dialogapropos.cpp
+    dialogapropos.cpp \
+    abuleduexercicev0.cpp
 HEADERS += mainwindow.h \
-    dialogapropos.h
+    dialogapropos.h \
+    abuleduexercicev0.h
 FORMS += mainwindow.ui \
     dialogapropos.ui
 RESOURCES += Fubuki.qrc
