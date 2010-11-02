@@ -91,7 +91,7 @@ private:
     void printFubuki();
     int indexInCasesInitial(int inCasesDonnees);
     void restaurerBtnNbre(int i);
-    void setAide();
+    void setInformation();
 
 signals:
     /** Demande le positionnement de l'onglet de l'aide
@@ -101,7 +101,7 @@ signals:
 
 private slots:
     void on_btnNouveau_clicked();
-    void on_btnAide_clicked();
+    void on_btnInformation_clicked();
     void on_btnCorrige_clicked();
     void on_cBoxSuite_activated(int index);
     void on_cBoxNiveau_activated(int index);

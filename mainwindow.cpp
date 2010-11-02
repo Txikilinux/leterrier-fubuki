@@ -204,7 +204,7 @@ void MainWindow::initFubuki()
     }
 
     // gerer l'aide
-    setAide();
+    setInformation();
 
 } // fin initFubuki
 
@@ -271,7 +271,7 @@ void MainWindow::_btnCase(int i) {
         // conserver ce bouton pour déposer
         actuelBtnCase = i;
     }
-    setAide();
+    setInformation();
 } //fin _btnCase(int i)
 
 void MainWindow::on_btnNbre0_clicked() { _btnNbre(0); }
@@ -299,14 +299,14 @@ void MainWindow::_btnNbre(int i) {
         actuelBtnCase = -1;
         actuelBtnNbre = -1;
     }
-    setAide();
+    setInformation();
 }
 
 void MainWindow::restaurerBtnNbre(int i) {
     nomBtnNbre[i]->setStyleSheet("color :#2020C0");
     nomBtnNbre[i]->setFont(fontMEDIUM);
     nomBtnNbre[i]->setDisabled(false);
-    setAide();
+    setInformation();
 }
 
 void MainWindow::on_btnVerifier_clicked()
@@ -420,7 +420,7 @@ void MainWindow::on_btnCorrige_clicked()
     }
 }
 
-void MainWindow::on_btnAide_clicked()
+void MainWindow::on_btnInformation_clicked()
 {
     QList<int> inconnus;
     for (int i = 0; i < 9; i++) {
@@ -442,7 +442,7 @@ void MainWindow::on_btnAide_clicked()
     nomBtnNbre[k]->setFont(fontMINUS);
     nomBtnNbre[k]->setDisabled(true);
 
-    setAide();
+    setInformation();
 }
 
 void MainWindow::on_btnNouveau_clicked()
@@ -451,9 +451,9 @@ void MainWindow::on_btnNouveau_clicked()
     initFubuki();
 }
 
-void MainWindow::setAide() {
+void MainWindow::setInformation() {
     if (niveau >4) {
-        ui->btnAide->setDisabled(true);
+        ui->btnInformation->setDisabled(true);
         return;
     }
     QList<int> inconnus;
@@ -461,9 +461,9 @@ void MainWindow::setAide() {
         if (nomBtnCase[i]->text() == "") inconnus << i;
     }
     if (inconnus.length() < 5)
-        ui->btnAide->setDisabled(true);
+        ui->btnInformation->setDisabled(true);
     else
-        ui->btnAide->setDisabled(false);
+        ui->btnInformation->setDisabled(false);
 }
 
 //--------------------------------------------------------------------------------------

@@ -40,27 +40,27 @@ QTextEdit#tedAffiche {background-color: qlineargradient(spread:pad, x1:0, y1:0, 
 						border-style : solid ;
 						border-color : white; }
 
-QPushButton#btnAide {
+QPushButton#btnInformation {
 			background-color : rgba(200, 255, 100, 255); 
-			background-image: url(:/data_images/data/images/aide.png); 
+			background-image: url(:/data_images/data/images/information.png); 
 			background-repeat: repeat-no;
    			background-position: center;
 			border-radius : 8px; 
 						border-width : 2px;
 						border-style : solid ;
 						border-color : black; }
-QPushButton#btnAide:hover { 
+QPushButton#btnInformation:hover { 
 			background-color : rgba(200, 255, 100, 255); 
-			background-image: url(:/data_images/data/images/aide.png); 
+			background-image: url(:/data_images/data/images/information.png); 
 			background-repeat: repeat-no;
    			background-position: center;
 			border-radius : 8px; 
 						border-width : 2px;
 						border-style : solid ;
 						border-color : white; }
-QPushButton#btnAide:disabled { 
+QPushButton#btnInformation:disabled { 
 			background-color : rgba(200, 255, 100, 255); 
-			background-image: url(:/data_images/data/images/aide_minus.png); 
+			background-image: url(:/data_images/data/images/information_minus.png); 
 			background-repeat: repeat-no;
    			background-position: center;
 			border-radius : 8px; 
@@ -69,7 +69,7 @@ QPushButton#btnAide:disabled {
 						border-color : white; }
 QPushButton#btnVerifier {
 			background-color : rgba(200, 255, 100, 255); 
-			background-image: url(:/data_images/data/images/verifier.svg); 
+			background-image: url(:/data_images/data/images/verifier.png); 
 			background-repeat: repeat-no;
    			background-position: center;
 			border-radius : 8px; 
@@ -78,7 +78,7 @@ QPushButton#btnVerifier {
 						border-color : black; }
 QPushButton#btnVerifier:hover { 
 			background-color : rgba(200, 255, 100, 255); 
-			background-image: url(:/data_images/data/images/verifier.svg); 
+			background-image: url(:/data_images/data/images/verifier.png); 
 			background-repeat: repeat-no;
    			background-position: center;
 			border-radius : 8px; 
@@ -105,7 +105,7 @@ QPushButton#btnCorrige:hover {
 						border-color : white; }
 QPushButton#btnNouveau {
 			background-color : rgba(200, 255, 100, 255); 
-			background-image: url(:/data_images/data/images/nouveau.svg); 
+			background-image: url(:/data_images/data/images/nouveau.png); 
 			background-repeat: repeat-no;
    			background-position: center;
 			border-radius : 8px; 
@@ -114,7 +114,7 @@ QPushButton#btnNouveau {
 						border-color : black; }
 QPushButton#btnNouveau:hover { 
 			background-color : rgba(200, 255, 100, 255); 
-			background-image: url(:/data_images/data/images/nouveau.svg); 
+			background-image: url(:/data_images/data/images/nouveau.png); 
 			background-repeat: repeat-no;
    			background-position: center;
 			border-radius : 8px; 
@@ -805,7 +805,7 @@ QPushButton#btnQuitter:hover {
      </property>
     </item>
    </widget>
-   <widget class="QPushButton" name="btnAide">
+   <widget class="QPushButton" name="btnInformation">
     <property name="geometry">
      <rect>
       <x>270</x>
