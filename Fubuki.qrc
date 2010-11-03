@@ -1,14 +1,12 @@
 <RCC>
     <qresource prefix="/data_images">
-        <file>data/images/fond.png</file>
-        <file>data/images/pagefold.png</file>
-        <file>data/images/vignetteTerrier.png</file>
-        <file>data/images/vignetteTerrierLite.png</file>
-        <file>data/images/corriger.png</file>
-        <file>data/images/quitter.png</file>
-        <file>data/images/information.png</file>
-        <file>data/images/verifier.png</file>
-        <file>data/images/nouveau.png</file>
-        <file>data/images/information_minus.png</file>
+        <file>data/images/background-600x365.png</file>
+        <file>data/images/pagefold-50x45.png</file>
+        <file>data/images/correct-24x24.png</file>
+        <file>data/images/quit-24x24.png</file>
+        <file>data/images/info-24x24.png</file>
+        <file>data/images/check-24x24.png</file>
+        <file>data/images/new-24x24.png</file>
+        <file>data/images/info-12x12.png</file>
     </qresource>
 </RCC>
