@@ -29,6 +29,7 @@
 #include <QMainWindow>
 #include <QList>
 #include <QPushButton>
+#include "abuleduaproposv0.h"
 #include "abuleduexercicev0.h"
 
 
@@ -127,19 +128,6 @@ private slots:
     void on_btnNbre7_clicked();
     void on_btnNbre8_clicked();
     void _btnNbre(int i);
-
-    /** Slot demandant l'affichage de l'aide sur l'onglet Aide
-      */
-    void montreAide();
-    /** Slot demandant l'affichage de l'aide sur l'onglet Contacts
-      */
-    void montreContacts();
-    /** Slot demandant l'affichage de l'aide sur l'onglet A Propos
-      */
-    void montreAPropos();
-    /** Slot demandant l'affichage de l'aide sur l'onglet Traduire
-      */
-    void montreTraduire();
 };
 
 #endif // MAINWINDOW_H

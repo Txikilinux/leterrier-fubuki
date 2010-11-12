@@ -970,20 +970,7 @@ QPushButton#btnQuitter:hover {
     </property>
     <addaction name="actionQuitter"/>
    </widget>
-   <widget class="QMenu" name="menuAide">
-    <property name="title">
-     <string>Aide</string>
-    </property>
-    <addaction name="actionAide_en_ligne"/>
-    <addaction name="separator"/>
-    <addaction name="actionAideRapide"/>
-    <addaction name="actionContacts"/>
-    <addaction name="actionTraduire"/>
-    <addaction name="separator"/>
-    <addaction name="actionAPropos"/>
-   </widget>
    <addaction name="menuFichier"/>
-   <addaction name="menuAide"/>
   </widget>
   <action name="actionQuitter">
    <property name="text">

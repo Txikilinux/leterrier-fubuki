@@ -34,9 +34,9 @@ int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
 
-    qApp->setApplicationName("Fubuki");
-    qApp->setApplicationVersion("10.08");
-
+    qApp->setApplicationName("Fubuki");    
+    qApp->setApplicationVersion("10.11");
+    qApp->setOrganizationDomain("http://www.abuledu.org/leterrier/fubuki_10.11");
 
     MainWindow w;
     w.setFixedSize(600, 390);

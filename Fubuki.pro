@@ -5,11 +5,12 @@ TARGET = Fubuki
 TEMPLATE = app
 SOURCES += main.cpp \
     mainwindow.cpp \
-    dialogapropos.cpp \
-    abuleduexercicev0.cpp
+    abuleduexercicev0.cpp \
+    abuleduaproposv0.cpp
 HEADERS += mainwindow.h \
-    dialogapropos.h \
-    abuleduexercicev0.h
+    abuleduexercicev0.h \
+    abuleduaproposv0.h
 FORMS += mainwindow.ui \
-    dialogapropos.ui
+    abuleduaproposv0.ui
 RESOURCES += Fubuki.qrc
+QT += script xml network
