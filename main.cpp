@@ -26,13 +26,17 @@
 
 
 #include <QtGui/QApplication>
+#include <QtCore>
 #include "mainwindow.h"
+#include <QTime>
 
 void debugOutput(QtMsgType type, const char *msg);
 
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
+
+    qDebug() << QTime::currentTime();
 
     qApp->setApplicationName("Fubuki");    
     qApp->setApplicationVersion("10.11");

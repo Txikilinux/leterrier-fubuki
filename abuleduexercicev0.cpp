@@ -75,7 +75,6 @@ AbulEduExerciceV0::AbulEduExerciceV0(QWidget *parent) :
 
 AbulEduExerciceV0::~AbulEduExerciceV0()
 {
-    delete this;
 }
 
 void AbulEduExerciceV0::setAbeLineLog(QString question, QString answer,

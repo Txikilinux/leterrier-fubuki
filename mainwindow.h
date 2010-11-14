@@ -60,11 +60,22 @@ private:
         (6 équations à 9 inconnues => infinité (théorique) de solutions)
     */
     int niveau;
+    /**
+        plage de 1 à 9, ou choix entre 15 et 35
+      */
     int alea;
     /**
-      plus grand nombre utilisé (9 par défaut)
+      plus grand nombre utilisé (9 par défaut) - voir alea précédent
     */
     int borneSup;
+    /**
+      nombre d'erreurs
+      */
+    int nErreurs;
+    /**
+      nombre de fois que l'aide est demandée
+      */
+    int nAides;
     /**
       vrai si un nombre a été placé par l'utilisateur
       (utilisé dans le niveau infernal)
@@ -93,6 +104,7 @@ private:
     int indexInCasesInitial(int inCasesDonnees);
     void restaurerBtnNbre(int i);
     void setInformation();
+    QString abeEvaluation(); // renvoie a,b,c,d ou z en fonction du niveau, #erreurs, etc.
 
 signals:
     /** Demande le positionnement de l'onglet de l'aide
