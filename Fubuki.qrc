@@ -2,11 +2,11 @@
     <qresource prefix="/data_images">
         <file>data/images/background-600x365.png</file>
         <file>data/images/pagefold-50x45.png</file>
-        <file>data/images/correct-24x24.png</file>
         <file>data/images/quit-24x24.png</file>
         <file>data/images/info-24x24.png</file>
         <file>data/images/check-24x24.png</file>
         <file>data/images/new-24x24.png</file>
         <file>data/images/info-12x12.png</file>
+        <file>data/images/erase-24x24.png</file>
     </qresource>
 </RCC>

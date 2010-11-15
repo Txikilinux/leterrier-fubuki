@@ -210,7 +210,9 @@ void MainWindow::initFubuki()
     nErreurs = 0;
     nAides = 0;
     ui->btnVerifier->setDisabled(false);
-    ui->btnCorrige->setDisabled(false);
+    ui->btnAbandonner->setDisabled(false);
+    ui->btnNouveau->setDisabled(true);
+    ui->btnQuitter->setDisabled(true);
 
 } // fin initFubuki
 
@@ -362,8 +364,10 @@ void MainWindow::on_btnVerifier_clicked()
         ui->tedAffiche->setText(trUtf8("Bravo, tout est parfait !\n\nTu peux choisir une nouvelle grille..."));
         setAbeLineLog("Complète la grille","", -1, 0 , abeEvaluation(), "", "", "", trUtf8("Vérification"));
         pushAbulEduLogs();
-        ui->btnCorrige->setDisabled(true);
         ui->btnVerifier->setDisabled(true);
+        ui->btnAbandonner->setDisabled(true);
+        ui->btnNouveau->setDisabled(false);
+        ui->btnQuitter->setDisabled(false);
         return;
     }
 
@@ -441,7 +445,7 @@ void MainWindow::on_cBoxSuite_activated(int index)
     initFubuki();
 }
 
-void MainWindow::on_btnCorrige_clicked()
+void MainWindow::on_btnAbandonner_clicked()
 {
     for (int i = 0; i < 9; i++) {
         if (nomBtnCase[i]->text().toInt() != cases[i]) {
@@ -454,12 +458,14 @@ void MainWindow::on_btnCorrige_clicked()
         nomBtnCase[i]->setDisabled(true);
     }
     ui->btnVerifier->setDisabled(true);
-    ui->btnCorrige->setDisabled(true);;
+    ui->btnAbandonner->setDisabled(true);
+    ui->btnNouveau->setDisabled(false);
+    ui->btnQuitter->setDisabled(false);
     if (nErreurs > 0)
-        ui->tedAffiche->setText(trUtf8("Erreur(s) !\n\nTu peux choisir une nouvelle grille..."));
+        ui->tedAffiche->setText(trUtf8("Abandon. Voici un corrigé !\n\nTu peux choisir une nouvelle grille..."));
     else
         ui->tedAffiche->setText(trUtf8("Bravo, tout est parfait !\n\nTu peux choisir une nouvelle grille..."));
-    setAbeLineLog("Complète la grille","", -1, 0 , abeEvaluation(), "", "", "", trUtf8("Corrigé"));
+    setAbeLineLog("Complète la grille","", -1, 0 , abeEvaluation(), "", "", "", trUtf8("Abandon"));
     pushAbulEduLogs();
 }
 

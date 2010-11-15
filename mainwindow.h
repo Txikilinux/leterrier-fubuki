@@ -115,7 +115,7 @@ signals:
 private slots:
     void on_btnNouveau_clicked();
     void on_btnInformation_clicked();
-    void on_btnCorrige_clicked();
+    void on_btnAbandonner_clicked();
     void on_cBoxSuite_activated(int index);
     void on_cBoxNiveau_activated(int index);
     void on_btnVerifier_clicked();

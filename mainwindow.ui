@@ -98,18 +98,18 @@ QPushButton#btnVerifier:hover {
 						border-width : 2px;
 						border-style : solid ;
 						border-color : white; }
-QPushButton#btnCorrige {
+QPushButton#btnAbandonner {
 			background-color : rgba(200, 255, 100, 255); 
-	background-image: url(:/data_images/data/images/correct-24x24.png);
+	background-image: url(:/data_images/data/images/erase-24x24.png);
 			background-repeat: repeat-no;
    			background-position: center;
 			border-radius : 8px; 
 						border-width : 2px;
 						border-style : solid ;
 						border-color : black; }
-QPushButton#btnCorrige:hover { 
+QPushButton#btnAbandonner:hover { 
 			background-color : rgba(200, 255, 100, 255); 
-	background-image: url(:/data_images/data/images/correct-24x24.png);
+	background-image: url(:/data_images/data/images/erase-24x24.png);
 			background-repeat: repeat-no;
    			background-position: center;
 			border-radius : 8px; 
@@ -766,7 +766,7 @@ QPushButton#btnQuitter:hover {
      </font>
     </property>
     <property name="toolTip">
-     <string>Vérification</string>
+     <string>Vérifier</string>
     </property>
     <property name="text">
      <string/>
@@ -875,7 +875,7 @@ QPushButton#btnQuitter:hover {
      </property>
     </item>
    </widget>
-   <widget class="QPushButton" name="btnCorrige">
+   <widget class="QPushButton" name="btnAbandonner">
     <property name="geometry">
      <rect>
       <x>420</x>
@@ -891,7 +891,7 @@ QPushButton#btnQuitter:hover {
      </font>
     </property>
     <property name="toolTip">
-     <string>Corriger</string>
+     <string>Abandonner</string>
     </property>
     <property name="text">
      <string/>
