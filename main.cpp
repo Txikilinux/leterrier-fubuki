@@ -39,8 +39,8 @@ int main(int argc, char *argv[])
     qDebug() << QTime::currentTime();
 
     qApp->setApplicationName("Fubuki");    
-    qApp->setApplicationVersion("10.11");
-    qApp->setOrganizationDomain("http://www.abuledu.org/leterrier/fubuki_10.11");
+    qApp->setApplicationVersion("v1");
+    qApp->setOrganizationDomain("http://entraide.abuledu-fr.org/topic/fubuki");
 
     MainWindow w;
     w.setFixedSize(600, 390);
