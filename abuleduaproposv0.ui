@@ -20,7 +20,7 @@
       <bool>false</bool>
      </property>
      <property name="currentIndex">
-      <number>0</number>
+      <number>5</number>
      </property>
      <widget class="QWidget" name="tabAide">
       <attribute name="title">
@@ -45,9 +45,6 @@ p, li { white-space: pre-wrap; }
 &lt;table border=&quot;0&quot; style=&quot;-qt-table-type: root; margin-top:4px; margin-bottom:4px; margin-left:4px; margin-right:4px;&quot;&gt;
 &lt;tr&gt;
 &lt;td style=&quot;border: none;&quot;&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'Ubuntu'; font-size:11pt;&quot;&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:18pt; font-weight:600; color:#005500;&quot;&gt;Complèter&lt;/span&gt;&lt;span style=&quot; font-size:18pt; color:#00557f;&quot;&gt; &lt;/span&gt;&lt;span style=&quot; font-size:18pt; color:#005500;&quot;&gt;la&lt;/span&gt;&lt;span style=&quot; font-size:18pt; color:#00557f;&quot;&gt; &lt;/span&gt;&lt;span style=&quot; font-size:18pt; font-weight:600; font-style:italic; color:#ff5500;&quot;&gt;grille de gauche&lt;/span&gt;&lt;span style=&quot; font-size:18pt; font-weight:600; color:#ff5500;&quot;&gt; &lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:18pt; color:#005500;&quot;&gt;avec  les&lt;/span&gt;&lt;span style=&quot; font-size:18pt; color:#00557f;&quot;&gt; &lt;/span&gt;&lt;span style=&quot; font-size:18pt; font-weight:600; color:#005500;&quot;&gt;nombres&lt;/span&gt;&lt;span style=&quot; font-size:18pt; color:#00557f;&quot;&gt; &lt;/span&gt;&lt;span style=&quot; font-size:18pt; color:#005500;&quot;&gt;de la&lt;/span&gt;&lt;span style=&quot; font-size:18pt; color:#00557f;&quot;&gt; &lt;/span&gt;&lt;span style=&quot; font-size:18pt; font-weight:600; font-style:italic; color:#ffaa00;&quot;&gt;grille de droite&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:18pt; color:#005500;&quot;&gt;de sorte que les &lt;/span&gt;&lt;span style=&quot; font-size:18pt; font-weight:600; color:#005500;&quot;&gt;sommes&lt;/span&gt;&lt;span style=&quot; font-size:18pt; color:#005500;&quot;&gt; :&lt;/span&gt;&lt;/p&gt;
@@ -289,10 +286,7 @@ p, li { white-space: pre-wrap; }
 &lt;tr&gt;
 &lt;td style=&quot;border: none;&quot;&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
-&lt;p align=&quot;center&quot; style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'Ubuntu'; font-size:11pt;&quot;&gt;&lt;/p&gt;
-&lt;p align=&quot;center&quot; style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'DejaVu Sans'; font-size:18pt; font-weight:600; color:#00007f;&quot;&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
 &lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'DejaVu Sans'; font-size:14pt; font-weight:600; color:#00007f;&quot;&gt;Crédits :&lt;/span&gt;&lt;/p&gt;
 &lt;p align=&quot;center&quot; style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'DejaVu Sans'; font-size:14pt; font-weight:600; color:#00007f;&quot;&gt;&lt;/p&gt;
 &lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'DejaVu Sans'; font-size:14pt; font-weight:600; color:#00007f;&quot;&gt;O. pour m'avoir donné l'idée&lt;/span&gt;&lt;/p&gt;
