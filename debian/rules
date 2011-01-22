@@ -13,16 +13,14 @@ BUILDTEMP=$(CURDIR)/debian/leterrier-fubuki
 
 MANPAGES := $(CURDIR)/debian/leterrier-fubuki.1
 
-install/leterrier-calculette-capricieuse::
+install/leterrier-fubuki::
 	mkdir -p $(BUILDTEMP)/usr/bin/
 	mkdir -p $(BUILDTEMP)/$(EXECDEST)
-	mkdir -p $(BUILDTEMP)/$(DEST)/lang
-	mkdir -p $(BUILDTEMP)/$(DEST)/conf
 	mkdir -p $(BUILDTEMP)/$(DEST)/data
 	mkdir -p $(BUILDTEMP)/usr/share/applications
 	cp -a $(BUILDTEMP).wrapper $(BUILDTEMP)/usr/bin/leterrier-fubuki
 	cp -a $(CURDIR)/debian/*.desktop $(BUILDTEMP)/usr/share/applications/
 	cp -a $(CURDIR)/data/* $(BUILDTEMP)/$(DEST)/data
-	cp -a $(CURDIR)/fubuki $(BUILDTEMP)/$(EXECDEST)/
+	cp -a $(CURDIR)/Fubuki $(BUILDTEMP)/$(EXECDEST)/
 
 
