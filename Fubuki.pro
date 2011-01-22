@@ -14,3 +14,4 @@ FORMS += mainwindow.ui \
     abuleduaproposv0.ui
 RESOURCES += Fubuki.qrc
 QT += script xml network
+RC8FILE = windows/icon.rc
