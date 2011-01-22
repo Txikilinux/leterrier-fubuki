@@ -62,10 +62,11 @@ private:
     QAction *actionNews;
     QAction *actionTraductions;
     QAction *actionAbout;
-    QNetworkAccessManager *nam;
+    QNetworkAccessManager *m_nam;
     bool p_pedaDownloaded;
     bool p_forumDownloaded;
     bool p_newsDownloaded;
+    QUrl abeBuildUrl(QString reflector, QString action);
 
 private slots:
     void on_tabWidget_currentChanged(int index);
@@ -80,6 +81,8 @@ private slots:
     void changeTab(int onglet);
     void finishedSlotForum(QNetworkReply*);
     void finishedSlotNews(QNetworkReply*);
+    void finishedSlotPeda(QNetworkReply*);
+    void finishedSlotWPAD(QNetworkReply*);
 
 signals:
     /** Demande le positionnement de l'onglet de l'aide

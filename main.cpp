@@ -32,6 +32,12 @@
 
 void debugOutput(QtMsgType type, const char *msg);
 
+//-------------------Nom visible de l'application---------------------
+//
+extern const QString abeApplicationLongName="Leterrier d'AbulEdu - Fubuki";
+//
+//--------------------------------------------------------------------
+
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
