@@ -15,10 +15,10 @@ AppSupportURL=http://www.abuledu.org/leterrier/leterrier-fubuki
 AppUpdatesURL=http://www.abuledu.org/leterrier/leterrier-fubuki
 DefaultDirName={pf}\AbulEdu\Fubuki
 DefaultGroupName=Le Terrier d'AbulEdu
-LicenseFile=C:\Documents and Settings\jlf\Mes documents\Compilations\version-2.0.2\gpl-2.0.txt
-OutputDir=C:\Documents and Settings\jlf\Mes documents\Compilations\leterrier-fubuki-export\release
+LicenseFile=..\gpl-2.0.txt
+OutputDir=..\release
 OutputBaseFilename=fubuki-setup
-SetupIconFile=C:\Documents and Settings\jlf\Mes documents\Compilations\leterrier-fubuki-export\data\images\fubuki-icone.ico
+SetupIconFile=..\data\images\fubuki-icone.ico
 Compression=lzma
 SolidCompression=yes
 
@@ -30,9 +30,9 @@ Name: "french"; MessagesFile: "compiler:Languages\French.isl"
 Name: "desktopicon"; Description: "{cm:CreateDesktopIcon}"; GroupDescription: "{cm:AdditionalIcons}"; Flags: unchecked
 
 [Files]
-Source: "C:\Documents and Settings\jlf\Mes documents\Compilations\leterrier-fubuki-export\data\images\fubuki-icone.ico"; DestDir: "{app}\"
-Source: "C:\Documents and Settings\jlf\Mes documents\Compilations\leterrier-fubuki-export\release\Fubuki.exe"; DestDir: "{app}"; Flags: ignoreversion
-Source: "C:\Documents and Settings\jlf\Mes documents\Compilations\leterrier-fubuki-export\data\*"; DestDir: "{app}"; Flags: ignoreversion recursesubdirs createallsubdirs
+Source: "..\data\images\fubuki-icone.ico"; DestDir: "{app}\"
+Source: "..\release\Fubuki.exe"; DestDir: "{app}"; Flags: ignoreversion
+Source: "..\data\*"; DestDir: "{app}"; Flags: ignoreversion recursesubdirs createallsubdirs
 Source: "C:\Qt\2010.04\qt\bin\libgcc_s_dw2-1.dll"; DestDir: "{app}"; Flags: ignoreversion
 Source: "C:\Qt\2010.04\qt\bin\mingwm10.dll"; DestDir: "{app}"; Flags: ignoreversion
 Source: "C:\Qt\2010.04\qt\bin\QtCore4.dll"; DestDir: "{app}"; Flags: ignoreversion
@@ -44,7 +44,7 @@ Source: "C:\Qt\2010.04\qt\bin\QtScript4.dll"; DestDir: "{app}"; Flags: ignorever
 
 [Icons]
 Name: "{group}\Fubuki"; Filename: "{app}\Fubuki.exe"
-Name: "{commondesktop}\Fubuki"; Filename: "{app}\Fubuki.exe"; IconFilename: {app}\data\images\fubuki-icone.ico; IconIndex: 0;Tasks: desktopicon
+Name: "{commondesktop}\Fubuki"; Filename: "{app}\Fubuki.exe"; IconFilename: {app}\fubuki-icone.ico; IconIndex: 0;Tasks: desktopicon
 
 [Run]
 Filename: "{app}\Fubuki.exe"; Description: "{cm:LaunchProgram,Fubuki}"; Flags: nowait postinstall skipifsilent
