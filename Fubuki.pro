@@ -13,5 +13,11 @@ HEADERS += mainwindow.h \
 FORMS += mainwindow.ui \
     abuleduaproposv0.ui
 RESOURCES += Fubuki.qrc
+TRANSLATIONS = lang/fubuki_oc.ts \
+    lang/fubuki_en.ts \
+    lang/fubuki_de.ts \
+    lang/fubuki_es.ts \
+    lang/fubuki_nl.ts \
+    lang/fubuki_ca.ts
 QT += script xml network
 RC8FILE = windows/icon.rc
