@@ -9,7 +9,8 @@ Homepage: http://www.abuledu.org/leterrier/
 Package: leterrier-fubuki
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}, libqt4-xml
-Description: Un jeu de Fubuki
+Description: Un jeu de Fubuki (AbulEdu Le Terrier)
  Complétez la grille pour atteindre la bonne somme 
- pour chaque ligne et colonne ...
+ pour chaque ligne et colonne ... ce logiciel fait
+ partie des logiciels du Terrier d'AbulEdu
 
