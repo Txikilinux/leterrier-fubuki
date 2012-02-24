@@ -30,6 +30,7 @@
 #include <QMessageBox>
 #include <QDialog>
 #include <QInputDialog>
+#include <QFontDatabase>
 #include "abuleduaproposv0.h"
 #include "abuleduexercicev0.h"
 
@@ -50,8 +51,16 @@ MainWindow::MainWindow(QWidget *parent) :
     //for (int i = 0; i < nomBtnCase.length(); i++) { // DEBUG
     //    qDebug() << nomBtnCase[i]->objectName();
     //}
+
+    //Note ES. 2012 02 24: ca ne marche pas sur mon ordinateur, la liste findChildren n'est pas retournée dans l'ordre, de ce fait
+    //j'ai btn0 qui porte le nombre 7 et ainsi de suite ... donc je passe par une liste temporaire pour savoir combien de bouton
+    //existent et ensuite la boucle permet d'affecter les bon nombres...
     QRegExp nomNombresRegExp("btnNbre");
-    nomBtnNbre = ui->centralWidget->findChildren <QPushButton *> (nomNombresRegExp);
+    QList <QPushButton *> nomBtnNbreTemp = ui->centralWidget->findChildren <QPushButton *> (nomNombresRegExp);
+    for(int i = 0; i < nomBtnNbreTemp.size(); i++) {
+        QRegExp nomNombresRegExp("btnNbre" + QString::number(i));
+        nomBtnNbre << ui->centralWidget->findChildren <QPushButton *> (nomNombresRegExp);
+    }
 
     niveau = 0; // défaut
     alea = 0; // défaut
@@ -65,6 +74,7 @@ MainWindow::MainWindow(QWidget *parent) :
 
     AbulEduAproposV0 *monAide=new AbulEduAproposV0(this);
 
+    QFontDatabase::addApplicationFont(":/data/sonic_comic.ttf");
 }
 
 MainWindow::~MainWindow()
@@ -117,10 +127,11 @@ void MainWindow::initFubuki()
     }
     // remplir les boutons à placer (par défaut : tous)
     for (int i = 0; i < 9; i++) {
-        nomBtnNbre[i]->setStyleSheet("color :#2020C0");
+        nomBtnNbre[i]->setStyleSheet("color :#d40000; font-weight: bold;");
         nomBtnNbre[i]->setFont(fontMEDIUM);
         nomBtnNbre[i]->setDisabled(false);
         nomBtnNbre[i]->setProperty("text", QString::number(casesInitial[i]));
+        qDebug() << "On affecte le texte " << casesInitial[i] << " a la case " << i;
     }
     cases = casesInitial;
     // permuter cette liste
@@ -279,13 +290,13 @@ void MainWindow::_btnCase(int i) {
         actuelBtnCase = -1; 
         if (actuelBtnNbre >= 0 && niveau < 5) {
             // déposer actuelBtnNbre sur cette case
-            nomBtnCase[i]->setStyleSheet("color : #2020C0");
+            nomBtnCase[i]->setStyleSheet("color : #d40000");
             nomBtnCase[i]->setProperty("text", QString::number(casesInitial[actuelBtnNbre]));
             actuelBtnNbre = -1;
         }
     } else if (actuelBtnNbre >= 0) {
         // déposer actuelBtnNbre sur cette case
-        nomBtnCase[i]->setStyleSheet("color : #2020C0");
+        nomBtnCase[i]->setStyleSheet("color : #d40000");
         if (niveau > 4)
             nomBtnCase[i]->setProperty("text", QString::number(actuelBtnNbre));
         else
@@ -310,17 +321,18 @@ void MainWindow::on_btnNbre7_clicked() { _btnNbre(7); }
 void MainWindow::on_btnNbre8_clicked() { _btnNbre(8); }
 
 void MainWindow::_btnNbre(int i) {
+    qDebug() << "MainWindow::_btnNbre(int i) on a clique sur " << i << casesInitial[i];
     ui->tedAffiche->setText(trUtf8(""));
     if (actuelBtnNbre >= 0 && niveau <= 4) {
         restaurerBtnNbre(actuelBtnNbre);
     }
-    nomBtnNbre[i]->setStyleSheet("color :#2020C0");
+    nomBtnNbre[i]->setStyleSheet("color :#d40000");
     nomBtnNbre[i]->setFont(fontMINUS);
     nomBtnNbre[i]->setDisabled(true);
     actuelBtnNbre = i;
     if (actuelBtnCase > 0) {
         // déposer le nombe de ce btnNbre sur le actuelBtnCase
-        nomBtnCase[actuelBtnCase]->setStyleSheet("color : #2020C0");
+        nomBtnCase[actuelBtnCase]->setStyleSheet("color : #d40000");
         nomBtnCase[actuelBtnCase]->setProperty("text", QString::number(casesInitial[actuelBtnNbre]));
         actuelBtnCase = -1;
         actuelBtnNbre = -1;
@@ -329,7 +341,7 @@ void MainWindow::_btnNbre(int i) {
 }
 
 void MainWindow::restaurerBtnNbre(int i) {
-    nomBtnNbre[i]->setStyleSheet("color :#2020C0");
+    nomBtnNbre[i]->setStyleSheet("color :#d40000");
     nomBtnNbre[i]->setFont(fontMEDIUM);
     nomBtnNbre[i]->setDisabled(false);
     setInformation();
@@ -426,6 +438,24 @@ void MainWindow::on_btnVerifier_clicked()
 void MainWindow::on_cBoxNiveau_activated(int index)
 {
     niveau = index;
+
+    //Test de changement d'arrière plan
+    ui->centralWidget->setStyleSheet("QWidget#centralWidget {\
+                                                             background-image: url(:/data/images/background);\
+                                                             background-repeat: repeat-no;\
+                                                             background-position: top right;\
+                                                             font-family: Sonic Comics;\
+                                                         }");
+//    if(index < 2) {
+//    }
+//    else {
+//        ui->centralWidget->setStyleSheet("QWidget#centralWidget {\
+//                                                 background-image: url(:/data/images/background-nuit);\
+//                                                 background-repeat: repeat-no;\
+//                                                 background-position: top right;\
+//                                                 font-family: Sonic Comics;\
+//                                         }");
+//    }
     initFubuki();
 }
 
@@ -449,7 +479,7 @@ void MainWindow::on_btnAbandonner_clicked()
 {
     for (int i = 0; i < 9; i++) {
         if (nomBtnCase[i]->text().toInt() != cases[i]) {
-            nomBtnCase[i]->setStyleSheet("color : red");
+            nomBtnCase[i]->setStyleSheet("color : #d40000");
             nErreurs++;
         } else {
             nomBtnCase[i]->setStyleSheet("color : #20C020");
