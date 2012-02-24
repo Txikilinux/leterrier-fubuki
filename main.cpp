@@ -64,15 +64,14 @@ int main(int argc, char *argv[])
 
     //a mettre en commentaire pour avoir les qdebug ... et a activer
     //quand on release l'application
-//    qInstallMsgHandler(debugOutput);
+    qInstallMsgHandler(debugOutput);
 
     qApp->setApplicationName("leterrier-fubuki");
-    qApp->setApplicationVersion("1.0.0");
+    qApp->setApplicationVersion("1.99.0");
     qApp->setOrganizationDomain("abuledu.org");
     qApp->setOrganizationName("leterrier");
 
     MainWindow w;
-//    w.setFixedSize(1024, 390);
     w.show();
     return a.exec();
 }
