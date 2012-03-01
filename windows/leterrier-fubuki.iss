@@ -6,14 +6,13 @@
 ; Do not use the same AppId value in installers for other applications.
 ; (To generate a new GUID, click Tools | Generate GUID inside the IDE.)
 AppId={{F4866E24-2529-4516-8E45-474F72B4BCB7}
-AppName=Fubuki
-AppVersion=1.0
-;AppVerName=Fubuki 1.0
+AppName=leterrier-fubuki
+AppVersion=1.1
 AppPublisher=AbulEdu.org
 AppPublisherURL=http://www.abuledu.org/leterrier/leterrier-fubuki
 AppSupportURL=http://www.abuledu.org/leterrier/leterrier-fubuki
 AppUpdatesURL=http://www.abuledu.org/leterrier/leterrier-fubuki
-DefaultDirName={pf}\AbulEdu\Fubuki
+DefaultDirName={pf}\AbulEdu\fubuki
 DefaultGroupName=Le Terrier d'AbulEdu
 LicenseFile=..\gpl-2.0.txt
 OutputDir=..\release
@@ -31,7 +30,7 @@ Name: "desktopicon"; Description: "{cm:CreateDesktopIcon}"; GroupDescription: "{
 
 [Files]
 Source: "..\data\images\fubuki-icone.ico"; DestDir: "{app}\"
-Source: "..\release\Fubuki.exe"; DestDir: "{app}"; Flags: ignoreversion
+Source: "..\release\leterrier-fubuki.exe"; DestDir: "{app}"; Flags: ignoreversion
 Source: "..\data\*"; DestDir: "{app}"; Flags: ignoreversion recursesubdirs createallsubdirs
 Source: "C:\Qt\2010.04\qt\bin\libgcc_s_dw2-1.dll"; DestDir: "{app}"; Flags: ignoreversion
 Source: "C:\Qt\2010.04\qt\bin\mingwm10.dll"; DestDir: "{app}"; Flags: ignoreversion
@@ -43,9 +42,9 @@ Source: "C:\Qt\2010.04\qt\bin\QtScript4.dll"; DestDir: "{app}"; Flags: ignorever
 ; NOTE: Don't use "Flags: ignoreversion" on any shared system files
 
 [Icons]
-Name: "{group}\Fubuki"; Filename: "{app}\Fubuki.exe"
-Name: "{commondesktop}\Fubuki"; Filename: "{app}\Fubuki.exe"; IconFilename: {app}\fubuki-icone.ico; IconIndex: 0;Tasks: desktopicon
+Name: "{group}\Fubuki"; Filename: "{app}\leterrier-fubuki.exe"
+Name: "{commondesktop}\Fubuki"; Filename: "{app}\leterrier-fubuki.exe"; IconFilename: {app}\fubuki-icone.ico; IconIndex: 0;Tasks: desktopicon
 
 [Run]
-Filename: "{app}\Fubuki.exe"; Description: "{cm:LaunchProgram,Fubuki}"; Flags: nowait postinstall skipifsilent
+Filename: "{app}\leterrier-fubuki.exe"; Description: "{cm:LaunchProgram,Fubuki}"; Flags: nowait postinstall skipifsilent
 

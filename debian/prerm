@@ -2,7 +2,7 @@
 
 set -e
 
-xdg-desktop-menu uninstall /usr/share/applications/Fubuki.desktop
+xdg-desktop-menu uninstall /usr/share/applications/leterrier-fubuki.desktop
 
 #DEBHELPER#
 
