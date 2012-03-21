@@ -1,7 +1,7 @@
 # -------------------------------------------------
 # Project created by QtCreator 2010-09-28T22:50:23
 # -------------------------------------------------
-TARGET = Fubuki
+TARGET = leterrier-fubuki
 TEMPLATE = app
 SOURCES += main.cpp \
     mainwindow.cpp \
