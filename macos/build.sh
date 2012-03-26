@@ -38,7 +38,7 @@ cp -a MacOS/Applications /tmp/build-dmg/
 #monecoleadistance utilise une commande système qu'il faut embarquer dans le dossier Ressources
 
 #creation du fichier dmg
-hdiutil create ${APPNAME}-${APPVERSION}.dmg -srcfolder /tmp/build-dmg -format UDZO -volname ${APPNAME}
+hdiutil create ${APPNAME}-${APPVERSION}-osx.dmg -srcfolder /tmp/build-dmg -format UDZO -volname ${APPNAME}
 
 #nettoyage
 rm -rf /tmp/build-dmg
