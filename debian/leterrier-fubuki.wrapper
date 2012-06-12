@@ -2,5 +2,5 @@
 # application launcher
 (
     cd /usr/share/leterrier-fubuki
-    exec /usr/lib/leterrier-fubuki/Fubuki
+    exec /usr/lib/leterrier-fubuki/leterrier-fubuki
 )
