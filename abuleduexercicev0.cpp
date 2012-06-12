@@ -308,11 +308,13 @@ void AbulEduExerciceV0::onlineUpdateRequestSlot(QNetworkReply *reply)
         //On affiche une boite d'information a l'utilisateur ...
         if(titre.length())
         {
+	  /*
             QMessageBox msgBox;
             msgBox.setWindowTitle(titre);
             msgBox.setText(desc);
             msgBox.setStandardButtons(QMessageBox::Ok);
             msgBox.exec();
+	  */
         }
     }
 }
