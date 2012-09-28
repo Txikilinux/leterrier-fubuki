@@ -1131,7 +1131,7 @@ QPushButton#btnQuitter:hover {
            </font>
           </property>
           <property name="toolTip">
-           <string>Abandonner</string>
+           <string>Solution</string>
           </property>
           <property name="text">
            <string/>

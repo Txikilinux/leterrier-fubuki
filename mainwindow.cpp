@@ -492,7 +492,7 @@ void MainWindow::on_btnAbandonner_clicked()
     ui->btnNouveau->setDisabled(false);
     ui->btnQuitter->setDisabled(false);
     if (nErreurs > 0)
-        ui->tedAffiche->setText(trUtf8("Abandon. Voici un corrigé !\n\nTu peux choisir une nouvelle grille..."));
+        ui->tedAffiche->setText(trUtf8("Pas trouvé ? Voici un corrigé !\n\nTu peux choisir une nouvelle grille..."));
     else
         ui->tedAffiche->setText(trUtf8("Bravo, tout est parfait !\n\nTu peux choisir une nouvelle grille..."));
     setAbeLineLog("Complète la grille","", -1, 0 , abeEvaluation(), "", "", "", trUtf8("Abandon"));
