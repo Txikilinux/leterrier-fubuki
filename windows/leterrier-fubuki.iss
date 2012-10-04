@@ -6,30 +6,29 @@
 ; Do not use the same AppId value in installers for other applications.
 ; (To generate a new GUID, click Tools | Generate GUID inside the IDE.)
 AppId={{F4866E24-2529-4516-8E45-474F72B4BCB7}
-AppName=leterrier-fubuki
+AppName=Le Terrier d'AbulEdu - Fubuki
 AppVersion=1.1
-AppPublisher=AbulEdu.org
+AppPublisher=RyXéo SARL
 AppPublisherURL=http://www.abuledu.org/leterrier/leterrier-fubuki
 AppSupportURL=http://www.abuledu.org/leterrier/leterrier-fubuki
 AppUpdatesURL=http://www.abuledu.org/leterrier/leterrier-fubuki
-DefaultDirName={pf}\AbulEdu\fubuki
+DefaultDirName={pf}\AbulEdu\Fubuki
 DefaultGroupName=Le Terrier d'AbulEdu
 LicenseFile=..\gpl-2.0.txt
-OutputDir=..\release
-OutputBaseFilename=fubuki-setup
+OutputDir=.
+OutputBaseFilename=fubuki-1.1-setup
 SetupIconFile=..\data\images\fubuki-icone.ico
 Compression=lzma
 SolidCompression=yes
 
 [Languages]
 Name: "english"; MessagesFile: "compiler:Default.isl"
-Name: "french"; MessagesFile: "compiler:Languages\French.isl"
+Name: "french";  MessagesFile: "compiler:Languages\French.isl"
 
 [Tasks]
 Name: "desktopicon"; Description: "{cm:CreateDesktopIcon}"; GroupDescription: "{cm:AdditionalIcons}"; Flags: unchecked
 
 [Files]
-Source: "..\data\images\fubuki-icone.ico"; DestDir: "{app}\"
 Source: "..\release\leterrier-fubuki.exe"; DestDir: "{app}"; Flags: ignoreversion
 Source: "..\data\*"; DestDir: "{app}"; Flags: ignoreversion recursesubdirs createallsubdirs
 Source: "C:\Qt\2010.04\qt\bin\libgcc_s_dw2-1.dll"; DestDir: "{app}"; Flags: ignoreversion
@@ -42,8 +41,8 @@ Source: "C:\Qt\2010.04\qt\bin\QtScript4.dll"; DestDir: "{app}"; Flags: ignorever
 ; NOTE: Don't use "Flags: ignoreversion" on any shared system files
 
 [Icons]
-Name: "{group}\Fubuki"; Filename: "{app}\leterrier-fubuki.exe"
-Name: "{commondesktop}\Fubuki"; Filename: "{app}\leterrier-fubuki.exe"; IconFilename: {app}\fubuki-icone.ico; IconIndex: 0;Tasks: desktopicon
+Name: "{group}\Fubuki"; Filename: "{app}\leterrier-fubuki.exe"; WorkingDir: "{app}"
+Name: "{commondesktop}\Fubuki"; Filename: "{app}\leterrier-fubuki.exe"; 0;Tasks: desktopicon; WorkingDir: "{app}"
 
 [Run]
 Filename: "{app}\leterrier-fubuki.exe"; Description: "{cm:LaunchProgram,Fubuki}"; Flags: nowait postinstall skipifsilent
