@@ -8,7 +8,7 @@
 AppId={{F4866E24-2529-4516-8E45-474F72B4BCB7}
 AppName=Le Terrier d'AbulEdu - Fubuki
 AppVersion=1.2.0
-AppPublisher=RyXéo SARL
+AppPublisher=RyXeo SARL
 AppPublisherURL=http://www.abuledu.org/leterrier/leterrier-fubuki
 AppSupportURL=http://www.abuledu.org/leterrier/leterrier-fubuki
 AppUpdatesURL=http://www.abuledu.org/leterrier/leterrier-fubuki
@@ -17,7 +17,7 @@ DefaultGroupName=Le Terrier d'AbulEdu
 LicenseFile=..\gpl-2.0.txt
 OutputDir=.
 OutputBaseFilename=fubuki-1.2.0-setup
-SetupIconFile=..\data\images\fubuki-icone.ico
+SetupIconFile=leterrier-fubuki.ico
 Compression=lzma
 SolidCompression=yes
 
@@ -52,7 +52,7 @@ Source: "C:/QtSDK/Desktop/Qt/4.8.1/mingw/plugins\imageformats/qtiff4.dll"; DestD
 
 [Icons]
 Name: "{group}\Fubuki"; Filename: "{app}\leterrier-fubuki.exe"; WorkingDir: "{app}"
-Name: "{commondesktop}\Fubuki"; Filename: "{app}\leterrier-fubuki.exe"; 0;Tasks: desktopicon; WorkingDir: "{app}"
+Name: "{commondesktop}\Fubuki"; Filename: "{app}\leterrier-fubuki.exe"; Tasks: desktopicon; WorkingDir: "{app}"
 
 [Run]
 Filename: "{app}\leterrier-fubuki.exe"; Description: "{cm:LaunchProgram,Fubuki}"; Flags: nowait postinstall skipifsilent
