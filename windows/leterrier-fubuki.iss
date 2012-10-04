@@ -7,7 +7,7 @@
 ; (To generate a new GUID, click Tools | Generate GUID inside the IDE.)
 AppId={{F4866E24-2529-4516-8E45-474F72B4BCB7}
 AppName=Le Terrier d'AbulEdu - Fubuki
-AppVersion=1.1
+AppVersion=1.2.0
 AppPublisher=RyXéo SARL
 AppPublisherURL=http://www.abuledu.org/leterrier/leterrier-fubuki
 AppSupportURL=http://www.abuledu.org/leterrier/leterrier-fubuki
@@ -16,7 +16,7 @@ DefaultDirName={pf}\AbulEdu\Fubuki
 DefaultGroupName=Le Terrier d'AbulEdu
 LicenseFile=..\gpl-2.0.txt
 OutputDir=.
-OutputBaseFilename=fubuki-1.1-setup
+OutputBaseFilename=fubuki-1.2.0-setup
 SetupIconFile=..\data\images\fubuki-icone.ico
 Compression=lzma
 SolidCompression=yes
