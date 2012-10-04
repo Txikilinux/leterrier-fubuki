@@ -67,7 +67,7 @@ int main(int argc, char *argv[])
     qInstallMsgHandler(debugOutput);
 
     qApp->setApplicationName("leterrier-fubuki");
-    qApp->setApplicationVersion("1.99.0");
+    qApp->setApplicationVersion("1.99.1");
     qApp->setOrganizationDomain("abuledu.org");
     qApp->setOrganizationName("leterrier");
 
