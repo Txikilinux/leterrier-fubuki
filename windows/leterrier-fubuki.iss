@@ -20,6 +20,10 @@ OutputBaseFilename=leterrier-fubuki-1.2.0-setup
 SetupIconFile=leterrier-fubuki.ico
 Compression=lzma
 SolidCompression=yes
+SignTool=ryxeo /d $qPackage d'installation$q $f
+SignedUninstaller=True
+SignedUninstallerDir=.
+
 
 [Languages]
 Name: "english"; MessagesFile: "compiler:Default.isl"
