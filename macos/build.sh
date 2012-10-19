@@ -33,7 +33,8 @@ macdeployqt ${APPNAME}.app
 cp -a ${APPNAME}.app /tmp/build-dmg/
 cp -a MacOS/.DS_Store /tmp/build-dmg/
 cp -a MacOS/.background /tmp/build-dmg/
-cp -a MacOS/Applications /tmp/build-dmg/
+#on n'a plus les liens symboliques, on doit donc les re-creer
+ln -s /Applications /tmp/build-dmg/Applications
 
 #monecoleadistance utilise une commande système qu'il faut embarquer dans le dossier Ressources
 
