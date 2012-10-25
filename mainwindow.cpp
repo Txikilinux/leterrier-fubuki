@@ -40,7 +40,23 @@ MainWindow::MainWindow(QWidget *parent) :
     AbulEduExerciceV0(parent),
     ui(new Ui::MainWindow)
 {
+
+    //Langue
+    QString locale = QLocale::system().name().section('_', 0, 0);
+
+    //Un 1er qtranslator pour prendre les traductions QT Systeme
+    //c'est d'ailleur grace a ca qu'on est en RTL
+    qtTranslator.load("qt_" + locale,
+                      QLibraryInfo::location(QLibraryInfo::TranslationsPath));
+    qApp->installTranslator(&qtTranslator);
+
+    //Et un second qtranslator pour les traductions specifiques du
+    //logiciel
+    myappTranslator.load("mulot_" + locale, "lang");
+    qApp->installTranslator(&myappTranslator);
+
     ui->setupUi(this);
+    creeMenuLangue();
 
     fontBIG.setPointSize(30);
     fontMEDIUM.setPointSize(18);
@@ -545,4 +561,55 @@ void MainWindow::setInformation() {
         ui->btnInformation->setDisabled(true);
     else
         ui->btnInformation->setDisabled(false);
+}
+
+void MainWindow::slotChangeLangue()
+{
+    QString lang = sender()->objectName();
+    qApp->removeTranslator(&qtTranslator);
+    qApp->removeTranslator(&myappTranslator);
+
+    //Un 1er qtranslator pour prendre les traductions QT Systeme
+    //c'est d'ailleur grace a ca qu'on est en RTL
+    qtTranslator.load("qt_" + lang, QLibraryInfo::location(QLibraryInfo::TranslationsPath));
+    qApp->installTranslator(&qtTranslator);
+
+    //foreach (QWidget *widget, QApplication::allWidgets()) widget->setLayoutDirection(Qt::RightToLeft);
+    //Et un second qtranslator pour les traductions specifiques du
+    //logiciel
+    myappTranslator.load("mulot_" + lang, "lang");
+    qApp->installTranslator(&myappTranslator);
+    ui->retranslateUi(this);
+}
+
+void MainWindow::creeMenuLangue()
+{
+    QString locale = QLocale::system().name().section('_', 0, 0);
+    QList<QAction*> languesDisponibles;
+
+    QAction* actionLangueEn = new QAction(trUtf8("Anglais"),this);
+    actionLangueEn->setCheckable(true);
+    actionLangueEn->setObjectName("en");
+    connect(actionLangueEn, SIGNAL(triggered()), this, SLOT(slotChangeLangue()));
+    ui->menuLangues->addAction(actionLangueEn);
+    languesDisponibles << actionLangueEn;
+
+    QAction* actionLangueFr = new QAction(trUtf8("Français"),this);
+    actionLangueFr->setCheckable(true);
+    actionLangueFr->setObjectName("fr");
+    connect(actionLangueFr, SIGNAL(triggered()), this, SLOT(slotChangeLangue()));
+    ui->menuLangues->addAction(actionLangueFr);
+    languesDisponibles << actionLangueFr;
+
+    foreach(QAction* langue,languesDisponibles)
+    {
+        if (langue->objectName() == locale)
+        {
+            langue->setChecked(true);
+        }
+        else
+        {
+            langue->setChecked(false);
+        }
+    }
 }

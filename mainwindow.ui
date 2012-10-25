@@ -1356,11 +1356,17 @@ QComboBox::down-arrow {
     </property>
     <addaction name="actionQuitter"/>
    </widget>
+   <widget class="QMenu" name="menuLangues">
+    <property name="title">
+     <string>&amp;Langues</string>
+    </property>
+   </widget>
    <addaction name="menuFichier"/>
+   <addaction name="menuLangues"/>
   </widget>
   <action name="actionQuitter">
    <property name="text">
-    <string>Quitter</string>
+    <string>&amp;Quitter</string>
    </property>
    <property name="shortcut">
     <string>Ctrl+Q</string>
@@ -1398,6 +1404,16 @@ QComboBox::down-arrow {
    </property>
    <property name="text">
     <string>Aide en ligne...</string>
+   </property>
+  </action>
+  <action name="actionAnglais">
+   <property name="text">
+    <string>Anglais</string>
+   </property>
+  </action>
+  <action name="actionFran_ais">
+   <property name="text">
+    <string>Français</string>
    </property>
   </action>
  </widget>

@@ -31,6 +31,7 @@
 #include <QPushButton>
 #include "abuleduaproposv0.h"
 #include "abuleduexercicev0.h"
+#include <QApplication>
 
 
 namespace Ui {
@@ -106,6 +107,9 @@ private:
     void setInformation();
     QString abeEvaluation(); // renvoie a,b,c,d ou z en fonction du niveau, #erreurs, etc.
 
+    QTranslator qtTranslator;
+    QTranslator myappTranslator;
+
 signals:
     /** Demande le positionnement de l'onglet de l'aide
       * @param onglet : le numéro de l'onglet
@@ -140,6 +144,9 @@ private slots:
     void on_btnNbre7_clicked();
     void on_btnNbre8_clicked();
     void _btnNbre(int i);
+
+    void slotChangeLangue();
+    void creeMenuLangue();
 };
 
 #endif // MAINWINDOW_H
