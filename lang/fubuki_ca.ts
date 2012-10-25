@@ -299,7 +299,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <location filename="../mainwindow.ui" line="1355"/>
-        <source>Fichier</source>
+        <source>&amp;Fichier</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -354,13 +354,11 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <location filename="../mainwindow.ui" line="1411"/>
-        <location filename="../mainwindow.cpp" line="590"/>
         <source>Anglais</source>
         <translation type="unfinished"></translation>
     </message>
     <message utf8="true">
         <location filename="../mainwindow.ui" line="1416"/>
-        <location filename="../mainwindow.cpp" line="597"/>
         <source>Français</source>
         <translation type="unfinished"></translation>
     </message>
@@ -483,6 +481,16 @@ Tu peux choisir une nouvelle grille...</source>
     <message>
         <location filename="../mainwindow.cpp" line="541"/>
         <source>Information</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="600"/>
+        <source>&amp;Anglais</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message utf8="true">
+        <location filename="../mainwindow.cpp" line="607"/>
+        <source>&amp;Français</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

@@ -73,6 +73,7 @@ int main(int argc, char *argv[])
     translator.load("leterrier-fubuki_"+locale, "./conf/lang");
 
     a.installTranslator(&translator);
+
     qApp->setApplicationName("leterrier-fubuki");
     qApp->setApplicationVersion("1.99.1");
     qApp->setOrganizationDomain("abuledu.org");

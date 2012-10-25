@@ -52,7 +52,7 @@ MainWindow::MainWindow(QWidget *parent) :
 
     //Et un second qtranslator pour les traductions specifiques du
     //logiciel
-    myappTranslator.load("mulot_" + locale, "lang");
+    myappTranslator.load("fubuki_" + locale, "lang");
     qApp->installTranslator(&myappTranslator);
 
     ui->setupUi(this);
@@ -588,7 +588,7 @@ void MainWindow::slotChangeLangue()
     //foreach (QWidget *widget, QApplication::allWidgets()) widget->setLayoutDirection(Qt::RightToLeft);
     //Et un second qtranslator pour les traductions specifiques du
     //logiciel
-    myappTranslator.load("mulot_" + lang, "lang");
+    myappTranslator.load("fubuki_" + lang, "lang");
     qApp->installTranslator(&myappTranslator);
     ui->retranslateUi(this);
 }
@@ -597,14 +597,14 @@ void MainWindow::creeMenuLangue()
 {
     QString locale = QLocale::system().name().section('_', 0, 0);
 
-    QAction* actionLangueEn = new QAction(trUtf8("Anglais"),this);
+    QAction* actionLangueEn = new QAction(trUtf8("&Anglais"),this);
     actionLangueEn->setCheckable(true);
     actionLangueEn->setObjectName("en");
     connect(actionLangueEn, SIGNAL(triggered()), this, SLOT(slotChangeLangue()));
     ui->menuLangues->addAction(actionLangueEn);
     m_languesDisponibles << actionLangueEn;
 
-    QAction* actionLangueFr = new QAction(trUtf8("Français"),this);
+    QAction* actionLangueFr = new QAction(trUtf8("&Français"),this);
     actionLangueFr->setCheckable(true);
     actionLangueFr->setObjectName("fr");
     connect(actionLangueFr, SIGNAL(triggered()), this, SLOT(slotChangeLangue()));

@@ -371,9 +371,13 @@ p, li { white-space: pre-wrap; }
         <translation>Exit</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="1355"/>
         <source>Fichier</source>
-        <translation>File</translation>
+        <translation type="obsolete">File</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.ui" line="1355"/>
+        <source>&amp;Fichier</source>
+        <translation>&amp;File</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="1361"/>
@@ -427,13 +431,11 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <location filename="../mainwindow.ui" line="1411"/>
-        <location filename="../mainwindow.cpp" line="590"/>
         <source>Anglais</source>
         <translation>English</translation>
     </message>
     <message utf8="true">
         <location filename="../mainwindow.ui" line="1416"/>
-        <location filename="../mainwindow.cpp" line="597"/>
         <source>Français</source>
         <translation>French</translation>
     </message>
@@ -574,6 +576,16 @@ You can choose a new grid...</translation>
         <location filename="../mainwindow.cpp" line="541"/>
         <source>Information</source>
         <translation>Information</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="600"/>
+        <source>&amp;Anglais</source>
+        <translation>&amp;English</translation>
+    </message>
+    <message utf8="true">
+        <location filename="../mainwindow.cpp" line="607"/>
+        <source>&amp;Français</source>
+        <translation>&amp;French</translation>
     </message>
 </context>
 </TS>

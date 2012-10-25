@@ -1352,7 +1352,7 @@ QComboBox::down-arrow {
    </property>
    <widget class="QMenu" name="menuFichier">
     <property name="title">
-     <string>Fichier</string>
+     <string>&amp;Fichier</string>
     </property>
     <addaction name="actionQuitter"/>
    </widget>
@@ -1408,12 +1408,12 @@ QComboBox::down-arrow {
   </action>
   <action name="actionAnglais">
    <property name="text">
-    <string>Anglais</string>
+    <string>&amp;Anglais</string>
    </property>
   </action>
   <action name="actionFran_ais">
    <property name="text">
-    <string>Français</string>
+    <string>&amp;Français</string>
    </property>
   </action>
  </widget>
