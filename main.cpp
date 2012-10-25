@@ -66,6 +66,13 @@ int main(int argc, char *argv[])
     //quand on release l'application
     qInstallMsgHandler(debugOutput);
 
+    QString locale = QLocale::system().name().section('_', 0, 0);
+    QTranslator translator;
+
+    //Verifier si le chemin de stockage des langues est bien celui la
+    translator.load("leterrier-fubuki_"+locale, "./conf/lang");
+
+    a.installTranslator(&translator);
     qApp->setApplicationName("leterrier-fubuki");
     qApp->setApplicationVersion("1.99.1");
     qApp->setOrganizationDomain("abuledu.org");

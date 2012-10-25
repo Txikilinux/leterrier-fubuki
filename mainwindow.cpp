@@ -566,6 +566,17 @@ void MainWindow::setInformation() {
 void MainWindow::slotChangeLangue()
 {
     QString lang = sender()->objectName();
+    foreach(QAction* langue,m_languesDisponibles)
+    {
+        if (langue->objectName() == lang)
+        {
+            langue->setChecked(true);
+        }
+        else
+        {
+            langue->setChecked(false);
+        }
+    }
     qApp->removeTranslator(&qtTranslator);
     qApp->removeTranslator(&myappTranslator);
 
@@ -585,23 +596,22 @@ void MainWindow::slotChangeLangue()
 void MainWindow::creeMenuLangue()
 {
     QString locale = QLocale::system().name().section('_', 0, 0);
-    QList<QAction*> languesDisponibles;
 
     QAction* actionLangueEn = new QAction(trUtf8("Anglais"),this);
     actionLangueEn->setCheckable(true);
     actionLangueEn->setObjectName("en");
     connect(actionLangueEn, SIGNAL(triggered()), this, SLOT(slotChangeLangue()));
     ui->menuLangues->addAction(actionLangueEn);
-    languesDisponibles << actionLangueEn;
+    m_languesDisponibles << actionLangueEn;
 
     QAction* actionLangueFr = new QAction(trUtf8("Français"),this);
     actionLangueFr->setCheckable(true);
     actionLangueFr->setObjectName("fr");
     connect(actionLangueFr, SIGNAL(triggered()), this, SLOT(slotChangeLangue()));
     ui->menuLangues->addAction(actionLangueFr);
-    languesDisponibles << actionLangueFr;
+    m_languesDisponibles << actionLangueFr;
 
-    foreach(QAction* langue,languesDisponibles)
+    foreach(QAction* langue,m_languesDisponibles)
     {
         if (langue->objectName() == locale)
         {

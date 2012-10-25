@@ -110,6 +110,8 @@ private:
     QTranslator qtTranslator;
     QTranslator myappTranslator;
 
+    QList<QAction*> m_languesDisponibles;
+
 signals:
     /** Demande le positionnement de l'onglet de l'aide
       * @param onglet : le numéro de l'onglet
