@@ -112,7 +112,7 @@ AbulEduAproposV0::~AbulEduAproposV0()
 
 void AbulEduAproposV0::installeMenu()
 {
-    QString titreAbout=trUtf8("<center>%1 %2</center>").arg(abeApplicationLongName) 
+    QString titreAbout=trUtf8("<center>%1 %2</center>").arg(abeApplicationLongName)
                        .arg(qApp->applicationVersion());
     ui->textAbout->setHtml(titreAbout+" "+ui->textAbout->toHtml());         // Ajoute Nom application et Version en haut de la page
 
@@ -599,4 +599,17 @@ void AbulEduAproposV0::finishedSlotWPAD(QNetworkReply* reply)
         }
     }
     disconnect(m_nam,SIGNAL(finished(QNetworkReply*)),this, SLOT(finishedSlotWPAD(QNetworkReply*)));
+}
+
+void AbulEduAproposV0::changeEvent(QEvent *e)
+{
+    if(e->type() == QEvent::LanguageChange) {
+        QMenu *m = w->findChild<QMenu *>("menuAide"); //On cherche si le menu aide existe
+        if(m) {
+            m->setObjectName("vieuxMenuAide");
+            m->deleteLater();
+        }
+        installeMenu(); //Installe le menu Aide dans la menuBar
+        ui->retranslateUi(this);
+    }
 }

@@ -88,7 +88,7 @@ MainWindow::MainWindow(QWidget *parent) :
     actuelBtnNbre = -1; // pas de nombre sélectionné
     actuelBtnCase = -1; // pas de nombre sur cette case sélectionnée
 
-    AbulEduAproposV0 *monAide=new AbulEduAproposV0(this);
+    m_monAide=new AbulEduAproposV0(this);
 
     QFontDatabase::addApplicationFont(":/data/sonic_comic.ttf");
 }
@@ -303,7 +303,7 @@ void MainWindow::_btnCase(int i) {
         if (niveau <= 4) restaurerBtnNbre(k);
         // effacer le bouton
         nomBtnCase[i]->setText("");
-        actuelBtnCase = -1; 
+        actuelBtnCase = -1;
         if (actuelBtnNbre >= 0 && niveau < 5) {
             // déposer actuelBtnNbre sur cette case
             nomBtnCase[i]->setStyleSheet("color : #d40000");
@@ -364,7 +364,7 @@ void MainWindow::restaurerBtnNbre(int i) {
 }
 
 void MainWindow::on_btnVerifier_clicked()
-{   
+{
     // vérifier que la grille est suffisamment remplie sinon return
     QList<int> connus;
     for (int i = 0; i < 9; i++) {
@@ -519,7 +519,7 @@ void MainWindow::on_btnInformation_clicked()
 {
     QList<int> inconnus;
     for (int i = 0; i < 9; i++) {
-        if (nomBtnCase[i]->text() == "") inconnus << i;       
+        if (nomBtnCase[i]->text() == "") inconnus << i;
     }
     // tirer l'un de ces nombres au hasard
     int iBtn = rand() % inconnus.length();

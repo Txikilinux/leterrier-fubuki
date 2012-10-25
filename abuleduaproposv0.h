@@ -44,6 +44,9 @@ public:
     ~AbulEduAproposV0();
     QObject *w;
 
+protected:
+    void changeEvent(QEvent *e);
+
 private:
     Ui::AbulEduAproposV0 *ui;
     void installeMenu();

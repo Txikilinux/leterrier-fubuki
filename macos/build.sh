@@ -4,6 +4,8 @@
 #documentation https://redmine.ryxeo.com/projects/ryxeo/wiki/Cr%C3%A9er_un_paquet_avec_OSX
 APPNAME="leterrier-fubuki"
 APPVERSION="1.1.0"
+VOLNAME="AbulEdu LeTerrier Fubuki ${APPVERSION}"
+VOLICON="macos/icones/leterrier-fubuki.icns"
 
 #On stoppe dès qu'on rencontre un problème
 set -e
@@ -30,16 +32,17 @@ make -w -j4
 macdeployqt ${APPNAME}.app
 
 #copie des petites choses indispensables ...
-cp -a ${APPNAME}.app /tmp/build-dmg/
-cp -a MacOS/.DS_Store /tmp/build-dmg/
-cp -a MacOS/.background /tmp/build-dmg/
+#cp -a ${APPNAME}.app /tmp/build-dmg/
+#cp -a MacOS/.DS_Store /tmp/build-dmg/
+#cp -a MacOS/.background /tmp/build-dmg/
 #on n'a plus les liens symboliques, on doit donc les re-creer
 ln -s /Applications /tmp/build-dmg/Applications
 
 #monecoleadistance utilise une commande système qu'il faut embarquer dans le dossier Ressources
 
 #creation du fichier dmg
-hdiutil create ${APPNAME}-${APPVERSION}-osx.dmg -srcfolder /tmp/build-dmg -format UDZO -volname ${APPNAME}
+#hdiutil create ${APPNAME}-${APPVERSION}.dmg -srcfolder /tmp/build-dmg -format UDZO -volname ${APPNAME}
+~/create-dmg/create-dmg --window-size 415 295 --volname "${VOLNAME}" --volicon ${VOLICON} --background "macos/.background/background.png" ~/Desktop/${APPNAME}-${APPVERSION}-osx.dmg ${APPNAME}.app
 
 #nettoyage
 rm -rf /tmp/build-dmg

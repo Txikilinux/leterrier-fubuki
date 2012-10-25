@@ -8,7 +8,7 @@
 AppId={{F4866E24-2529-4516-8E45-474F72B4BCB7}
 AppName=Le Terrier d'AbulEdu - Fubuki
 AppVersion=1.2.0
-AppPublisher=RyXeo SARL
+AppPublisher=RyXéo SARL
 AppPublisherURL=http://www.abuledu.org/leterrier/leterrier-fubuki
 AppSupportURL=http://www.abuledu.org/leterrier/leterrier-fubuki
 AppUpdatesURL=http://www.abuledu.org/leterrier/leterrier-fubuki

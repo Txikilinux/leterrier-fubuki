@@ -112,6 +112,8 @@ private:
 
     QList<QAction*> m_languesDisponibles;
 
+    AbulEduAproposV0 *m_monAide;
+
 signals:
     /** Demande le positionnement de l'onglet de l'aide
       * @param onglet : le numéro de l'onglet
