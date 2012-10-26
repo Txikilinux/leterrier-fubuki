@@ -23,13 +23,9 @@ FORMS += mainwindow.ui \
 
 RESOURCES += Fubuki.qrc
 
-TRANSLATIONS = lang/fubuki_oc.ts \
-    lang/fubuki_en.ts \
-    lang/fubuki_de.ts \
-    lang/fubuki_es.ts \
-    lang/fubuki_nl.ts \
-    lang/fubuki_ca.ts \
-    lang/fubuki_br.ts
+#AbulEduLangV1
+include(lib/abuledulangv1/abuledulangv1.pri)
+include(lang/lang.pri)
 
 RC_FILE = windows/windows.rc
 
