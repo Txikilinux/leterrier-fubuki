@@ -3,7 +3,7 @@
 #Eric Seigne 2011 <eric.seigne@ryxeo.com>
 #documentation https://redmine.ryxeo.com/projects/ryxeo/wiki/Cr%C3%A9er_un_paquet_avec_OSX
 APPNAME="leterrier-fubuki"
-APPVERSION="1.1.0"
+APPVERSION="1.2.1"
 VOLNAME="AbulEdu LeTerrier Fubuki ${APPVERSION}"
 VOLICON="macos/icones/leterrier-fubuki.icns"
 
