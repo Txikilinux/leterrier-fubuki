@@ -31,7 +31,7 @@ TRANSLATIONS = lang/fubuki_oc.ts \
     lang/fubuki_ca.ts \
     lang/fubuki_br.ts
 
-RC_FILE = windows/icon.rc
+RC_FILE = windows/windows.rc
 
 win32 {
     DEFINES      += __WINDOWS__=1
