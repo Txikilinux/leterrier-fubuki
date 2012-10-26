@@ -10,19 +10,24 @@ VOLICON="macos/icones/leterrier-fubuki.icns"
 #On stoppe dès qu'on rencontre un problème
 set -e
 
-if [ -d /tmp/build-dmg ]; then
-  echo "Erreur: répertoire temporaire de build existant, merci de supprimer /tmp/build-dmg"
-  echo "et relancez ce script ensuite ..."
+if [ -d /tmp/build-dmg-${APPNAME} ]; then
+    rm -rf /tmp/build-dmg-${APPNAME}
 fi
+if [ -f ${APPNAME}-${APPVERSION}-osx.dmg ]; then
+    rm -f ${APPNAME}-${APPVERSION}-osx.dmg
+fi
+if [ -e ${APPNAME}.app ]; then
+    rm -rf ${APPNAME}.app
+fi
+
 #on fabrique une arborescence "dmg" temporaire
-mkdir /tmp/build-dmg
+mkdir /tmp/build-dmg-${APPNAME}
 
 #on cherche ou on se trouve et on change de repertoire le cas echeant
 if [ -f ../${APPNAME}.pro ]; then
-  cd ..
+    cd ..
 fi
 
-#qmake
 qmake ${APPNAME}.pro -r -spec macx-g++ CONFIG+=release
 
 #compilation
@@ -31,18 +36,18 @@ make -w -j4
 #on utilise les outils de Qt pour trimbaler le Qt framework et les dependances Qt
 macdeployqt ${APPNAME}.app
 
-#copie des petites choses indispensables ...
-#cp -a ${APPNAME}.app /tmp/build-dmg/
-#cp -a MacOS/.DS_Store /tmp/build-dmg/
-#cp -a MacOS/.background /tmp/build-dmg/
-#on n'a plus les liens symboliques, on doit donc les re-creer
-ln -s /Applications /tmp/build-dmg/Applications
+#note 20121021: je ne sais pas si c'est encore utile
+ln -s /Applications /tmp/build-dmg-${APPNAME}/Applications
 
-#monecoleadistance utilise une commande système qu'il faut embarquer dans le dossier Ressources
+#copie des donnees
+cp -a data ${APPNAME}.app/Contents/Resources/
+#cp -a conf ${APPNAME}.app/Contents/Resources/
+mkdir ${APPNAME}.app/Contents/Resources/lang
+cp -a lang/*.qm ${APPNAME}.app/Contents/Resources/lang/
 
 #creation du fichier dmg
-#hdiutil create ${APPNAME}-${APPVERSION}.dmg -srcfolder /tmp/build-dmg -format UDZO -volname ${APPNAME}
-~/create-dmg/create-dmg --window-size 415 295 --volname "${VOLNAME}" --volicon ${VOLICON} --background "macos/.background/background.png" ~/Desktop/${APPNAME}-${APPVERSION}-osx.dmg ${APPNAME}.app
+~/create-dmg/create-dmg --window-size 415 295 --volname "${VOLNAME}" --volicon ${VOLICON} --background "macos/.background/background.png" ${APPNAME}-${APPVERSION}-osx.dmg ${APPNAME}.app
 
 #nettoyage
-rm -rf /tmp/build-dmg
+rm -rf ${APPNAME}.app
+rm -rf /tmp/build-dmg-${APPNAME}

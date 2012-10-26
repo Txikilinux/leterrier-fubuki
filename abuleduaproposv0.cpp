@@ -2,7 +2,7 @@
  *
  * @see https://redmine.ryxeo.com/projects/leterrier-developpeu/
  * @author 2010 Jean-Louis Frucot <frucot.jeanlouis@free.fr>
- * @author 2010 Eric Seigne <eric.seigne@ryxeo.com>
+ * @author 2010-2012 Eric Seigne <eric.seigne@ryxeo.com>
  * @see The GNU Public License (GPL)
  */
 
