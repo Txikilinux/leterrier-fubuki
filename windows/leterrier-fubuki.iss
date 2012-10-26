@@ -7,7 +7,7 @@
 ; (To generate a new GUID, click Tools | Generate GUID inside the IDE.)
 AppId={{F4866E24-2529-4516-8E45-474F72B4BCB7}
 AppName=Le Terrier d'AbulEdu - Fubuki
-AppVersion=1.2.0
+AppVersion=1.2.1
 AppPublisher=RyXéo SARL
 AppPublisherURL=http://www.abuledu.org/leterrier/leterrier-fubuki
 AppSupportURL=http://www.abuledu.org/leterrier/leterrier-fubuki
@@ -16,7 +16,7 @@ DefaultDirName={pf}\AbulEdu\Fubuki
 DefaultGroupName=Le Terrier d'AbulEdu
 LicenseFile=..\gpl-2.0.txt
 OutputDir=.
-OutputBaseFilename=leterrier-fubuki-1.2.0-setup
+OutputBaseFilename=leterrier-fubuki-1.2.1-setup
 SetupIconFile=leterrier-fubuki.ico
 Compression=lzma
 SolidCompression=yes
@@ -33,8 +33,9 @@ Name: "french";  MessagesFile: "compiler:Languages\French.isl"
 Name: "desktopicon"; Description: "{cm:CreateDesktopIcon}"; GroupDescription: "{cm:AdditionalIcons}"; Flags: unchecked
 
 [Files]
-Source: "..\release\leterrier-fubuki.exe"; DestDir: "{app}"; Flags: ignoreversion
-Source: "..\data\*"; DestDir: "{app}"; Flags: ignoreversion recursesubdirs createallsubdirs
+Source: "../release/leterrier-fubuki.exe"; DestDir: "{app}"; Flags: ignoreversion
+Source: "../data/*"; DestDir: "{app}"; Flags: ignoreversion recursesubdirs createallsubdirs
+Source: "../lang/*.qm"; DestDir: "{app}/lang"; Flags: ignoreversion recursesubdirs createallsubdirs
 Source: "C:/QtSDK/mingw/bin/libstdc++-6.dll"; DestDir: "{app}"; Flags: ignoreversion recursesubdirs createallsubdirs
 Source: "C:/QtSDK/mingw/bin/mingwm10.dll"; DestDir: "{app}"; Flags: ignoreversion recursesubdirs createallsubdirs
 Source: "C:/QtSDK/mingw/bin/libgcc_s_dw2-1.dll"; DestDir: "{app}"; Flags: ignoreversion recursesubdirs createallsubdirs

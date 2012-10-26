@@ -1,3 +1,9 @@
+leterrier-fubuki (1.2.1~lucid2) lucid; urgency=low
+
+  * version 1.2.1
+
+ -- Eric Seigne <eric.seigne@ryxeo.com>  Fri, 26 Oct 2012 20:17:51 +0200
+
 leterrier-fubuki (1.1.0~lucid1) lucid; urgency=low
 
   * version 1.1 avec le debut de graphismes pour les differents niveaux
