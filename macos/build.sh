@@ -1,11 +1,19 @@
 #!/bin/bash
 #script de creation de l'image pour OSX
-#Eric Seigne 2011 <eric.seigne@ryxeo.com>
+#Eric Seigne 2011-2012 <eric.seigne@ryxeo.com>
 #documentation https://redmine.ryxeo.com/projects/ryxeo/wiki/Cr%C3%A9er_un_paquet_avec_OSX
 APPNAME="leterrier-fubuki"
-APPVERSION="1.2.1"
-VOLNAME="AbulEdu LeTerrier Fubuki ${APPVERSION}"
 VOLICON="macos/icones/leterrier-fubuki.icns"
+#recupere la version dans le fichier version.h
+if [ -f version.h ]; then
+    LAVERSIONH=`grep VER_FILEVERSION_STR version.h | awk '{print $3}' | cut -d "\\\\" -f1 | tr -d '"'`
+    if [ "x${LAVERSIONH}" != "x" ]; then
+	APPVERSION="${LAVERSIONH}${1}"
+    fi
+else 
+    APPVERSION=${1}
+fi
+VOLNAME="AbulEdu LeTerrier Fubuki ${APPVERSION}"
 
 #On stoppe dès qu'on rencontre un problème
 set -e
@@ -13,9 +21,7 @@ set -e
 if [ -d /tmp/build-dmg-${APPNAME} ]; then
     rm -rf /tmp/build-dmg-${APPNAME}
 fi
-if [ -f ${APPNAME}-${APPVERSION}-osx.dmg ]; then
-    rm -f ${APPNAME}-${APPVERSION}-osx.dmg
-fi
+rm -f ${APPNAME}-*.dmg
 if [ -e ${APPNAME}.app ]; then
     rm -rf ${APPNAME}.app
 fi
@@ -28,6 +34,7 @@ if [ -f ../${APPNAME}.pro ]; then
     cd ..
 fi
 
+bzr revert
 qmake ${APPNAME}.pro -r -spec macx-g++ CONFIG+=release
 
 #compilation
@@ -40,10 +47,17 @@ macdeployqt ${APPNAME}.app
 ln -s /Applications /tmp/build-dmg-${APPNAME}/Applications
 
 #copie des donnees
-cp -a data ${APPNAME}.app/Contents/Resources/
-#cp -a conf ${APPNAME}.app/Contents/Resources/
-mkdir ${APPNAME}.app/Contents/Resources/lang
-cp -a lang/*.qm ${APPNAME}.app/Contents/Resources/lang/
+if [ -d data ]; then
+    cp -a data ${APPNAME}.app/Contents/Resources/
+fi
+if [ -d conf ]; then
+    cp -a conf ${APPNAME}.app/Contents/Resources/
+fi
+if [ -d lang ]; then
+    mkdir ${APPNAME}.app/Contents/Resources/lang
+    lrelease *.pro
+    cp -a lang/*.qm ${APPNAME}.app/Contents/Resources/lang/ || true
+fi
 
 #creation du fichier dmg
 ~/create-dmg/create-dmg --window-size 415 295 --volname "${VOLNAME}" --volicon ${VOLICON} --background "macos/.background/background.png" ${APPNAME}-${APPVERSION}-osx.dmg ${APPNAME}.app
