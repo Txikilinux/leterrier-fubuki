@@ -25,47 +25,16 @@
 #include <QtGui/QApplication>
 #include <QtCore>
 #include "mainwindow.h"
-#include <QTime>
-
-//-------------------Nom visible de l'application---------------------
-//
-extern const QString abeApplicationLongName="Leterrier d'AbulEdu - Fubuki";
-//
-//--------------------------------------------------------------------
-
-
-//Capteur de debug
-void debugOutput(QtMsgType type, const char *msg)
-{
-  switch (type) {
-  case QtDebugMsg:
-#ifdef QT_NO_DEBUG_OUTPUT
-    fprintf(stderr, "Debug: %s\n", msg);
-#endif
-    break;
-  case QtWarningMsg:
-#ifdef QT_NO_WARNING_OUTPUT
-    fprintf(stderr, "Warning: %s\n", msg);
-#endif
-    break;
-  case QtCriticalMsg:
-    fprintf(stderr, "Critical: %s\n", msg);
-    break;
-  case QtFatalMsg:
-    fprintf(stderr, "Fatal: %s\n", msg);
-    abort();
-  }
-}
-
+#include "version.h"
+#include "abuleduapplicationv1.h"
 
 int main(int argc, char *argv[])
 {
-    QApplication a(argc, argv);
+    AbulEduApplicationV1 a(argc, argv,VER_INTERNALNAME_STR, VER_PRODUCTVERSION_STR, VER_COMPANYDOMAIN_STR, VER_COMPANYNAME_STR);
+    a.setAbeApplicationLongName(QObject::trUtf8(VER_FILEDESCRIPTION_STR));
 
     //a mettre en commentaire pour avoir les qdebug ... et a activer
     //quand on release l'application
-    qInstallMsgHandler(debugOutput);
-
     QString locale = QLocale::system().name().section('_', 0, 0);
     QTranslator translator;
 
@@ -73,11 +42,6 @@ int main(int argc, char *argv[])
     translator.load("leterrier-fubuki_"+locale, "./conf/lang");
 
     a.installTranslator(&translator);
-
-    qApp->setApplicationName("leterrier-fubuki");
-    qApp->setApplicationVersion("1.99.1");
-    qApp->setOrganizationDomain("abuledu.org");
-    qApp->setOrganizationName("leterrier");
 
     MainWindow w;
     w.show();

@@ -14,7 +14,8 @@ SOURCES += main.cpp \
     abuleduexercicev0.cpp \
     abuleduaproposv0.cpp
 
-HEADERS += mainwindow.h \
+HEADERS += version.h \
+    mainwindow.h \
     abuleduexercicev0.h \
     abuleduaproposv0.h
 
@@ -23,9 +24,6 @@ FORMS += mainwindow.ui \
 
 RESOURCES += Fubuki.qrc
 
-#AbulEduLangV1
-include(lib/abuledulangv1/abuledulangv1.pri)
-include(lang/lang.pri)
 
 RC_FILE = windows/windows.rc
 
@@ -34,3 +32,14 @@ win32 {
     OTHER_FILES  += windows/windows.rc
     RC_FILE       = windows/windows.rc
 }
+
+#AbulEduLangV1
+include(lib/abuledulangv1/abuledulangv1.pri)
+include(lang/lang.pri)
+include(lib/abuleduapplicationv1/abuleduapplicationv1.pri)
+include(lib/abuleduconstantesv1/abuleduconstantesv1.pri)
+include(lib/abuledunetworkaccessmanagerv1/abuledunetworkaccessmanagerv1.pri)
+include(lib/abuledumessageboxv1/abuledumessageboxv1.pri)
+include(lib/abuleduidentitesv1/abuleduidentitesv1.pri)
+include(lib/abuleduflatboutonv1/abuleduflatboutonv1.pri)
+include(lib/maia/maia.pri)
