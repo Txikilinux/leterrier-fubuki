@@ -33,16 +33,6 @@ int main(int argc, char *argv[])
     AbulEduApplicationV1 a(argc, argv,VER_INTERNALNAME_STR, VER_PRODUCTVERSION_STR, VER_COMPANYDOMAIN_STR, VER_COMPANYNAME_STR);
     a.setAbeApplicationLongName(QObject::trUtf8(VER_FILEDESCRIPTION_STR));
 
-    //a mettre en commentaire pour avoir les qdebug ... et a activer
-    //quand on release l'application
-    QString locale = QLocale::system().name().section('_', 0, 0);
-    QTranslator translator;
-
-    //Verifier si le chemin de stockage des langues est bien celui la
-    translator.load("leterrier-fubuki_"+locale, "./conf/lang");
-
-    a.installTranslator(&translator);
-
     MainWindow w;
     w.show();
     return a.exec();

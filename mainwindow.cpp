@@ -50,9 +50,10 @@ MainWindow::MainWindow(QWidget *parent) :
                       QLibraryInfo::location(QLibraryInfo::TranslationsPath));
     qApp->installTranslator(&qtTranslator);
 
-    //Et un second qtranslator pour les traductions specifiques du
-    //logiciel
-    myappTranslator.load("fubuki_" + locale, "lang");
+    //Et un second qtranslator pour les traductions specifiques du logiciel
+    if(! myappTranslator.load("leterrier-fubuki_"+locale, "lang")) {
+        myappTranslator.load("leterrier-fubuki_en","lang");
+    }
     qApp->installTranslator(&myappTranslator);
 
     ui->setupUi(this);
@@ -588,7 +589,7 @@ void MainWindow::slotChangeLangue()
     //foreach (QWidget *widget, QApplication::allWidgets()) widget->setLayoutDirection(Qt::RightToLeft);
     //Et un second qtranslator pour les traductions specifiques du
     //logiciel
-    myappTranslator.load("fubuki_" + lang, "lang");
+    myappTranslator.load("leterrier-fubuki_" + lang, "lang");
     qApp->installTranslator(&myappTranslator);
     ui->retranslateUi(this);
 }
