@@ -34,6 +34,11 @@ int main(int argc, char *argv[])
     a.setAbeApplicationLongName(QObject::trUtf8(VER_FILEDESCRIPTION_STR));
 
     MainWindow w;
+#ifdef __ABULEDUTABLETTEV1__MODE__
+    QApplication::setStyle("plastique");
+    w.showFullScreen();
+#else
     w.show();
+#endif
     return a.exec();
 }

@@ -92,6 +92,10 @@ MainWindow::MainWindow(QWidget *parent) :
     m_monAide=new AbulEduAproposV0(this);
 
     QFontDatabase::addApplicationFont(":/data/sonic_comic.ttf");
+
+#ifdef __ABULEDUTABLETTEV1__MODE__
+    ui->menuBar->hide();
+#endif
 }
 
 MainWindow::~MainWindow()
@@ -240,7 +244,7 @@ void MainWindow::initFubuki()
     ui->btnVerifier->setDisabled(false);
     ui->btnAbandonner->setDisabled(false);
     ui->btnNouveau->setDisabled(true);
-    ui->btnQuitter->setDisabled(true);
+    ui->btnQuitter->setDisabled(false);
 
 } // fin initFubuki
 
