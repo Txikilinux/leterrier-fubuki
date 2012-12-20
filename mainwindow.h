@@ -42,6 +42,7 @@ class MainWindow : public AbulEduExerciceV0 {
     Q_OBJECT
 public:
     MainWindow(QWidget *parent = 0);
+    QString getMainWindowLang();
     ~MainWindow();
 
 protected:
@@ -109,7 +110,7 @@ private:
 
     QTranslator qtTranslator;
     QTranslator myappTranslator;
-
+    QString m_lang;
     QList<QAction*> m_languesDisponibles;
 
     AbulEduAproposV0 *m_monAide;
