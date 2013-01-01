@@ -22,5 +22,6 @@ install/leterrier-fubuki::
 	cp -a $(CURDIR)/debian/*.desktop $(BUILDTEMP)/usr/share/applications/
 	cp -a $(CURDIR)/data/* $(BUILDTEMP)/$(DEST)/data
 	cp -a $(CURDIR)/leterrier-fubuki $(BUILDTEMP)/$(EXECDEST)/
+	strip $(BUILDTEMP)/$(EXECDEST)/leterrier-fubuki
 
 
