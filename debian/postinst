@@ -1,6 +1,13 @@
 #!/bin/bash
+ICON=/usr/share/applications/leterrier-fubuki.desktop
+ALACARTEDIR=/usr/share/abuledu-alacarte/data/profile1.applications/
 
-xdg-desktop-menu install  --novendor --mode system /usr/share/applications/leterrier-fubuki.desktop
+xdg-desktop-menu install  --novendor --mode system ${ICON}
+
+#alacarte
+if [ -d "${ALACARTEDIR}" ]; then
+    cp ${ICON} ${ALACARTEDIR}
+fi
 
 #DEBHELPER#
 
