@@ -57,8 +57,10 @@ Source: "C:/QtSDK/Desktop/Qt/4.8.1/mingw/plugins\imageformats/qjpeg4.dll"; DestD
 Source: "C:/QtSDK/Desktop/Qt/4.8.1/mingw/plugins\imageformats/qmng4.dll"; DestDir: "{app}\imageformats"; Flags: ignoreversion recursesubdirs createallsubdirs
 Source: "C:/QtSDK/Desktop/Qt/4.8.1/mingw/plugins\imageformats/qsvg4.dll"; DestDir: "{app}\imageformats"; Flags: ignoreversion recursesubdirs createallsubdirs
 Source: "C:/QtSDK/Desktop/Qt/4.8.1/mingw/plugins\imageformats/qtiff4.dll"; DestDir: "{app}\imageformats"; Flags: ignoreversion recursesubdirs createallsubdirs
-; NOTE: Don't use "Flags: ignoreversion" on any shared system files
+; pour alacarte > 1.0.8
 Source: "..\debian\*.desktop"; DestDir: "{win}\abuledu-alacarte\data\profile1.applications"; Flags: ignoreversion recursesubdirs createallsubdirs
+Source: "..\data\images\fubuki-icone-128.png"; DestDir: "{app}"; Flags: ignoreversion
+; NOTE: Don't use "Flags: ignoreversion" on any shared system files
 
 [Icons]
 ; Name: "{group}\Fubuki"; Filename: "{app}\leterrier-fubuki.exe"; WorkingDir: "{app}"
