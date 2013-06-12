@@ -2,12 +2,14 @@
   * Fubuki (le terrier d'AbulEdu)
   *
   * @warning aucun traitement d'erreur n'est pour l'instant implémenté
-  * @see https://redmine.ryxeo.com/projects/
-  * @author 2009-2010 Andre Connes <andre dot connes at wanadoo dot fr>
-  * @author 2012 Éric Seigne <eric.seigne@ryxeo.com>
-  *
-  *
+  * @see https://redmine.ryxeo.com/projects/leterrier-fubuki
+  * @author 2009-2010 André Connes <andre.connes@wanadoo.fr>
+  * @author 2011 Jean-Louis Frucot <frucot.jeanlouis@free.fr>
+  * @author 2011-2013 Eric Seigne <eric.seigne@ryxeo.com>
+  * @author 2012-2013 Philippe Cadaugade <philippe.cadaugade@ryxeo.com>
+  * @author 2012-2013 Icham Sirat <icham.sirat@ryxeo.com>
   * @see The GNU Public License (GPL)
+  *
   * This program is free software; you can redistribute it and/or modify
   * it under the terms of the GNU General Public License as published by
   * the Free Software Foundation; either version 2 of the License, or
@@ -22,7 +24,6 @@
   * with this program; if not, write to the Free Software Foundation, Inc.,
   * 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA
   */
-
 
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
