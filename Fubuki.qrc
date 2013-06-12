@@ -1,12 +1,15 @@
 <RCC>
     <qresource prefix="/data/images">
-        <file alias="background">data/images/fubuki-fond.jpg</file>
         <file alias="nouveau">data/images/nouveau.png</file>
-        <file alias="parametre">data/images/parametre.png</file>
-        <file alias="fermer">data/images/fermer.png</file>
-        <file alias="quitter">data/images/quit.png</file>
+        <file alias="verification">data/images/parametre.png</file>
+        <file alias="fermeture">data/images/fermer.png</file>
+        <file alias="sortie">data/images/quit.png</file>
         <file>data/sonic_comic.ttf</file>
         <file alias="aide">data/images/aide.png</file>
-        <file alias="poubelle">data/images/poubelle.png</file>
+        <file alias="solution">data/images/poubelle.png</file>
+        <file alias="background">data/images/fubuki-fond.jpg</file>
+        <file alias="nombres">data/images/nombres.png</file>
+        <file alias="niveaux">data/images/niveaux.png</file>
+        <file alias="rouleau">data/images/rouleau.png</file>
     </qresource>
 </RCC>

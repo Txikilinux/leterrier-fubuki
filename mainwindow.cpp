@@ -30,6 +30,7 @@
 #include <QMessageBox>
 #include <QDialog>
 #include <QInputDialog>
+#include <QDesktopWidget>
 #include <QFontDatabase>
 #include "abuleduaproposv0.h"
 #include "abuleduexercicev0.h"
@@ -51,9 +52,11 @@ MainWindow::MainWindow(QWidget *parent) :
     qApp->installTranslator(&qtTranslator);
 
     //Et un second qtranslator pour les traductions specifiques du logiciel
-    if(! myappTranslator.load("leterrier-fubuki_"+locale, "lang")) {
-        myappTranslator.load("leterrier-fubuki_en","lang");
-    }
+//    if(! myappTranslator.load("leterrier-fubuki_"+locale, "lang")) {
+//        myappTranslator.load("leterrier-fubuki_en","lang");
+//    }
+
+    myappTranslator.load("leterrier-fubuki_" + locale, "lang");
     qApp->installTranslator(&myappTranslator);
 
     ui->setupUi(this);
@@ -78,7 +81,7 @@ MainWindow::MainWindow(QWidget *parent) :
         QRegExp nomNombresRegExp("btnNbre" + QString::number(i));
         nomBtnNbre << ui->centralWidget->findChildren <QPushButton *> (nomNombresRegExp);
     }
-
+    m_isFirstFubuki = true;
     niveau = 0; // défaut
     alea = 0; // défaut
     borneSup = 9; // défaut
@@ -96,6 +99,49 @@ MainWindow::MainWindow(QWidget *parent) :
 #ifdef __ABULEDUTABLETTEV1__MODE__
     ui->menuBar->hide();
 #endif
+
+    //Une astuce pour eviter de faire 7 boutons * 3 lignes pour activer les icones
+    QList<AbulEduFlatBoutonV1 *> btns = ui->frmIcones->findChildren<AbulEduFlatBoutonV1 *>();
+    for(int i = 0; i < btns.count(); i++)
+    {
+        QString composant = btns.at(i)->whatsThis();
+        btns.at(i)->setIconeNormale(QString(":/data/images/%1").arg(composant));
+
+#ifdef __ABULEDUTABLETTEV1__MODE__
+        btns.at(i)->setIconePressed(QString(":/data/images/%1Over").arg(composant));
+#else
+        btns.at(i)->setIconeSurvol(QString(":/data/images/%1Over").arg(composant));
+#endif
+        btns.at(i)->setIconeDisabled(QString(":/data/images/%1Disabled").arg(composant));
+        btns.at(i)->setTexteAlignement(Qt::AlignLeft);
+    }
+
+#ifdef __ABULEDUTABLETTEV1__MODE__
+    /// 15/01/2012 Icham -> mode tablette, pas de tooltips (pas de survol en mode tactile, et puis ça faisait des trucs bizarres parfois)
+    /// 15/01/2013 iCHAM -> icones survol = icones normales
+    // on cherche tous les enfants, et on leur met une chaine vide en tooltips (= desactivation)
+    foreach (QWidget *obj, findChildren<QWidget*>()) {
+        obj->setToolTip("");
+//        if(dynamic_cast<AbulEduFlatBoutonV1*>(obj)){
+//            dynamic_cast<AbulEduFlatBoutonV1*>(obj)->setIconeSurvol(dynamic_cast<AbulEduFlatBoutonV1*>(obj)->getIconeNormale());
+//        }
+    }
+#endif
+    foreach(AbulEduFlatBoutonV1* enfant,ui->frmIcones->findChildren<AbulEduFlatBoutonV1 *>())
+    {
+            enfant->setStyleSheet(enfant->styleSheet().replace("border-image","text-align: bottom;background-image"));
+            enfant->setStyleSheet(enfant->styleSheet().replace("image-position: center","background-position: center top"));
+    }
+    qDebug()<<" ------------------------------------------------ ";
+    ui->frmNiveau->move(ui->frmIcones->x()-ui->frmNiveau->width()+8,ui->frmIcones->height()-ui->btnNiveaux->height()-ui->btnVerifier->height()-ui->btnAbandonner->height()-ui->frmNiveau->height()-43);
+    ui->frmNiveau->setVisible(false);
+    ui->frmQuitter->move(ui->frmIcones->x()-ui->frmQuitter->width()+8,ui->frmIcones->height()-ui->frmQuitter->height()-13);
+    ui->frmQuitter->setVisible(false);
+    ui->frmChoixNombres->move(ui->frmIcones->x()-ui->frmChoixNombres->width()+8,ui->frmIcones->height()-ui->frmChoixNombres->height()-ui->btnInformation->height()-ui->btnQuitter->height()-12);
+    ui->frmChoixNombres->setVisible(false);
+
+    ui->cBoxSuite->hide();
+//    ui->tedAffiche->hide();
 }
 
 MainWindow::~MainWindow()
@@ -115,8 +161,22 @@ void MainWindow::changeEvent(QEvent *e)
     }
 }
 
+void MainWindow::paintEvent(QPaintEvent *)
+{
+    if(m_isFirstFubuki)
+    {
+        initFubuki();
+    }
+    m_isFirstFubuki = false;
+}
+
 void MainWindow::initFubuki()
 {
+    if(ui->frmNiveau->isVisible())
+    {
+        ui->frmNiveau->setVisible(false);
+        ui->btnNiveaux->setStyleSheet(ui->btnNiveaux->styleSheet().replace("border-radius:5px;background-color:#ffffff;","background-color:rgba(0,0,0,0);"));
+    }
     if (alea == 0)
         setAbeExerciceName(trUtf8("de 1 à 9"));
     else
@@ -127,7 +187,8 @@ void MainWindow::initFubuki()
 
     // effacer l'affichage
     ui->tedAffiche->clear();
-    ui->cBoxSuite->setDisabled(false);
+//    ui->cBoxSuite->setDisabled(false);
+    ui->btnNombres->setDisabled(false);
     // pas de nombre placé par l'utilisateur
     placement = false;
     // les nombres à manipuler
@@ -137,7 +198,8 @@ void MainWindow::initFubuki()
     else {
         if (niveau >= 5) {
             borneSup = 15 + rand() %20;
-            ui->cBoxSuite->setDisabled(true);
+//            ui->cBoxSuite->setDisabled(true);
+            ui->btnNombres->setDisabled(true);
         }
         casesInitial << borneSup;
         while( casesInitial.length() < 9) {
@@ -458,26 +520,7 @@ void MainWindow::on_btnVerifier_clicked()
 
 void MainWindow::on_cBoxNiveau_activated(int index)
 {
-    niveau = index;
-
-    //Test de changement d'arrière plan
-    ui->centralWidget->setStyleSheet("QWidget#centralWidget {\
-                                                             background-image: url(:/data/images/background);\
-                                                             background-repeat: repeat-no;\
-                                                             background-position: top right;\
-                                                             font-family: Sonic Comics;\
-                                                         }");
-//    if(index < 2) {
-//    }
-//    else {
-//        ui->centralWidget->setStyleSheet("QWidget#centralWidget {\
-//                                                 background-image: url(:/data/images/background-nuit);\
-//                                                 background-repeat: repeat-no;\
-//                                                 background-position: top right;\
-//                                                 font-family: Sonic Comics;\
-//                                         }");
-//    }
-    initFubuki();
+    /* A supprimer */
 }
 
 void MainWindow::on_cBoxSuite_activated(int index)
@@ -489,7 +532,7 @@ void MainWindow::on_cBoxSuite_activated(int index)
         if (ok)
             borneSup = n;
         else {
-            ui->cBoxSuite->setCurrentIndex(0);
+//            ui->cBoxSuite->setCurrentIndex(0);
             alea = 0;
         }
     }
@@ -627,4 +670,99 @@ void MainWindow::creeMenuLangue()
             langue->setChecked(false);
         }
     }
+}
+
+void MainWindow::on_btnNiveaux_clicked()
+{
+    ui->frmNiveau->setVisible(true);
+    ui->frmNiveau->raise();
+    ui->btnNiveaux->setStyleSheet(ui->btnNiveaux->styleSheet().replace("background-color:rgba(0,0,0,0);","border-radius:5px;background-color:#ffffff;"));
+}
+
+void MainWindow::on_btnNiveauAnnuler_clicked()
+{
+    ui->frmNiveau->setVisible(false);
+    ui->btnNiveaux->setStyleSheet(ui->btnNiveaux->styleSheet().replace("border-radius:5px;background-color:#ffffff;","background-color:rgba(0,0,0,0);"));
+}
+
+void MainWindow::on_btnQuitter_clicked()
+{
+    ui->frmQuitter->setVisible(true);
+    ui->frmQuitter->raise();
+    ui->btnQuitter->setStyleSheet(ui->btnQuitter->styleSheet().replace("background-color:rgba(0,0,0,0);","border-radius:5px;background-color:#ffffff;"));
+
+}
+
+void MainWindow::on_btnQuitterAnnuler_clicked()
+{
+    ui->frmQuitter->setVisible(false);
+    ui->btnQuitter->setStyleSheet(ui->btnQuitter->styleSheet().replace("border-radius:5px;background-color:#ffffff;","background-color:rgba(0,0,0,0);"));
+}
+
+void MainWindow::on_btnQuitterRetourMenuPrincipal_clicked()
+{
+    close();
+}
+
+void MainWindow::on_btnNombres_clicked()
+{
+    ui->frmChoixNombres->setVisible(true);
+    ui->frmChoixNombres->raise();
+    ui->btnNombres->setStyleSheet(ui->btnNombres->styleSheet().replace("background-color:rgba(0,0,0,0);","border-radius:5px;background-color:#ffffff;"));
+}
+
+void MainWindow::on_btnNiveauFacile_clicked()
+{
+    niveau = 0;
+    initFubuki();
+}
+
+void MainWindow::on_btnNiveauMoyen_clicked()
+{
+    niveau = 1;
+    initFubuki();
+}
+
+void MainWindow::on_btnNiveauDifficile_clicked()
+{
+    niveau = 2;
+    initFubuki();
+}
+
+void MainWindow::on_btnNiveauTresDifficile_clicked()
+{
+    niveau = 3;
+    initFubuki();
+}
+
+void MainWindow::on_btnNiveauDiabolique_clicked()
+{
+    niveau = 4;
+    initFubuki();
+}
+
+void MainWindow::on_btnNiveauInfernal_clicked()
+{
+    niveau = 5;
+    initFubuki();
+}
+
+void MainWindow::on_btnNombresZeroNeuf_clicked()
+{
+    on_cBoxSuite_activated(0);
+    ui->frmChoixNombres->setVisible(false);
+    ui->btnNombres->setStyleSheet(ui->btnNombres->styleSheet().replace("border-radius:5px;background-color:#ffffff;","background-color:rgba(0,0,0,0);"));
+}
+
+void MainWindow::on_btnNombresAuChoix_clicked()
+{
+    on_cBoxSuite_activated(1);
+    ui->frmChoixNombres->setVisible(false);
+    ui->btnNombres->setStyleSheet(ui->btnNombres->styleSheet().replace("border-radius:5px;background-color:#ffffff;","background-color:rgba(0,0,0,0);"));
+}
+
+void MainWindow::on_btnNombresFermer_clicked()
+{
+    ui->frmChoixNombres->setVisible(false);
+    ui->btnNombres->setStyleSheet(ui->btnNombres->styleSheet().replace("border-radius:5px;background-color:#ffffff;","background-color:rgba(0,0,0,0);"));
 }

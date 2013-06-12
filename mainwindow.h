@@ -47,6 +47,7 @@ public:
 
 protected:
     void changeEvent(QEvent *e);
+    void paintEvent(QPaintEvent *);
 
 private:
     Ui::MainWindow *ui;
@@ -61,6 +62,8 @@ private:
         RMQ : ça fait peur mais c'est plus facile que le niveau précédent
         (6 équations à 9 inconnues => infinité (théorique) de solutions)
     */
+
+    bool m_isFirstFubuki;
     int niveau;
     /**
         plage de 1 à 9, ou choix entre 15 et 35
@@ -152,6 +155,21 @@ private slots:
 
     void slotChangeLangue();
     void creeMenuLangue();
+    void on_btnNiveaux_clicked();
+    void on_btnNiveauAnnuler_clicked();
+    void on_btnQuitter_clicked();
+    void on_btnQuitterAnnuler_clicked();
+    void on_btnQuitterRetourMenuPrincipal_clicked();
+    void on_btnNiveauFacile_clicked();
+    void on_btnNiveauMoyen_clicked();
+    void on_btnNiveauDifficile_clicked();
+    void on_btnNiveauTresDifficile_clicked();
+    void on_btnNiveauDiabolique_clicked();
+    void on_btnNiveauInfernal_clicked();
+    void on_btnNombres_clicked();
+    void on_btnNombresZeroNeuf_clicked();
+    void on_btnNombresAuChoix_clicked();
+    void on_btnNombresFermer_clicked();
 };
 
 #endif // MAINWINDOW_H
