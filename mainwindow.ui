@@ -109,19 +109,6 @@ QComboBox::down-arrow {
         </property>
        </item>
       </widget>
-      <widget class="QTextEdit" name="tedAffiche">
-       <property name="geometry">
-        <rect>
-         <x>30</x>
-         <y>30</y>
-         <width>121</width>
-         <height>51</height>
-        </rect>
-       </property>
-       <property name="readOnly">
-        <bool>true</bool>
-       </property>
-      </widget>
       <widget class="QFrame" name="frmQuitter">
        <property name="geometry">
         <rect>

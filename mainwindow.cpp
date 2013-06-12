@@ -142,7 +142,6 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->frmChoixNombres->setVisible(false);
 
     ui->cBoxSuite->hide();
-//    ui->tedAffiche->hide();
 }
 
 MainWindow::~MainWindow()
@@ -186,8 +185,6 @@ void MainWindow::initFubuki()
     setAbeNbTotalQuestions(1);
     setAbeSkill(trUtf8("anticiper 6 totaux de 3 nombres"));
 
-    // effacer l'affichage
-    ui->tedAffiche->clear();
 //    ui->cBoxSuite->setDisabled(false);
     ui->btnNombres->setDisabled(false);
     // pas de nombre placé par l'utilisateur
@@ -352,7 +349,6 @@ void MainWindow::on_btnCase7_clicked() { _btnCase(7); }
 void MainWindow::on_btnCase8_clicked() { _btnCase(8); }
 
 void MainWindow::_btnCase(int i) {
-    ui->tedAffiche->setText(trUtf8(""));
     if (niveau > 4) {
         if (nomBtnCase[i]->text() != "") {
             //le btnCase n'est pas vide, vider !
@@ -406,7 +402,6 @@ void MainWindow::on_btnNbre8_clicked() { _btnNbre(8); }
 
 void MainWindow::_btnNbre(int i) {
     qDebug() << "MainWindow::_btnNbre(int i) on a clique sur " << i << casesInitial[i];
-    ui->tedAffiche->setText(trUtf8(""));
     if (actuelBtnNbre >= 0 && niveau <= 4) {
         restaurerBtnNbre(actuelBtnNbre);
     }
@@ -439,7 +434,8 @@ void MainWindow::on_btnVerifier_clicked()
         if (nomBtnCase[i]->text() != "") connus << i;
     }
     if (connus.length() <= (4 - niveau) || (connus.length() == 0 && niveau > 4)) {
-        ui->tedAffiche->setText(trUtf8("Vérification réfusée.\n\nCommence à remplir la grille de gauche !"));
+        AbulEduMessageBoxV1* msg = new AbulEduMessageBoxV1(trUtf8("Vérification refusée"),trUtf8("Commence à remplir la grille !"));
+        msg->show();
         return;
     }
 
@@ -457,7 +453,9 @@ void MainWindow::on_btnVerifier_clicked()
         ok = ok && nomBtnCase[2]->text().toInt()+nomBtnCase[5]->text().toInt()+nomBtnCase[8]->text().toInt() == ui->lblV2->text().toInt();
     if (ok)
     {
-        ui->tedAffiche->setText(trUtf8("Bravo, tout est parfait !\n\nTu peux choisir une nouvelle grille..."));
+        AbulEduMessageBoxV1* msg = new AbulEduMessageBoxV1(trUtf8("Félicitations"),trUtf8("Tu peux choisir une nouvelle grille..."));
+        msg->setWink();
+        msg->show();
         setAbeLineLog("Complète la grille","", -1, 0 , abeEvaluation(), "", "", "", trUtf8("Vérification"));
         pushAbulEduLogs();
         ui->btnVerifier->setDisabled(true);
@@ -480,11 +478,14 @@ void MainWindow::on_btnVerifier_clicked()
             }
         }
         if (iFaute != -1) {
-            ui->tedAffiche->setText(trUtf8("Une ou des erreurs ...\nPar exemple le nombre : %1 \n\nJe te prie de corriger !").arg(nomBtnCase[iFaute]->text()));
+            AbulEduMessageBoxV1* msg = new AbulEduMessageBoxV1(trUtf8("Une ou des erreurs ..."),trUtf8("Par exemple le nombre : %1 \n\nJe te prie de corriger !").arg(nomBtnCase[iFaute]->text()));
+            msg->show();
             nErreurs++;
             setAbeLineLog("Complète la grille","", -1, 0 , "d", "", "", "", trUtf8("Vérification"));
         } else {
-            ui->tedAffiche->setText(trUtf8("Pas d'erreur !\n\nComplète la grille..."));
+            AbulEduMessageBoxV1* msg = new AbulEduMessageBoxV1(trUtf8("Pas d'erreur !"),trUtf8("Continue à complèter la grille..."));
+            msg->setWink();
+            msg->show();
             setAbeLineLog("Complète la grille","", -1, 0 , "a", "", "", "", trUtf8("Vérification"));
         }
     } else {
@@ -496,7 +497,8 @@ void MainWindow::on_btnVerifier_clicked()
                 somme += nomBtnCase[3*i+j]->text().toInt();
             }
             if (nVides == 0 && somme != ligSomme[i]) {
-                    ui->tedAffiche->setText(trUtf8("Une ou des erreurs ...\nPar exemple la ligne %1\n\nJe te prie de corriger !").arg(i+1));
+                    AbulEduMessageBoxV1* msg = new AbulEduMessageBoxV1(trUtf8("Une ou des erreurs ..."),trUtf8("Par exemple la ligne %1\n\nJe te prie de corriger !").arg(i+1));
+                    msg->show();
                     nErreurs++;
                     setAbeLineLog("Complète la grille","", -1, 0 , "d", "", "", "", trUtf8("Vérification"));
                     return;
@@ -509,12 +511,15 @@ void MainWindow::on_btnVerifier_clicked()
                 somme += nomBtnCase[i+3*j]->text().toInt();
             }
             if (nVides == 0 && somme != colSomme[i]) {
-                    ui->tedAffiche->setText(trUtf8("Une ou des erreurs ...\nPar exemple la colonne %1\n\nJe te prie de corriger !").arg(i+1));
+                    AbulEduMessageBoxV1* msg = new AbulEduMessageBoxV1(trUtf8("Une ou des erreurs ..."),trUtf8("Par exemple la colonne %1\n\nJe te prie de corriger !").arg(i+1));
+                    msg->show();
                     setAbeLineLog("Complète la grille","", -1, 0 , "d", "", "", "", trUtf8("Vérification"));
                     return;
             }
         }
-        ui->tedAffiche->setText(trUtf8("Pas d'erreur !\n\nComplète la grille..."));
+        AbulEduMessageBoxV1* msg = new AbulEduMessageBoxV1(trUtf8("Pas d'erreur !"),trUtf8("Continue à complèter la grille..."));
+        msg->setWink();
+        msg->show();
         setAbeLineLog("Complète la grille","", -1, 0 , "a", "", "", "", trUtf8("Vérification"));
     }
 } // fin on_btnVerifier_clicked
@@ -557,9 +562,16 @@ void MainWindow::on_btnAbandonner_clicked()
     ui->btnNouveau->setDisabled(false);
     ui->btnQuitter->setDisabled(false);
     if (nErreurs > 0)
-        ui->tedAffiche->setText(trUtf8("Pas trouvé ? Voici un corrigé !\n\nTu peux choisir une nouvelle grille..."));
+    {
+        AbulEduMessageBoxV1* msg = new AbulEduMessageBoxV1(trUtf8("Pas trouvé ?"),trUtf8("Voici un corrigé ! \n\nTu peux choisir une nouvelle grille..."));
+        msg->show();
+    }
     else
-        ui->tedAffiche->setText(trUtf8("Bravo, tout est parfait !\n\nTu peux choisir une nouvelle grille..."));
+    {
+        AbulEduMessageBoxV1* msg = new AbulEduMessageBoxV1(trUtf8("Félicitations"),trUtf8("Tu peux choisir une nouvelle grille..."));
+        msg->setWink();
+        msg->show();
+    }
     setAbeLineLog("Complète la grille","", -1, 0 , abeEvaluation(), "", "", "", trUtf8("Abandon"));
     pushAbulEduLogs();
 }
@@ -574,7 +586,8 @@ void MainWindow::on_btnInformation_clicked()
     int iBtn = rand() % inconnus.length();
     //qDebug() << "Je prends le " << iBtn << "ieme bouton inconnu : " << inconnus[iBtn];
     //qDebug() << "AIDE : Je propose la btnCase " << inconnus[iBtn] << " de valeur " << cases[inconnus[iBtn]] << cases;
-    ui->tedAffiche->setText(trUtf8("Je propose le nombre ... %1").arg(QString::number(cases[inconnus[iBtn]])));
+    AbulEduMessageBoxV1* msg = new AbulEduMessageBoxV1(trUtf8("Allez, je t'aide..."),trUtf8("Je propose le nombre ... %1").arg(QString::number(cases[inconnus[iBtn]])));
+    msg->show();
     nomBtnCase[inconnus[iBtn]]->setStyleSheet("color : #C02020");
     //nomBtnCase[inconnus[iBtn]]->setFont(fontBIG);
     nomBtnCase[inconnus[iBtn]]->setProperty("text", QString::number(cases[inconnus[iBtn]]));

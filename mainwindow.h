@@ -31,9 +31,10 @@
 #include <QMainWindow>
 #include <QList>
 #include <QPushButton>
+#include <QApplication>
 #include "abuleduaproposv0.h"
 #include "abuleduexercicev0.h"
-#include <QApplication>
+#include "abuledumessageboxv1.h"
 
 
 namespace Ui {
