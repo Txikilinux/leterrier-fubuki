@@ -128,10 +128,12 @@ MainWindow::MainWindow(QWidget *parent) :
 #endif
     foreach(AbulEduFlatBoutonV1* enfant,ui->frmIcones->findChildren<AbulEduFlatBoutonV1 *>())
     {
-            enfant->setStyleSheet(enfant->styleSheet().replace("border-image","text-align: bottom;background-image"));
-            enfant->setStyleSheet(enfant->styleSheet().replace("image-position: center","background-position: center top"));
+        enfant->setCouleurFondPressed(QColor(255,255,255,50));
+        enfant->setCouleurTexteSurvol(Qt::red);
+        enfant->setCouleurTexteNormale(Qt::white);
+        enfant->setStyleSheet(enfant->styleSheet().replace("border-image","text-align: bottom;background-image"));
+        enfant->setStyleSheet(enfant->styleSheet().replace("image-position: center","background-position: center top"));
     }
-    qDebug()<<" ------------------------------------------------ ";
     ui->frmNiveau->move(ui->frmIcones->x()-ui->frmNiveau->width()+8,ui->frmIcones->height()-ui->btnNiveaux->height()-ui->btnVerifier->height()-ui->btnAbandonner->height()-ui->frmNiveau->height()-43);
     ui->frmNiveau->setVisible(false);
     ui->frmChoixNombres->move(ui->frmIcones->x()-ui->frmChoixNombres->width()+8,ui->frmIcones->height()-ui->frmChoixNombres->height()-ui->btnInformation->height()-ui->btnInformation->height()-12);
@@ -140,8 +142,17 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->cBoxSuite->hide();
 
     setWindowFlags(Qt::CustomizeWindowHint);
-        ui->frmButtons->move(0,38);
-        ui->frmButtons->setVisible(false);
+    ui->frmButtons->move(0,38);
+    ui->frmButtons->setVisible(false);
+
+    ui->btnMinimized->setCouleurFondSurvol(QColor(6,109,255));
+    ui->btnMinimized->setCouleurFondNormale(QColor(255,255,255,50));
+    ui->btnMinimized->setAllMargins(8,4,8,12);
+    ui->btnMinimized->setBorderRadius(4);
+    ui->btnFullScreen->setCouleurFondSurvol(QColor(6,109,255));
+    ui->btnFullScreen->setCouleurFondNormale(QColor(255,255,255,50));
+    ui->btnFullScreen->setAllMargins(8,12,8,4);
+    ui->btnFullScreen->setBorderRadius(4);
 }
 
 MainWindow::~MainWindow()
@@ -170,6 +181,7 @@ void MainWindow::paintEvent(QPaintEvent *)
     m_isFirstFubuki = false;
     foreach(AbulEduFlatBoutonV1* enfant,ui->frmButtons->findChildren<AbulEduFlatBoutonV1 *>())
         {
+        enfant->setCouleurTexteSurvol(Qt::red);
                 enfant->setStyleSheet(enfant->styleSheet().replace("border-image","text-align: bottom;background-image"));
                 enfant->setStyleSheet(enfant->styleSheet().replace("image-position: center","background-position: center top"));
         }
@@ -420,6 +432,7 @@ void MainWindow::_btnCase(int i) {
         actuelBtnCase = i;
     }
     setInformation();
+    ui->frmButtons->setVisible(false);
 } //fin _btnCase(int i)
 
 void MainWindow::on_btnNbre0_clicked() { _btnNbre(0); }
@@ -449,6 +462,7 @@ void MainWindow::_btnNbre(int i) {
         actuelBtnNbre = -1;
     }
     setInformation();
+    ui->frmButtons->setVisible(false);
 }
 
 void MainWindow::restaurerBtnNbre(int i) {
@@ -621,6 +635,7 @@ void MainWindow::on_btnInformation_clicked()
     //qDebug() << "Je prends le " << iBtn << "ieme bouton inconnu : " << inconnus[iBtn];
     //qDebug() << "AIDE : Je propose la btnCase " << inconnus[iBtn] << " de valeur " << cases[inconnus[iBtn]] << cases;
     AbulEduMessageBoxV1* msg = new AbulEduMessageBoxV1(trUtf8("Allez, je t'aide..."),trUtf8("Je propose le nombre ... %1").arg(QString::number(cases[inconnus[iBtn]])));
+    msg->setWink();
     msg->show();
     nomBtnCase[inconnus[iBtn]]->setStyleSheet("color : #C02020");
     //nomBtnCase[inconnus[iBtn]]->setFont(fontBIG);
@@ -642,6 +657,7 @@ void MainWindow::on_btnInformation_clicked()
 void MainWindow::on_btnNouveau_clicked()
 {
     initFubuki();
+    on_btnFeuille_clicked();
 }
 
 void MainWindow::setInformation() {
@@ -824,4 +840,23 @@ void MainWindow::on_btnAideFeuille_clicked()
 {
     ui->stackedWidgetContainer->slideInWidget(ui->pageApropos);
     on_btnFeuille_clicked();
+}
+
+void MainWindow::on_btnMinimized_clicked()
+{
+    showMinimized();
+}
+
+void MainWindow::on_btnFullScreen_clicked()
+{
+    if(isFullScreen())
+    {
+        showNormal();
+        ui->btnFullScreen->setIconeNormale(":/data/images/showMaximized");
+    }
+    else
+    {
+        showFullScreen();
+        ui->btnFullScreen->setIconeNormale(":/data/images/showNormal");
+    }
 }

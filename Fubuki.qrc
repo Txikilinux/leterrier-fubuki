@@ -21,5 +21,8 @@
         <file alias="aideHover">data/images/aide-hover.png</file>
         <file alias="solutionHover">data/images/poubelle-hover.png</file>
         <file alias="verificationHover">data/images/parametre-hover.png</file>
+        <file alias="showMinimized">data/images/fenetreReduit.png</file>
+        <file alias="showNormal">data/images/fenetreMoyen.png</file>
+        <file alias="showMaximized">data/images/fenetreGrand.png</file>
     </qresource>
 </RCC>

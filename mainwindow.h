@@ -183,6 +183,8 @@ private slots:
     void on_btnFeuille_clicked();
     void on_pushButton_clicked();
     void on_btnAideFeuille_clicked();
+    void on_btnMinimized_clicked();
+    void on_btnFullScreen_clicked();
 };
 
 #endif // MAINWINDOW_H
