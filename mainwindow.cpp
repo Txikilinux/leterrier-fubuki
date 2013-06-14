@@ -134,9 +134,11 @@ MainWindow::MainWindow(QWidget *parent) :
         enfant->setStyleSheet(enfant->styleSheet().replace("border-image","text-align: bottom;background-image"));
         enfant->setStyleSheet(enfant->styleSheet().replace("image-position: center","background-position: center top"));
     }
-    ui->frmNiveau->move(ui->frmIcones->x()-ui->frmNiveau->width()+8,ui->frmIcones->height()-ui->btnNiveaux->height()-ui->btnVerifier->height()-ui->btnAbandonner->height()-ui->frmNiveau->height()-43);
+
+    /* Positionnement en dur puisque la hauteur de fenêtre "utile" est fixe */
+    ui->frmNiveau->move(ui->frmIcones->x()-ui->frmNiveau->width()+8,ui->frmIcones->y()+24);
+    ui->frmChoixNombres->move(ui->frmIcones->x()-ui->frmChoixNombres->width()+8,ui->frmIcones->y()+314);
     ui->frmNiveau->setVisible(false);
-    ui->frmChoixNombres->move(ui->frmIcones->x()-ui->frmChoixNombres->width()+8,ui->frmIcones->height()-ui->frmChoixNombres->height()-ui->btnInformation->height()-ui->btnInformation->height()-12);
     ui->frmChoixNombres->setVisible(false);
 
     ui->cBoxSuite->hide();
@@ -180,12 +182,12 @@ void MainWindow::paintEvent(QPaintEvent *)
     }
     m_isFirstFubuki = false;
     foreach(AbulEduFlatBoutonV1* enfant,ui->frmButtons->findChildren<AbulEduFlatBoutonV1 *>())
-        {
+    {
         enfant->setCouleurTexteSurvol(Qt::red);
-                enfant->setStyleSheet(enfant->styleSheet().replace("border-image","text-align: bottom;background-image"));
-                enfant->setStyleSheet(enfant->styleSheet().replace("image-position: center","background-position: center top"));
-        }
-        ui->btnFeuille->setStyleSheet("QPushButton > *{color:red;}QPushButton{border: none; color:rgba(0,0,0,255);background-repeat: no-repeat;background-color:transparent;border-image:url(':/data/images/leaf');image-position: center;}");
+        enfant->setStyleSheet(enfant->styleSheet().replace("border-image","text-align: bottom;background-image"));
+        enfant->setStyleSheet(enfant->styleSheet().replace("image-position: center","background-position: center top"));
+    }
+    ui->btnFeuille->setStyleSheet("QPushButton > *{color:red;}QPushButton{border: none; color:rgba(0,0,0,255);background-repeat: no-repeat;background-color:transparent;border-image:url(':/data/images/leaf');image-position: center;}");
 }
 
 #ifndef __ABULEDUTABLETTEV1__MODE__
@@ -741,6 +743,11 @@ void MainWindow::on_btnNiveaux_clicked()
     ui->frmNiveau->setVisible(true);
     ui->frmNiveau->raise();
     ui->btnNiveaux->setStyleSheet(ui->btnNiveaux->styleSheet().replace("background-color:rgba(0,0,0,0);","border-radius:5px;background-color:#ffffff;"));
+    on_btnNombresFermer_clicked();
+    if (ui->frmButtons->isVisible())
+    {
+        ui->frmButtons->setVisible(false);
+    }
 }
 
 void MainWindow::on_btnNiveauAnnuler_clicked()
@@ -755,6 +762,11 @@ void MainWindow::on_btnNombres_clicked()
     ui->frmChoixNombres->setVisible(true);
     ui->frmChoixNombres->raise();
     ui->btnNombres->setStyleSheet(ui->btnNombres->styleSheet().replace("background-color:rgba(0,0,0,0);","border-radius:5px;background-color:#ffffff;"));
+    on_btnNiveauAnnuler_clicked();
+    if (ui->frmButtons->isVisible())
+    {
+        ui->frmButtons->setVisible(false);
+    }
 }
 
 void MainWindow::on_btnNiveauFacile_clicked()
@@ -829,6 +841,8 @@ void MainWindow::on_btnFeuille_clicked()
         ui->frmButtons->setVisible(true);
         ui->frmButtons->raise();
     }
+    on_btnNombresFermer_clicked();
+    on_btnNiveauAnnuler_clicked();
 }
 
 void MainWindow::on_pushButton_clicked()

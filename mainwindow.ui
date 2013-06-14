@@ -1813,6 +1813,9 @@ border-radius:5px;</string>
           <height>100</height>
          </rect>
         </property>
+        <property name="whatsThis">
+         <string>frmB</string>
+        </property>
         <property name="styleSheet">
          <string notr="true">QFrame#frmButtons {
 background-image: url(:/data/images/feuille);
