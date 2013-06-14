@@ -109,9 +109,9 @@ MainWindow::MainWindow(QWidget *parent) :
         btns.at(i)->setIconeNormale(QString(":/data/images/%1").arg(composant));
 
 #ifdef __ABULEDUTABLETTEV1__MODE__
-        btns.at(i)->setIconePressed(QString(":/data/images/%1Over").arg(composant));
+        btns.at(i)->setIconePressed(QString(":/data/images/%1Hover").arg(composant));
 #else
-        btns.at(i)->setIconeSurvol(QString(":/data/images/%1Over").arg(composant));
+        btns.at(i)->setIconeSurvol(QString(":/data/images/%1Hover").arg(composant));
 #endif
         btns.at(i)->setIconeDisabled(QString(":/data/images/%1Disabled").arg(composant));
         btns.at(i)->setTexteAlignement(Qt::AlignLeft);
@@ -312,7 +312,7 @@ void MainWindow::initFubuki()
     ui->btnVerifier->setDisabled(false);
     ui->btnAbandonner->setDisabled(false);
 
-//!    ui->btnNouveau->setDisabled(true);
+    ui->btnNouveau->setDisabled(true);
 
 
 } // fin initFubuki
@@ -470,7 +470,7 @@ void MainWindow::on_btnVerifier_clicked()
         ui->btnVerifier->setDisabled(true);
         ui->btnAbandonner->setDisabled(true);
 
-//!        ui->btnNouveau->setDisabled(false);
+        ui->btnNouveau->setDisabled(false);
 
         return;
     }
@@ -570,7 +570,7 @@ void MainWindow::on_btnAbandonner_clicked()
     ui->btnVerifier->setDisabled(true);
     ui->btnAbandonner->setDisabled(true);
 
-//!    ui->btnNouveau->setDisabled(false);
+    ui->btnNouveau->setDisabled(false);
 
     if (nErreurs > 0)
     {

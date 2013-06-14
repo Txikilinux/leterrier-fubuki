@@ -14,5 +14,12 @@
         <file alias="feuille">data/images/fubuki-feuille.jpg</file>
         <file alias="top">data/images/fubuki-top.jpg</file>
         <file alias="leaf">data/images/feuille.png</file>
+        <file alias="sortieHover">data/images/quit-hover.png</file>
+        <file alias="nouveauHover">data/images/nouveau-hover.png</file>
+        <file alias="nombresHover">data/images/nombres-hover.png</file>
+        <file alias="niveauxHover">data/images/niveaux-hover.png</file>
+        <file alias="aideHover">data/images/aide-hover.png</file>
+        <file alias="solutionHover">data/images/poubelle-hover.png</file>
+        <file alias="verificationHover">data/images/parametre-hover.png</file>
     </qresource>
 </RCC>
