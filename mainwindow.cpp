@@ -141,7 +141,6 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->frmNiveau->setVisible(false);
     ui->frmChoixNombres->setVisible(false);
 
-    ui->cBoxSuite->hide();
 
     setWindowFlags(Qt::CustomizeWindowHint);
     ui->frmButtons->move(0,38);

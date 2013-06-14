@@ -70,52 +70,6 @@ background-color:blue
 	font-family: Sonic Comics;
 }</string>
        </property>
-       <widget class="QComboBox" name="cBoxSuite">
-        <property name="geometry">
-         <rect>
-          <x>20</x>
-          <y>40</y>
-          <width>165</width>
-          <height>23</height>
-         </rect>
-        </property>
-        <property name="font">
-         <font>
-          <weight>50</weight>
-          <bold>false</bold>
-         </font>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">QComboBox {
-    border: 2px solid #C02020;
-    border-radius: 6px;
-	background: transparent;
-}
-     
-QComboBox::drop-down {
-    width: 32px;
-    border-top-right-radius: 3px;
-    border-bottom-right-radius: 3px;
-	background: transparent;
-}
-     
-QComboBox::down-arrow {
-    image: url(:/data/images/fermer);
-    width: 32;
-    height: 32;
-}</string>
-        </property>
-        <item>
-         <property name="text">
-          <string>Nombres de 1 à 9</string>
-         </property>
-        </item>
-        <item>
-         <property name="text">
-          <string>Choix des nombres</string>
-         </property>
-        </item>
-       </widget>
        <widget class="QFrame" name="frmNiveau">
         <property name="geometry">
          <rect>
