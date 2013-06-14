@@ -51,6 +51,11 @@ public:
 protected:
     void changeEvent(QEvent *e);
     void paintEvent(QPaintEvent *);
+#ifndef __ABULEDUTABLETTEV1__MODE__
+    void mouseMoveEvent(QMouseEvent *event);
+    void mousePressEvent(QMouseEvent *event);
+    void mouseReleaseEvent(QMouseEvent *event);
+#endif
 
 private:
     Ui::MainWindow *ui;
@@ -120,6 +125,10 @@ private:
     QList<QAction*> m_languesDisponibles;
 
     AbulEduAproposV0 *m_monAide;
+
+    /** Position de la souris pour gerer le deplacement de la fenetre */
+    QPoint m_dragPosition;
+    bool   m_isWindowMoving;
 
 signals:
     /** Demande le positionnement de l'onglet de l'aide

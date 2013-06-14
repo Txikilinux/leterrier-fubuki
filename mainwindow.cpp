@@ -97,9 +97,7 @@ MainWindow::MainWindow(QWidget *parent) :
 
     QFontDatabase::addApplicationFont(":/data/sonic_comic.ttf");
 
-#ifdef __ABULEDUTABLETTEV1__MODE__
     ui->menuBar->hide();
-#endif
 
     //Une astuce pour eviter de faire 7 boutons * 3 lignes pour activer les icones
     QList<AbulEduFlatBoutonV1 *> btns = ui->frmIcones->findChildren<AbulEduFlatBoutonV1 *>();
@@ -177,6 +175,31 @@ void MainWindow::paintEvent(QPaintEvent *)
         }
         ui->btnFeuille->setStyleSheet("QPushButton > *{color:red;}QPushButton{border: none; color:rgba(0,0,0,255);background-repeat: no-repeat;background-color:transparent;border-image:url(':/data/images/leaf');image-position: center;}");
 }
+
+#ifndef __ABULEDUTABLETTEV1__MODE__
+void MainWindow::mouseMoveEvent(QMouseEvent *event)
+{
+    if (m_isWindowMoving) {
+        move(event->globalPos() - m_dragPosition);
+        event->accept();
+    }
+}
+
+void MainWindow::mousePressEvent(QMouseEvent *event)
+{
+    if (event->button() == Qt::LeftButton && ui->lblTitre->rect().contains(event->pos())) {
+        m_dragPosition = event->globalPos() - frameGeometry().topLeft();
+        event->accept();
+        m_isWindowMoving = true;
+    }
+}
+
+void MainWindow::mouseReleaseEvent(QMouseEvent *event)
+{
+    Q_UNUSED(event);
+    m_isWindowMoving = false;
+}
+#endif
 
 void MainWindow::initFubuki()
 {

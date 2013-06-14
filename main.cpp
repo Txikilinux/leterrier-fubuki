@@ -38,7 +38,7 @@ int main(int argc, char *argv[])
     QApplication::setStyle("plastique");
     w.showFullScreen();
 #else
-    w.showMaximized();
+    w.show();
 #endif
     return a.exec();
 }
