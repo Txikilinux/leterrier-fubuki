@@ -526,6 +526,9 @@ QPushButton#btnQuitter:hover {
               <bold>true</bold>
              </font>
             </property>
+            <property name="focusPolicy">
+             <enum>Qt::NoFocus</enum>
+            </property>
             <property name="styleSheet">
              <string notr="true"/>
             </property>
@@ -565,6 +568,9 @@ QPushButton#btnQuitter:hover {
               <bold>true</bold>
              </font>
             </property>
+            <property name="focusPolicy">
+             <enum>Qt::NoFocus</enum>
+            </property>
             <property name="text">
              <string/>
             </property>
@@ -600,6 +606,9 @@ QPushButton#btnQuitter:hover {
               <weight>75</weight>
               <bold>true</bold>
              </font>
+            </property>
+            <property name="focusPolicy">
+             <enum>Qt::NoFocus</enum>
             </property>
             <property name="text">
              <string/>
@@ -674,6 +683,9 @@ QPushButton#btnQuitter:hover {
               <bold>true</bold>
              </font>
             </property>
+            <property name="focusPolicy">
+             <enum>Qt::NoFocus</enum>
+            </property>
             <property name="text">
              <string/>
             </property>
@@ -710,6 +722,9 @@ QPushButton#btnQuitter:hover {
               <bold>true</bold>
              </font>
             </property>
+            <property name="focusPolicy">
+             <enum>Qt::NoFocus</enum>
+            </property>
             <property name="text">
              <string/>
             </property>
@@ -745,6 +760,9 @@ QPushButton#btnQuitter:hover {
               <weight>75</weight>
               <bold>true</bold>
              </font>
+            </property>
+            <property name="focusPolicy">
+             <enum>Qt::NoFocus</enum>
             </property>
             <property name="text">
              <string/>
@@ -819,6 +837,9 @@ QPushButton#btnQuitter:hover {
               <bold>true</bold>
              </font>
             </property>
+            <property name="focusPolicy">
+             <enum>Qt::NoFocus</enum>
+            </property>
             <property name="text">
              <string/>
             </property>
@@ -855,6 +876,9 @@ QPushButton#btnQuitter:hover {
               <bold>true</bold>
              </font>
             </property>
+            <property name="focusPolicy">
+             <enum>Qt::NoFocus</enum>
+            </property>
             <property name="text">
              <string/>
             </property>
@@ -890,6 +914,9 @@ QPushButton#btnQuitter:hover {
               <weight>75</weight>
               <bold>true</bold>
              </font>
+            </property>
+            <property name="focusPolicy">
+             <enum>Qt::NoFocus</enum>
             </property>
             <property name="text">
              <string/>
@@ -1181,6 +1208,9 @@ QPushButton#btnQuitter:hover {
             <property name="cursor">
              <cursorShape>ArrowCursor</cursorShape>
             </property>
+            <property name="focusPolicy">
+             <enum>Qt::NoFocus</enum>
+            </property>
             <property name="text">
              <string/>
             </property>
@@ -1213,6 +1243,9 @@ QPushButton#btnQuitter:hover {
             </property>
             <property name="cursor">
              <cursorShape>ArrowCursor</cursorShape>
+            </property>
+            <property name="focusPolicy">
+             <enum>Qt::NoFocus</enum>
             </property>
             <property name="text">
              <string/>
@@ -1247,6 +1280,9 @@ QPushButton#btnQuitter:hover {
             <property name="cursor">
              <cursorShape>ArrowCursor</cursorShape>
             </property>
+            <property name="focusPolicy">
+             <enum>Qt::NoFocus</enum>
+            </property>
             <property name="text">
              <string/>
             </property>
@@ -1276,6 +1312,9 @@ QPushButton#btnQuitter:hover {
               <weight>75</weight>
               <bold>true</bold>
              </font>
+            </property>
+            <property name="focusPolicy">
+             <enum>Qt::NoFocus</enum>
             </property>
             <property name="text">
              <string/>
@@ -1307,6 +1346,9 @@ QPushButton#btnQuitter:hover {
               <bold>true</bold>
              </font>
             </property>
+            <property name="focusPolicy">
+             <enum>Qt::NoFocus</enum>
+            </property>
             <property name="text">
              <string/>
             </property>
@@ -1336,6 +1378,9 @@ QPushButton#btnQuitter:hover {
               <weight>75</weight>
               <bold>true</bold>
              </font>
+            </property>
+            <property name="focusPolicy">
+             <enum>Qt::NoFocus</enum>
             </property>
             <property name="text">
              <string/>
@@ -1367,6 +1412,9 @@ QPushButton#btnQuitter:hover {
               <bold>true</bold>
              </font>
             </property>
+            <property name="focusPolicy">
+             <enum>Qt::NoFocus</enum>
+            </property>
             <property name="text">
              <string/>
             </property>
@@ -1397,6 +1445,9 @@ QPushButton#btnQuitter:hover {
               <bold>true</bold>
              </font>
             </property>
+            <property name="focusPolicy">
+             <enum>Qt::NoFocus</enum>
+            </property>
             <property name="text">
              <string/>
             </property>
@@ -1426,6 +1477,9 @@ QPushButton#btnQuitter:hover {
               <weight>75</weight>
               <bold>true</bold>
              </font>
+            </property>
+            <property name="focusPolicy">
+             <enum>Qt::NoFocus</enum>
             </property>
             <property name="text">
              <string/>
