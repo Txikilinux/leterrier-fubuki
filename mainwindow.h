@@ -160,9 +160,6 @@ private slots:
     void creeMenuLangue();
     void on_btnNiveaux_clicked();
     void on_btnNiveauAnnuler_clicked();
-    void on_btnQuitter_clicked();
-    void on_btnQuitterAnnuler_clicked();
-    void on_btnQuitterRetourMenuPrincipal_clicked();
     void on_btnNiveauFacile_clicked();
     void on_btnNiveauMoyen_clicked();
     void on_btnNiveauDifficile_clicked();
@@ -173,6 +170,8 @@ private slots:
     void on_btnNombresZeroNeuf_clicked();
     void on_btnNombresAuChoix_clicked();
     void on_btnNombresFermer_clicked();
+    void on_btnSortie_clicked();
+    void on_btnFeuille_clicked();
 };
 
 #endif // MAINWINDOW_H

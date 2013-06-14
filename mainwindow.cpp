@@ -136,12 +136,14 @@ MainWindow::MainWindow(QWidget *parent) :
     qDebug()<<" ------------------------------------------------ ";
     ui->frmNiveau->move(ui->frmIcones->x()-ui->frmNiveau->width()+8,ui->frmIcones->height()-ui->btnNiveaux->height()-ui->btnVerifier->height()-ui->btnAbandonner->height()-ui->frmNiveau->height()-43);
     ui->frmNiveau->setVisible(false);
-    ui->frmQuitter->move(ui->frmIcones->x()-ui->frmQuitter->width()+8,ui->frmIcones->height()-ui->frmQuitter->height()-13);
-    ui->frmQuitter->setVisible(false);
-    ui->frmChoixNombres->move(ui->frmIcones->x()-ui->frmChoixNombres->width()+8,ui->frmIcones->height()-ui->frmChoixNombres->height()-ui->btnInformation->height()-ui->btnQuitter->height()-12);
+    ui->frmChoixNombres->move(ui->frmIcones->x()-ui->frmChoixNombres->width()+8,ui->frmIcones->height()-ui->frmChoixNombres->height()-ui->btnInformation->height()-ui->btnInformation->height()-12);
     ui->frmChoixNombres->setVisible(false);
 
     ui->cBoxSuite->hide();
+
+    setWindowFlags(Qt::CustomizeWindowHint);
+        ui->frmButtons->move(0,38);
+        ui->frmButtons->setVisible(false);
 }
 
 MainWindow::~MainWindow()
@@ -168,6 +170,12 @@ void MainWindow::paintEvent(QPaintEvent *)
         initFubuki();
     }
     m_isFirstFubuki = false;
+    foreach(AbulEduFlatBoutonV1* enfant,ui->frmButtons->findChildren<AbulEduFlatBoutonV1 *>())
+        {
+                enfant->setStyleSheet(enfant->styleSheet().replace("border-image","text-align: bottom;background-image"));
+                enfant->setStyleSheet(enfant->styleSheet().replace("image-position: center","background-position: center top"));
+        }
+        ui->btnFeuille->setStyleSheet("QPushButton > *{color:red;}QPushButton{border: none; color:rgba(0,0,0,255);background-repeat: no-repeat;background-color:transparent;border-image:url(':/data/images/leaf');image-position: center;}");
 }
 
 void MainWindow::initFubuki()
@@ -303,8 +311,9 @@ void MainWindow::initFubuki()
     nAides = 0;
     ui->btnVerifier->setDisabled(false);
     ui->btnAbandonner->setDisabled(false);
-    ui->btnNouveau->setDisabled(true);
-    ui->btnQuitter->setDisabled(false);
+
+//!    ui->btnNouveau->setDisabled(true);
+
 
 } // fin initFubuki
 
@@ -460,8 +469,9 @@ void MainWindow::on_btnVerifier_clicked()
         pushAbulEduLogs();
         ui->btnVerifier->setDisabled(true);
         ui->btnAbandonner->setDisabled(true);
-        ui->btnNouveau->setDisabled(false);
-        ui->btnQuitter->setDisabled(false);
+
+//!        ui->btnNouveau->setDisabled(false);
+
         return;
     }
 
@@ -559,8 +569,9 @@ void MainWindow::on_btnAbandonner_clicked()
     }
     ui->btnVerifier->setDisabled(true);
     ui->btnAbandonner->setDisabled(true);
-    ui->btnNouveau->setDisabled(false);
-    ui->btnQuitter->setDisabled(false);
+
+//!    ui->btnNouveau->setDisabled(false);
+
     if (nErreurs > 0)
     {
         AbulEduMessageBoxV1* msg = new AbulEduMessageBoxV1(trUtf8("Pas trouvé ?"),trUtf8("Voici un corrigé ! \n\nTu peux choisir une nouvelle grille..."));
@@ -699,24 +710,6 @@ void MainWindow::on_btnNiveauAnnuler_clicked()
     ui->btnNiveaux->setStyleSheet(ui->btnNiveaux->styleSheet().replace("border-radius:5px;background-color:#ffffff;","background-color:rgba(0,0,0,0);"));
 }
 
-void MainWindow::on_btnQuitter_clicked()
-{
-    ui->frmQuitter->setVisible(true);
-    ui->frmQuitter->raise();
-    ui->btnQuitter->setStyleSheet(ui->btnQuitter->styleSheet().replace("background-color:rgba(0,0,0,0);","border-radius:5px;background-color:#ffffff;"));
-
-}
-
-void MainWindow::on_btnQuitterAnnuler_clicked()
-{
-    ui->frmQuitter->setVisible(false);
-    ui->btnQuitter->setStyleSheet(ui->btnQuitter->styleSheet().replace("border-radius:5px;background-color:#ffffff;","background-color:rgba(0,0,0,0);"));
-}
-
-void MainWindow::on_btnQuitterRetourMenuPrincipal_clicked()
-{
-    close();
-}
 
 void MainWindow::on_btnNombres_clicked()
 {
@@ -779,4 +772,22 @@ void MainWindow::on_btnNombresFermer_clicked()
 {
     ui->frmChoixNombres->setVisible(false);
     ui->btnNombres->setStyleSheet(ui->btnNombres->styleSheet().replace("border-radius:5px;background-color:#ffffff;","background-color:rgba(0,0,0,0);"));
+}
+
+void MainWindow::on_btnSortie_clicked()
+{
+    close();
+}
+
+void MainWindow::on_btnFeuille_clicked()
+{
+    if (ui->frmButtons->isVisible())
+    {
+        ui->frmButtons->setVisible(false);
+    }
+    else
+    {
+        ui->frmButtons->setVisible(true);
+        ui->frmButtons->raise();
+    }
 }
