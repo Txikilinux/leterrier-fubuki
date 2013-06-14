@@ -39,7 +39,7 @@ background-color:blue
    </property>
    <layout class="QGridLayout" name="gridLayout">
     <item row="0" column="0">
-     <widget class="QStackedWidget" name="stackedWidgetContainer">
+     <widget class="AbulEduStackedWidgetV1" name="stackedWidgetContainer">
       <property name="minimumSize">
        <size>
         <width>1024</width>
@@ -57,6 +57,9 @@ background-color:blue
       </property>
       <property name="styleSheet">
        <string notr="true"/>
+      </property>
+      <property name="currentIndex">
+       <number>0</number>
       </property>
       <widget class="QWidget" name="pagePrincipale" native="true">
        <property name="styleSheet">
@@ -2272,6 +2275,46 @@ font-size:24px;
         </layout>
        </widget>
       </widget>
+      <widget class="QWidget" name="pageApropos">
+       <widget class="QPushButton" name="pushButton">
+        <property name="geometry">
+         <rect>
+          <x>870</x>
+          <y>510</y>
+          <width>93</width>
+          <height>27</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>OK</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label">
+        <property name="geometry">
+         <rect>
+          <x>170</x>
+          <y>90</y>
+          <width>581</width>
+          <height>311</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>Andika Basic</family>
+          <pointsize>20</pointsize>
+         </font>
+        </property>
+        <property name="text">
+         <string>Bientôt ici des informations et des liens concernant ce logiciel</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+        <property name="wordWrap">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </widget>
      </widget>
     </item>
    </layout>
@@ -2358,6 +2401,12 @@ font-size:24px;
    <class>AbulEduFlatBoutonV1</class>
    <extends>QPushButton</extends>
    <header>abuleduflatboutonv1.h</header>
+  </customwidget>
+  <customwidget>
+   <class>AbulEduStackedWidgetV1</class>
+   <extends>QStackedWidget</extends>
+   <header>abuledustackedwidgetv1.h</header>
+   <container>1</container>
   </customwidget>
  </customwidgets>
  <tabstops>

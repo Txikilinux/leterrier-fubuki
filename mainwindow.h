@@ -181,6 +181,8 @@ private slots:
     void on_btnNombresFermer_clicked();
     void on_btnSortie_clicked();
     void on_btnFeuille_clicked();
+    void on_pushButton_clicked();
+    void on_btnAideFeuille_clicked();
 };
 
 #endif // MAINWINDOW_H

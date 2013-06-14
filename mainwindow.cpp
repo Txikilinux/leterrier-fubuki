@@ -814,3 +814,14 @@ void MainWindow::on_btnFeuille_clicked()
         ui->frmButtons->raise();
     }
 }
+
+void MainWindow::on_pushButton_clicked()
+{
+    ui->stackedWidgetContainer->slideInWidget(ui->pagePrincipale);
+}
+
+void MainWindow::on_btnAideFeuille_clicked()
+{
+    ui->stackedWidgetContainer->slideInWidget(ui->pageApropos);
+    on_btnFeuille_clicked();
+}
