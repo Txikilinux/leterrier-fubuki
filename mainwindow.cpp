@@ -154,6 +154,11 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->btnFullScreen->setCouleurFondNormale(QColor(255,255,255,50));
     ui->btnFullScreen->setAllMargins(8,12,8,4);
     ui->btnFullScreen->setBorderRadius(4);
+
+    QDesktopWidget *widget = QApplication::desktop();
+    int desktop_width = widget->width();
+    int desktop_height = widget->height();
+    this->move((desktop_width-this->width())/2, (desktop_height-this->height())/2);
 }
 
 MainWindow::~MainWindow()
@@ -401,10 +406,18 @@ void MainWindow::_btnCase(int i) {
             return;
         }
         // valuer le btnCase
-        bool ok = false;
-        while (!ok)
-            // astuce (ben oui) puisque actuelBtnNbre désigne normalement un indice pas une valeur
-            actuelBtnNbre = QInputDialog::getInteger(this, trUtf8("Ton choix"), trUtf8("Nombre entier entre 1 et 34"), 16, 1, 34, 1, &ok);
+//        bool ok = false;
+//        while (!ok)
+//            // astuce (ben oui) puisque actuelBtnNbre désigne normalement un indice pas une valeur
+//            actuelBtnNbre = QInputDialog::getInteger(this, trUtf8("Ton choix"), trUtf8("Nombre entier entre 1 et 34"), 16, 1, 34, 1, &ok);
+        AbulEduMessageBoxV1* inputBox = new AbulEduMessageBoxV1(trUtf8("Nombre maximum"),trUtf8("Choisis un nombre entre 1 et 34"));
+        inputBox->setWink();
+        inputBox->abeMessageBoxShowInput(true);
+        inputBox->show();
+        /* Pour pouvoir vérifier que mon nombre est bien compris entre 1 et 34 il me faut un validateur
+           Ou alors il faudra que je mette cet AbulEduMessageBox dans un méthode retournant un booléen, dans laquelle je testerai le retour
+        inputBox->setValidatorForInput(QRegExp)*/
+        connect(inputBox, SIGNAL(signalAbeMessageBoxInputOK(QString)),SLOT(slotMainWindowSetBorneSup(QString)),Qt::UniqueConnection);
     }
     int k = indexInCasesInitial(nomBtnCase[i]->text().toInt());
     if (k >= 0) {
@@ -577,21 +590,21 @@ void MainWindow::on_cBoxNiveau_activated(int index)
     /* A supprimer */
 }
 
-void MainWindow::on_cBoxSuite_activated(int index)
-{
-    alea = index;
-    if (index > 0) {
-        bool ok = false;
-        int n = QInputDialog::getInteger(this, trUtf8("A toi de choisir"), trUtf8("Nombre entier\n  plus grand que 15\n  plus petit que 35"), 25, 16, 34, 1, &ok);
-        if (ok)
-            borneSup = n;
-        else {
-//            ui->cBoxSuite->setCurrentIndex(0);
-            alea = 0;
-        }
-    }
-    initFubuki();
-}
+//void MainWindow::on_cBoxSuite_activated(int index)
+//{
+//    alea = index;
+//    if (index > 0) {
+//        bool ok = false;
+//        int n = QInputDialog::getInteger(this, trUtf8("A toi de choisir"), trUtf8("Nombre entier\n  plus grand que 15\n  plus petit que 35"), 25, 16, 34, 1, &ok);
+//        if (ok)
+//            borneSup = n;
+//        else {
+////            ui->cBoxSuite->setCurrentIndex(0);
+//            alea = 0;
+//        }
+//    }
+//    initFubuki();
+//}
 
 void MainWindow::on_btnAbandonner_clicked()
 {
@@ -806,14 +819,24 @@ void MainWindow::on_btnNiveauInfernal_clicked()
 
 void MainWindow::on_btnNombresZeroNeuf_clicked()
 {
-    on_cBoxSuite_activated(0);
+    alea = 0;
+    initFubuki();
     ui->frmChoixNombres->setVisible(false);
     ui->btnNombres->setStyleSheet(ui->btnNombres->styleSheet().replace("border-radius:5px;background-color:#ffffff;","background-color:rgba(0,0,0,0);"));
 }
 
 void MainWindow::on_btnNombresAuChoix_clicked()
 {
-    on_cBoxSuite_activated(1);
+    alea = 1;
+    AbulEduMessageBoxV1* inputBox = new AbulEduMessageBoxV1(trUtf8("Nombre maximum"),trUtf8("Choisis un nombre entre 1 et 34"));
+    inputBox->abeMessageBoxShowInput(true);
+    inputBox->setWink();
+    inputBox->show();
+    /* Pour pouvoir vérifier que mon nombre est bien compris entre 1 et 34 il me faut un validateur
+       Ou alors il faudra que je mette cet AbulEduMessageBox dans un méthode retournant un booléen, dans laquelle je testerai le retour
+    inputBox->setValidatorForInput(QRegExp)*/
+    connect(inputBox, SIGNAL(signalAbeMessageBoxInputOK(QString)),SLOT(slotMainWindowSetBorneSup(QString)),Qt::UniqueConnection);
+
     ui->frmChoixNombres->setVisible(false);
     ui->btnNombres->setStyleSheet(ui->btnNombres->styleSheet().replace("border-radius:5px;background-color:#ffffff;","background-color:rgba(0,0,0,0);"));
 }
@@ -872,4 +895,16 @@ void MainWindow::on_btnFullScreen_clicked()
         showFullScreen();
         ui->btnFullScreen->setIconeNormale(":/data/images/showNormal");
     }
+}
+
+void MainWindow::slotMainWindowSetBorneSup(QString nombreLu)
+{
+    bool ok;// = false;
+    borneSup = nombreLu.toInt(&ok);
+    if (!ok || borneSup > 34){
+        alea = 0;
+        AbulEduMessageBoxV1* msg = new AbulEduMessageBoxV1(trUtf8("Problème"),trUtf8("Tu n'as pas donné un nombre compris entre 1 et 34, on reste avec les nombres de 1 à 9..."));
+        msg->show();
+    }
+    initFubuki();
 }

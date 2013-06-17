@@ -140,7 +140,7 @@ private slots:
     void on_btnNouveau_clicked();
     void on_btnInformation_clicked();
     void on_btnAbandonner_clicked();
-    void on_cBoxSuite_activated(int index);
+//    void on_cBoxSuite_activated(int index);
     void on_cBoxNiveau_activated(int index);
     void on_btnVerifier_clicked();
     void on_btnCase0_clicked();
@@ -185,6 +185,7 @@ private slots:
     void on_btnAideFeuille_clicked();
     void on_btnMinimized_clicked();
     void on_btnFullScreen_clicked();
+    void slotMainWindowSetBorneSup(QString nombreLu);
 };
 
 #endif // MAINWINDOW_H
