@@ -146,6 +146,10 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->frmButtons->move(0,38);
     ui->frmButtons->setVisible(false);
 
+#ifdef __ABULEDUTABLETTEV1__MODE__
+    ui->btnMinimized->setVisible(false);
+    ui->btnFullScreen->setVisible(false);
+#else
     ui->btnMinimized->setCouleurFondSurvol(QColor(6,109,255));
     ui->btnMinimized->setCouleurFondNormale(QColor(255,255,255,50));
     ui->btnMinimized->setAllMargins(8,4,8,12);
@@ -154,6 +158,7 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->btnFullScreen->setCouleurFondNormale(QColor(255,255,255,50));
     ui->btnFullScreen->setAllMargins(8,12,8,4);
     ui->btnFullScreen->setBorderRadius(4);
+#endif
 
     QDesktopWidget *widget = QApplication::desktop();
     int desktop_width = widget->width();
