@@ -3,11 +3,11 @@
 Version=1.0
 Type=Application
 Terminal=false
-Icon[fr]=/usr/share/leterrier-fubuki/data/images/fubuki-icone-256.png
+Icon[fr]=/usr/share/leterrier-fubuki/data/icones/leterrier-fubuki-256.png
 Name[fr]=Fubuki
 Exec=leterrier-fubuki
 Comment[fr]=Un jeu de Fubuki
 Name=AbulEdu Fubuki
 Comment=Un jeu de Fubuki
-Icon=/usr/share/leterrier-fubuki/data/images/fubuki-icone-256.png
+Icon=/usr/share/leterrier-fubuki/data/icones/leterrier-fubuki-256.png
 Categories=Education;
