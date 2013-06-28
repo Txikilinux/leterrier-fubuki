@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1070</width>
-    <height>643</height>
+    <width>1084</width>
+    <height>686</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -115,6 +115,9 @@ border-bottom-left-radius: 5px;</string>
            <property name="cursor">
             <cursorShape>PointingHandCursor</cursorShape>
            </property>
+           <property name="styleSheet">
+            <string notr="true">color:gray;</string>
+           </property>
            <property name="text">
             <string>Annuler</string>
            </property>
@@ -144,10 +147,10 @@ border-bottom-left-radius: 5px;</string>
             <cursorShape>PointingHandCursor</cursorShape>
            </property>
            <property name="styleSheet">
-            <string notr="true">color: #dcdc7c;</string>
+            <string notr="true">color: green;</string>
            </property>
            <property name="text">
-            <string>Difficile</string>
+            <string>Verte</string>
            </property>
           </widget>
          </item>
@@ -175,10 +178,10 @@ border-bottom-left-radius: 5px;</string>
             <cursorShape>PointingHandCursor</cursorShape>
            </property>
            <property name="styleSheet">
-            <string notr="true">color: orange;</string>
+            <string notr="true">color: #107bfa;</string>
            </property>
            <property name="text">
-            <string>Très Difficile</string>
+            <string>Bleue</string>
            </property>
           </widget>
          </item>
@@ -206,10 +209,72 @@ border-bottom-left-radius: 5px;</string>
             <cursorShape>PointingHandCursor</cursorShape>
            </property>
            <property name="styleSheet">
-            <string notr="true">color: #dc7c7c;</string>
+            <string notr="true">color:#85582d;</string>
            </property>
            <property name="text">
-            <string>Diabolique</string>
+            <string>Marron</string>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="0">
+          <widget class="AbulEduFlatBoutonV1" name="btnNiveauMoyen">
+           <property name="minimumSize">
+            <size>
+             <width>100</width>
+             <height>30</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>100</width>
+             <height>30</height>
+            </size>
+           </property>
+           <property name="font">
+            <font>
+             <weight>75</weight>
+             <bold>true</bold>
+            </font>
+           </property>
+           <property name="cursor">
+            <cursorShape>PointingHandCursor</cursorShape>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">color:#f15c28;</string>
+           </property>
+           <property name="text">
+            <string>Orange</string>
+           </property>
+          </widget>
+         </item>
+         <item row="5" column="0">
+          <widget class="AbulEduFlatBoutonV1" name="btnNiveauInfernal">
+           <property name="minimumSize">
+            <size>
+             <width>100</width>
+             <height>30</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>100</width>
+             <height>30</height>
+            </size>
+           </property>
+           <property name="font">
+            <font>
+             <weight>75</weight>
+             <bold>true</bold>
+            </font>
+           </property>
+           <property name="cursor">
+            <cursorShape>PointingHandCursor</cursorShape>
+           </property>
+           <property name="styleSheet">
+            <string notr="true"/>
+           </property>
+           <property name="text">
+            <string>Noire</string>
            </property>
           </widget>
          </item>
@@ -238,72 +303,10 @@ border-bottom-left-radius: 5px;</string>
             <cursorShape>PointingHandCursor</cursorShape>
            </property>
            <property name="styleSheet">
-            <string notr="true">color: #7cdc7c;</string>
+            <string notr="true">color:#e8e226;</string>
            </property>
            <property name="text">
-            <string>Facile</string>
-           </property>
-          </widget>
-         </item>
-         <item row="1" column="0">
-          <widget class="AbulEduFlatBoutonV1" name="btnNiveauMoyen">
-           <property name="minimumSize">
-            <size>
-             <width>100</width>
-             <height>30</height>
-            </size>
-           </property>
-           <property name="maximumSize">
-            <size>
-             <width>100</width>
-             <height>30</height>
-            </size>
-           </property>
-           <property name="font">
-            <font>
-             <weight>75</weight>
-             <bold>true</bold>
-            </font>
-           </property>
-           <property name="cursor">
-            <cursorShape>PointingHandCursor</cursorShape>
-           </property>
-           <property name="styleSheet">
-            <string notr="true">color: green;</string>
-           </property>
-           <property name="text">
-            <string>Moyen</string>
-           </property>
-          </widget>
-         </item>
-         <item row="5" column="0">
-          <widget class="AbulEduFlatBoutonV1" name="btnNiveauInfernal">
-           <property name="minimumSize">
-            <size>
-             <width>100</width>
-             <height>30</height>
-            </size>
-           </property>
-           <property name="maximumSize">
-            <size>
-             <width>100</width>
-             <height>30</height>
-            </size>
-           </property>
-           <property name="font">
-            <font>
-             <weight>75</weight>
-             <bold>true</bold>
-            </font>
-           </property>
-           <property name="cursor">
-            <cursorShape>PointingHandCursor</cursorShape>
-           </property>
-           <property name="styleSheet">
-            <string notr="true">color: red;</string>
-           </property>
-           <property name="text">
-            <string>Infernal</string>
+            <string>Jaune</string>
            </property>
           </widget>
          </item>
@@ -2338,7 +2341,7 @@ font-size:24px;
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1070</width>
+     <width>1084</width>
      <height>25</height>
     </rect>
    </property>
