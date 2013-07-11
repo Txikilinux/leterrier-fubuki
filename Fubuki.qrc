@@ -9,7 +9,6 @@
         <file alias="nombres">data/images/nombres.png</file>
         <file alias="rouleau">data/images/rouleau.png</file>
         <file alias="feuille">data/images/fubuki-feuille.jpg</file>
-        <file alias="top">data/images/fubuki-top.jpg</file>
         <file alias="leaf">data/images/feuille.png</file>
         <file alias="sortieHover">data/images/quit-hover.png</file>
         <file alias="nouveauHover">data/images/nouveau-hover.png</file>
@@ -32,5 +31,7 @@
         <file alias="debut">data/images/debut.png</file>
         <file alias="nombresDisabled">data/images/nombres-gris.png</file>
         <file alias="aideDisabled">data/images/aide-gris.png</file>
+        <file alias="top">data/images/fubuki-top.png</file>
+        <file alias="stock">data/images/pioche.png</file>
     </qresource>
 </RCC>

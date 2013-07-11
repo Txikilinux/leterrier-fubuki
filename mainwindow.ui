@@ -34,7 +34,7 @@
   <widget class="QWidget" name="centralWidget">
    <property name="styleSheet">
     <string notr="true">QWidget#widgetContainer {
-background-color:blue
+background-color:transparent;
 }</string>
    </property>
    <layout class="QGridLayout" name="gridLayout">
@@ -43,7 +43,7 @@ background-color:blue
       <property name="minimumSize">
        <size>
         <width>1024</width>
-        <height>600</height>
+        <height>550</height>
        </size>
       </property>
       <property name="maximumSize">
@@ -315,9 +315,9 @@ border-bottom-left-radius: 5px;</string>
        <widget class="QFrame" name="frmAireTravail">
         <property name="geometry">
          <rect>
-          <x>420</x>
+          <x>390</x>
           <y>40</y>
-          <width>501</width>
+          <width>531</width>
           <height>561</height>
          </rect>
         </property>
@@ -327,6 +327,13 @@ border-bottom-left-radius: 5px;</string>
 	background-repeat: repeat-no;
    	background-position: top right;
 }
+
+QFrame#frmBtnNombres{
+	background-image: url(:/data/images/stock);
+	background-repeat: repeat-no;
+   	background-position: top right;
+}
+
 QLabel {
 	background-color : #d40000;
 	color : #eed9be;
@@ -424,10 +431,10 @@ QPushButton#btnQuitter:hover {
         <widget class="QFrame" name="frmCases">
          <property name="geometry">
           <rect>
-           <x>0</x>
-           <y>0</y>
-           <width>481</width>
-           <height>381</height>
+           <x>30</x>
+           <y>160</y>
+           <width>444</width>
+           <height>380</height>
           </rect>
          </property>
          <property name="minimumSize">
@@ -441,62 +448,23 @@ QPushButton#btnQuitter:hover {
          </property>
          <layout class="QGridLayout" name="layoutCases">
           <property name="leftMargin">
-           <number>50</number>
+           <number>3</number>
           </property>
           <property name="topMargin">
-           <number>40</number>
-          </property>
-          <property name="rightMargin">
-           <number>40</number>
-          </property>
-          <property name="bottomMargin">
-           <number>40</number>
-          </property>
-          <property name="spacing">
            <number>2</number>
           </property>
-          <item row="0" column="0">
-           <widget class="QPushButton" name="btnCase0">
-            <property name="sizePolicy">
-             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-              <horstretch>0</horstretch>
-              <verstretch>0</verstretch>
-             </sizepolicy>
-            </property>
-            <property name="minimumSize">
-             <size>
-              <width>50</width>
-              <height>50</height>
-             </size>
-            </property>
-            <property name="maximumSize">
-             <size>
-              <width>50</width>
-              <height>50</height>
-             </size>
-            </property>
-            <property name="font">
-             <font>
-              <family>Bitstream Charter</family>
-              <pointsize>26</pointsize>
-              <weight>75</weight>
-              <bold>true</bold>
-             </font>
-            </property>
-            <property name="focusPolicy">
-             <enum>Qt::NoFocus</enum>
-            </property>
-            <property name="styleSheet">
-             <string notr="true"/>
-            </property>
-            <property name="text">
-             <string/>
-            </property>
-            <property name="flat">
-             <bool>true</bool>
-            </property>
-           </widget>
-          </item>
+          <property name="rightMargin">
+           <number>0</number>
+          </property>
+          <property name="bottomMargin">
+           <number>0</number>
+          </property>
+          <property name="horizontalSpacing">
+           <number>17</number>
+          </property>
+          <property name="verticalSpacing">
+           <number>9</number>
+          </property>
           <item row="0" column="1">
            <widget class="QPushButton" name="btnCase1">
             <property name="sizePolicy">
@@ -507,14 +475,14 @@ QPushButton#btnQuitter:hover {
             </property>
             <property name="minimumSize">
              <size>
-              <width>50</width>
-              <height>50</height>
+              <width>60</width>
+              <height>60</height>
              </size>
             </property>
             <property name="maximumSize">
              <size>
-              <width>50</width>
-              <height>50</height>
+              <width>60</width>
+              <height>60</height>
              </size>
             </property>
             <property name="font">
@@ -546,14 +514,14 @@ QPushButton#btnQuitter:hover {
             </property>
             <property name="minimumSize">
              <size>
-              <width>50</width>
-              <height>50</height>
+              <width>60</width>
+              <height>60</height>
              </size>
             </property>
             <property name="maximumSize">
              <size>
-              <width>50</width>
-              <height>50</height>
+              <width>60</width>
+              <height>60</height>
              </size>
             </property>
             <property name="font">
@@ -585,14 +553,14 @@ QPushButton#btnQuitter:hover {
             </property>
             <property name="minimumSize">
              <size>
-              <width>50</width>
-              <height>50</height>
+              <width>60</width>
+              <height>60</height>
              </size>
             </property>
             <property name="maximumSize">
              <size>
-              <width>50</width>
-              <height>50</height>
+              <width>60</width>
+              <height>60</height>
              </size>
             </property>
             <property name="font">
@@ -622,14 +590,14 @@ QPushButton#btnQuitter:hover {
             </property>
             <property name="minimumSize">
              <size>
-              <width>50</width>
-              <height>50</height>
+              <width>60</width>
+              <height>60</height>
              </size>
             </property>
             <property name="maximumSize">
              <size>
-              <width>50</width>
-              <height>50</height>
+              <width>60</width>
+              <height>60</height>
              </size>
             </property>
             <property name="font">
@@ -661,14 +629,14 @@ QPushButton#btnQuitter:hover {
             </property>
             <property name="minimumSize">
              <size>
-              <width>50</width>
-              <height>50</height>
+              <width>60</width>
+              <height>60</height>
              </size>
             </property>
             <property name="maximumSize">
              <size>
-              <width>50</width>
-              <height>50</height>
+              <width>60</width>
+              <height>60</height>
              </size>
             </property>
             <property name="font">
@@ -700,14 +668,14 @@ QPushButton#btnQuitter:hover {
             </property>
             <property name="minimumSize">
              <size>
-              <width>50</width>
-              <height>50</height>
+              <width>60</width>
+              <height>60</height>
              </size>
             </property>
             <property name="maximumSize">
              <size>
-              <width>50</width>
-              <height>50</height>
+              <width>60</width>
+              <height>60</height>
              </size>
             </property>
             <property name="font">
@@ -739,14 +707,14 @@ QPushButton#btnQuitter:hover {
             </property>
             <property name="minimumSize">
              <size>
-              <width>50</width>
-              <height>50</height>
+              <width>60</width>
+              <height>60</height>
              </size>
             </property>
             <property name="maximumSize">
              <size>
-              <width>50</width>
-              <height>50</height>
+              <width>60</width>
+              <height>60</height>
              </size>
             </property>
             <property name="font">
@@ -776,14 +744,14 @@ QPushButton#btnQuitter:hover {
             </property>
             <property name="minimumSize">
              <size>
-              <width>50</width>
-              <height>50</height>
+              <width>60</width>
+              <height>60</height>
              </size>
             </property>
             <property name="maximumSize">
              <size>
-              <width>50</width>
-              <height>50</height>
+              <width>60</width>
+              <height>60</height>
              </size>
             </property>
             <property name="font">
@@ -815,14 +783,14 @@ QPushButton#btnQuitter:hover {
             </property>
             <property name="minimumSize">
              <size>
-              <width>50</width>
-              <height>50</height>
+              <width>60</width>
+              <height>60</height>
              </size>
             </property>
             <property name="maximumSize">
              <size>
-              <width>50</width>
-              <height>50</height>
+              <width>60</width>
+              <height>60</height>
              </size>
             </property>
             <property name="font">
@@ -854,14 +822,14 @@ QPushButton#btnQuitter:hover {
             </property>
             <property name="minimumSize">
              <size>
-              <width>50</width>
-              <height>50</height>
+              <width>60</width>
+              <height>60</height>
              </size>
             </property>
             <property name="maximumSize">
              <size>
-              <width>50</width>
-              <height>50</height>
+              <width>60</width>
+              <height>60</height>
              </size>
             </property>
             <property name="font">
@@ -893,14 +861,14 @@ QPushButton#btnQuitter:hover {
             </property>
             <property name="minimumSize">
              <size>
-              <width>50</width>
-              <height>50</height>
+              <width>60</width>
+              <height>60</height>
              </size>
             </property>
             <property name="maximumSize">
              <size>
-              <width>50</width>
-              <height>50</height>
+              <width>60</width>
+              <height>60</height>
              </size>
             </property>
             <property name="font">
@@ -930,14 +898,14 @@ QPushButton#btnQuitter:hover {
             </property>
             <property name="minimumSize">
              <size>
-              <width>50</width>
-              <height>50</height>
+              <width>60</width>
+              <height>60</height>
              </size>
             </property>
             <property name="maximumSize">
              <size>
-              <width>50</width>
-              <height>50</height>
+              <width>60</width>
+              <height>60</height>
              </size>
             </property>
             <property name="font">
@@ -967,14 +935,14 @@ QPushButton#btnQuitter:hover {
             </property>
             <property name="minimumSize">
              <size>
-              <width>50</width>
-              <height>50</height>
+              <width>60</width>
+              <height>60</height>
              </size>
             </property>
             <property name="maximumSize">
              <size>
-              <width>50</width>
-              <height>50</height>
+              <width>60</width>
+              <height>60</height>
              </size>
             </property>
             <property name="font">
@@ -1004,14 +972,14 @@ QPushButton#btnQuitter:hover {
             </property>
             <property name="minimumSize">
              <size>
-              <width>50</width>
-              <height>50</height>
+              <width>60</width>
+              <height>60</height>
              </size>
             </property>
             <property name="maximumSize">
              <size>
-              <width>50</width>
-              <height>50</height>
+              <width>60</width>
+              <height>60</height>
              </size>
             </property>
             <property name="font">
@@ -1031,334 +999,93 @@ QPushButton#btnQuitter:hover {
             </property>
            </widget>
           </item>
+          <item row="0" column="0">
+           <widget class="QPushButton" name="btnCase0">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>60</width>
+              <height>60</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>60</width>
+              <height>60</height>
+             </size>
+            </property>
+            <property name="font">
+             <font>
+              <family>Bitstream Charter</family>
+              <pointsize>26</pointsize>
+              <weight>75</weight>
+              <bold>true</bold>
+             </font>
+            </property>
+            <property name="focusPolicy">
+             <enum>Qt::NoFocus</enum>
+            </property>
+            <property name="styleSheet">
+             <string notr="true"/>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+            <property name="flat">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
          </layout>
         </widget>
         <widget class="QFrame" name="frmBtnNombres">
          <property name="geometry">
           <rect>
-           <x>110</x>
-           <y>380</y>
-           <width>311</width>
-           <height>181</height>
+           <x>0</x>
+           <y>40</y>
+           <width>510</width>
+           <height>70</height>
           </rect>
          </property>
          <property name="styleSheet">
-          <string notr="true"> *[flat=&quot;true&quot;]{
-	color : #d40000;
-	border-radius : 8px;
-	border-width : 2px;
-	border-style : solid;
-	border-color : #d40000;
- }
-
- *[flat=&quot;true&quot;]:hover{ 
-	color : #d40000; 
-	border-radius : 8px; 
-	border-width : 2px;
-	border-style : solid ;
-	border-color : white;
- }
-
-QPushButton#btnInformation {
-    border-radius : 8px; 
-    border-width : 0px;
-    border-style : solid ;
-    border-color : transparent;
-}
-QPushButton#btnInformation:hover { 
-    border-radius : 8px; 
-    border-width : 0px;
-    border-style : solid ;
-    border-color : transparent;
-}
-QPushButton#btnInformation:disabled { 
-    border-radius : 8px; 
-    border-width : 0px;
-    border-style : solid ;
-    border-color : transparent;
-}
-QPushButton#btnVerifier {
-    border-radius : 8px; 
-    border-width : 0px;
-    border-style : solid ;
-    border-color : transparent; }
-QPushButton#btnVerifier:hover { 
-    border-radius : 8px; 
-    border-width : 0px;
-    border-style : solid ;
-    border-color : transparent; }
-QPushButton#btnAbandonner {
-    border-radius : 8px; 
-    border-width : 0px;
-    border-style : solid ;
-    border-color : transparent; }
-QPushButton#btnAbandonner:hover { 
-    border-radius : 8px; 
-    border-width : 0px;
-    border-style : solid ;
-    border-color : transparent; }
-QPushButton#btnNouveau {
-    border-radius : 8px; 
-    border-width : 0px;
-    border-style : solid ;
-    border-color : transparent; }
-QPushButton#btnNouveau:hover { 
-    border-radius : 8px; 
-    border-width : 0px;
-    border-style : solid ;
-    border-color : transparent; }
-QPushButton#btnQuitter {
-    border-radius : 8px; 
-    border-width : 0px;
-    border-style : solid ;
-    border-color : transparent; }
-QPushButton#btnQuitter:hover { 
-    border-radius : 8px; 
-    border-width : 0px;
-    border-style : solid ;
-    border-color : transparent; }</string>
+          <string notr="true"/>
          </property>
          <property name="lineWidth">
           <number>0</number>
          </property>
-         <layout class="QGridLayout" name="gridBtnNombres">
+         <layout class="QHBoxLayout" name="horizontalLayout">
+          <property name="spacing">
+           <number>7</number>
+          </property>
           <property name="leftMargin">
-           <number>50</number>
+           <number>7</number>
           </property>
           <property name="topMargin">
            <number>0</number>
           </property>
           <property name="rightMargin">
-           <number>50</number>
+           <number>1</number>
           </property>
           <property name="bottomMargin">
            <number>0</number>
           </property>
-          <property name="horizontalSpacing">
-           <number>12</number>
-          </property>
-          <property name="verticalSpacing">
-           <number>6</number>
-          </property>
-          <item row="0" column="0">
-           <widget class="QPushButton" name="btnNbre6">
-            <property name="minimumSize">
-             <size>
-              <width>35</width>
-              <height>35</height>
-             </size>
-            </property>
-            <property name="maximumSize">
-             <size>
-              <width>30</width>
-              <height>30</height>
-             </size>
-            </property>
-            <property name="font">
-             <font>
-              <family>Bitstream Charter</family>
-              <pointsize>15</pointsize>
-              <weight>75</weight>
-              <bold>true</bold>
-             </font>
-            </property>
-            <property name="cursor">
-             <cursorShape>ArrowCursor</cursorShape>
-            </property>
-            <property name="focusPolicy">
-             <enum>Qt::NoFocus</enum>
-            </property>
-            <property name="text">
-             <string/>
-            </property>
-            <property name="flat">
-             <bool>true</bool>
-            </property>
-           </widget>
-          </item>
-          <item row="0" column="1">
-           <widget class="QPushButton" name="btnNbre7">
-            <property name="minimumSize">
-             <size>
-              <width>35</width>
-              <height>35</height>
-             </size>
-            </property>
-            <property name="maximumSize">
-             <size>
-              <width>30</width>
-              <height>30</height>
-             </size>
-            </property>
-            <property name="font">
-             <font>
-              <family>Bitstream Charter</family>
-              <pointsize>15</pointsize>
-              <weight>75</weight>
-              <bold>true</bold>
-             </font>
-            </property>
-            <property name="cursor">
-             <cursorShape>ArrowCursor</cursorShape>
-            </property>
-            <property name="focusPolicy">
-             <enum>Qt::NoFocus</enum>
-            </property>
-            <property name="text">
-             <string/>
-            </property>
-            <property name="flat">
-             <bool>true</bool>
-            </property>
-           </widget>
-          </item>
-          <item row="0" column="2">
-           <widget class="QPushButton" name="btnNbre8">
-            <property name="minimumSize">
-             <size>
-              <width>35</width>
-              <height>35</height>
-             </size>
-            </property>
-            <property name="maximumSize">
-             <size>
-              <width>30</width>
-              <height>30</height>
-             </size>
-            </property>
-            <property name="font">
-             <font>
-              <family>Bitstream Charter</family>
-              <pointsize>15</pointsize>
-              <weight>75</weight>
-              <bold>true</bold>
-             </font>
-            </property>
-            <property name="cursor">
-             <cursorShape>ArrowCursor</cursorShape>
-            </property>
-            <property name="focusPolicy">
-             <enum>Qt::NoFocus</enum>
-            </property>
-            <property name="text">
-             <string/>
-            </property>
-            <property name="flat">
-             <bool>true</bool>
-            </property>
-           </widget>
-          </item>
-          <item row="1" column="0">
-           <widget class="QPushButton" name="btnNbre3">
-            <property name="minimumSize">
-             <size>
-              <width>35</width>
-              <height>35</height>
-             </size>
-            </property>
-            <property name="maximumSize">
-             <size>
-              <width>30</width>
-              <height>30</height>
-             </size>
-            </property>
-            <property name="font">
-             <font>
-              <family>Bitstream Charter</family>
-              <pointsize>15</pointsize>
-              <weight>75</weight>
-              <bold>true</bold>
-             </font>
-            </property>
-            <property name="focusPolicy">
-             <enum>Qt::NoFocus</enum>
-            </property>
-            <property name="text">
-             <string/>
-            </property>
-            <property name="flat">
-             <bool>true</bool>
-            </property>
-           </widget>
-          </item>
-          <item row="1" column="1">
-           <widget class="QPushButton" name="btnNbre4">
-            <property name="minimumSize">
-             <size>
-              <width>35</width>
-              <height>35</height>
-             </size>
-            </property>
-            <property name="maximumSize">
-             <size>
-              <width>30</width>
-              <height>30</height>
-             </size>
-            </property>
-            <property name="font">
-             <font>
-              <family>Bitstream Charter</family>
-              <pointsize>15</pointsize>
-              <weight>75</weight>
-              <bold>true</bold>
-             </font>
-            </property>
-            <property name="focusPolicy">
-             <enum>Qt::NoFocus</enum>
-            </property>
-            <property name="text">
-             <string/>
-            </property>
-            <property name="flat">
-             <bool>true</bool>
-            </property>
-           </widget>
-          </item>
-          <item row="1" column="2">
-           <widget class="QPushButton" name="btnNbre5">
-            <property name="minimumSize">
-             <size>
-              <width>35</width>
-              <height>35</height>
-             </size>
-            </property>
-            <property name="maximumSize">
-             <size>
-              <width>30</width>
-              <height>30</height>
-             </size>
-            </property>
-            <property name="font">
-             <font>
-              <family>Bitstream Charter</family>
-              <pointsize>15</pointsize>
-              <weight>75</weight>
-              <bold>true</bold>
-             </font>
-            </property>
-            <property name="focusPolicy">
-             <enum>Qt::NoFocus</enum>
-            </property>
-            <property name="text">
-             <string/>
-            </property>
-            <property name="flat">
-             <bool>true</bool>
-            </property>
-           </widget>
-          </item>
-          <item row="2" column="0">
+          <item>
            <widget class="QPushButton" name="btnNbre0">
             <property name="minimumSize">
              <size>
-              <width>35</width>
-              <height>35</height>
+              <width>40</width>
+              <height>40</height>
              </size>
             </property>
             <property name="maximumSize">
              <size>
-              <width>30</width>
-              <height>30</height>
+              <width>40</width>
+              <height>40</height>
              </size>
             </property>
             <property name="font">
@@ -1380,18 +1107,156 @@ QPushButton#btnQuitter:hover {
             </property>
            </widget>
           </item>
-          <item row="2" column="1">
+          <item>
+           <widget class="QPushButton" name="btnNbre6">
+            <property name="minimumSize">
+             <size>
+              <width>40</width>
+              <height>40</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>40</width>
+              <height>40</height>
+             </size>
+            </property>
+            <property name="font">
+             <font>
+              <family>Bitstream Charter</family>
+              <pointsize>15</pointsize>
+              <weight>75</weight>
+              <bold>true</bold>
+             </font>
+            </property>
+            <property name="cursor">
+             <cursorShape>ArrowCursor</cursorShape>
+            </property>
+            <property name="focusPolicy">
+             <enum>Qt::NoFocus</enum>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+            <property name="flat">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="btnNbre3">
+            <property name="minimumSize">
+             <size>
+              <width>40</width>
+              <height>40</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>40</width>
+              <height>40</height>
+             </size>
+            </property>
+            <property name="font">
+             <font>
+              <family>Bitstream Charter</family>
+              <pointsize>15</pointsize>
+              <weight>75</weight>
+              <bold>true</bold>
+             </font>
+            </property>
+            <property name="focusPolicy">
+             <enum>Qt::NoFocus</enum>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+            <property name="flat">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="btnNbre4">
+            <property name="minimumSize">
+             <size>
+              <width>40</width>
+              <height>40</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>40</width>
+              <height>40</height>
+             </size>
+            </property>
+            <property name="font">
+             <font>
+              <family>Bitstream Charter</family>
+              <pointsize>15</pointsize>
+              <weight>75</weight>
+              <bold>true</bold>
+             </font>
+            </property>
+            <property name="focusPolicy">
+             <enum>Qt::NoFocus</enum>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+            <property name="flat">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="btnNbre7">
+            <property name="minimumSize">
+             <size>
+              <width>40</width>
+              <height>40</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>40</width>
+              <height>40</height>
+             </size>
+            </property>
+            <property name="font">
+             <font>
+              <family>Bitstream Charter</family>
+              <pointsize>15</pointsize>
+              <weight>75</weight>
+              <bold>true</bold>
+             </font>
+            </property>
+            <property name="cursor">
+             <cursorShape>ArrowCursor</cursorShape>
+            </property>
+            <property name="focusPolicy">
+             <enum>Qt::NoFocus</enum>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+            <property name="flat">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+          <item>
            <widget class="QPushButton" name="btnNbre1">
             <property name="minimumSize">
              <size>
-              <width>35</width>
-              <height>35</height>
+              <width>40</width>
+              <height>40</height>
              </size>
             </property>
             <property name="maximumSize">
              <size>
-              <width>30</width>
-              <height>30</height>
+              <width>40</width>
+              <height>40</height>
              </size>
             </property>
             <property name="font">
@@ -1413,18 +1278,87 @@ QPushButton#btnQuitter:hover {
             </property>
            </widget>
           </item>
-          <item row="2" column="2">
+          <item>
            <widget class="QPushButton" name="btnNbre2">
             <property name="minimumSize">
              <size>
-              <width>35</width>
-              <height>35</height>
+              <width>40</width>
+              <height>40</height>
              </size>
             </property>
             <property name="maximumSize">
              <size>
-              <width>30</width>
-              <height>30</height>
+              <width>40</width>
+              <height>40</height>
+             </size>
+            </property>
+            <property name="font">
+             <font>
+              <family>Bitstream Charter</family>
+              <pointsize>15</pointsize>
+              <weight>75</weight>
+              <bold>true</bold>
+             </font>
+            </property>
+            <property name="focusPolicy">
+             <enum>Qt::NoFocus</enum>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+            <property name="flat">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="btnNbre8">
+            <property name="minimumSize">
+             <size>
+              <width>40</width>
+              <height>40</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>40</width>
+              <height>40</height>
+             </size>
+            </property>
+            <property name="font">
+             <font>
+              <family>Bitstream Charter</family>
+              <pointsize>15</pointsize>
+              <weight>75</weight>
+              <bold>true</bold>
+             </font>
+            </property>
+            <property name="cursor">
+             <cursorShape>ArrowCursor</cursorShape>
+            </property>
+            <property name="focusPolicy">
+             <enum>Qt::NoFocus</enum>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+            <property name="flat">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="btnNbre5">
+            <property name="minimumSize">
+             <size>
+              <width>40</width>
+              <height>40</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>40</width>
+              <height>40</height>
              </size>
             </property>
             <property name="font">
@@ -1453,9 +1387,9 @@ QPushButton#btnQuitter:hover {
         <property name="geometry">
          <rect>
           <x>920</x>
-          <y>90</y>
+          <y>110</y>
           <width>100</width>
-          <height>511</height>
+          <height>471</height>
          </rect>
         </property>
         <property name="minimumSize">
@@ -1496,6 +1430,7 @@ QPushButton#btnQuitter:hover {
            </property>
            <property name="font">
             <font>
+             <family>Andika Basic</family>
              <weight>50</weight>
              <bold>false</bold>
             </font>
@@ -1531,7 +1466,7 @@ QPushButton#btnQuitter:hover {
            <property name="minimumSize">
             <size>
              <width>0</width>
-             <height>72</height>
+             <height>60</height>
             </size>
            </property>
            <property name="maximumSize">
@@ -1542,6 +1477,7 @@ QPushButton#btnQuitter:hover {
            </property>
            <property name="font">
             <font>
+             <family>Andika Basic</family>
              <weight>50</weight>
              <bold>false</bold>
             </font>
@@ -1588,6 +1524,7 @@ QPushButton#btnQuitter:hover {
            </property>
            <property name="font">
             <font>
+             <family>Andika Basic</family>
              <weight>50</weight>
              <bold>false</bold>
             </font>
@@ -1634,6 +1571,7 @@ QPushButton#btnQuitter:hover {
            </property>
            <property name="font">
             <font>
+             <family>Andika Basic</family>
              <weight>50</weight>
              <bold>false</bold>
             </font>
@@ -1663,7 +1601,7 @@ QPushButton#btnQuitter:hover {
            <property name="minimumSize">
             <size>
              <width>0</width>
-             <height>72</height>
+             <height>65</height>
             </size>
            </property>
            <property name="maximumSize">
@@ -1674,6 +1612,7 @@ QPushButton#btnQuitter:hover {
            </property>
            <property name="font">
             <font>
+             <family>Andika Basic</family>
              <weight>50</weight>
              <bold>false</bold>
             </font>
@@ -1720,6 +1659,7 @@ QPushButton#btnQuitter:hover {
            </property>
            <property name="font">
             <font>
+             <family>Andika Basic</family>
              <weight>50</weight>
              <bold>false</bold>
             </font>
@@ -2324,7 +2264,6 @@ color:rgba(129, 198, 251, 255);	</string>
            <property name="styleSheet">
             <string notr="true">QLabel {
 padding-left:20px;
-background-color: qlineargradient( x1:0 y1:0, x2:1 y2:0, stop:0 #066DFF, stop:1 #0D90F6);
 color:white;
 font-size:24px;
 
