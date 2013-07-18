@@ -2385,6 +2385,22 @@ border-bottom-left-radius: 10px;
           </item>
          </layout>
         </widget>
+        <widget class="QLabel" name="lblLevel">
+         <property name="geometry">
+          <rect>
+           <x>927</x>
+           <y>8</y>
+           <width>80</width>
+           <height>64</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+         <property name="pixmap">
+          <pixmap resource="Fubuki.qrc">:/data/images/belt0</pixmap>
+         </property>
+        </widget>
        </widget>
        <widget class="QWidget" name="pageApropos">
         <widget class="QPushButton" name="pushButton">
@@ -2535,6 +2551,8 @@ border-bottom-left-radius: 10px;
   <tabstop>btnNbre7</tabstop>
   <tabstop>btnNbre8</tabstop>
  </tabstops>
- <resources/>
+ <resources>
+  <include location="Fubuki.qrc"/>
+ </resources>
  <connections/>
 </ui>

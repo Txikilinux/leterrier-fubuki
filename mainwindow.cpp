@@ -136,8 +136,8 @@ MainWindow::MainWindow(QWidget *parent) :
     }
 
     /* Positionnement en dur puisque la hauteur de fenêtre "utile" est fixe */
-    ui->frmNiveau->move(ui->frmIcones->x()-ui->frmNiveau->width()+8,ui->frmIcones->y()+24);
-    ui->frmChoixNombres->move(ui->frmIcones->x()-ui->frmChoixNombres->width()+8,ui->frmIcones->y()+314);
+    ui->frmNiveau->move(ui->frmIcones->x()-ui->frmNiveau->width()+8,ui->frmIcones->y()+21);
+    ui->frmChoixNombres->move(ui->frmIcones->x()-ui->frmChoixNombres->width()+8,ui->frmIcones->y()+128);
     ui->frmNiveau->setVisible(false);
     ui->frmChoixNombres->setVisible(false);
 
@@ -793,36 +793,42 @@ void MainWindow::on_btnNombres_clicked()
 void MainWindow::on_btnNiveauFacile_clicked()
 {
     niveau = 0;
+    ui->lblLevel->setPixmap(QPixmap(":/data/images/belt"+QString::number(niveau)));
     initFubuki();
 }
 
 void MainWindow::on_btnNiveauMoyen_clicked()
 {
     niveau = 1;
+    ui->lblLevel->setPixmap(QPixmap(":/data/images/belt"+QString::number(niveau)));
     initFubuki();
 }
 
 void MainWindow::on_btnNiveauDifficile_clicked()
 {
     niveau = 2;
+    ui->lblLevel->setPixmap(QPixmap(":/data/images/belt"+QString::number(niveau)));
     initFubuki();
 }
 
 void MainWindow::on_btnNiveauTresDifficile_clicked()
 {
     niveau = 3;
+    ui->lblLevel->setPixmap(QPixmap(":/data/images/belt"+QString::number(niveau)));
     initFubuki();
 }
 
 void MainWindow::on_btnNiveauDiabolique_clicked()
 {
     niveau = 4;
+    ui->lblLevel->setPixmap(QPixmap(":/data/images/belt"+QString::number(niveau)));
     initFubuki();
 }
 
 void MainWindow::on_btnNiveauInfernal_clicked()
 {
     niveau = 5;
+    ui->lblLevel->setPixmap(QPixmap(":/data/images/belt"+QString::number(niveau)));
     initFubuki();
 }
 
