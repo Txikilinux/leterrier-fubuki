@@ -675,7 +675,7 @@ QLabel {
             <number>7</number>
            </property>
            <item row="0" column="0">
-            <widget class="QPushButton" name="btnCase0">
+            <widget class="AbulEduFlatBoutonV1" name="btnCase0">
              <property name="sizePolicy">
               <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
                <horstretch>0</horstretch>
@@ -717,7 +717,7 @@ QLabel {
             </widget>
            </item>
            <item row="0" column="1">
-            <widget class="QPushButton" name="btnCase1">
+            <widget class="AbulEduFlatBoutonV1" name="btnCase1">
              <property name="sizePolicy">
               <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
                <horstretch>0</horstretch>
@@ -756,7 +756,7 @@ QLabel {
             </widget>
            </item>
            <item row="0" column="2">
-            <widget class="QPushButton" name="btnCase2">
+            <widget class="AbulEduFlatBoutonV1" name="btnCase2">
              <property name="sizePolicy">
               <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
                <horstretch>0</horstretch>
@@ -832,7 +832,7 @@ QLabel {
             </widget>
            </item>
            <item row="1" column="0">
-            <widget class="QPushButton" name="btnCase3">
+            <widget class="AbulEduFlatBoutonV1" name="btnCase3">
              <property name="sizePolicy">
               <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
                <horstretch>0</horstretch>
@@ -871,7 +871,7 @@ QLabel {
             </widget>
            </item>
            <item row="1" column="1">
-            <widget class="QPushButton" name="btnCase4">
+            <widget class="AbulEduFlatBoutonV1" name="btnCase4">
              <property name="sizePolicy">
               <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
                <horstretch>0</horstretch>
@@ -910,7 +910,7 @@ QLabel {
             </widget>
            </item>
            <item row="1" column="2">
-            <widget class="QPushButton" name="btnCase5">
+            <widget class="AbulEduFlatBoutonV1" name="btnCase5">
              <property name="sizePolicy">
               <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
                <horstretch>0</horstretch>
@@ -986,7 +986,7 @@ QLabel {
             </widget>
            </item>
            <item row="2" column="0">
-            <widget class="QPushButton" name="btnCase6">
+            <widget class="AbulEduFlatBoutonV1" name="btnCase6">
              <property name="sizePolicy">
               <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
                <horstretch>0</horstretch>
@@ -1025,7 +1025,7 @@ QLabel {
             </widget>
            </item>
            <item row="2" column="1">
-            <widget class="QPushButton" name="btnCase7">
+            <widget class="AbulEduFlatBoutonV1" name="btnCase7">
              <property name="sizePolicy">
               <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
                <horstretch>0</horstretch>
@@ -1064,7 +1064,7 @@ QLabel {
             </widget>
            </item>
            <item row="2" column="2">
-            <widget class="QPushButton" name="btnCase8">
+            <widget class="AbulEduFlatBoutonV1" name="btnCase8">
              <property name="sizePolicy">
               <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
                <horstretch>0</horstretch>
@@ -1278,7 +1278,7 @@ QLabel {
             <number>0</number>
            </property>
            <item row="0" column="7">
-            <widget class="QPushButton" name="btnNbre6">
+            <widget class="AbulEduFlatBoutonV1" name="btnNbre6">
              <property name="minimumSize">
               <size>
                <width>40</width>
@@ -1314,7 +1314,7 @@ QLabel {
             </widget>
            </item>
            <item row="0" column="9">
-            <widget class="QPushButton" name="btnNbre7">
+            <widget class="AbulEduFlatBoutonV1" name="btnNbre7">
              <property name="minimumSize">
               <size>
                <width>40</width>
@@ -1350,7 +1350,7 @@ QLabel {
             </widget>
            </item>
            <item row="0" column="10">
-            <widget class="QPushButton" name="btnNbre8">
+            <widget class="AbulEduFlatBoutonV1" name="btnNbre8">
              <property name="minimumSize">
               <size>
                <width>40</width>
@@ -1386,7 +1386,7 @@ QLabel {
             </widget>
            </item>
            <item row="0" column="0">
-            <widget class="QPushButton" name="btnNbre0">
+            <widget class="AbulEduFlatBoutonV1" name="btnNbre0">
              <property name="minimumSize">
               <size>
                <width>40</width>
@@ -1419,7 +1419,7 @@ QLabel {
             </widget>
            </item>
            <item row="0" column="1">
-            <widget class="QPushButton" name="btnNbre1">
+            <widget class="AbulEduFlatBoutonV1" name="btnNbre1">
              <property name="minimumSize">
               <size>
                <width>40</width>
@@ -1452,7 +1452,7 @@ QLabel {
             </widget>
            </item>
            <item row="0" column="2">
-            <widget class="QPushButton" name="btnNbre2">
+            <widget class="AbulEduFlatBoutonV1" name="btnNbre2">
              <property name="minimumSize">
               <size>
                <width>40</width>
@@ -1485,7 +1485,7 @@ QLabel {
             </widget>
            </item>
            <item row="0" column="4">
-            <widget class="QPushButton" name="btnNbre4">
+            <widget class="AbulEduFlatBoutonV1" name="btnNbre4">
              <property name="minimumSize">
               <size>
                <width>40</width>
@@ -1518,7 +1518,7 @@ QLabel {
             </widget>
            </item>
            <item row="0" column="5">
-            <widget class="QPushButton" name="btnNbre5">
+            <widget class="AbulEduFlatBoutonV1" name="btnNbre5">
              <property name="minimumSize">
               <size>
                <width>40</width>
@@ -1551,7 +1551,7 @@ QLabel {
             </widget>
            </item>
            <item row="0" column="3">
-            <widget class="QPushButton" name="btnNbre3">
+            <widget class="AbulEduFlatBoutonV1" name="btnNbre3">
              <property name="minimumSize">
               <size>
                <width>40</width>

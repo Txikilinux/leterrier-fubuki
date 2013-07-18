@@ -264,7 +264,7 @@ void MainWindow::initFubuki()
     }
     // remplir les boutons à placer (par défaut : tous)
     for (int i = 0; i < 9; i++) {
-        nomBtnNbre[i]->setStyleSheet("color :#d40000; font-weight: bold;");
+        nomBtnNbre[i]->setStyleSheet("background:transparent;color :#d40000; font-weight: bold;");
         nomBtnNbre[i]->setFont(fontMEDIUM);
         nomBtnNbre[i]->setDisabled(false);
         nomBtnNbre[i]->setProperty("text", QString::number(casesInitial[i]));
@@ -293,7 +293,7 @@ void MainWindow::initFubuki()
 
     // vider les cases
     for (int i = 0; i < 9; i++) {
-        nomBtnCase[i]->setStyleSheet("color :black");
+        nomBtnCase[i]->setStyleSheet("background:transparent;color :black");
         nomBtnCase[i]->setFont(fontBIG);
         nomBtnCase[i]->setDisabled(false);
         nomBtnCase[i]->setProperty("text", "");
@@ -329,7 +329,7 @@ void MainWindow::initFubuki()
         //qDebug() << casesDonnees;
     }
     for (int i = 0; i < casesDonnees.length(); i++) {
-        nomBtnCase[casesDonnees[i]]->setStyleSheet("color :#C02020");
+        nomBtnCase[casesDonnees[i]]->setStyleSheet("background:transparent;color :#C02020");
         nomBtnCase[casesDonnees[i]]->setDisabled(true);
         nomBtnCase[casesDonnees[i]]->setProperty("text", QString::number(cases[casesDonnees[i]]));
         nomBtnCase[casesDonnees[i]]->setProperty("used",true);
@@ -342,7 +342,7 @@ void MainWindow::initFubuki()
         for (int i = 0; i < 9; i++) {
             if (isIn(i, casesDonnees)) {
                 int k = indexInCasesInitial(cases[i]);
-                nomBtnNbre[k]->setStyleSheet("color :#C02020");
+                nomBtnNbre[k]->setStyleSheet("background:transparent;color :#C02020");
                 nomBtnNbre[k]->setFont(fontMINUS);
                 nomBtnNbre[k]->setDisabled(true);
                 nomBtnNbre[k]->setProperty("used",true);
@@ -404,7 +404,7 @@ void MainWindow::restoreCases()
     {
         if(!btn->property("used").toBool())
         {
-            btn->setStyleSheet("color :black");
+            btn->setStyleSheet("background:transparent;color :black");
             btn->setFont(fontBIG);
             btn->setDisabled(false);
             btn->setFlat(true);
@@ -414,7 +414,7 @@ void MainWindow::restoreCases()
         }
         else
         {
-            btn->setStyleSheet("color :#C02020");
+            btn->setStyleSheet("background:transparent;color :#C02020");
             btn->setDisabled(true);
             btn->setProperty("text", btn->property("text").toString());
             btn->setProperty("used",true);
@@ -428,7 +428,7 @@ void MainWindow::restoreNbres()
     {
         if(!btn->property("used").toBool())
         {
-            btn->setStyleSheet("color :#d40000; font-weight: bold;");
+            btn->setStyleSheet("background:transparent;color :#d40000; font-weight: bold;");
             btn->setFont(fontMEDIUM);
             btn->setDisabled(false);
             btn->setProperty("text", btn->property("text").toString());
@@ -436,7 +436,7 @@ void MainWindow::restoreNbres()
         }
         else
         {
-            btn->setStyleSheet("color :#C02020");
+            btn->setStyleSheet("background:transparent;color :#C02020");
             btn->setDisabled(true);
             btn->setProperty("text", btn->property("text").toString());
             btn->setProperty("used",true);
@@ -491,13 +491,13 @@ void MainWindow::_btnCase(int i) {
         actuelBtnCase = -1;
         if (actuelBtnNbre >= 0 && niveau < 5) {
             // déposer actuelBtnNbre sur cette case
-            nomBtnCase[i]->setStyleSheet("color : #d40000");
+            nomBtnCase[i]->setStyleSheet("background:transparent;color : #d40000");
             nomBtnCase[i]->setProperty("text", QString::number(casesInitial[actuelBtnNbre]));
             actuelBtnNbre = -1;
         }
     } else if (actuelBtnNbre >= 0) {
         // déposer actuelBtnNbre sur cette case
-        nomBtnCase[i]->setStyleSheet("color : #d40000");
+        nomBtnCase[i]->setStyleSheet("background:transparent;color : #d40000");
         if (niveau > 4)
             nomBtnCase[i]->setProperty("text", QString::number(actuelBtnNbre));
         else
@@ -527,13 +527,13 @@ void MainWindow::_btnNbre(int i) {
     if (actuelBtnNbre >= 0 && niveau <= 4) {
         restaurerBtnNbre(actuelBtnNbre);
     }
-    nomBtnNbre[i]->setStyleSheet("color :#d40000");
+    nomBtnNbre[i]->setStyleSheet("background:transparent;color :#d40000");
     nomBtnNbre[i]->setFont(fontMINUS);
     nomBtnNbre[i]->setDisabled(true);
     actuelBtnNbre = i;
     if (actuelBtnCase > 0) {
         // déposer le nombe de ce btnNbre sur le actuelBtnCase
-        nomBtnCase[actuelBtnCase]->setStyleSheet("color : #d40000");
+        nomBtnCase[actuelBtnCase]->setStyleSheet("background:transparent;color : #d40000");
         nomBtnCase[actuelBtnCase]->setProperty("text", QString::number(casesInitial[actuelBtnNbre]));
         actuelBtnCase = -1;
         actuelBtnNbre = -1;
@@ -543,7 +543,7 @@ void MainWindow::_btnNbre(int i) {
 }
 
 void MainWindow::restaurerBtnNbre(int i) {
-    nomBtnNbre[i]->setStyleSheet("color :#d40000");
+    nomBtnNbre[i]->setStyleSheet("background:transparent;color :#d40000");
     nomBtnNbre[i]->setFont(fontMEDIUM);
     nomBtnNbre[i]->setDisabled(false);
     setInformation();
@@ -673,10 +673,10 @@ void MainWindow::on_btnAbandonner_clicked()
 {
     for (int i = 0; i < 9; i++) {
         if (nomBtnCase[i]->text().toInt() != cases[i]) {
-            nomBtnCase[i]->setStyleSheet("color : #d40000");
+            nomBtnCase[i]->setStyleSheet("background:transparent;color : #d40000");
             nErreurs++;
         } else {
-            nomBtnCase[i]->setStyleSheet("color : #20C020");
+            nomBtnCase[i]->setStyleSheet("background:transparent;color : #20C020");
         }
         nomBtnCase[i]->setProperty("text", QString::number(cases[i]));
         nomBtnCase[i]->setDisabled(true);
@@ -714,14 +714,14 @@ void MainWindow::on_btnInformation_clicked()
     AbulEduMessageBoxV1* msg = new AbulEduMessageBoxV1(trUtf8("Allez, je t'aide..."),trUtf8("Je propose le nombre ... %1").arg(QString::number(cases[inconnus[iBtn]])));
     msg->setWink();
     msg->show();
-    nomBtnCase[inconnus[iBtn]]->setStyleSheet("color : #C02020");
+    nomBtnCase[inconnus[iBtn]]->setStyleSheet("background:transparent;color : #C02020");
     //nomBtnCase[inconnus[iBtn]]->setFont(fontBIG);
     nomBtnCase[inconnus[iBtn]]->setProperty("text", QString::number(cases[inconnus[iBtn]]));
     nomBtnCase[inconnus[iBtn]]->setDisabled(true);
     // rechercher la case correspondant au nombre donné
     //qDebug() << "rechercher la case " << cases[inconnus[iBtn]];
     int k = indexInCasesInitial(cases[inconnus[iBtn]]);
-    nomBtnNbre[k]->setStyleSheet("color : #C02020");
+    nomBtnNbre[k]->setStyleSheet("background:transparent;color : #C02020");
     nomBtnNbre[k]->setFont(fontMINUS);
     nomBtnNbre[k]->setDisabled(true);
 
@@ -980,6 +980,9 @@ void MainWindow::slotMainWindowSetBorneSup(QString nombreLu)
 
 void MainWindow::on_btnDebut_clicked()
 {
+    ui->btnVerifier->setDisabled(false);
+    ui->btnAbandonner->setDisabled(false);
+    ui->btnNouveau->setDisabled(true);
     restoreCases();
     restoreNbres();
 }
