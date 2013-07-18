@@ -93,11 +93,9 @@ MainWindow::MainWindow(QWidget *parent) :
     actuelBtnNbre = -1; // pas de nombre sélectionné
     actuelBtnCase = -1; // pas de nombre sur cette case sélectionnée
 
-    m_monAide=new AbulEduAproposV0(this);
+//    m_monAide=new AbulEduAproposV0(this);
 
     QFontDatabase::addApplicationFont(":/data/sonic_comic.ttf");
-
-    ui->menuBar->hide();
 
     //Une astuce pour eviter de faire 7 boutons * 3 lignes pour activer les icones
     QList<AbulEduFlatBoutonV1 *> btns = ui->frmIcones->findChildren<AbulEduFlatBoutonV1 *>();
@@ -784,20 +782,19 @@ void MainWindow::slotChangeLangue()
 
 void MainWindow::creeMenuLangue()
 {
+    /** @todo à revoir sans le menu */
     QString locale = QLocale::system().name().section('_', 0, 0);
 
     QAction* actionLangueEn = new QAction(trUtf8("&Anglais"),this);
     actionLangueEn->setCheckable(true);
     actionLangueEn->setObjectName("en");
     connect(actionLangueEn, SIGNAL(triggered()), this, SLOT(slotChangeLangue()));
-    ui->menuLangues->addAction(actionLangueEn);
     m_languesDisponibles << actionLangueEn;
 
     QAction* actionLangueFr = new QAction(trUtf8("&Français"),this);
     actionLangueFr->setCheckable(true);
     actionLangueFr->setObjectName("fr");
     connect(actionLangueFr, SIGNAL(triggered()), this, SLOT(slotChangeLangue()));
-    ui->menuLangues->addAction(actionLangueFr);
     m_languesDisponibles << actionLangueFr;
 
     foreach(QAction* langue,m_languesDisponibles)
@@ -957,10 +954,18 @@ void MainWindow::on_btnFullScreen_clicked()
     if(isFullScreen())
     {
         showNormal();
+        ui->centralWidget->move(0,0);
+        ui->widgetContainer->move(0,0);
         ui->btnFullScreen->setIconeNormale(":/data/images/showMaximized");
     }
     else
     {
+        QDesktopWidget *widget = QApplication::desktop();
+        int desktop_width = widget->width();
+        int desktop_height = widget->height();
+//        this->move((desktop_width-this->width())/2, (desktop_height-this->height())/2);
+        ui->centralWidget->move((desktop_width-ui->centralWidget->width())/2, (desktop_height-ui->centralWidget->height())/2);
+        ui->widgetContainer->move((desktop_width-ui->widgetContainer->width())/2, (desktop_height-ui->widgetContainer->height())/2);
         showFullScreen();
         ui->btnFullScreen->setIconeNormale(":/data/images/showNormal");
     }
