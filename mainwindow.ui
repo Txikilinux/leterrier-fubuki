@@ -379,7 +379,7 @@ border-bottom-left-radius: 5px;</string>
           <enum>QFrame::Raised</enum>
          </property>
          <layout class="QGridLayout" name="gridLayout_2">
-          <item row="6" column="0">
+          <item row="11" column="0">
            <widget class="AbulEduFlatBoutonV1" name="btnNiveauAnnuler">
             <property name="minimumSize">
              <size>
@@ -407,130 +407,6 @@ border-bottom-left-radius: 5px;</string>
             </property>
             <property name="text">
              <string>Annuler</string>
-            </property>
-           </widget>
-          </item>
-          <item row="2" column="0">
-           <widget class="AbulEduFlatBoutonV1" name="btnNiveauDifficile">
-            <property name="minimumSize">
-             <size>
-              <width>100</width>
-              <height>30</height>
-             </size>
-            </property>
-            <property name="maximumSize">
-             <size>
-              <width>100</width>
-              <height>30</height>
-             </size>
-            </property>
-            <property name="font">
-             <font>
-              <weight>75</weight>
-              <bold>true</bold>
-             </font>
-            </property>
-            <property name="cursor">
-             <cursorShape>PointingHandCursor</cursorShape>
-            </property>
-            <property name="styleSheet">
-             <string notr="true">color: green;</string>
-            </property>
-            <property name="text">
-             <string>Verte</string>
-            </property>
-           </widget>
-          </item>
-          <item row="3" column="0">
-           <widget class="AbulEduFlatBoutonV1" name="btnNiveauTresDifficile">
-            <property name="minimumSize">
-             <size>
-              <width>100</width>
-              <height>30</height>
-             </size>
-            </property>
-            <property name="maximumSize">
-             <size>
-              <width>100</width>
-              <height>30</height>
-             </size>
-            </property>
-            <property name="font">
-             <font>
-              <weight>75</weight>
-              <bold>true</bold>
-             </font>
-            </property>
-            <property name="cursor">
-             <cursorShape>PointingHandCursor</cursorShape>
-            </property>
-            <property name="styleSheet">
-             <string notr="true">color: #107bfa;</string>
-            </property>
-            <property name="text">
-             <string>Bleue</string>
-            </property>
-           </widget>
-          </item>
-          <item row="4" column="0">
-           <widget class="AbulEduFlatBoutonV1" name="btnNiveauDiabolique">
-            <property name="minimumSize">
-             <size>
-              <width>100</width>
-              <height>30</height>
-             </size>
-            </property>
-            <property name="maximumSize">
-             <size>
-              <width>100</width>
-              <height>30</height>
-             </size>
-            </property>
-            <property name="font">
-             <font>
-              <weight>75</weight>
-              <bold>true</bold>
-             </font>
-            </property>
-            <property name="cursor">
-             <cursorShape>PointingHandCursor</cursorShape>
-            </property>
-            <property name="styleSheet">
-             <string notr="true">color:#85582d;</string>
-            </property>
-            <property name="text">
-             <string>Marron</string>
-            </property>
-           </widget>
-          </item>
-          <item row="1" column="0">
-           <widget class="AbulEduFlatBoutonV1" name="btnNiveauMoyen">
-            <property name="minimumSize">
-             <size>
-              <width>100</width>
-              <height>30</height>
-             </size>
-            </property>
-            <property name="maximumSize">
-             <size>
-              <width>100</width>
-              <height>30</height>
-             </size>
-            </property>
-            <property name="font">
-             <font>
-              <weight>75</weight>
-              <bold>true</bold>
-             </font>
-            </property>
-            <property name="cursor">
-             <cursorShape>PointingHandCursor</cursorShape>
-            </property>
-            <property name="styleSheet">
-             <string notr="true">color:#f15c28;</string>
-            </property>
-            <property name="text">
-             <string>Orange</string>
             </property>
            </widget>
           </item>
@@ -565,7 +441,7 @@ border-bottom-left-radius: 5px;</string>
             </property>
            </widget>
           </item>
-          <item row="0" column="0">
+          <item row="10" column="0">
            <widget class="AbulEduFlatBoutonV1" name="btnNiveauFacile">
             <property name="minimumSize">
              <size>
@@ -597,6 +473,130 @@ border-bottom-left-radius: 5px;</string>
             </property>
            </widget>
           </item>
+          <item row="9" column="0">
+           <widget class="AbulEduFlatBoutonV1" name="btnNiveauMoyen">
+            <property name="minimumSize">
+             <size>
+              <width>100</width>
+              <height>30</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>100</width>
+              <height>30</height>
+             </size>
+            </property>
+            <property name="font">
+             <font>
+              <weight>75</weight>
+              <bold>true</bold>
+             </font>
+            </property>
+            <property name="cursor">
+             <cursorShape>PointingHandCursor</cursorShape>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">color:#f15c28;</string>
+            </property>
+            <property name="text">
+             <string>Orange</string>
+            </property>
+           </widget>
+          </item>
+          <item row="8" column="0">
+           <widget class="AbulEduFlatBoutonV1" name="btnNiveauDifficile">
+            <property name="minimumSize">
+             <size>
+              <width>100</width>
+              <height>30</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>100</width>
+              <height>30</height>
+             </size>
+            </property>
+            <property name="font">
+             <font>
+              <weight>75</weight>
+              <bold>true</bold>
+             </font>
+            </property>
+            <property name="cursor">
+             <cursorShape>PointingHandCursor</cursorShape>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">color: green;</string>
+            </property>
+            <property name="text">
+             <string>Verte</string>
+            </property>
+           </widget>
+          </item>
+          <item row="7" column="0">
+           <widget class="AbulEduFlatBoutonV1" name="btnNiveauTresDifficile">
+            <property name="minimumSize">
+             <size>
+              <width>100</width>
+              <height>30</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>100</width>
+              <height>30</height>
+             </size>
+            </property>
+            <property name="font">
+             <font>
+              <weight>75</weight>
+              <bold>true</bold>
+             </font>
+            </property>
+            <property name="cursor">
+             <cursorShape>PointingHandCursor</cursorShape>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">color: #107bfa;</string>
+            </property>
+            <property name="text">
+             <string>Bleue</string>
+            </property>
+           </widget>
+          </item>
+          <item row="6" column="0">
+           <widget class="AbulEduFlatBoutonV1" name="btnNiveauDiabolique">
+            <property name="minimumSize">
+             <size>
+              <width>100</width>
+              <height>30</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>100</width>
+              <height>30</height>
+             </size>
+            </property>
+            <property name="font">
+             <font>
+              <weight>75</weight>
+              <bold>true</bold>
+             </font>
+            </property>
+            <property name="cursor">
+             <cursorShape>PointingHandCursor</cursorShape>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">color:#85582d;</string>
+            </property>
+            <property name="text">
+             <string>Marron</string>
+            </property>
+           </widget>
+          </item>
          </layout>
         </widget>
         <widget class="QFrame" name="frmAireTravail">
@@ -621,95 +621,18 @@ QFrame#frmBtnNombres{
    	background-position: top right;
 }
 QLabel {
-	background-color : #d40000;
+	background-image: url(:/data/images/fondChiffre);
+	background-repeat: repeat-no;
+   	background-position: top center;
 	color : #eed9be;
 	border-radius : 8px;
 	font-family: Sonic Comics;
 	font-size: 24pt;
 }
 
-QTextEdit#tedAffiche {
-	border-radius : 8px;
-	background: transparent;
-	color: #d40000;
-	border-width: 0px;
-	border-color: transparent;
-}
-
  *[flat=&quot;true&quot;]{
-	color : #d40000;
-	border-radius : 8px;
-	border-width : 2px;
-	border-style : solid;
-	border-color : #d40000;
- }
-
- *[flat=&quot;true&quot;]:hover{ 
-	color : #d40000; 
-	border-radius : 8px; 
-	border-width : 2px;
-	border-style : solid ;
-	border-color : white;
- }
-
-QPushButton#btnInformation {
-    border-radius : 8px; 
-    border-width : 0px;
-    border-style : solid ;
-    border-color : transparent;
-}
-QPushButton#btnInformation:hover { 
-    border-radius : 8px; 
-    border-width : 0px;
-    border-style : solid ;
-    border-color : transparent;
-}
-QPushButton#btnInformation:disabled { 
-    border-radius : 8px; 
-    border-width : 0px;
-    border-style : solid ;
-    border-color : transparent;
-}
-QPushButton#btnVerifier {
-    border-radius : 8px; 
-    border-width : 0px;
-    border-style : solid ;
-    border-color : transparent; }
-QPushButton#btnVerifier:hover { 
-    border-radius : 8px; 
-    border-width : 0px;
-    border-style : solid ;
-    border-color : transparent; }
-QPushButton#btnAbandonner {
-    border-radius : 8px; 
-    border-width : 0px;
-    border-style : solid ;
-    border-color : transparent; }
-QPushButton#btnAbandonner:hover { 
-    border-radius : 8px; 
-    border-width : 0px;
-    border-style : solid ;
-    border-color : transparent; }
-QPushButton#btnNouveau {
-    border-radius : 8px; 
-    border-width : 0px;
-    border-style : solid ;
-    border-color : transparent; }
-QPushButton#btnNouveau:hover { 
-    border-radius : 8px; 
-    border-width : 0px;
-    border-style : solid ;
-    border-color : transparent; }
-QPushButton#btnQuitter {
-    border-radius : 8px; 
-    border-width : 0px;
-    border-style : solid ;
-    border-color : transparent; }
-QPushButton#btnQuitter:hover { 
-    border-radius : 8px; 
-    border-width : 0px;
-    border-style : solid ;
-    border-color : transparent; }</string>
+	color : rgba(253,47,0,125);
+ }</string>
          </property>
          <property name="lineWidth">
           <number>0</number>
@@ -1339,80 +1262,7 @@ QPushButton#btnQuitter:hover {
            </rect>
           </property>
           <property name="styleSheet">
-           <string notr="true"> *[flat=&quot;true&quot;]{
-	color : #d40000;
-	border-radius : 8px;
-	border-width : 2px;
-	border-style : solid;
-	border-color : #d40000;
- }
-
- *[flat=&quot;true&quot;]:hover{ 
-	color : #d40000; 
-	border-radius : 8px; 
-	border-width : 2px;
-	border-style : solid ;
-	border-color : white;
- }
-
-QPushButton#btnInformation {
-    border-radius : 8px; 
-    border-width : 0px;
-    border-style : solid ;
-    border-color : transparent;
-}
-QPushButton#btnInformation:hover { 
-    border-radius : 8px; 
-    border-width : 0px;
-    border-style : solid ;
-    border-color : transparent;
-}
-QPushButton#btnInformation:disabled { 
-    border-radius : 8px; 
-    border-width : 0px;
-    border-style : solid ;
-    border-color : transparent;
-}
-QPushButton#btnVerifier {
-    border-radius : 8px; 
-    border-width : 0px;
-    border-style : solid ;
-    border-color : transparent; }
-QPushButton#btnVerifier:hover { 
-    border-radius : 8px; 
-    border-width : 0px;
-    border-style : solid ;
-    border-color : transparent; }
-QPushButton#btnAbandonner {
-    border-radius : 8px; 
-    border-width : 0px;
-    border-style : solid ;
-    border-color : transparent; }
-QPushButton#btnAbandonner:hover { 
-    border-radius : 8px; 
-    border-width : 0px;
-    border-style : solid ;
-    border-color : transparent; }
-QPushButton#btnNouveau {
-    border-radius : 8px; 
-    border-width : 0px;
-    border-style : solid ;
-    border-color : transparent; }
-QPushButton#btnNouveau:hover { 
-    border-radius : 8px; 
-    border-width : 0px;
-    border-style : solid ;
-    border-color : transparent; }
-QPushButton#btnQuitter {
-    border-radius : 8px; 
-    border-width : 0px;
-    border-style : solid ;
-    border-color : transparent; }
-QPushButton#btnQuitter:hover { 
-    border-radius : 8px; 
-    border-width : 0px;
-    border-style : solid ;
-    border-color : transparent; }</string>
+           <string notr="true"/>
           </property>
           <property name="lineWidth">
            <number>0</number>

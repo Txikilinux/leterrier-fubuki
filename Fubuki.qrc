@@ -39,5 +39,6 @@
         <file alias="belt5">data/images/ceinture-noire.png</file>
         <file alias="belt1">data/images/ceinture-orange.png</file>
         <file alias="belt2">data/images/ceinture-verte.png</file>
+        <file alias="fondChiffre">data/images/fond-chiffres.png</file>
     </qresource>
 </RCC>
