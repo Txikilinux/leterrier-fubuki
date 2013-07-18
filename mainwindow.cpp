@@ -297,6 +297,7 @@ void MainWindow::initFubuki()
         nomBtnCase[i]->setFont(fontBIG);
         nomBtnCase[i]->setDisabled(false);
         nomBtnCase[i]->setProperty("text", "");
+        nomBtnCase[i]->setProperty("used",false);
     }
     // choisir les cases données en fonction du niveau et afficher
     QList<int> casesDonnees;
@@ -331,6 +332,7 @@ void MainWindow::initFubuki()
         nomBtnCase[casesDonnees[i]]->setStyleSheet("color :#C02020");
         nomBtnCase[casesDonnees[i]]->setDisabled(true);
         nomBtnCase[casesDonnees[i]]->setProperty("text", QString::number(cases[casesDonnees[i]]));
+        nomBtnCase[casesDonnees[i]]->setProperty("used",true);
     }
 
     // qDebug() << "casesInitial cases casesDonnees " << casesInitial << cases << casesDonnees;
@@ -343,6 +345,12 @@ void MainWindow::initFubuki()
                 nomBtnNbre[k]->setStyleSheet("color :#C02020");
                 nomBtnNbre[k]->setFont(fontMINUS);
                 nomBtnNbre[k]->setDisabled(true);
+                nomBtnNbre[k]->setProperty("used",true);
+            }
+            else
+            {
+                int k = indexInCasesInitial(cases[i]);
+                nomBtnNbre[k]->setProperty("used",false);
             }
         }
     } else {
@@ -388,6 +396,52 @@ QString MainWindow::abeEvaluation() {
             ((niveau == 4 || niveau == 5) && (2*nAides + nErreurs <  8)))
        return "c";
     return "d";
+}
+
+void MainWindow::restoreCases()
+{
+    foreach(QPushButton* btn,nomBtnCase)
+    {
+        if(!btn->property("used").toBool())
+        {
+            btn->setStyleSheet("color :black");
+            btn->setFont(fontBIG);
+            btn->setDisabled(false);
+            btn->setFlat(true);
+            btn->setProperty("text", "");
+            btn->setText("");
+            btn->setProperty("used",false);
+        }
+        else
+        {
+            btn->setStyleSheet("color :#C02020");
+            btn->setDisabled(true);
+            btn->setProperty("text", btn->property("text").toString());
+            btn->setProperty("used",true);
+        }
+    }
+}
+
+void MainWindow::restoreNbres()
+{
+    foreach(QPushButton* btn,nomBtnNbre)
+    {
+        if(!btn->property("used").toBool())
+        {
+            btn->setStyleSheet("color :#d40000; font-weight: bold;");
+            btn->setFont(fontMEDIUM);
+            btn->setDisabled(false);
+            btn->setProperty("text", btn->property("text").toString());
+            btn->setProperty("used",false);
+        }
+        else
+        {
+            btn->setStyleSheet("color :#C02020");
+            btn->setDisabled(true);
+            btn->setProperty("text", btn->property("text").toString());
+            btn->setProperty("used",true);
+        }
+    }
 }
 
 int MainWindow::indexInCasesInitial(int inCasesDonnees) {
@@ -922,4 +976,10 @@ void MainWindow::slotMainWindowSetBorneSup(QString nombreLu)
         msg->show();
     }
     initFubuki();
+}
+
+void MainWindow::on_btnDebut_clicked()
+{
+    restoreCases();
+    restoreNbres();
 }

@@ -106,13 +106,13 @@ private:
     QList<int> cases;
     QList<int> ligSomme;
     QList<int> colSomme;
+    /** Liste des boutons contenant la grille */
     QList <QPushButton *> nomBtnCase;
+    /** Liste des boutons contenant la pioche */
     QList <QPushButton *> nomBtnNbre;
 
     QList<QPushButton*> caseCopy;
     QList<QPushButton> btnCopy;
-    QList<QLabel> vResultCopy;
-    QList<QLabel> hResultCopy;
 
     int actuelBtnNbre;  // indice du btnNbre qui a été sélectionné par un clic
     int actuelBtnCase; // indice du btnCase qui a été sélectionné par un clic
@@ -123,6 +123,11 @@ private:
     void restaurerBtnNbre(int i);
     void setInformation();
     QString abeEvaluation(); // renvoie a,b,c,d ou z en fonction du niveau, #erreurs, etc.
+
+    /** Appelé au clic sur le bouton Début, cette méthode remet les cases dans l'état du début de l'exercice */
+    void restoreCases();
+    /** Appelé au clic sur le bouton Début, cette méthode remet les nombres dans l'état du début de l'exercice */
+    void restoreNbres();
 
     QTranslator qtTranslator;
     QTranslator myappTranslator;
@@ -191,6 +196,7 @@ private slots:
     void on_btnMinimized_clicked();
     void on_btnFullScreen_clicked();
     void slotMainWindowSetBorneSup(QString nombreLu);
+    void on_btnDebut_clicked();
 };
 
 #endif // MAINWINDOW_H
