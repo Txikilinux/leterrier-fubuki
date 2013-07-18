@@ -138,11 +138,24 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->frmChoixNombres->move(ui->frmIcones->x()-ui->frmChoixNombres->width()+8,ui->frmIcones->y()+128);
     ui->frmNiveau->setVisible(false);
     ui->frmChoixNombres->setVisible(false);
+    ui->btnEs->setVisible(false);
+    ui->btnIt->setVisible(false);
+    ui->btnDe->setVisible(false);
+    ui->btnOc->setVisible(false);
 
 
     setWindowFlags(Qt::CustomizeWindowHint);
     ui->frmButtons->move(9,0);
     ui->frmButtons->setVisible(false);
+
+    ui->btnLanguages->setIconeNormale(":/data/flags/fr");
+    ui->frmChoixLangues->move(790,0);
+    ui->frmChoixLangues->setVisible(false);
+    foreach(AbulEduFlatBoutonV1* btn, ui->frmChoixLangues->findChildren<AbulEduFlatBoutonV1*>())
+    {
+        connect(btn, SIGNAL(clicked()),SLOT(slotChangeLangue()),Qt::UniqueConnection);
+    }
+
 
 #ifdef __ABULEDUTABLETTEV1__MODE__
     ui->btnMinimized->setVisible(false);
@@ -177,6 +190,7 @@ void MainWindow::changeEvent(QEvent *e)
     switch (e->type()) {
     case QEvent::LanguageChange:
         ui->retranslateUi(this);
+        initFubuki();
         break;
     default:
         break;
@@ -752,18 +766,7 @@ void MainWindow::setInformation() {
 
 void MainWindow::slotChangeLangue()
 {
-    QString lang = sender()->objectName();
-    foreach(QAction* langue,m_languesDisponibles)
-    {
-        if (langue->objectName() == lang)
-        {
-            langue->setChecked(true);
-        }
-        else
-        {
-            langue->setChecked(false);
-        }
-    }
+    QString lang = static_cast<AbulEduFlatBoutonV1*>(sender())->whatsThis();
     qApp->removeTranslator(&qtTranslator);
     qApp->removeTranslator(&myappTranslator);
 
@@ -990,4 +993,50 @@ void MainWindow::on_btnDebut_clicked()
     ui->btnNouveau->setDisabled(true);
     restoreCases();
     restoreNbres();
+}
+
+void MainWindow::on_btnLanguages_clicked()
+{
+    ui->frmChoixLangues->setVisible(true);
+}
+
+void MainWindow::on_btnFr_clicked()
+{
+    ui->btnLanguages->setIconeNormale(":/data/flags/fr");
+    ui->frmChoixLangues->setVisible(false);
+}
+
+void MainWindow::on_btnEn_clicked()
+{
+    ui->btnLanguages->setIconeNormale(":/data/flags/en");
+    ui->frmChoixLangues->setVisible(false);
+}
+
+void MainWindow::on_btnEs_clicked()
+{
+    ui->btnLanguages->setIconeNormale(":/data/flags/es");
+    ui->frmChoixLangues->setVisible(false);
+}
+
+void MainWindow::on_btnIt_clicked()
+{
+    ui->btnLanguages->setIconeNormale(":/data/flags/it");
+    ui->frmChoixLangues->setVisible(false);
+}
+
+void MainWindow::on_btnDe_clicked()
+{
+    ui->btnLanguages->setIconeNormale(":/data/flags/de");
+    ui->frmChoixLangues->setVisible(false);
+}
+
+void MainWindow::on_btnOc_clicked()
+{
+    ui->btnLanguages->setIconeNormale(":/data/flags/oc");
+    ui->frmChoixLangues->setVisible(false);
+}
+
+void MainWindow::on_btnLangueAnnuler_clicked()
+{
+    ui->frmChoixLangues->setVisible(false);
 }

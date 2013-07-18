@@ -41,4 +41,12 @@
         <file alias="belt2">data/images/ceinture-verte.png</file>
         <file alias="fondChiffre">data/images/fond-chiffres.png</file>
     </qresource>
+    <qresource prefix="/data/flags">
+        <file alias="de">data/images/de.png</file>
+        <file alias="en">data/images/en.png</file>
+        <file alias="es">data/images/es.png</file>
+        <file alias="fr">data/images/fr.png</file>
+        <file alias="it">data/images/it.png</file>
+        <file alias="oc">data/images/oc.png</file>
+    </qresource>
 </RCC>

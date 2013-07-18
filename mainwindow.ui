@@ -141,11 +141,11 @@ background-position: top right;
            </color>
           </property>
           <property name="iconeNormale" stdset="0">
-           <string/>
+           <string notr="true"/>
           </property>
          </widget>
         </item>
-        <item row="1" column="3">
+        <item row="1" column="5">
          <widget class="AbulEduFlatBoutonV1" name="btnMinimized">
           <property name="minimumSize">
            <size>
@@ -203,14 +203,14 @@ background-position: top right;
            </color>
           </property>
           <property name="iconeNormale" stdset="0">
-           <string>:/data/images/showMinimized</string>
+           <string notr="true">:/data/images/showMinimized</string>
           </property>
           <property name="IconeSurvol" stdset="0">
-           <string/>
+           <string notr="true"/>
           </property>
          </widget>
         </item>
-        <item row="1" column="4">
+        <item row="1" column="6">
          <widget class="AbulEduFlatBoutonV1" name="btnFullScreen">
           <property name="minimumSize">
            <size>
@@ -268,10 +268,10 @@ background-position: top right;
            </color>
           </property>
           <property name="iconeNormale" stdset="0">
-           <string>:/data/images/showMaximized</string>
+           <string notr="true">:/data/images/showMaximized</string>
           </property>
           <property name="IconeSurvol" stdset="0">
-           <string/>
+           <string notr="true"/>
           </property>
          </widget>
         </item>
@@ -308,7 +308,7 @@ font-size:24px;
           </property>
          </spacer>
         </item>
-        <item row="0" column="4">
+        <item row="0" column="6">
          <spacer name="verticalSpacer">
           <property name="orientation">
            <enum>Qt::Vertical</enum>
@@ -320,6 +320,44 @@ font-size:24px;
            <size>
             <width>20</width>
             <height>3</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item row="1" column="3">
+         <widget class="AbulEduFlatBoutonV1" name="btnLanguages">
+          <property name="minimumSize">
+           <size>
+            <width>40</width>
+            <height>40</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>40</width>
+            <height>40</height>
+           </size>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+          <property name="flat">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="4">
+         <spacer name="horizontalSpacer_2">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <property name="sizeType">
+           <enum>QSizePolicy::Fixed</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>25</width>
+            <height>20</height>
            </size>
           </property>
          </spacer>
@@ -2000,7 +2038,7 @@ border-radius:5px;</string>
              <cursorShape>PointingHandCursor</cursorShape>
             </property>
             <property name="styleSheet">
-             <string notr="true"/>
+             <string notr="true">color:gray;</string>
             </property>
             <property name="text">
              <string>Annuler</string>
@@ -2098,10 +2136,10 @@ border-bottom-left-radius: 10px;
              </color>
             </property>
             <property name="iconeNormale" stdset="0">
-             <string>:/data/images/nouveau</string>
+             <string notr="true">:/data/images/nouveau</string>
             </property>
             <property name="IconeSurvol" stdset="0">
-             <string>:/data/images/nouveauHover</string>
+             <string notr="true">:/data/images/nouveauHover</string>
             </property>
            </widget>
           </item>
@@ -2163,10 +2201,10 @@ border-bottom-left-radius: 10px;
              </color>
             </property>
             <property name="iconeNormale" stdset="0">
-             <string>:/data/images/aide</string>
+             <string notr="true">:/data/images/aide</string>
             </property>
             <property name="IconeSurvol" stdset="0">
-             <string>:/data/images/aideHover</string>
+             <string notr="true">:/data/images/aideHover</string>
             </property>
            </widget>
           </item>
@@ -2228,10 +2266,10 @@ border-bottom-left-radius: 10px;
              </color>
             </property>
             <property name="iconeNormale" stdset="0">
-             <string>:/data/images/sortie</string>
+             <string notr="true">:/data/images/sortie</string>
             </property>
             <property name="IconeSurvol" stdset="0">
-             <string>:/data/images/sortieHover</string>
+             <string notr="true">:/data/images/sortieHover</string>
             </property>
            </widget>
           </item>
@@ -2252,6 +2290,263 @@ border-bottom-left-radius: 10px;
          <property name="pixmap">
           <pixmap resource="Fubuki.qrc">:/data/images/belt0</pixmap>
          </property>
+        </widget>
+        <widget class="QFrame" name="frmChoixLangues">
+         <property name="geometry">
+          <rect>
+           <x>140</x>
+           <y>10</y>
+           <width>124</width>
+           <height>191</height>
+          </rect>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background-color: #ffffff;
+border-radius:5px;</string>
+         </property>
+         <property name="frameShape">
+          <enum>QFrame::StyledPanel</enum>
+         </property>
+         <property name="frameShadow">
+          <enum>QFrame::Raised</enum>
+         </property>
+         <layout class="QGridLayout" name="gridLayout_8">
+          <item row="12" column="0">
+           <widget class="AbulEduFlatBoutonV1" name="btnLangueAnnuler">
+            <property name="minimumSize">
+             <size>
+              <width>100</width>
+              <height>30</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>100</width>
+              <height>30</height>
+             </size>
+            </property>
+            <property name="font">
+             <font>
+              <weight>75</weight>
+              <bold>true</bold>
+             </font>
+            </property>
+            <property name="cursor">
+             <cursorShape>PointingHandCursor</cursorShape>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">color:gray;</string>
+            </property>
+            <property name="text">
+             <string>Annuler</string>
+            </property>
+           </widget>
+          </item>
+          <item row="7" column="0">
+           <widget class="AbulEduFlatBoutonV1" name="btnOc">
+            <property name="minimumSize">
+             <size>
+              <width>100</width>
+              <height>30</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>100</width>
+              <height>30</height>
+             </size>
+            </property>
+            <property name="font">
+             <font>
+              <weight>75</weight>
+              <bold>true</bold>
+             </font>
+            </property>
+            <property name="cursor">
+             <cursorShape>PointingHandCursor</cursorShape>
+            </property>
+            <property name="whatsThis">
+             <string notr="true">oc</string>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">color:orange</string>
+            </property>
+            <property name="text">
+             <string>oc</string>
+            </property>
+           </widget>
+          </item>
+          <item row="6" column="0">
+           <widget class="AbulEduFlatBoutonV1" name="btnDe">
+            <property name="minimumSize">
+             <size>
+              <width>100</width>
+              <height>30</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>100</width>
+              <height>30</height>
+             </size>
+            </property>
+            <property name="font">
+             <font>
+              <weight>75</weight>
+              <bold>true</bold>
+             </font>
+            </property>
+            <property name="cursor">
+             <cursorShape>PointingHandCursor</cursorShape>
+            </property>
+            <property name="whatsThis">
+             <string notr="true">de</string>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">color:black</string>
+            </property>
+            <property name="text">
+             <string>deutsch</string>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="0">
+           <widget class="AbulEduFlatBoutonV1" name="btnFr">
+            <property name="minimumSize">
+             <size>
+              <width>100</width>
+              <height>30</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>100</width>
+              <height>30</height>
+             </size>
+            </property>
+            <property name="font">
+             <font>
+              <weight>75</weight>
+              <bold>true</bold>
+             </font>
+            </property>
+            <property name="cursor">
+             <cursorShape>PointingHandCursor</cursorShape>
+            </property>
+            <property name="whatsThis">
+             <string notr="true">fr</string>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">color: blue;</string>
+            </property>
+            <property name="text">
+             <string>French</string>
+            </property>
+           </widget>
+          </item>
+          <item row="3" column="0">
+           <widget class="AbulEduFlatBoutonV1" name="btnEn">
+            <property name="minimumSize">
+             <size>
+              <width>100</width>
+              <height>30</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>100</width>
+              <height>30</height>
+             </size>
+            </property>
+            <property name="font">
+             <font>
+              <weight>75</weight>
+              <bold>true</bold>
+             </font>
+            </property>
+            <property name="cursor">
+             <cursorShape>PointingHandCursor</cursorShape>
+            </property>
+            <property name="whatsThis">
+             <string notr="true">en</string>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">color:red</string>
+            </property>
+            <property name="text">
+             <string>English</string>
+            </property>
+           </widget>
+          </item>
+          <item row="4" column="0">
+           <widget class="AbulEduFlatBoutonV1" name="btnEs">
+            <property name="minimumSize">
+             <size>
+              <width>100</width>
+              <height>30</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>100</width>
+              <height>30</height>
+             </size>
+            </property>
+            <property name="font">
+             <font>
+              <weight>75</weight>
+              <bold>true</bold>
+             </font>
+            </property>
+            <property name="cursor">
+             <cursorShape>PointingHandCursor</cursorShape>
+            </property>
+            <property name="whatsThis">
+             <string notr="true">es</string>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">color:#e8e226;</string>
+            </property>
+            <property name="text">
+             <string>Espanol</string>
+            </property>
+           </widget>
+          </item>
+          <item row="5" column="0">
+           <widget class="AbulEduFlatBoutonV1" name="btnIt">
+            <property name="minimumSize">
+             <size>
+              <width>100</width>
+              <height>30</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>100</width>
+              <height>30</height>
+             </size>
+            </property>
+            <property name="font">
+             <font>
+              <weight>75</weight>
+              <bold>true</bold>
+             </font>
+            </property>
+            <property name="cursor">
+             <cursorShape>PointingHandCursor</cursorShape>
+            </property>
+            <property name="whatsThis">
+             <string notr="true">it</string>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">color:green</string>
+            </property>
+            <property name="text">
+             <string>italiano</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
         </widget>
        </widget>
        <widget class="QWidget" name="pageApropos">
