@@ -109,6 +109,11 @@ private:
     QList <QPushButton *> nomBtnCase;
     QList <QPushButton *> nomBtnNbre;
 
+    QList<QPushButton*> caseCopy;
+    QList<QPushButton> btnCopy;
+    QList<QLabel> vResultCopy;
+    QList<QLabel> hResultCopy;
+
     int actuelBtnNbre;  // indice du btnNbre qui a été sélectionné par un clic
     int actuelBtnCase; // indice du btnCase qui a été sélectionné par un clic
 

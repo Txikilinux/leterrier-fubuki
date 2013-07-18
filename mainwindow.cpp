@@ -143,19 +143,21 @@ MainWindow::MainWindow(QWidget *parent) :
 
 
     setWindowFlags(Qt::CustomizeWindowHint);
-    ui->frmButtons->move(0,38);
+    ui->frmButtons->move(9,0);
     ui->frmButtons->setVisible(false);
 
 #ifdef __ABULEDUTABLETTEV1__MODE__
     ui->btnMinimized->setVisible(false);
     ui->btnFullScreen->setVisible(false);
 #else
-    ui->btnMinimized->setCouleurFondSurvol(QColor(6,109,255));
-    ui->btnMinimized->setCouleurFondNormale(QColor(255,255,255,50));
+    ui->btnMinimized->setCouleurFondSurvol(QColor(252,152,41));
+    ui->btnMinimized->setCouleurFondPressed(QColor(252,152,41));
+    ui->btnMinimized->setCouleurFondNormale(QColor(203,106,89));
     ui->btnMinimized->setAllMargins(8,4,8,12);
     ui->btnMinimized->setBorderRadius(4);
-    ui->btnFullScreen->setCouleurFondSurvol(QColor(6,109,255));
-    ui->btnFullScreen->setCouleurFondNormale(QColor(255,255,255,50));
+    ui->btnFullScreen->setCouleurFondSurvol(QColor(252,152,41));
+    ui->btnFullScreen->setCouleurFondPressed(QColor(252,152,41));
+    ui->btnFullScreen->setCouleurFondNormale(QColor(203,106,89));
     ui->btnFullScreen->setAllMargins(8,12,8,4);
     ui->btnFullScreen->setBorderRadius(4);
 #endif
@@ -196,7 +198,7 @@ void MainWindow::paintEvent(QPaintEvent *)
         enfant->setStyleSheet(enfant->styleSheet().replace("border-image","text-align: bottom;background-image"));
         enfant->setStyleSheet(enfant->styleSheet().replace("image-position: center","background-position: center top"));
     }
-    ui->btnFeuille->setStyleSheet("QPushButton > *{color:red;}QPushButton{border: none; color:rgba(0,0,0,255);background-repeat: no-repeat;background-color:transparent;border-image:url(':/data/images/leaf');image-position: center;}");
+    ui->btnFeuille->setStyleSheet("QPushButton > *{color:red;}QPushButton{border: none; color:rgba(0,0,0,255);background-repeat: no-repeat;background-color:transparent;}");
 }
 
 #ifndef __ABULEDUTABLETTEV1__MODE__
@@ -359,6 +361,8 @@ void MainWindow::initFubuki()
     ui->btnAbandonner->setDisabled(false);
 
     ui->btnNouveau->setDisabled(true);
+
+    /* Creation d'une copie des cases */
 
 
 } // fin initFubuki
@@ -874,12 +878,12 @@ void MainWindow::on_btnFeuille_clicked()
 
 void MainWindow::on_pushButton_clicked()
 {
-    ui->stackedWidgetContainer->slideInWidget(ui->pagePrincipale);
+    ui->stackedWidget->slideInWidget(ui->pagePrincipale);
 }
 
 void MainWindow::on_btnAideFeuille_clicked()
 {
-    ui->stackedWidgetContainer->slideInWidget(ui->pageApropos);
+    ui->stackedWidget->slideInWidget(ui->pageApropos);
     on_btnFeuille_clicked();
 }
 
