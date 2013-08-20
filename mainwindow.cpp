@@ -138,10 +138,6 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->frmChoixNombres->move(ui->frmIcones->x()-ui->frmChoixNombres->width()+8,ui->frmIcones->y()+128);
     ui->frmNiveau->setVisible(false);
     ui->frmChoixNombres->setVisible(false);
-    ui->btnEs->setVisible(false);
-    ui->btnIt->setVisible(false);
-    ui->btnDe->setVisible(false);
-    ui->btnOc->setVisible(false);
 
 
     setWindowFlags(Qt::CustomizeWindowHint);
@@ -151,11 +147,14 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->btnLanguages->setIconeNormale(":/data/flags/fr");
     ui->frmChoixLangues->move(790,0);
     ui->frmChoixLangues->setVisible(false);
+    ui->btnEs->setVisible(false);
+    ui->btnIt->setVisible(false);
+    ui->btnDe->setVisible(false);
+    ui->btnOc->setVisible(false);
     foreach(AbulEduFlatBoutonV1* btn, ui->frmChoixLangues->findChildren<AbulEduFlatBoutonV1*>())
     {
         connect(btn, SIGNAL(clicked()),SLOT(slotChangeLangue()),Qt::UniqueConnection);
     }
-
 
 #ifdef __ABULEDUTABLETTEV1__MODE__
     ui->btnMinimized->setVisible(false);
@@ -818,11 +817,12 @@ void MainWindow::on_btnNiveaux_clicked()
     ui->frmNiveau->setVisible(true);
     ui->frmNiveau->raise();
     ui->btnNiveaux->setStyleSheet(ui->btnNiveaux->styleSheet().replace("background-color:rgba(0,0,0,0);","border-radius:5px;background-color:#ffffff;"));
-    on_btnNombresFermer_clicked();
     if (ui->frmButtons->isVisible())
     {
         ui->frmButtons->setVisible(false);
     }
+    on_btnNombresFermer_clicked();
+    on_btnLangueAnnuler_clicked();
 }
 
 void MainWindow::on_btnNiveauAnnuler_clicked()
@@ -837,11 +837,12 @@ void MainWindow::on_btnNombres_clicked()
     ui->frmChoixNombres->setVisible(true);
     ui->frmChoixNombres->raise();
     ui->btnNombres->setStyleSheet(ui->btnNombres->styleSheet().replace("background-color:rgba(0,0,0,0);","border-radius:5px;background-color:#ffffff;"));
-    on_btnNiveauAnnuler_clicked();
     if (ui->frmButtons->isVisible())
     {
         ui->frmButtons->setVisible(false);
     }
+    on_btnLangueAnnuler_clicked();
+    on_btnNiveauAnnuler_clicked();
 }
 
 void MainWindow::on_btnNiveauFacile_clicked()
@@ -934,6 +935,7 @@ void MainWindow::on_btnFeuille_clicked()
     }
     on_btnNombresFermer_clicked();
     on_btnNiveauAnnuler_clicked();
+    on_btnLangueAnnuler_clicked();
 }
 
 void MainWindow::on_pushButton_clicked()
@@ -1000,6 +1002,12 @@ void MainWindow::on_btnDebut_clicked()
 void MainWindow::on_btnLanguages_clicked()
 {
     ui->frmChoixLangues->setVisible(true);
+    if (ui->frmButtons->isVisible())
+    {
+        ui->frmButtons->setVisible(false);
+    }
+    on_btnNombresFermer_clicked();
+    on_btnNiveauAnnuler_clicked();
 }
 
 void MainWindow::on_btnFr_clicked()

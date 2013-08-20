@@ -1685,7 +1685,7 @@ QLabel {
              <string/>
             </property>
             <property name="whatsThis">
-             <string>verification</string>
+             <string notr="true">verification</string>
             </property>
             <property name="text">
              <string>Vérification</string>
@@ -1732,7 +1732,7 @@ QLabel {
              <string/>
             </property>
             <property name="whatsThis">
-             <string>niveaux</string>
+             <string notr="true">niveaux</string>
             </property>
             <property name="text">
              <string>Niveau</string>
@@ -1779,7 +1779,7 @@ QLabel {
              <string/>
             </property>
             <property name="whatsThis">
-             <string>aide</string>
+             <string notr="true">aide</string>
             </property>
             <property name="text">
              <string>Aide</string>
@@ -1826,7 +1826,7 @@ QLabel {
              <string/>
             </property>
             <property name="whatsThis">
-             <string>debut</string>
+             <string notr="true">debut</string>
             </property>
             <property name="text">
              <string>Début</string>
@@ -1867,7 +1867,7 @@ QLabel {
              <string/>
             </property>
             <property name="whatsThis">
-             <string>solution</string>
+             <string notr="true">solution</string>
             </property>
             <property name="text">
              <string>Solution</string>
@@ -1914,7 +1914,7 @@ QLabel {
              <string/>
             </property>
             <property name="whatsThis">
-             <string>nombres</string>
+             <string notr="true">nombres</string>
             </property>
             <property name="text">
              <string>Nombres</string>
@@ -2372,7 +2372,7 @@ border-radius:5px;</string>
              <string notr="true">color:orange</string>
             </property>
             <property name="text">
-             <string>oc</string>
+             <string>Oc</string>
             </property>
            </widget>
           </item>
@@ -2406,7 +2406,7 @@ border-radius:5px;</string>
              <string notr="true">color:black</string>
             </property>
             <property name="text">
-             <string>deutsch</string>
+             <string>Deutsch</string>
             </property>
            </widget>
           </item>
@@ -2440,7 +2440,7 @@ border-radius:5px;</string>
              <string notr="true">color: blue;</string>
             </property>
             <property name="text">
-             <string>French</string>
+             <string>Français</string>
             </property>
            </widget>
           </item>
@@ -2542,7 +2542,7 @@ border-radius:5px;</string>
              <string notr="true">color:green</string>
             </property>
             <property name="text">
-             <string>italiano</string>
+             <string>Italiano</string>
             </property>
            </widget>
           </item>
