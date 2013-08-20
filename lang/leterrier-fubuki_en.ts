@@ -422,14 +422,8 @@ p, li { white-space: pre-wrap; }
         <translation>Brown</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="1688"/>
-        <source>verification</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location filename="../mainwindow.ui" line="1735"/>
         <source>niveaux</source>
-        <translation>levels</translation>
+        <translation type="obsolete">levels</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="1738"/>
@@ -437,9 +431,8 @@ p, li { white-space: pre-wrap; }
         <translation>Level</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="1782"/>
         <source>aide</source>
-        <translation>help</translation>
+        <translation type="obsolete">help</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="1785"/>
@@ -448,9 +441,8 @@ p, li { white-space: pre-wrap; }
         <translation>Help</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="1829"/>
         <source>debut</source>
-        <translation>beginning</translation>
+        <translation type="obsolete">beginning</translation>
     </message>
     <message utf8="true">
         <location filename="../mainwindow.ui" line="1832"/>
@@ -458,14 +450,12 @@ p, li { white-space: pre-wrap; }
         <translation>Beginning</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="1870"/>
         <source>solution</source>
-        <translation>Solution</translation>
+        <translation type="obsolete">Solution</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="1917"/>
         <source>nombres</source>
-        <translation>numbers</translation>
+        <translation type="obsolete">numbers</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="1920"/>
@@ -498,19 +488,8 @@ p, li { white-space: pre-wrap; }
         <translation>Exit</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="2375"/>
         <source>oc</source>
-        <translation>oc</translation>
-    </message>
-    <message>
-        <location filename="../mainwindow.ui" line="2409"/>
-        <source>deutsch</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location filename="../mainwindow.ui" line="2443"/>
-        <source>French</source>
-        <translation></translation>
+        <translation type="obsolete">oc</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="2477"/>
@@ -523,9 +502,19 @@ p, li { white-space: pre-wrap; }
         <translation></translation>
     </message>
     <message>
+        <location filename="../mainwindow.ui" line="2375"/>
+        <source>Oc</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.ui" line="2409"/>
+        <source>Deutsch</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../mainwindow.ui" line="2545"/>
-        <source>italiano</source>
-        <translation></translation>
+        <source>Italiano</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="2563"/>
@@ -587,122 +576,123 @@ p, li { white-space: pre-wrap; }
         <translation type="obsolete">English</translation>
     </message>
     <message utf8="true">
+        <location filename="../mainwindow.ui" line="2443"/>
         <source>Français</source>
-        <translation type="obsolete">French</translation>
+        <translation>French</translation>
     </message>
     <message utf8="true">
-        <location filename="../mainwindow.cpp" line="244"/>
+        <location filename="../mainwindow.cpp" line="248"/>
         <source>de 1 à 9</source>
         <translation>from 1 to 9</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="246"/>
+        <location filename="../mainwindow.cpp" line="250"/>
         <source>entre 15 et %1</source>
         <translation>between 15 and %1</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="247"/>
+        <location filename="../mainwindow.cpp" line="251"/>
         <source>niveau %1</source>
         <translation>level %1</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="249"/>
+        <location filename="../mainwindow.cpp" line="253"/>
         <source>anticiper 6 totaux de 3 nombres</source>
         <translation>predict 6 results from 3 numbers</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="483"/>
-        <location filename="../mainwindow.cpp" line="906"/>
+        <location filename="../mainwindow.cpp" line="487"/>
+        <location filename="../mainwindow.cpp" line="901"/>
         <source>Nombre maximum</source>
         <translation>Max number</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="483"/>
-        <location filename="../mainwindow.cpp" line="906"/>
+        <location filename="../mainwindow.cpp" line="487"/>
+        <location filename="../mainwindow.cpp" line="901"/>
         <source>Choisis un nombre entre 1 et 34</source>
         <translation>Choice a number between 1 and 34</translation>
     </message>
     <message utf8="true">
-        <location filename="../mainwindow.cpp" line="567"/>
+        <location filename="../mainwindow.cpp" line="571"/>
         <source>Vérification refusée</source>
         <translation>Check denied</translation>
     </message>
     <message utf8="true">
-        <location filename="../mainwindow.cpp" line="567"/>
+        <location filename="../mainwindow.cpp" line="571"/>
         <source>Commence à remplir la grille !</source>
         <translation>Fill the grid first !</translation>
     </message>
     <message utf8="true">
-        <location filename="../mainwindow.cpp" line="586"/>
-        <location filename="../mainwindow.cpp" line="703"/>
+        <location filename="../mainwindow.cpp" line="590"/>
+        <location filename="../mainwindow.cpp" line="707"/>
         <source>Félicitations</source>
         <translation>Congratulations</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="586"/>
-        <location filename="../mainwindow.cpp" line="703"/>
+        <location filename="../mainwindow.cpp" line="590"/>
+        <location filename="../mainwindow.cpp" line="707"/>
         <source>Tu peux choisir une nouvelle grille...</source>
         <translation>You can choose a new one...</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="612"/>
-        <location filename="../mainwindow.cpp" line="631"/>
-        <location filename="../mainwindow.cpp" line="645"/>
+        <location filename="../mainwindow.cpp" line="616"/>
+        <location filename="../mainwindow.cpp" line="635"/>
+        <location filename="../mainwindow.cpp" line="649"/>
         <source>Une ou des erreurs ...</source>
         <translation>Error(s) ...</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="612"/>
+        <location filename="../mainwindow.cpp" line="616"/>
         <source>Par exemple le nombre : %1 
 
 Je te prie de corriger !</source>
         <translation>Number %1, for example. Please correct !</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="617"/>
-        <location filename="../mainwindow.cpp" line="651"/>
+        <location filename="../mainwindow.cpp" line="621"/>
+        <location filename="../mainwindow.cpp" line="655"/>
         <source>Pas d&apos;erreur !</source>
         <translation>No error !</translation>
     </message>
     <message utf8="true">
-        <location filename="../mainwindow.cpp" line="617"/>
-        <location filename="../mainwindow.cpp" line="651"/>
+        <location filename="../mainwindow.cpp" line="621"/>
+        <location filename="../mainwindow.cpp" line="655"/>
         <source>Continue à complèter la grille...</source>
         <translation>Carry on filling the grid...</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="631"/>
+        <location filename="../mainwindow.cpp" line="635"/>
         <source>Par exemple la ligne %1
 
 Je te prie de corriger !</source>
         <translation>Line %1 for example. Please correct !</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="645"/>
+        <location filename="../mainwindow.cpp" line="649"/>
         <source>Par exemple la colonne %1
 
 Je te prie de corriger !</source>
         <translation>Column %1 for example. Please correct !</translation>
     </message>
     <message utf8="true">
-        <location filename="../mainwindow.cpp" line="698"/>
+        <location filename="../mainwindow.cpp" line="702"/>
         <source>Pas trouvé ?</source>
         <translation>No idea ?</translation>
     </message>
     <message utf8="true">
-        <location filename="../mainwindow.cpp" line="698"/>
+        <location filename="../mainwindow.cpp" line="702"/>
         <source>Voici un corrigé ! 
 
 Tu peux choisir une nouvelle grille...</source>
         <translation>Here is a solution ! Choose a new grid...</translation>
     </message>
     <message utf8="true">
-        <location filename="../mainwindow.cpp" line="989"/>
+        <location filename="../mainwindow.cpp" line="987"/>
         <source>Problème</source>
         <translation>Problem</translation>
     </message>
     <message utf8="true">
-        <location filename="../mainwindow.cpp" line="989"/>
+        <location filename="../mainwindow.cpp" line="987"/>
         <source>Tu n&apos;as pas donné un nombre compris entre 1 et 34, on reste avec les nombres de 1 à 9...</source>
         <translation>Not matching number, we keep numbers from 1 to 9...</translation>
     </message>
@@ -732,12 +722,12 @@ You can choose a new grid...</translation>
     </message>
     <message utf8="true">
         <location filename="../mainwindow.ui" line="1691"/>
-        <location filename="../mainwindow.cpp" line="589"/>
-        <location filename="../mainwindow.cpp" line="615"/>
-        <location filename="../mainwindow.cpp" line="620"/>
-        <location filename="../mainwindow.cpp" line="634"/>
-        <location filename="../mainwindow.cpp" line="647"/>
-        <location filename="../mainwindow.cpp" line="654"/>
+        <location filename="../mainwindow.cpp" line="593"/>
+        <location filename="../mainwindow.cpp" line="619"/>
+        <location filename="../mainwindow.cpp" line="624"/>
+        <location filename="../mainwindow.cpp" line="638"/>
+        <location filename="../mainwindow.cpp" line="651"/>
+        <location filename="../mainwindow.cpp" line="658"/>
         <source>Vérification</source>
         <translation>Checking</translation>
     </message>
@@ -798,34 +788,34 @@ Tu peux choisir une nouvelle grille...</source>
 You can choose a new grid...</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="707"/>
+        <location filename="../mainwindow.cpp" line="711"/>
         <source>Abandon</source>
         <translation>Cancel</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="721"/>
+        <location filename="../mainwindow.cpp" line="725"/>
         <source>Je propose le nombre ... %1</source>
         <translation>I suggest ... %1</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="721"/>
+        <location filename="../mainwindow.cpp" line="725"/>
         <source>Allez, je t&apos;aide...</source>
         <translation>I give you helping hand...</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="736"/>
+        <location filename="../mainwindow.cpp" line="740"/>
         <source>Information</source>
         <translation>Information</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="2641"/>
-        <location filename="../mainwindow.cpp" line="797"/>
+        <location filename="../mainwindow.cpp" line="790"/>
         <source>&amp;Anglais</source>
         <translation>&amp;English</translation>
     </message>
     <message utf8="true">
         <location filename="../mainwindow.ui" line="2646"/>
-        <location filename="../mainwindow.cpp" line="803"/>
+        <location filename="../mainwindow.cpp" line="796"/>
         <source>&amp;Français</source>
         <translation>&amp;Français</translation>
     </message>

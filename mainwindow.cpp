@@ -147,7 +147,7 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->btnLanguages->setIconeNormale(":/data/flags/fr");
     ui->frmChoixLangues->move(790,0);
     ui->frmChoixLangues->setVisible(false);
-    ui->btnEs->setVisible(false);
+//    ui->btnEs->setVisible(false);
     ui->btnIt->setVisible(false);
     ui->btnDe->setVisible(false);
     ui->btnOc->setVisible(false);
