@@ -153,7 +153,10 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->btnOc->setVisible(false);
     foreach(AbulEduFlatBoutonV1* btn, ui->frmChoixLangues->findChildren<AbulEduFlatBoutonV1*>())
     {
-        connect(btn, SIGNAL(clicked()),SLOT(slotChangeLangue()),Qt::UniqueConnection);
+        if(!btn->whatsThis().isEmpty())
+        {
+            connect(btn, SIGNAL(clicked()),SLOT(slotChangeLangue()),Qt::UniqueConnection);
+        }
     }
 
 #ifdef __ABULEDUTABLETTEV1__MODE__
