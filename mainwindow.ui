@@ -333,14 +333,14 @@ font-size:24px;
          <widget class="AbulEduFlatBoutonV1" name="btnLanguages">
           <property name="minimumSize">
            <size>
-            <width>40</width>
-            <height>40</height>
+            <width>48</width>
+            <height>29</height>
            </size>
           </property>
           <property name="maximumSize">
            <size>
-            <width>40</width>
-            <height>40</height>
+            <width>48</width>
+            <height>29</height>
            </size>
           </property>
           <property name="cursor">
@@ -2390,10 +2390,10 @@ border-bottom-left-radius: 10px;
         <widget class="QFrame" name="frmChoixLangues">
          <property name="geometry">
           <rect>
-           <x>140</x>
+           <x>70</x>
            <y>10</y>
            <width>124</width>
-           <height>191</height>
+           <height>271</height>
           </rect>
          </property>
          <property name="styleSheet">
@@ -2407,7 +2407,7 @@ border-radius:5px;</string>
           <enum>QFrame::Raised</enum>
          </property>
          <layout class="QGridLayout" name="gridLayout_8">
-          <item row="12" column="0">
+          <item row="13" column="0">
            <widget class="AbulEduFlatBoutonV1" name="btnLangueAnnuler">
             <property name="minimumSize">
              <size>
@@ -2439,7 +2439,7 @@ border-radius:5px;</string>
             </property>
            </widget>
           </item>
-          <item row="7" column="0">
+          <item row="8" column="0">
            <widget class="AbulEduFlatBoutonV1" name="btnOc">
             <property name="minimumSize">
              <size>
@@ -2646,6 +2646,41 @@ border-radius:5px;</string>
             </property>
             <property name="text">
              <string>Italiano</string>
+            </property>
+           </widget>
+          </item>
+          <item row="7" column="0">
+           <widget class="AbulEduFlatBoutonV1" name="btnNl">
+            <property name="minimumSize">
+             <size>
+              <width>100</width>
+              <height>30</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>100</width>
+              <height>30</height>
+             </size>
+            </property>
+            <property name="font">
+             <font>
+              <family>Andika Basic</family>
+              <weight>75</weight>
+              <bold>true</bold>
+             </font>
+            </property>
+            <property name="cursor">
+             <cursorShape>PointingHandCursor</cursorShape>
+            </property>
+            <property name="whatsThis">
+             <string notr="true">de</string>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">color:#dd4900</string>
+            </property>
+            <property name="text">
+             <string>Nederlander</string>
             </property>
            </widget>
           </item>
