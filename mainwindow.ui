@@ -279,7 +279,6 @@ background-position: top right;
          <widget class="QLabel" name="lblTitre">
           <property name="font">
            <font>
-            <family>Andika Basic</family>
             <pointsize>-1</pointsize>
            </font>
           </property>
@@ -343,6 +342,9 @@ font-size:24px;
             <width>40</width>
             <height>40</height>
            </size>
+          </property>
+          <property name="cursor">
+           <cursorShape>PointingHandCursor</cursorShape>
           </property>
           <property name="text">
            <string/>
@@ -755,6 +757,9 @@ QLabel {
                <bold>true</bold>
               </font>
              </property>
+             <property name="cursor">
+              <cursorShape>PointingHandCursor</cursorShape>
+             </property>
              <property name="focusPolicy">
               <enum>Qt::NoFocus</enum>
              </property>
@@ -797,6 +802,9 @@ QLabel {
                <bold>true</bold>
               </font>
              </property>
+             <property name="cursor">
+              <cursorShape>PointingHandCursor</cursorShape>
+             </property>
              <property name="focusPolicy">
               <enum>Qt::NoFocus</enum>
              </property>
@@ -835,6 +843,9 @@ QLabel {
                <weight>75</weight>
                <bold>true</bold>
               </font>
+             </property>
+             <property name="cursor">
+              <cursorShape>PointingHandCursor</cursorShape>
              </property>
              <property name="focusPolicy">
               <enum>Qt::NoFocus</enum>
@@ -912,6 +923,9 @@ QLabel {
                <bold>true</bold>
               </font>
              </property>
+             <property name="cursor">
+              <cursorShape>PointingHandCursor</cursorShape>
+             </property>
              <property name="focusPolicy">
               <enum>Qt::NoFocus</enum>
              </property>
@@ -951,6 +965,9 @@ QLabel {
                <bold>true</bold>
               </font>
              </property>
+             <property name="cursor">
+              <cursorShape>PointingHandCursor</cursorShape>
+             </property>
              <property name="focusPolicy">
               <enum>Qt::NoFocus</enum>
              </property>
@@ -989,6 +1006,9 @@ QLabel {
                <weight>75</weight>
                <bold>true</bold>
               </font>
+             </property>
+             <property name="cursor">
+              <cursorShape>PointingHandCursor</cursorShape>
              </property>
              <property name="focusPolicy">
               <enum>Qt::NoFocus</enum>
@@ -1066,6 +1086,9 @@ QLabel {
                <bold>true</bold>
               </font>
              </property>
+             <property name="cursor">
+              <cursorShape>PointingHandCursor</cursorShape>
+             </property>
              <property name="focusPolicy">
               <enum>Qt::NoFocus</enum>
              </property>
@@ -1105,6 +1128,9 @@ QLabel {
                <bold>true</bold>
               </font>
              </property>
+             <property name="cursor">
+              <cursorShape>PointingHandCursor</cursorShape>
+             </property>
              <property name="focusPolicy">
               <enum>Qt::NoFocus</enum>
              </property>
@@ -1143,6 +1169,9 @@ QLabel {
                <weight>75</weight>
                <bold>true</bold>
               </font>
+             </property>
+             <property name="cursor">
+              <cursorShape>PointingHandCursor</cursorShape>
              </property>
              <property name="focusPolicy">
               <enum>Qt::NoFocus</enum>
@@ -1353,7 +1382,7 @@ QLabel {
               </font>
              </property>
              <property name="cursor">
-              <cursorShape>ArrowCursor</cursorShape>
+              <cursorShape>PointingHandCursor</cursorShape>
              </property>
              <property name="focusPolicy">
               <enum>Qt::NoFocus</enum>
@@ -1389,7 +1418,7 @@ QLabel {
               </font>
              </property>
              <property name="cursor">
-              <cursorShape>ArrowCursor</cursorShape>
+              <cursorShape>PointingHandCursor</cursorShape>
              </property>
              <property name="focusPolicy">
               <enum>Qt::NoFocus</enum>
@@ -1425,7 +1454,7 @@ QLabel {
               </font>
              </property>
              <property name="cursor">
-              <cursorShape>ArrowCursor</cursorShape>
+              <cursorShape>PointingHandCursor</cursorShape>
              </property>
              <property name="focusPolicy">
               <enum>Qt::NoFocus</enum>
@@ -1460,6 +1489,9 @@ QLabel {
                <bold>true</bold>
               </font>
              </property>
+             <property name="cursor">
+              <cursorShape>PointingHandCursor</cursorShape>
+             </property>
              <property name="focusPolicy">
               <enum>Qt::NoFocus</enum>
              </property>
@@ -1492,6 +1524,9 @@ QLabel {
                <weight>75</weight>
                <bold>true</bold>
               </font>
+             </property>
+             <property name="cursor">
+              <cursorShape>PointingHandCursor</cursorShape>
              </property>
              <property name="focusPolicy">
               <enum>Qt::NoFocus</enum>
@@ -1526,6 +1561,9 @@ QLabel {
                <bold>true</bold>
               </font>
              </property>
+             <property name="cursor">
+              <cursorShape>PointingHandCursor</cursorShape>
+             </property>
              <property name="focusPolicy">
               <enum>Qt::NoFocus</enum>
              </property>
@@ -1558,6 +1596,9 @@ QLabel {
                <weight>75</weight>
                <bold>true</bold>
               </font>
+             </property>
+             <property name="cursor">
+              <cursorShape>PointingHandCursor</cursorShape>
              </property>
              <property name="focusPolicy">
               <enum>Qt::NoFocus</enum>
@@ -1592,6 +1633,9 @@ QLabel {
                <bold>true</bold>
               </font>
              </property>
+             <property name="cursor">
+              <cursorShape>PointingHandCursor</cursorShape>
+             </property>
              <property name="focusPolicy">
               <enum>Qt::NoFocus</enum>
              </property>
@@ -1624,6 +1668,9 @@ QLabel {
                <weight>75</weight>
                <bold>true</bold>
               </font>
+             </property>
+             <property name="cursor">
+              <cursorShape>PointingHandCursor</cursorShape>
              </property>
              <property name="focusPolicy">
               <enum>Qt::NoFocus</enum>
@@ -1694,6 +1741,9 @@ QLabel {
               <bold>false</bold>
              </font>
             </property>
+            <property name="cursor">
+             <cursorShape>PointingHandCursor</cursorShape>
+            </property>
             <property name="toolTip">
              <string/>
             </property>
@@ -1740,6 +1790,9 @@ QLabel {
               <weight>50</weight>
               <bold>false</bold>
              </font>
+            </property>
+            <property name="cursor">
+             <cursorShape>PointingHandCursor</cursorShape>
             </property>
             <property name="toolTip">
              <string/>
@@ -1788,6 +1841,9 @@ QLabel {
               <bold>false</bold>
              </font>
             </property>
+            <property name="cursor">
+             <cursorShape>PointingHandCursor</cursorShape>
+            </property>
             <property name="toolTip">
              <string/>
             </property>
@@ -1835,6 +1891,9 @@ QLabel {
               <bold>false</bold>
              </font>
             </property>
+            <property name="cursor">
+             <cursorShape>PointingHandCursor</cursorShape>
+            </property>
             <property name="toolTip">
              <string/>
             </property>
@@ -1875,6 +1934,9 @@ QLabel {
               <weight>50</weight>
               <bold>false</bold>
              </font>
+            </property>
+            <property name="cursor">
+             <cursorShape>PointingHandCursor</cursorShape>
             </property>
             <property name="toolTip">
              <string/>
@@ -1922,6 +1984,9 @@ QLabel {
               <weight>50</weight>
               <bold>false</bold>
              </font>
+            </property>
+            <property name="cursor">
+             <cursorShape>PointingHandCursor</cursorShape>
             </property>
             <property name="toolTip">
              <string/>

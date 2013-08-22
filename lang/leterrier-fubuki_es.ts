@@ -459,7 +459,7 @@ p, li { white-space: pre-wrap; }
     <message utf8="true">
         <location filename="../mainwindow.cpp" line="574"/>
         <source>Commence à remplir la grille !</source>
-        <translation>Empieza con rellenar la tabla !</translation>
+        <translation>Empieza a rellenar la tabla !</translation>
     </message>
     <message utf8="true">
         <location filename="../mainwindow.cpp" line="593"/>
@@ -485,7 +485,7 @@ p, li { white-space: pre-wrap; }
         <source>Par exemple le nombre : %1 
 
 Je te prie de corriger !</source>
-        <translation>Por ejemplo, el %1. Propone otro !</translation>
+        <translation>Por ejemplo, el %1. Propone otro número !</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="624"/>
@@ -554,12 +554,12 @@ Tu peux choisir une nouvelle grille...</source>
     <message>
         <location filename="../mainwindow.cpp" line="728"/>
         <source>Je propose le nombre ... %1</source>
-        <translation>Propongo el número %1</translation>
+        <translation>Te propongo el número %1</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="728"/>
         <source>Allez, je t&apos;aide...</source>
-        <translation>Bueno, te ayudo un poco...</translation>
+        <translation>Bueno, pequeña ayuda...</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="743"/>
