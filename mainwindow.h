@@ -205,6 +205,7 @@ private slots:
     void on_btnIt_clicked();
     void on_btnDe_clicked();
     void on_btnOc_clicked();
+    void on_btnNl_clicked();
     void on_btnLangueAnnuler_clicked();
 };
 
