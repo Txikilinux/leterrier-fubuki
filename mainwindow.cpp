@@ -689,11 +689,12 @@ void MainWindow::on_cBoxNiveau_activated(int index)
 void MainWindow::on_btnAbandonner_clicked()
 {
     for (int i = 0; i < 9; i++) {
+        qDebug()<<"case "<<i<<" : "<<nomBtnCase[i]->text().toInt()<<" -> "<<cases[i];
         if (nomBtnCase[i]->text().toInt() != cases[i]) {
-            nomBtnCase[i]->setStyleSheet("background:transparent;color : #d40000");
+            nomBtnCase[i]->setStyleSheet("background:transparent;color : #006cc0");
             nErreurs++;
         } else {
-            nomBtnCase[i]->setStyleSheet("background:transparent;color : #20C020");
+//            nomBtnCase[i]->setStyleSheet("background:transparent;color : #ec11da");
         }
         nomBtnCase[i]->setProperty("text", QString::number(cases[i]));
         nomBtnCase[i]->setDisabled(true);
