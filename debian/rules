@@ -31,7 +31,7 @@ install/leterrier-fubuki::
 	cp -a $(CURDIR)/debian/*.desktop $(BUILDTEMP)/usr/share/applications/
 	# On recopie dans le dossier /usr/share tout le contenu de data, et en particulier toutes les icônes 
 	cp -a $(CURDIR)/data/* $(BUILDTEMP)/$(DEST)/data
-	cp -a $(CURDIR)/lang/*.ts $(BUILDTEMP)/$(DEST)/lang
+	cp -a $(CURDIR)/lang/*.ts $(BUILDTEMP)/$(EXECDEST)/lang
 	cp -a $(CURDIR)/leterrier-fubuki $(BUILDTEMP)/$(EXECDEST)/
 	install -s -m 755 $(CURDIR)/$(EXECNAME) $(BUILDTEMP)/$(EXECDEST)/
 	# et là on va chercher l'icône du logiciel à la "racine" de /usr/share
