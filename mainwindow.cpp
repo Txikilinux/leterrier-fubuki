@@ -265,13 +265,21 @@ void MainWindow::initFubuki()
     // les nombres à manipuler
     casesInitial.clear();
     if (alea == 0 && niveau < 5)
+    {
         casesInitial << 1 << 2 << 3 << 4 << 5 << 6 << 7 << 8 << 9;
+        ui->lblIndicationNiveauNoir->setVisible(false);
+        ui->frmBtnNombres->setVisible(true);
+    }
     else {
         if (niveau >= 5) {
             borneSup = 15 + rand() %20;
 //            ui->cBoxSuite->setDisabled(true);
             ui->btnNombres->setDisabled(true);
+            ui->frmBtnNombres->setVisible(false);
+            ui->lblIndicationNiveauNoir->setVisible(true);
+
         }
+
         casesInitial << borneSup;
         while( casesInitial.length() < 9) {
             int r = rand() % borneSup+1;
@@ -490,14 +498,15 @@ void MainWindow::_btnCase(int i) {
 //        while (!ok)
 //            // astuce (ben oui) puisque actuelBtnNbre désigne normalement un indice pas une valeur
 //            actuelBtnNbre = QInputDialog::getInteger(this, trUtf8("Ton choix"), trUtf8("Nombre entier entre 1 et 34"), 16, 1, 34, 1, &ok);
-        AbulEduMessageBoxV1* inputBox = new AbulEduMessageBoxV1(trUtf8("Nombre maximum"),trUtf8("Choisis un nombre entre 1 et 34"));
+        AbulEduMessageBoxV1* inputBox = new AbulEduMessageBoxV1(trUtf8("Choisis un nombre"),trUtf8("Choisis un nombre entre 1 et 34"));
         inputBox->setWink();
         inputBox->abeMessageBoxShowInput(true);
         inputBox->show();
+        actuelBtnCase = i;
         /* Pour pouvoir vérifier que mon nombre est bien compris entre 1 et 34 il me faut un validateur
            Ou alors il faudra que je mette cet AbulEduMessageBox dans un méthode retournant un booléen, dans laquelle je testerai le retour
         inputBox->setValidatorForInput(QRegExp)*/
-        connect(inputBox, SIGNAL(signalAbeMessageBoxInputOK(QString)),SLOT(slotMainWindowSetBorneSup(QString)),Qt::UniqueConnection);
+        connect(inputBox, SIGNAL(signalAbeMessageBoxInputOK(QString)),SLOT(slotMainWindowSetInCase(QString)),Qt::UniqueConnection);
     }
     int k = indexInCasesInitial(nomBtnCase[i]->text().toInt());
     if (k >= 0) {
@@ -995,6 +1004,21 @@ void MainWindow::slotMainWindowSetBorneSup(QString nombreLu)
         msg->show();
     }
     initFubuki();
+}
+
+void MainWindow::slotMainWindowSetInCase(QString nombreLu)
+{
+    bool ok;
+    int conversion = nombreLu.toInt(&ok);
+    if (!ok || conversion > 34 || conversion < 1){
+        AbulEduMessageBoxV1* msg = new AbulEduMessageBoxV1(trUtf8("Problème"),trUtf8("Tu n'as pas donné un nombre compris entre 1 et 34..."));
+        msg->show();
+    }
+    else
+    {
+        nomBtnCase[actuelBtnCase]->setText(nombreLu);
+        nomBtnCase[actuelBtnCase]->setStyleSheet("background:transparent;color : #d40000");
+    }
 }
 
 void MainWindow::on_btnDebut_clicked()

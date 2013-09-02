@@ -2686,6 +2686,31 @@ border-radius:5px;</string>
           </item>
          </layout>
         </widget>
+        <widget class="QLabel" name="lblIndicationNiveauNoir">
+         <property name="geometry">
+          <rect>
+           <x>350</x>
+           <y>40</y>
+           <width>561</width>
+           <height>41</height>
+          </rect>
+         </property>
+         <property name="font">
+          <font>
+           <family>Andika Basic</family>
+           <pointsize>16</pointsize>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">color:#9c4242;</string>
+         </property>
+         <property name="text">
+          <string>Clique directement dans les cases de la grille</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+        </widget>
        </widget>
        <widget class="QWidget" name="pageApropos">
         <widget class="QPushButton" name="pushButton">

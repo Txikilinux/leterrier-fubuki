@@ -197,6 +197,7 @@ private slots:
     void on_btnMinimized_clicked();
     void on_btnFullScreen_clicked();
     void slotMainWindowSetBorneSup(QString nombreLu);
+    void slotMainWindowSetInCase(QString nombreLu);
     void on_btnDebut_clicked();
     void on_btnLanguages_clicked();
     void on_btnFr_clicked();
