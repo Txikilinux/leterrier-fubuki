@@ -20,6 +20,7 @@ install/leterrier-fubuki::
 	install -d -m 755 $(BUILDTEMP)/usr/bin/
 	install -d -m 755 $(BUILDTEMP)/$(EXECDEST)
 	install -d -m 755 $(BUILDTEMP)/$(DEST)/data
+	install -d -m 755 $(BUILDTEMP)/$(DEST)/lang
 	install -d -m 755  $(BUILDTEMP)/usr/share/applications
 	install -d -m 755 $(BUILDTEMP)/$(DEST)/data/icones/
 	install -m 755 $(BUILDTEMP).wrapper $(BUILDTEMP)/usr/bin/leterrier-fubuki
@@ -28,9 +29,12 @@ install/leterrier-fubuki::
 	#install -m 644 $(CURDIR)/exemples/*.abe $(BUILDTEMP)/$(DEST)/data
 	cp -a $(BUILDTEMP).wrapper $(BUILDTEMP)/usr/bin/leterrier-fubuki
 	cp -a $(CURDIR)/debian/*.desktop $(BUILDTEMP)/usr/share/applications/
+	# On recopie dans le dossier /usr/share tout le contenu de data, et en particulier toutes les icônes 
 	cp -a $(CURDIR)/data/* $(BUILDTEMP)/$(DEST)/data
+	cp -a $(CURDIR)/lang/*.ts $(BUILDTEMP)/$(DEST)/lang
 	cp -a $(CURDIR)/leterrier-fubuki $(BUILDTEMP)/$(EXECDEST)/
 	install -s -m 755 $(CURDIR)/$(EXECNAME) $(BUILDTEMP)/$(EXECDEST)/
+	# et là on va chercher l'icône du logiciel à la "racine" de /usr/share
 	install -m 644 $(CURDIR)/data/icones/$(EXECNAME)-256.png $(BUILDTEMP)/$(DEST)/
 
 
