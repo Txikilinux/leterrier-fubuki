@@ -20,7 +20,7 @@ install/leterrier-fubuki::
 	install -d -m 755 $(BUILDTEMP)/usr/bin/
 	install -d -m 755 $(BUILDTEMP)/$(EXECDEST)
 	install -d -m 755 $(BUILDTEMP)/$(DEST)/data
-	install -d -m 755 $(BUILDTEMP)/$(EXECDEST)/lang
+	install -d -m 755 $(BUILDTEMP)/$(DEST)/lang
 	install -d -m 755  $(BUILDTEMP)/usr/share/applications
 	install -d -m 755 $(BUILDTEMP)/$(DEST)/data/icones/
 	install -m 755 $(BUILDTEMP).wrapper $(BUILDTEMP)/usr/bin/leterrier-fubuki
