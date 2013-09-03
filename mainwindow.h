@@ -1,5 +1,5 @@
 /**
-  * Fubuki (le terrier d'AbulEdu)
+  * Fubuki (le Terrier d'AbulÉdu)
   *
   * @warning aucun traitement d'erreur n'est pour l'instant implémenté
   * @see https://redmine.ryxeo.com/projects/leterrier-fubuki
