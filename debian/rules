@@ -19,7 +19,7 @@ MANPAGES := $(CURDIR)/debian/$(EXECNAME).1
 install/$(EXECNAME)::
 	install -d -m 755 $(BUILDTEMP)/usr/bin/
 	install -d -m 755 $(BUILDTEMP)/$(EXECDEST)
-	install -d -m 755 $(BUILDTEMP)/$(DEST)/data/picto
+	install -d -m 755 $(BUILDTEMP)/$(DEST)/data/icones
 	install -d -m 755 $(BUILDTEMP)/$(DEST)/conf
 	install -d -m 755 $(BUILDTEMP)/$(DEST)/lang
 	install -d -m 755 $(BUILDTEMP)/usr/share/applications
