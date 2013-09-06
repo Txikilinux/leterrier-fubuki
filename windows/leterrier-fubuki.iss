@@ -20,6 +20,7 @@ OutputBaseFilename=leterrier-fubuki-LAVERSION-setup
 SetupIconFile=leterrier-fubuki.ico
 Compression=lzma
 SolidCompression=yes
+; WizardImageFile=imageWizard.bmp
 SignTool=ryxeo /d $qPackage d'installation$q $f
 SignedUninstaller=True
 SignedUninstallerDir=.
@@ -33,8 +34,11 @@ Name: "desktopicon"; Description: "{cm:CreateDesktopIcon}"; GroupDescription: "{
 
 [Files]
 Source: "../release/leterrier-fubuki.exe"; DestDir: "{app}"; Flags: ignoreversion
-Source: "../data/*"; DestDir: "{app}"; Flags: ignoreversion recursesubdirs createallsubdirs
-Source: "../lang/*.qm"; DestDir: "{app}/lang"; Flags: ignoreversion
+Source: "..\debian\*.desktop"; DestDir: "{app}"; Flags: ignoreversion
+;Source: "../data/*"; DestDir: "{app}"; Flags: ignoreversion recursesubdirs createallsubdirs
+;Source: "..\exemples\*.abe"; DestDir: "{app}\data"; Flags: ignoreversion recursesubdirs createallsubdirs
+;Source: "..\conf\*"; DestDir: "{app}\conf"; Flags: ignoreversion recursesubdirs createallsubdirs
+Source: "../lang/*.qm"; DestDir: "{app}\lang"; Flags: ignoreversion
 Source: "C:/code/quazip.dll"; DestDir: "{app}"; Flags: ignoreversion
 Source: "C:/code/exiv2/bin/libexiv2-12.dll"; DestDir: "{app}"; Flags: ignoreversion
 Source: "C:/QtSDK/mingw/bin/libstdc++-6.dll"; DestDir: "{app}"; Flags: ignoreversion recursesubdirs createallsubdirs
@@ -57,9 +61,12 @@ Source: "C:/QtSDK/Desktop/Qt/4.8.1/mingw/plugins\imageformats/qjpeg4.dll"; DestD
 Source: "C:/QtSDK/Desktop/Qt/4.8.1/mingw/plugins\imageformats/qmng4.dll"; DestDir: "{app}\imageformats"; Flags: ignoreversion recursesubdirs createallsubdirs
 Source: "C:/QtSDK/Desktop/Qt/4.8.1/mingw/plugins\imageformats/qsvg4.dll"; DestDir: "{app}\imageformats"; Flags: ignoreversion recursesubdirs createallsubdirs
 Source: "C:/QtSDK/Desktop/Qt/4.8.1/mingw/plugins\imageformats/qtiff4.dll"; DestDir: "{app}\imageformats"; Flags: ignoreversion recursesubdirs createallsubdirs
+Source: "C:/QtSDK/Desktop/Qt/4.8.1/mingw/bin/QtMultimedia4.dll"; DestDir: "{app}"; Flags: ignoreversion recursesubdirs createallsubdirs
+Source: "C:/QtSDK/Desktop/Qt/4.8.1/mingw/plugins/phonon_backend\phonon_ds94.dll"; DestDir: "{app}\phonon_backend"; Flags: ignoreversion recursesubdirs createallsubdirs
+Source: "C:/QtSDK/Desktop/Qt/4.8.1/mingw/bin/phonon4.dll"; DestDir: "{app}"; Flags: ignoreversion recursesubdirs createallsubdirs
 ; pour alacarte > 1.0.8
-Source: "..\debian\*.desktop"; DestDir: "{win}\abuledu-alacarte\data\profile1.applications"; Flags: ignoreversion recursesubdirs createallsubdirs
-Source: "..\data\icones\leterrier-fubuki-128.png"; DestDir: "{app}"; Flags: ignoreversion
+Source: "..\debian\*.desktop"; DestDir: "{win}\abuledu-alacarte\data\profile1.applications"; AfterInstall: UpdateDesktopPath; Flags: ignoreversion recursesubdirs createallsubdirs
+Source: "..\data\icones\leterrier-fubuki-256.png"; DestDir: "{app}"; Flags: ignoreversion
 ; NOTE: Don't use "Flags: ignoreversion" on any shared system files
 
 [Icons]
@@ -69,3 +76,12 @@ Source: "..\data\icones\leterrier-fubuki-128.png"; DestDir: "{app}"; Flags: igno
 [Run]
 ; Filename: "{app}\leterrier-fubuki.exe"; Description: "{cm:LaunchProgram,Fubuki}"; Flags: nowait postinstall skipifsilent
 
+[Code]
+procedure UpdateDesktopPath();
+var Strings : TArrayOfString;
+begin
+  SetArrayLength(Strings, 1);
+  Strings[0] := 'X-Horizon-WindowsExecPath=' + ExpandConstant('{app}');
+
+  SaveStringsToFile(ExpandConstant('{win}') + '\abuledu-alacarte\data\profile1.applications\leterrier-fubuki.desktop', Strings, True);
+end;
