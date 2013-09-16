@@ -43,6 +43,11 @@ MainWindow::MainWindow(QWidget *parent) :
     ui(new Ui::MainWindow)
 {
 
+    QSettings config("/tmp/toto.conf",QSettings::IniFormat);
+    config.setValue("color1",QColor(252,152,41));
+    config.setValue("color2",QColor(203,106,89));
+    config.setValue("color3",QColor(252,152,41));
+
     //Langue
     QString locale = QLocale::system().name().section('_', 0, 0);
 
@@ -141,42 +146,42 @@ MainWindow::MainWindow(QWidget *parent) :
 
 
     setWindowFlags(Qt::CustomizeWindowHint);
-    ui->frmButtons->move(9,0);
-    ui->frmButtons->setVisible(false);
+//    ui->frmButtons->move(9,0);
+//    ui->frmButtons->setVisible(false);
 
-    ui->btnLanguages->setIconeNormale(":/data/flags/fr");
-    ui->btnLanguages->setIconeSurvol(":/data/flags/frHover");
-    ui->frmChoixLangues->move(790,0);
-    ui->frmChoixLangues->setVisible(false);
+//    ui->btnLanguages->setIconeNormale(":/data/flags/fr");
+//    ui->btnLanguages->setIconeSurvol(":/data/flags/frHover");
+//    ui->frmChoixLangues->move(790,0);
+//    ui->frmChoixLangues->setVisible(false);
 //    ui->btnEs->setVisible(false);
-    ui->btnIt->setVisible(false);
-    ui->btnDe->setVisible(false);
-    ui->btnOc->setVisible(false);
-    ui->btnNl->setVisible(false);
-    ui->frmChoixLangues->adjustSize();
-    foreach(AbulEduFlatBoutonV1* btn, ui->frmChoixLangues->findChildren<AbulEduFlatBoutonV1*>())
-    {
-        if(!btn->whatsThis().isEmpty())
-        {
-            connect(btn, SIGNAL(clicked()),SLOT(slotChangeLangue()),Qt::UniqueConnection);
-        }
-    }
+//    ui->btnIt->setVisible(false);
+//    ui->btnDe->setVisible(false);
+//    ui->btnOc->setVisible(false);
+//    ui->btnNl->setVisible(false);
+//    ui->frmChoixLangues->adjustSize();
+//    foreach(AbulEduFlatBoutonV1* btn, ui->frmChoixLangues->findChildren<AbulEduFlatBoutonV1*>())
+//    {
+//        if(!btn->whatsThis().isEmpty())
+//        {
+//            connect(btn, SIGNAL(clicked()),SLOT(slotChangeLangue()),Qt::UniqueConnection);
+//        }
+//    }
 
-#ifdef __ABULEDUTABLETTEV1__MODE__
-    ui->btnMinimized->setVisible(false);
-    ui->btnFullScreen->setVisible(false);
-#else
-    ui->btnMinimized->setCouleurFondSurvol(QColor(252,152,41));
-    ui->btnMinimized->setCouleurFondPressed(QColor(252,152,41));
-    ui->btnMinimized->setCouleurFondNormale(QColor(203,106,89));
-    ui->btnMinimized->setAllMargins(8,4,8,12);
-    ui->btnMinimized->setBorderRadius(4);
-    ui->btnFullScreen->setCouleurFondSurvol(QColor(252,152,41));
-    ui->btnFullScreen->setCouleurFondPressed(QColor(252,152,41));
-    ui->btnFullScreen->setCouleurFondNormale(QColor(203,106,89));
-    ui->btnFullScreen->setAllMargins(8,12,8,4);
-    ui->btnFullScreen->setBorderRadius(4);
-#endif
+//#ifdef __ABULEDUTABLETTEV1__MODE__
+//    ui->btnMinimized->setVisible(false);
+//    ui->btnFullScreen->setVisible(false);
+//#else
+//    ui->btnMinimized->setCouleurFondSurvol(QColor(252,152,41));
+//    ui->btnMinimized->setCouleurFondPressed(QColor(252,152,41));
+//    ui->btnMinimized->setCouleurFondNormale(QColor(203,106,89));
+//    ui->btnMinimized->setAllMargins(8,4,8,12);
+//    ui->btnMinimized->setBorderRadius(4);
+//    ui->btnFullScreen->setCouleurFondSurvol(QColor(252,152,41));
+//    ui->btnFullScreen->setCouleurFondPressed(QColor(252,152,41));
+//    ui->btnFullScreen->setCouleurFondNormale(QColor(203,106,89));
+//    ui->btnFullScreen->setAllMargins(8,12,8,4);
+//    ui->btnFullScreen->setBorderRadius(4);
+//#endif
 
     QDesktopWidget *widget = QApplication::desktop();
     int desktop_width = widget->width();
@@ -209,13 +214,13 @@ void MainWindow::paintEvent(QPaintEvent *)
         initFubuki();
     }
     m_isFirstFubuki = false;
-    foreach(AbulEduFlatBoutonV1* enfant,ui->frmButtons->findChildren<AbulEduFlatBoutonV1 *>())
-    {
-        enfant->setCouleurTexteSurvol(Qt::red);
-        enfant->setStyleSheet(enfant->styleSheet().replace("border-image","text-align: bottom;background-image"));
-        enfant->setStyleSheet(enfant->styleSheet().replace("image-position: center","background-position: center top"));
-    }
-    ui->btnFeuille->setStyleSheet("QPushButton > *{color:red;}QPushButton{border: none; color:rgba(0,0,0,255);background-repeat: no-repeat;background-color:transparent;}");
+//    foreach(AbulEduFlatBoutonV1* enfant,ui->frmButtons->findChildren<AbulEduFlatBoutonV1 *>())
+//    {
+//        enfant->setCouleurTexteSurvol(Qt::red);
+//        enfant->setStyleSheet(enfant->styleSheet().replace("border-image","text-align: bottom;background-image"));
+//        enfant->setStyleSheet(enfant->styleSheet().replace("image-position: center","background-position: center top"));
+//    }
+//    ui->btnFeuille->setStyleSheet("QPushButton > *{color:red;}QPushButton{border: none; color:rgba(0,0,0,255);background-repeat: no-repeat;background-color:transparent;}");
 }
 
 #ifndef __ABULEDUTABLETTEV1__MODE__
@@ -229,11 +234,11 @@ void MainWindow::mouseMoveEvent(QMouseEvent *event)
 
 void MainWindow::mousePressEvent(QMouseEvent *event)
 {
-    if (event->button() == Qt::LeftButton && ui->lblTitre->rect().contains(event->pos())) {
-        m_dragPosition = event->globalPos() - frameGeometry().topLeft();
-        event->accept();
-        m_isWindowMoving = true;
-    }
+//    if (event->button() == Qt::LeftButton && ui->lblTitre->rect().contains(event->pos())) {
+//        m_dragPosition = event->globalPos() - frameGeometry().topLeft();
+//        event->accept();
+//        m_isWindowMoving = true;
+//    }
 }
 
 void MainWindow::mouseReleaseEvent(QMouseEvent *event)
@@ -393,7 +398,7 @@ void MainWindow::initFubuki()
     ui->btnVerifier->setDisabled(false);
     ui->btnAbandonner->setDisabled(false);
 
-    ui->btnNouveau->setDisabled(true);
+//    ui->btnNouveau->setDisabled(true);
 
     /* Creation d'une copie des cases */
 
@@ -535,7 +540,7 @@ void MainWindow::_btnCase(int i) {
         actuelBtnCase = i;
     }
     setInformation();
-    ui->frmButtons->setVisible(false);
+//    ui->frmButtons->setVisible(false);
 } //fin _btnCase(int i)
 
 void MainWindow::on_btnNbre0_clicked() { _btnNbre(0); }
@@ -565,7 +570,7 @@ void MainWindow::_btnNbre(int i) {
         actuelBtnNbre = -1;
     }
     setInformation();
-    ui->frmButtons->setVisible(false);
+//    ui->frmButtons->setVisible(false);
 }
 
 void MainWindow::restaurerBtnNbre(int i) {
@@ -610,7 +615,7 @@ void MainWindow::on_btnVerifier_clicked()
         ui->btnVerifier->setDisabled(true);
         ui->btnAbandonner->setDisabled(true);
 
-        ui->btnNouveau->setDisabled(false);
+//        ui->btnNouveau->setDisabled(false);
 
         return;
     }
@@ -711,7 +716,7 @@ void MainWindow::on_btnAbandonner_clicked()
     ui->btnVerifier->setDisabled(true);
     ui->btnAbandonner->setDisabled(true);
 
-    ui->btnNouveau->setDisabled(false);
+//    ui->btnNouveau->setDisabled(false);
 
     if (nErreurs > 0)
     {
@@ -758,10 +763,10 @@ void MainWindow::on_btnInformation_clicked()
     setInformation();
 }
 
-void MainWindow::on_btnNouveau_clicked()
+void MainWindow::on_abeMenuFeuilleBtnNew_clicked()
 {
     initFubuki();
-    on_btnFeuille_clicked();
+//    on_btnFeuille_clicked();
 }
 
 void MainWindow::setInformation() {
@@ -833,12 +838,12 @@ void MainWindow::on_btnNiveaux_clicked()
     ui->frmNiveau->setVisible(true);
     ui->frmNiveau->raise();
     ui->btnNiveaux->setStyleSheet(ui->btnNiveaux->styleSheet().replace("background-color:rgba(0,0,0,0);","border-radius:5px;background-color:#ffffff;"));
-    if (ui->frmButtons->isVisible())
-    {
-        ui->frmButtons->setVisible(false);
-    }
+//    if (ui->frmButtons->isVisible())
+//    {
+//        ui->frmButtons->setVisible(false);
+//    }
     on_btnNombresFermer_clicked();
-    on_btnLangueAnnuler_clicked();
+//    on_btnLangueAnnuler_clicked();
 }
 
 void MainWindow::on_btnNiveauAnnuler_clicked()
@@ -853,11 +858,11 @@ void MainWindow::on_btnNombres_clicked()
     ui->frmChoixNombres->setVisible(true);
     ui->frmChoixNombres->raise();
     ui->btnNombres->setStyleSheet(ui->btnNombres->styleSheet().replace("background-color:rgba(0,0,0,0);","border-radius:5px;background-color:#ffffff;"));
-    if (ui->frmButtons->isVisible())
-    {
-        ui->frmButtons->setVisible(false);
-    }
-    on_btnLangueAnnuler_clicked();
+//    if (ui->frmButtons->isVisible())
+//    {
+//        ui->frmButtons->setVisible(false);
+//    }
+//    on_btnLangueAnnuler_clicked();
     on_btnNiveauAnnuler_clicked();
 }
 
@@ -933,66 +938,66 @@ void MainWindow::on_btnNombresFermer_clicked()
     ui->btnNombres->setStyleSheet(ui->btnNombres->styleSheet().replace("border-radius:5px;background-color:#ffffff;","background-color:rgba(0,0,0,0);"));
 }
 
-void MainWindow::on_btnSortie_clicked()
+void MainWindow::on_abeMenuFeuilleBtnQuit_clicked()
 {
     close();
 }
 
-void MainWindow::on_btnFeuille_clicked()
-{
-    if (ui->frmButtons->isVisible())
-    {
-        ui->frmButtons->setVisible(false);
-    }
-    else
-    {
-        ui->frmButtons->setVisible(true);
-        ui->frmButtons->raise();
-    }
-    on_btnNombresFermer_clicked();
-    on_btnNiveauAnnuler_clicked();
-    on_btnLangueAnnuler_clicked();
-}
+//void MainWindow::on_btnFeuille_clicked()
+//{
+//    if (ui->frmButtons->isVisible())
+//    {
+//        ui->frmButtons->setVisible(false);
+//    }
+//    else
+//    {
+//        ui->frmButtons->setVisible(true);
+//        ui->frmButtons->raise();
+//    }
+//    on_btnNombresFermer_clicked();
+//    on_btnNiveauAnnuler_clicked();
+//    on_btnLangueAnnuler_clicked();
+//}
 
 void MainWindow::on_pushButton_clicked()
 {
     ui->stackedWidget->slideInWidget(ui->pagePrincipale);
 }
 
-void MainWindow::on_btnAideFeuille_clicked()
+void MainWindow::on_abeMenuFeuilleBtnHelp_clicked()
 {
     /* En attendant d'avoir avancé sur une nouvelle boite à propos, je vais ici appeler l'autre bouton aide, celui de la télécommande
     ui->stackedWidget->slideInWidget(ui->pageApropos); */
     on_btnInformation_clicked();
-    on_btnFeuille_clicked();
+//    on_btnFeuille_clicked();
 }
 
-void MainWindow::on_btnMinimized_clicked()
-{
-    showMinimized();
-}
+//void MainWindow::on_btnMinimized_clicked()
+//{
+//    showMinimized();
+//}
 
-void MainWindow::on_btnFullScreen_clicked()
-{
-    if(isFullScreen())
-    {
-        showNormal();
-        ui->centralWidget->move(0,0);
-        ui->widgetContainer->move(0,0);
-        ui->btnFullScreen->setIconeNormale(":/data/images/showMaximized");
-    }
-    else
-    {
-        QDesktopWidget *widget = QApplication::desktop();
-        int desktop_width = widget->width();
-        int desktop_height = widget->height();
-//        this->move((desktop_width-this->width())/2, (desktop_height-this->height())/2);
-        ui->centralWidget->move((desktop_width-ui->centralWidget->width())/2, (desktop_height-ui->centralWidget->height())/2);
-        ui->widgetContainer->move((desktop_width-ui->widgetContainer->width())/2, (desktop_height-ui->widgetContainer->height())/2);
-        showFullScreen();
-        ui->btnFullScreen->setIconeNormale(":/data/images/showNormal");
-    }
-}
+//void MainWindow::on_btnFullScreen_clicked()
+//{
+//    if(isFullScreen())
+//    {
+//        showNormal();
+//        ui->centralWidget->move(0,0);
+//        ui->widgetContainer->move(0,0);
+//        ui->btnFullScreen->setIconeNormale(":/data/images/showMaximized");
+//    }
+//    else
+//    {
+//        QDesktopWidget *widget = QApplication::desktop();
+//        int desktop_width = widget->width();
+//        int desktop_height = widget->height();
+////        this->move((desktop_width-this->width())/2, (desktop_height-this->height())/2);
+//        ui->centralWidget->move((desktop_width-ui->centralWidget->width())/2, (desktop_height-ui->centralWidget->height())/2);
+//        ui->widgetContainer->move((desktop_width-ui->widgetContainer->width())/2, (desktop_height-ui->widgetContainer->height())/2);
+//        showFullScreen();
+//        ui->btnFullScreen->setIconeNormale(":/data/images/showNormal");
+//    }
+//}
 
 void MainWindow::slotMainWindowSetBorneSup(QString nombreLu)
 {
@@ -1025,72 +1030,72 @@ void MainWindow::on_btnDebut_clicked()
 {
     ui->btnVerifier->setDisabled(false);
     ui->btnAbandonner->setDisabled(false);
-    ui->btnNouveau->setDisabled(true);
+//    ui->btnNouveau->setDisabled(true);
     restoreCases();
     restoreNbres();
 }
 
-void MainWindow::on_btnLanguages_clicked()
-{
-    ui->frmChoixLangues->setVisible(true);
-    if (ui->frmButtons->isVisible())
-    {
-        ui->frmButtons->setVisible(false);
-    }
-    on_btnNombresFermer_clicked();
-    on_btnNiveauAnnuler_clicked();
-}
+//void MainWindow::on_btnLanguages_clicked()
+//{
+//    ui->frmChoixLangues->setVisible(true);
+//    if (ui->frmButtons->isVisible())
+//    {
+//        ui->frmButtons->setVisible(false);
+//    }
+//    on_btnNombresFermer_clicked();
+//    on_btnNiveauAnnuler_clicked();
+//}
 
-void MainWindow::on_btnFr_clicked()
-{
-    ui->btnLanguages->setIconeNormale(":/data/flags/fr");
-    ui->btnLanguages->setIconeSurvol(":/data/flags/frHover");
-    ui->frmChoixLangues->setVisible(false);
-}
+//void MainWindow::on_btnFr_clicked()
+//{
+//    ui->btnLanguages->setIconeNormale(":/data/flags/fr");
+//    ui->btnLanguages->setIconeSurvol(":/data/flags/frHover");
+//    ui->frmChoixLangues->setVisible(false);
+//}
 
-void MainWindow::on_btnEn_clicked()
-{
-    ui->btnLanguages->setIconeNormale(":/data/flags/en");
-    ui->btnLanguages->setIconeSurvol(":/data/flags/enHover");
-    ui->frmChoixLangues->setVisible(false);
-}
+//void MainWindow::on_btnEn_clicked()
+//{
+//    ui->btnLanguages->setIconeNormale(":/data/flags/en");
+//    ui->btnLanguages->setIconeSurvol(":/data/flags/enHover");
+//    ui->frmChoixLangues->setVisible(false);
+//}
 
-void MainWindow::on_btnEs_clicked()
-{
-    ui->btnLanguages->setIconeNormale(":/data/flags/es");
-    ui->btnLanguages->setIconeSurvol(":/data/flags/esHover");
-    ui->frmChoixLangues->setVisible(false);
-}
+//void MainWindow::on_btnEs_clicked()
+//{
+//    ui->btnLanguages->setIconeNormale(":/data/flags/es");
+//    ui->btnLanguages->setIconeSurvol(":/data/flags/esHover");
+//    ui->frmChoixLangues->setVisible(false);
+//}
 
-void MainWindow::on_btnIt_clicked()
-{
-    ui->btnLanguages->setIconeNormale(":/data/flags/it");
-    ui->btnLanguages->setIconeSurvol(":/data/flags/itHover");
-    ui->frmChoixLangues->setVisible(false);
-}
+//void MainWindow::on_btnIt_clicked()
+//{
+//    ui->btnLanguages->setIconeNormale(":/data/flags/it");
+//    ui->btnLanguages->setIconeSurvol(":/data/flags/itHover");
+//    ui->frmChoixLangues->setVisible(false);
+//}
 
-void MainWindow::on_btnDe_clicked()
-{
-    ui->btnLanguages->setIconeNormale(":/data/flags/de");
-    ui->btnLanguages->setIconeSurvol(":/data/flags/deHover");
-    ui->frmChoixLangues->setVisible(false);
-}
+//void MainWindow::on_btnDe_clicked()
+//{
+//    ui->btnLanguages->setIconeNormale(":/data/flags/de");
+//    ui->btnLanguages->setIconeSurvol(":/data/flags/deHover");
+//    ui->frmChoixLangues->setVisible(false);
+//}
 
-void MainWindow::on_btnNl_clicked()
-{
-    ui->btnLanguages->setIconeNormale(":/data/flags/nl");
-    ui->btnLanguages->setIconeSurvol(":/data/flags/nlHover");
-    ui->frmChoixLangues->setVisible(false);
-}
+//void MainWindow::on_btnNl_clicked()
+//{
+//    ui->btnLanguages->setIconeNormale(":/data/flags/nl");
+//    ui->btnLanguages->setIconeSurvol(":/data/flags/nlHover");
+//    ui->frmChoixLangues->setVisible(false);
+//}
 
-void MainWindow::on_btnOc_clicked()
-{
-    ui->btnLanguages->setIconeNormale(":/data/flags/oc");
-    ui->btnLanguages->setIconeSurvol(":/data/flags/ocHover");
-    ui->frmChoixLangues->setVisible(false);
-}
+//void MainWindow::on_btnOc_clicked()
+//{
+//    ui->btnLanguages->setIconeNormale(":/data/flags/oc");
+//    ui->btnLanguages->setIconeSurvol(":/data/flags/ocHover");
+//    ui->frmChoixLangues->setVisible(false);
+//}
 
-void MainWindow::on_btnLangueAnnuler_clicked()
-{
-    ui->frmChoixLangues->setVisible(false);
-}
+//void MainWindow::on_btnLangueAnnuler_clicked()
+//{
+//    ui->frmChoixLangues->setVisible(false);
+//}

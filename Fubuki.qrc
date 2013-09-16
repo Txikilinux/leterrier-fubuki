@@ -1,22 +1,13 @@
 <RCC>
     <qresource prefix="/data/images">
-        <file alias="nouveau">data/images/nouveau.png</file>
         <file alias="fermeture">data/images/fermer.png</file>
-        <file alias="sortie">data/images/quit.png</file>
         <file>data/sonic_comic.ttf</file>
         <file alias="aide">data/images/aide.png</file>
         <file alias="background">data/images/fubuki-fond.jpg</file>
         <file alias="nombres">data/images/nombres.png</file>
         <file alias="rouleau">data/images/rouleau.png</file>
-        <file alias="top">data/images/fubuki-top.jpg</file>
-        <file alias="leaf">data/images/feuille.png</file>
-        <file alias="sortieHover">data/images/quit-hover.png</file>
-        <file alias="nouveauHover">data/images/nouveau-hover.png</file>
         <file alias="nombresHover">data/images/nombres-hover.png</file>
         <file alias="aideHover">data/images/aide-hover.png</file>
-        <file alias="showMinimized">data/images/fenetreReduit.png</file>
-        <file alias="showNormal">data/images/fenetreMoyen.png</file>
-        <file alias="showMaximized">data/images/fenetreGrand.png</file>
         <file alias="verificationHover">data/images/verif-hover.png</file>
         <file alias="verificationDisabled">data/images/verif-gris.png</file>
         <file alias="verification">data/images/verif.png</file>
@@ -39,21 +30,5 @@
         <file alias="belt1">data/images/ceinture-orange.png</file>
         <file alias="belt2">data/images/ceinture-verte.png</file>
         <file alias="fondChiffre">data/images/fond-chiffres.png</file>
-    </qresource>
-    <qresource prefix="/data/flags">
-        <file alias="de">data/images/de.png</file>
-        <file alias="en">data/images/en.png</file>
-        <file alias="es">data/images/es.png</file>
-        <file alias="fr">data/images/fr.png</file>
-        <file alias="it">data/images/it.png</file>
-        <file alias="oc">data/images/oc.png</file>
-        <file alias="ocHover">data/images/oc-hover.png</file>
-        <file alias="nlHover">data/images/nl-hover.png</file>
-        <file alias="nl">data/images/nl.png</file>
-        <file alias="itHover">data/images/it-hover.png</file>
-        <file alias="esHover">data/images/es-hover.png</file>
-        <file alias="enHover">data/images/en-hover.png</file>
-        <file alias="deHover">data/images/de-hover.png</file>
-        <file alias="frHover">data/images/fr-hover.png</file>
     </qresource>
 </RCC>

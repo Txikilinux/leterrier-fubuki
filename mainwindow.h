@@ -148,7 +148,7 @@ signals:
     void toto();
 
 private slots:
-    void on_btnNouveau_clicked();
+    void on_abeMenuFeuilleBtnNew_clicked();
     void on_btnInformation_clicked();
     void on_btnAbandonner_clicked();
 //    void on_cBoxSuite_activated(int index);
@@ -190,24 +190,24 @@ private slots:
     void on_btnNombresZeroNeuf_clicked();
     void on_btnNombresAuChoix_clicked();
     void on_btnNombresFermer_clicked();
-    void on_btnSortie_clicked();
-    void on_btnFeuille_clicked();
+    void on_abeMenuFeuilleBtnQuit_clicked();
+//    void on_btnFeuille_clicked();
     void on_pushButton_clicked();
-    void on_btnAideFeuille_clicked();
-    void on_btnMinimized_clicked();
-    void on_btnFullScreen_clicked();
+    void on_abeMenuFeuilleBtnHelp_clicked();
+//    void on_btnMinimized_clicked();
+//    void on_btnFullScreen_clicked();
     void slotMainWindowSetBorneSup(QString nombreLu);
     void slotMainWindowSetInCase(QString nombreLu);
     void on_btnDebut_clicked();
-    void on_btnLanguages_clicked();
-    void on_btnFr_clicked();
-    void on_btnEn_clicked();
-    void on_btnEs_clicked();
-    void on_btnIt_clicked();
-    void on_btnDe_clicked();
-    void on_btnOc_clicked();
-    void on_btnNl_clicked();
-    void on_btnLangueAnnuler_clicked();
+//    void on_btnLanguages_clicked();
+//    void on_btnFr_clicked();
+//    void on_btnEn_clicked();
+//    void on_btnEs_clicked();
+//    void on_btnIt_clicked();
+//    void on_btnDe_clicked();
+//    void on_btnOc_clicked();
+//    void on_btnNl_clicked();
+//    void on_btnLangueAnnuler_clicked();
 };
 
 #endif // MAINWINDOW_H
