@@ -51,11 +51,6 @@ public:
 protected:
     void changeEvent(QEvent *e);
     void paintEvent(QPaintEvent *);
-#ifndef __ABULEDUTABLETTEV1__MODE__
-    void mouseMoveEvent(QMouseEvent *event);
-    void mousePressEvent(QMouseEvent *event);
-    void mouseReleaseEvent(QMouseEvent *event);
-#endif
 
 private:
     Ui::MainWindow *ui;

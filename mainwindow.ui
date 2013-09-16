@@ -38,16 +38,7 @@ background-color:#813723;
 }</string>
    </property>
    <layout class="QGridLayout" name="gridLayout">
-    <property name="leftMargin">
-     <number>0</number>
-    </property>
-    <property name="topMargin">
-     <number>0</number>
-    </property>
-    <property name="rightMargin">
-     <number>0</number>
-    </property>
-    <property name="bottomMargin">
+    <property name="margin">
      <number>0</number>
     </property>
     <property name="spacing">
@@ -74,16 +65,7 @@ background-color:#813723;
        <property name="sizeConstraint">
         <enum>QLayout::SetDefaultConstraint</enum>
        </property>
-       <property name="leftMargin">
-        <number>0</number>
-       </property>
-       <property name="topMargin">
-        <number>0</number>
-       </property>
-       <property name="rightMargin">
-        <number>0</number>
-       </property>
-       <property name="bottomMargin">
+       <property name="margin">
         <number>0</number>
        </property>
        <item>
@@ -1082,23 +1064,14 @@ QLabel {
              <number>0</number>
             </property>
             <layout class="QGridLayout" name="gridBtnNombres">
-             <property name="leftMargin">
-              <number>0</number>
-             </property>
-             <property name="topMargin">
-              <number>0</number>
-             </property>
-             <property name="rightMargin">
-              <number>0</number>
-             </property>
-             <property name="bottomMargin">
-              <number>0</number>
-             </property>
              <property name="horizontalSpacing">
               <number>0</number>
              </property>
              <property name="verticalSpacing">
               <number>6</number>
+             </property>
+             <property name="margin">
+              <number>0</number>
              </property>
              <item row="0" column="7">
               <widget class="AbulEduFlatBoutonV1" name="btnNbre6">
@@ -1452,22 +1425,13 @@ QLabel {
             <number>0</number>
            </property>
            <layout class="QGridLayout" name="layoutIcones">
-            <property name="leftMargin">
-             <number>0</number>
-            </property>
-            <property name="topMargin">
-             <number>0</number>
-            </property>
-            <property name="rightMargin">
-             <number>0</number>
-            </property>
-            <property name="bottomMargin">
-             <number>0</number>
-            </property>
             <property name="horizontalSpacing">
              <number>2</number>
             </property>
             <property name="verticalSpacing">
+             <number>0</number>
+            </property>
+            <property name="margin">
              <number>0</number>
             </property>
             <item row="0" column="1">
@@ -1511,6 +1475,30 @@ QLabel {
               </property>
               <property name="flat">
                <bool>true</bool>
+              </property>
+              <property name="IconeNormale" stdset="0">
+               <string notr="true">:/data/images/verification</string>
+              </property>
+              <property name="IconeSurvol" stdset="0">
+               <string notr="true">:/data/images/verificationHover</string>
+              </property>
+              <property name="IconePressed" stdset="0">
+               <string notr="true">:/data/images/verificationPressed</string>
+              </property>
+              <property name="IconeDisabled" stdset="0">
+               <string notr="true">:/data/images/verificationDisabled</string>
+              </property>
+              <property name="CouleurTexteNormale" stdset="0">
+               <string>white</string>
+              </property>
+              <property name="CouleurTexteSurvol" stdset="0">
+               <string>red</string>
+              </property>
+              <property name="BackgroundAlignement" stdset="0">
+               <string notr="true">center top</string>
+              </property>
+              <property name="TexteAlignement" stdset="0">
+               <string>Qt::AlignBottom</string>
               </property>
              </widget>
             </item>
@@ -1562,6 +1550,30 @@ QLabel {
               <property name="flat">
                <bool>true</bool>
               </property>
+              <property name="IconeNormale" stdset="0">
+               <string notr="true">:/data/images/niveaux</string>
+              </property>
+              <property name="IconeSurvol" stdset="0">
+               <string notr="true">:/data/images/niveauxHover</string>
+              </property>
+              <property name="IconePressed" stdset="0">
+               <string notr="true">:/data/images/niveauxPressed</string>
+              </property>
+              <property name="IconeDisabled" stdset="0">
+               <string notr="true">:/data/images/niveauxDisabled</string>
+              </property>
+              <property name="CouleurTexteNormale" stdset="0">
+               <string>white</string>
+              </property>
+              <property name="CouleurTexteSurvol" stdset="0">
+               <string>red</string>
+              </property>
+              <property name="BackgroundAlignement" stdset="0">
+               <string notr="true">center top</string>
+              </property>
+              <property name="TexteAlignement" stdset="0">
+               <string>Qt::AlignBottom</string>
+              </property>
              </widget>
             </item>
             <item row="8" column="1">
@@ -1611,6 +1623,30 @@ QLabel {
               </property>
               <property name="flat">
                <bool>true</bool>
+              </property>
+              <property name="IconeNormale" stdset="0">
+               <string notr="true">:/data/images/aide</string>
+              </property>
+              <property name="IconeSurvol" stdset="0">
+               <string notr="true">:/data/images/aideHover</string>
+              </property>
+              <property name="IconePressed" stdset="0">
+               <string notr="true">:/data/images/aidePressed</string>
+              </property>
+              <property name="IconeDisabled" stdset="0">
+               <string notr="true">:/data/images/aideDisabled</string>
+              </property>
+              <property name="CouleurTexteNormale" stdset="0">
+               <string>white</string>
+              </property>
+              <property name="CouleurTexteSurvol" stdset="0">
+               <string>red</string>
+              </property>
+              <property name="BackgroundAlignement" stdset="0">
+               <string notr="true">center top</string>
+              </property>
+              <property name="TexteAlignement" stdset="0">
+               <string>Qt::AlignBottom</string>
               </property>
              </widget>
             </item>
@@ -1662,6 +1698,30 @@ QLabel {
               <property name="flat">
                <bool>true</bool>
               </property>
+              <property name="IconeNormale" stdset="0">
+               <string notr="true">:/data/images/debut</string>
+              </property>
+              <property name="IconeSurvol" stdset="0">
+               <string notr="true">:/data/images/debutHover</string>
+              </property>
+              <property name="IconePressed" stdset="0">
+               <string notr="true">:/data/images/debutPressed</string>
+              </property>
+              <property name="IconeDisabled" stdset="0">
+               <string notr="true">:/data/images/debutDisabled</string>
+              </property>
+              <property name="CouleurTexteNormale" stdset="0">
+               <string>white</string>
+              </property>
+              <property name="CouleurTexteSurvol" stdset="0">
+               <string>red</string>
+              </property>
+              <property name="BackgroundAlignement" stdset="0">
+               <string notr="true">center top</string>
+              </property>
+              <property name="TexteAlignement" stdset="0">
+               <string>Qt::AlignBottom</string>
+              </property>
              </widget>
             </item>
             <item row="9" column="1">
@@ -1705,6 +1765,30 @@ QLabel {
               </property>
               <property name="flat">
                <bool>true</bool>
+              </property>
+              <property name="IconeNormale" stdset="0">
+               <string notr="true">:/data/images/solution</string>
+              </property>
+              <property name="IconeSurvol" stdset="0">
+               <string notr="true">:/data/images/solutionHover</string>
+              </property>
+              <property name="IconePressed" stdset="0">
+               <string notr="true">:/data/images/solutionPressed</string>
+              </property>
+              <property name="IconeDisabled" stdset="0">
+               <string notr="true">:/data/images/solutionDisabled</string>
+              </property>
+              <property name="TexteAlignement" stdset="0">
+               <string notr="true">Qt::AlignBottom</string>
+              </property>
+              <property name="CouleurTexteNormale" stdset="0">
+               <string>white</string>
+              </property>
+              <property name="CouleurTexteSurvol" stdset="0">
+               <string>red</string>
+              </property>
+              <property name="BackgroundAlignement" stdset="0">
+               <string notr="true">center top</string>
               </property>
              </widget>
             </item>
@@ -1755,6 +1839,30 @@ QLabel {
               </property>
               <property name="flat">
                <bool>true</bool>
+              </property>
+              <property name="IconeNormale" stdset="0">
+               <string notr="true">:/data/images/nombres</string>
+              </property>
+              <property name="IconeSurvol" stdset="0">
+               <string notr="true">:/data/images/nombresHover</string>
+              </property>
+              <property name="IconePressed" stdset="0">
+               <string notr="true">:/data/images/nombresPressed</string>
+              </property>
+              <property name="IconeDisabled" stdset="0">
+               <string notr="true">:/data/images/nombresDisabled</string>
+              </property>
+              <property name="CouleurTexteNormale" stdset="0">
+               <string>white</string>
+              </property>
+              <property name="CouleurTexteSurvol" stdset="0">
+               <string>red</string>
+              </property>
+              <property name="BackgroundAlignement" stdset="0">
+               <string notr="true">center top</string>
+              </property>
+              <property name="TexteAlignement" stdset="0">
+               <string>Qt::AlignBottom</string>
               </property>
              </widget>
             </item>
