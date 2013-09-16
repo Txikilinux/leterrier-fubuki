@@ -60,7 +60,6 @@ MainWindow::MainWindow(QWidget *parent) :
     qApp->installTranslator(&myappTranslator);
 
     ui->setupUi(this);
-    creeMenuLangue();
 
     fontBIG.setPointSize(30);
     fontMEDIUM.setPointSize(18);
@@ -114,6 +113,8 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->frmNiveau->setVisible(false);
     ui->frmChoixNombres->setVisible(false);
 
+    /** @todo s'assurer que c'est la bonne façon de faire */
+    connect(ui->frmMenuFeuille, SIGNAL(signalAbeMenuFeuilleChangeLanguage(QString)),this,SLOT(slotChangeLangue(QString)),Qt::UniqueConnection);
 
     setWindowFlags(Qt::CustomizeWindowHint);
 
@@ -683,9 +684,8 @@ void MainWindow::setInformation() {
         ui->btnInformation->setDisabled(false);
 }
 
-void MainWindow::slotChangeLangue()
+void MainWindow::slotChangeLangue(QString lang)
 {
-    QString lang = static_cast<AbulEduFlatBoutonV1*>(sender())->whatsThis();
     qApp->removeTranslator(&qtTranslator);
     qApp->removeTranslator(&myappTranslator);
 
@@ -700,36 +700,6 @@ void MainWindow::slotChangeLangue()
     myappTranslator.load("leterrier-fubuki_" + lang, "lang");
     qApp->installTranslator(&myappTranslator);
     ui->retranslateUi(this);
-}
-
-void MainWindow::creeMenuLangue()
-{
-    /** @todo à revoir sans le menu */
-    QString locale = QLocale::system().name().section('_', 0, 0);
-
-    QAction* actionLangueEn = new QAction(trUtf8("&Anglais"),this);
-    actionLangueEn->setCheckable(true);
-    actionLangueEn->setObjectName("en");
-    connect(actionLangueEn, SIGNAL(triggered()), this, SLOT(slotChangeLangue()));
-    m_languesDisponibles << actionLangueEn;
-
-    QAction* actionLangueFr = new QAction(trUtf8("&Français"),this);
-    actionLangueFr->setCheckable(true);
-    actionLangueFr->setObjectName("fr");
-    connect(actionLangueFr, SIGNAL(triggered()), this, SLOT(slotChangeLangue()));
-    m_languesDisponibles << actionLangueFr;
-
-    foreach(QAction* langue,m_languesDisponibles)
-    {
-        if (langue->objectName() == locale)
-        {
-            langue->setChecked(true);
-        }
-        else
-        {
-            langue->setChecked(false);
-        }
-    }
 }
 
 void MainWindow::on_btnNiveaux_clicked()
