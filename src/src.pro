@@ -24,13 +24,13 @@ FORMS += mainwindow.ui \
 
 RESOURCES += Fubuki.qrc
 
-
-RC_FILE = windows/windows.rc
-
 win32 {
-    DEFINES      += __WINDOWS__=1
     OTHER_FILES  += ../windows/windows.rc
     RC_FILE       = ../windows/windows.rc
+}
+
+macx {
+ ICON = ../macos/icones/leterrier-fubuki.icns
 }
 
 #AbulEduLangV1
