@@ -1,6 +1,3 @@
-# -------------------------------------------------
-# Project created by QtCreator 2010-09-28T22:50:23
-# -------------------------------------------------
 system(ccache -V):QMAKE_CXX = ccache g++
 
 TARGET = leterrier-fubuki
