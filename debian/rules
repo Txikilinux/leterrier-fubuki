@@ -18,16 +18,12 @@ else
 endif
 
 QTDIR=/usr
-#QTPLUGINS=/usr/lib/qt4/plugins
-#QMAKE=qmake-qt4 #apres jaunty
 CFLAGS=-O3
 CXXFLAGS=-O3
 EXECNAME=leterrier-fubuki
 DEST=/usr/share/$(EXECNAME)
 EXECDEST=/usr/lib/$(EXECNAME)
 BUILDTEMP=$(CURDIR)/debian/$(EXECNAME)
-
-MANPAGES := $(CURDIR)/debian/$(EXECNAME).1
 
 install/$(EXECNAME)::
 	install -d -m 755 $(BUILDTEMP)/usr/bin/
@@ -48,5 +44,3 @@ configure/$(EXECNAME)::
 ifeq ($(QTVERSION),5)
 	echo "leterrier:Depends=leterrier-qt5-libs" >> debian/$(EXECNAME).substvars
 endif
-
-
