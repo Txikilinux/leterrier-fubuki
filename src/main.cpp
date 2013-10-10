@@ -22,6 +22,8 @@
   * 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA
   */
 
+#include "abuleduapplicationv1.h"
+#include <QtCore>
 #include "mainwindow.h"
 #include "version.h"
 #include "abuleduapplicationv1.h"
