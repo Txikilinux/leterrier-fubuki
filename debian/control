@@ -2,13 +2,13 @@ Source: leterrier-fubuki
 Section: misc
 Priority: extra
 Maintainer: Icham Sirat <icham.sirat@ryxeo.com>
-Build-Depends: cdbs, libqtwebkit-dev | libqt4-webkit(<<4:4.8.1), qt4-qmake, libqt4-dev, libqt4-phonon-dev | libphonon-dev, phonon, zlib1g-dev, libpulse-dev, libexiv2-dev, libqt4-webkit
+Build-Depends: cdbs, libqt5webkit5-dev, qt5-qmake, qtbase5-dev, libqt5core5, zlib1g-dev, libexiv2-dev
 Standards-Version: 3.8.3
 Homepage: http://www.abuledu.org/leterrier/
 
 Package: leterrier-fubuki
 Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}, libqt4-xml, exiv2, zlib1g
+Depends: ${shlibs:Depends}, ${misc:Depends}, ${leterrier:Depends}, exiv2, zlib1g
 Description: Un jeu de Fubuki (AbulEdu Le Terrier)
  Complétez la grille pour atteindre la bonne somme 
  pour chaque ligne et colonne ... ce logiciel fait

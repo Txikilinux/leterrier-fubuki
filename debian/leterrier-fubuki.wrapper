@@ -1,6 +1,10 @@
 #!/bin/bash
 # application launcher
+EXENAME=leterrier-fubuki
 (
-    cd /usr/share/leterrier-fubuki
-    exec /usr/lib/leterrier-fubuki/leterrier-fubuki
+    cd /usr/share/${EXENAME}
+    if [ -f /usr/lib/${EXENAME}/libQtCore.so.4 ]; then
+	export LD_LIBRARY_PATH=/usr/lib/${EXENAME}
+    fi
+    exec /usr/lib/${EXENAME}/${EXENAME} $@
 )
