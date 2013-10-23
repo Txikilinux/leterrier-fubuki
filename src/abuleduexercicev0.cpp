@@ -179,7 +179,7 @@ QHash<int, QHash<QString, QString> >  AbulEduExerciceV0::getPluginLogs(QString l
 void AbulEduExerciceV0::pushAbulEduLogs()
 {
     QEvent* logEvent = new QEvent(AbulEduLogsPush);
-    QApplication::postEvent(this, logEvent);
+    abeApp->postEvent(this, logEvent);
 }
 
 

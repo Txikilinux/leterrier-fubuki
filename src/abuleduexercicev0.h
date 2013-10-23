@@ -32,7 +32,7 @@
 #ifndef ABULEDUEXERCICEV0_H
 #define ABULEDUEXERCICEV0_H
 
-#include <QApplication>
+#include "abuleduapplicationv1.h"
 #include <QDebug>
 #include <QPluginLoader>
 #include <QDir>
