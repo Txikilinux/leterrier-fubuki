@@ -640,27 +640,36 @@ void MainWindow::on_btnInformation_clicked()
         if (nomBtnCase[i]->text() == "") inconnus << i;
     }
     // tirer l'un de ces nombres au hasard
-    int iBtn = rand() % inconnus.length();
-    //qDebug() << "Je prends le " << iBtn << "ieme bouton inconnu : " << inconnus[iBtn];
-    //qDebug() << "AIDE : Je propose la btnCase " << inconnus[iBtn] << " de valeur " << cases[inconnus[iBtn]] << cases;
-    AbulEduMessageBoxV1* msg = new AbulEduMessageBoxV1(trUtf8("Allez, je t'aide..."),trUtf8("Je propose le nombre ... %1").arg(QString::number(cases[inconnus[iBtn]])));
-    msg->setWink();
-    msg->show();
-    nomBtnCase[inconnus[iBtn]]->setStyleSheet("background:transparent;color : #C02020");
-    //nomBtnCase[inconnus[iBtn]]->setFont(fontBIG);
-    nomBtnCase[inconnus[iBtn]]->setProperty("text", QString::number(cases[inconnus[iBtn]]));
-    nomBtnCase[inconnus[iBtn]]->setDisabled(true);
-    // rechercher la case correspondant au nombre donné
-    //qDebug() << "rechercher la case " << cases[inconnus[iBtn]];
-    int k = indexInCasesInitial(cases[inconnus[iBtn]]);
-    nomBtnNbre[k]->setStyleSheet("background:transparent;color : #C02020");
-    nomBtnNbre[k]->setFont(fontMINUS);
-    nomBtnNbre[k]->setDisabled(true);
+    if(inconnus.size() > 0)
+    {
+        int iBtn = rand() % inconnus.length();
+        //qDebug() << "Je prends le " << iBtn << "ieme bouton inconnu : " << inconnus[iBtn];
+        //qDebug() << "AIDE : Je propose la btnCase " << inconnus[iBtn] << " de valeur " << cases[inconnus[iBtn]] << cases;
+        AbulEduMessageBoxV1* msg = new AbulEduMessageBoxV1(trUtf8("Allez, je t'aide..."),trUtf8("Je propose le nombre ... %1").arg(QString::number(cases[inconnus[iBtn]])));
+        msg->setWink();
+        msg->show();
+        nomBtnCase[inconnus[iBtn]]->setStyleSheet("background:transparent;color : #C02020");
+        //nomBtnCase[inconnus[iBtn]]->setFont(fontBIG);
+        nomBtnCase[inconnus[iBtn]]->setProperty("text", QString::number(cases[inconnus[iBtn]]));
+        nomBtnCase[inconnus[iBtn]]->setDisabled(true);
+        // rechercher la case correspondant au nombre donné
+        //qDebug() << "rechercher la case " << cases[inconnus[iBtn]];
+        int k = indexInCasesInitial(cases[inconnus[iBtn]]);
+        nomBtnNbre[k]->setStyleSheet("background:transparent;color : #C02020");
+        nomBtnNbre[k]->setFont(fontMINUS);
+        nomBtnNbre[k]->setDisabled(true);
 
-    nAides++;
-    setAbeLineLog("Complète la grille","", -1, 0 , "", "", "", "", trUtf8("Information"));
+        nAides++;
+        setAbeLineLog("Complète la grille","", -1, 0 , "", "", "", "", trUtf8("Information"));
 
-    setInformation();
+        setInformation();
+    }
+    else
+    {
+        AbulEduMessageBoxV1* msg = new AbulEduMessageBoxV1(trUtf8("Allez, je t'aide..."),trUtf8("Choisis une nouvelle grille par le menu Feuille ou change de niveau."));
+        msg->setWink();
+        msg->show();
+    }
 }
 
 void MainWindow::on_abeMenuFeuilleBtnNew_clicked()
