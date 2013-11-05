@@ -1525,16 +1525,16 @@ QLabel {
                <string notr="true">:/data/images/verificationDisabled</string>
               </property>
               <property name="CouleurTexteNormale" stdset="0">
-               <string>white</string>
+               <string notr="true">white</string>
               </property>
               <property name="CouleurTexteSurvol" stdset="0">
-               <string>red</string>
+               <string notr="true">red</string>
               </property>
               <property name="BackgroundAlignement" stdset="0">
                <string notr="true">center top</string>
               </property>
               <property name="TexteAlignement" stdset="0">
-               <string>Qt::AlignBottom</string>
+               <string notr="true">Qt::AlignBottom</string>
               </property>
              </widget>
             </item>
@@ -1599,16 +1599,16 @@ QLabel {
                <string notr="true">:/data/images/niveauxDisabled</string>
               </property>
               <property name="CouleurTexteNormale" stdset="0">
-               <string>white</string>
+               <string notr="true">white</string>
               </property>
               <property name="CouleurTexteSurvol" stdset="0">
-               <string>red</string>
+               <string notr="true">red</string>
               </property>
               <property name="BackgroundAlignement" stdset="0">
                <string notr="true">center top</string>
               </property>
               <property name="TexteAlignement" stdset="0">
-               <string>Qt::AlignBottom</string>
+               <string notr="true">Qt::AlignBottom</string>
               </property>
              </widget>
             </item>
@@ -1673,16 +1673,16 @@ QLabel {
                <string notr="true">:/data/images/aideDisabled</string>
               </property>
               <property name="CouleurTexteNormale" stdset="0">
-               <string>white</string>
+               <string notr="true">white</string>
               </property>
               <property name="CouleurTexteSurvol" stdset="0">
-               <string>red</string>
+               <string notr="true">red</string>
               </property>
               <property name="BackgroundAlignement" stdset="0">
                <string notr="true">center top</string>
               </property>
               <property name="TexteAlignement" stdset="0">
-               <string>Qt::AlignBottom</string>
+               <string notr="true">Qt::AlignBottom</string>
               </property>
              </widget>
             </item>
@@ -1747,16 +1747,16 @@ QLabel {
                <string notr="true">:/data/images/debutDisabled</string>
               </property>
               <property name="CouleurTexteNormale" stdset="0">
-               <string>white</string>
+               <string notr="true">white</string>
               </property>
               <property name="CouleurTexteSurvol" stdset="0">
-               <string>red</string>
+               <string notr="true">red</string>
               </property>
               <property name="BackgroundAlignement" stdset="0">
                <string notr="true">center top</string>
               </property>
               <property name="TexteAlignement" stdset="0">
-               <string>Qt::AlignBottom</string>
+               <string notr="true">Qt::AlignBottom</string>
               </property>
              </widget>
             </item>
@@ -1818,10 +1818,10 @@ QLabel {
                <string notr="true">Qt::AlignBottom</string>
               </property>
               <property name="CouleurTexteNormale" stdset="0">
-               <string>white</string>
+               <string notr="true">white</string>
               </property>
               <property name="CouleurTexteSurvol" stdset="0">
-               <string>red</string>
+               <string notr="true">red</string>
               </property>
               <property name="BackgroundAlignement" stdset="0">
                <string notr="true">center top</string>
@@ -1889,16 +1889,16 @@ QLabel {
                <string notr="true">:/data/images/nombresDisabled</string>
               </property>
               <property name="CouleurTexteNormale" stdset="0">
-               <string>white</string>
+               <string notr="true">white</string>
               </property>
               <property name="CouleurTexteSurvol" stdset="0">
-               <string>red</string>
+               <string notr="true">red</string>
               </property>
               <property name="BackgroundAlignement" stdset="0">
                <string notr="true">center top</string>
               </property>
               <property name="TexteAlignement" stdset="0">
-               <string>Qt::AlignBottom</string>
+               <string notr="true">Qt::AlignBottom</string>
               </property>
              </widget>
             </item>

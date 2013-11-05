@@ -310,7 +310,7 @@ p, li { white-space: pre-wrap; }
         <translation type="obsolete">Check</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="1758"/>
+        <location filename="../mainwindow.ui" line="1794"/>
         <source>Solution</source>
         <translation>Solution</translation>
     </message>
@@ -371,38 +371,38 @@ p, li { white-space: pre-wrap; }
         <translation type="obsolete">&amp;Languages</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="172"/>
-        <location filename="../mainwindow.ui" line="1983"/>
+        <location filename="../mainwindow.ui" line="190"/>
+        <location filename="../mainwindow.ui" line="2019"/>
         <source>Annuler</source>
         <translation>Cancel</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="204"/>
+        <location filename="../mainwindow.ui" line="222"/>
         <source>Noire</source>
         <translation>Black</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="237"/>
+        <location filename="../mainwindow.ui" line="255"/>
         <source>Jaune</source>
         <translation>Yellow</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="269"/>
+        <location filename="../mainwindow.ui" line="287"/>
         <source>Orange</source>
         <translation>Orange</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="301"/>
+        <location filename="../mainwindow.ui" line="319"/>
         <source>Verte</source>
         <translation>Green</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="333"/>
+        <location filename="../mainwindow.ui" line="351"/>
         <source>Bleue</source>
         <translation>Blue</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="365"/>
+        <location filename="../mainwindow.ui" line="383"/>
         <source>Marron</source>
         <translation>Brown</translation>
     </message>
@@ -411,7 +411,7 @@ p, li { white-space: pre-wrap; }
         <translation type="obsolete">levels</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="1542"/>
+        <location filename="../mainwindow.ui" line="1578"/>
         <source>Niveau</source>
         <translation>Level</translation>
     </message>
@@ -420,7 +420,7 @@ p, li { white-space: pre-wrap; }
         <translation type="obsolete">help</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="1616"/>
+        <location filename="../mainwindow.ui" line="1652"/>
         <source>Aide</source>
         <translation>Help</translation>
     </message>
@@ -429,7 +429,7 @@ p, li { white-space: pre-wrap; }
         <translation type="obsolete">beginning</translation>
     </message>
     <message utf8="true">
-        <location filename="../mainwindow.ui" line="1690"/>
+        <location filename="../mainwindow.ui" line="1726"/>
         <source>Début</source>
         <translation>Beginning</translation>
     </message>
@@ -442,17 +442,17 @@ p, li { white-space: pre-wrap; }
         <translation type="obsolete">numbers</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="1832"/>
+        <location filename="../mainwindow.ui" line="1868"/>
         <source>Nombres</source>
         <translation>Numbers</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="1919"/>
+        <location filename="../mainwindow.ui" line="1955"/>
         <source>Au choix</source>
         <translation>Choice</translation>
     </message>
     <message utf8="true">
-        <location filename="../mainwindow.ui" line="1951"/>
+        <location filename="../mainwindow.ui" line="1987"/>
         <source>0 à 9</source>
         <translation>0 to 9</translation>
     </message>
@@ -473,91 +473,62 @@ p, li { white-space: pre-wrap; }
         <translation type="obsolete">oc</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="1492"/>
-        <location filename="../mainwindow.ui" line="1566"/>
-        <location filename="../mainwindow.ui" line="1640"/>
-        <location filename="../mainwindow.ui" line="1714"/>
-        <location filename="../mainwindow.ui" line="1785"/>
-        <location filename="../mainwindow.ui" line="1856"/>
-        <source>white</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../mainwindow.ui" line="1495"/>
-        <location filename="../mainwindow.ui" line="1569"/>
-        <location filename="../mainwindow.ui" line="1643"/>
-        <location filename="../mainwindow.ui" line="1717"/>
-        <location filename="../mainwindow.ui" line="1788"/>
-        <location filename="../mainwindow.ui" line="1859"/>
-        <source>red</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../mainwindow.ui" line="1501"/>
-        <location filename="../mainwindow.ui" line="1575"/>
-        <location filename="../mainwindow.ui" line="1649"/>
-        <location filename="../mainwindow.ui" line="1723"/>
-        <location filename="../mainwindow.ui" line="1865"/>
-        <source>Qt::AlignBottom</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../mainwindow.ui" line="2024"/>
+        <location filename="../mainwindow.ui" line="2060"/>
         <source>Clique directement dans les cases de la grille</source>
         <translation>Click straight on squares</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="2042"/>
+        <location filename="../mainwindow.ui" line="2078"/>
         <source>OK</source>
         <translation></translation>
     </message>
     <message utf8="true">
-        <location filename="../mainwindow.ui" line="2061"/>
+        <location filename="../mainwindow.ui" line="2097"/>
         <source>Bientôt ici des informations et des liens concernant ce logiciel</source>
         <translation>Details and links about this software soon available</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="2132"/>
+        <location filename="../mainwindow.ui" line="2168"/>
         <source>&amp;Quitter</source>
         <translation>&amp;Quit</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="2135"/>
+        <location filename="../mainwindow.ui" line="2171"/>
         <source>Ctrl+Q</source>
         <translation>Ctrl+Q</translation>
     </message>
     <message utf8="true">
-        <location filename="../mainwindow.ui" line="2140"/>
+        <location filename="../mainwindow.ui" line="2176"/>
         <source>Aide intégrée...</source>
         <translation>Software help desk...</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="2143"/>
+        <location filename="../mainwindow.ui" line="2179"/>
         <source>F1</source>
         <translation>F1</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="2148"/>
+        <location filename="../mainwindow.ui" line="2184"/>
         <source>Contacter un auteur...</source>
         <translation>Get in touch with author...</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="2153"/>
+        <location filename="../mainwindow.ui" line="2189"/>
         <source>Traduire le logiciel...</source>
         <translation>Translate the software...</translation>
     </message>
     <message utf8="true">
-        <location filename="../mainwindow.ui" line="2158"/>
+        <location filename="../mainwindow.ui" line="2194"/>
         <source>À propos de ce logiciel...</source>
         <translation>About this software...</translation>
     </message>
     <message utf8="true">
-        <location filename="../mainwindow.ui" line="2161"/>
+        <location filename="../mainwindow.ui" line="2197"/>
         <source>À propos de ce logiciel</source>
         <translation>About this software</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="2169"/>
+        <location filename="../mainwindow.ui" line="2205"/>
         <source>Aide en ligne...</source>
         <translation>Online help...</translation>
     </message>
@@ -590,13 +561,13 @@ p, li { white-space: pre-wrap; }
         <translation>predict 6 results from 3 numbers</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="781"/>
+        <location filename="../mainwindow.cpp" line="790"/>
         <source>Nombre maximum</source>
         <translation>Max number</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="410"/>
-        <location filename="../mainwindow.cpp" line="781"/>
+        <location filename="../mainwindow.cpp" line="790"/>
         <source>Choisis un nombre entre 1 et 34</source>
         <translation>Choice a number between 1 and 34</translation>
     </message>
@@ -679,19 +650,24 @@ Je te prie de corriger !</source>
 Tu peux choisir une nouvelle grille...</source>
         <translation>Here is a solution ! Choose a new grid...</translation>
     </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="669"/>
+        <source>Choisis une nouvelle grille par le menu Feuille ou change de niveau.</source>
+        <translation>Choose a new grid or change level.</translation>
+    </message>
     <message utf8="true">
-        <location filename="../mainwindow.cpp" line="824"/>
-        <location filename="../mainwindow.cpp" line="835"/>
+        <location filename="../mainwindow.cpp" line="833"/>
+        <location filename="../mainwindow.cpp" line="844"/>
         <source>Problème</source>
         <translation>Problem</translation>
     </message>
     <message utf8="true">
-        <location filename="../mainwindow.cpp" line="824"/>
+        <location filename="../mainwindow.cpp" line="833"/>
         <source>Tu n&apos;as pas donné un nombre compris entre 1 et 34, on reste avec les nombres de 1 à 9...</source>
         <translation>Not matching number, we keep numbers from 1 to 9...</translation>
     </message>
     <message utf8="true">
-        <location filename="../mainwindow.cpp" line="835"/>
+        <location filename="../mainwindow.cpp" line="844"/>
         <source>Tu n&apos;as pas donné un nombre compris entre 1 et 34...</source>
         <translation>Not matching number...</translation>
     </message>
@@ -720,7 +696,7 @@ Tu peux choisir une nouvelle grille...</source>
 You can choose a new grid...</translation>
     </message>
     <message utf8="true">
-        <location filename="../mainwindow.ui" line="1468"/>
+        <location filename="../mainwindow.ui" line="1504"/>
         <location filename="../mainwindow.cpp" line="516"/>
         <location filename="../mainwindow.cpp" line="539"/>
         <location filename="../mainwindow.cpp" line="544"/>
@@ -792,27 +768,28 @@ You can choose a new grid...</translation>
         <translation>Cancel</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="646"/>
+        <location filename="../mainwindow.cpp" line="648"/>
         <source>Je propose le nombre ... %1</source>
         <translation>I suggest ... %1</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="646"/>
+        <location filename="../mainwindow.cpp" line="648"/>
+        <location filename="../mainwindow.cpp" line="669"/>
         <source>Allez, je t&apos;aide...</source>
         <translation>I give you helping hand...</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="661"/>
+        <location filename="../mainwindow.cpp" line="663"/>
         <source>Information</source>
         <translation>Information</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="2174"/>
+        <location filename="../mainwindow.ui" line="2210"/>
         <source>&amp;Anglais</source>
         <translation>&amp;English</translation>
     </message>
     <message utf8="true">
-        <location filename="../mainwindow.ui" line="2179"/>
+        <location filename="../mainwindow.ui" line="2215"/>
         <source>&amp;Français</source>
         <translation>&amp;Français</translation>
     </message>
