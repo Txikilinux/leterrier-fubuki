@@ -12,6 +12,7 @@ AbulEduInputBox::AbulEduInputBox(QString titre, QString texte,bool doYouWantToCl
     m_leInput = new QLineEdit(frmAbeInput);
     m_leInput->setAlignment(Qt::AlignCenter);
     m_leInput->setStyleSheet("border : 1px solid;");
+    m_leInput->setMaximumWidth(150);
     frmAbeInputLayout->addWidget(m_leInput);
     frmAbeInputLayout->addSpacerItem(new QSpacerItem(10, 10, QSizePolicy::Minimum, QSizePolicy::Expanding));
     QGridLayout* gl = (QGridLayout*) abeMessageBoxGetMainFrame()->layout();
