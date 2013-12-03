@@ -35,6 +35,7 @@
 #include "abuleduaproposv0.h"
 #include "abuleduexercicev0.h"
 #include "abuledumessageboxv1.h"
+#include "abuleduinputbox.h"
 
 
 namespace Ui {

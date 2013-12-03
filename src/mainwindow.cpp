@@ -407,15 +407,14 @@ void MainWindow::_btnCase(int i) {
 //        while (!ok)
 //            // astuce (ben oui) puisque actuelBtnNbre désigne normalement un indice pas une valeur
 //            actuelBtnNbre = QInputDialog::getInteger(this, trUtf8("Ton choix"), trUtf8("Nombre entier entre 1 et 34"), 16, 1, 34, 1, &ok);
-        AbulEduMessageBoxV1* inputBox = new AbulEduMessageBoxV1(trUtf8("Choisis un nombre"),trUtf8("Choisis un nombre entre 1 et 34"));
+        AbulEduInputBox* inputBox = new AbulEduInputBox(trUtf8("Choisis un nombre"),trUtf8("Choisis un nombre entre 1 et 34"));
         inputBox->setWink();
-        inputBox->abeMessageBoxShowInput(true);
         inputBox->show();
         actuelBtnCase = i;
         /* Pour pouvoir vérifier que mon nombre est bien compris entre 1 et 34 il me faut un validateur
            Ou alors il faudra que je mette cet AbulEduMessageBox dans un méthode retournant un booléen, dans laquelle je testerai le retour
         inputBox->setValidatorForInput(QRegExp)*/
-        connect(inputBox, SIGNAL(signalAbeMessageBoxInputOK(QString)),SLOT(slotMainWindowSetInCase(QString)),Qt::UniqueConnection);
+        connect(inputBox, SIGNAL(signalAbeInputBoxOK(QString)),SLOT(slotMainWindowSetInCase(QString)),Qt::UniqueConnection);
     }
     int k = indexInCasesInitial(nomBtnCase[i]->text().toInt());
     if (k >= 0) {
@@ -787,14 +786,13 @@ void MainWindow::on_btnNombresZeroNeuf_clicked()
 void MainWindow::on_btnNombresAuChoix_clicked()
 {
     alea = 1;
-    AbulEduMessageBoxV1* inputBox = new AbulEduMessageBoxV1(trUtf8("Nombre maximum"),trUtf8("Choisis un nombre entre 1 et 34"));
-    inputBox->abeMessageBoxShowInput(true);
+    AbulEduInputBox* inputBox = new AbulEduInputBox(trUtf8("Nombre maximum"),trUtf8("Choisis un nombre entre 1 et 34"));
     inputBox->setWink();
     inputBox->show();
     /* Pour pouvoir vérifier que mon nombre est bien compris entre 1 et 34 il me faut un validateur
        Ou alors il faudra que je mette cet AbulEduMessageBox dans un méthode retournant un booléen, dans laquelle je testerai le retour
     inputBox->setValidatorForInput(QRegExp)*/
-    connect(inputBox, SIGNAL(signalAbeMessageBoxInputOK(QString)),SLOT(slotMainWindowSetBorneSup(QString)),Qt::UniqueConnection);
+    connect(inputBox, SIGNAL(signalAbeInputBoxOK(QString)),SLOT(slotMainWindowSetBorneSup(QString)),Qt::UniqueConnection);
 
     ui->frmChoixNombres->setVisible(false);
     ui->btnNombres->setStyleSheet(ui->btnNombres->styleSheet().replace("border-radius:5px;background-color:#ffffff;","background-color:rgba(0,0,0,0);"));
