@@ -33,7 +33,6 @@
 #include <QInputDialog>
 #include <QDesktopWidget>
 #include <QFontDatabase>
-#include "abuleduaproposv0.h"
 #include "abuleduexercicev0.h"
 
 bool isIn(int i, QList<int> s);
@@ -115,6 +114,7 @@ MainWindow::MainWindow(QWidget *parent) :
 
     /** @todo s'assurer que c'est la bonne façon de faire */
     connect(ui->frmMenuFeuille, SIGNAL(signalAbeMenuFeuilleChangeLanguage(QString)),this,SLOT(slotChangeLangue(QString)),Qt::UniqueConnection);
+    connect(ui->pageAbout, SIGNAL(signalAbeAproposBtnCloseClicked()), this, SLOT(slotMainWindowShowMainPage()),Qt::UniqueConnection);
 
     setWindowFlags(Qt::CustomizeWindowHint);
 
@@ -809,17 +809,9 @@ void MainWindow::on_abeMenuFeuilleBtnQuit_clicked()
     close();
 }
 
-void MainWindow::on_pushButton_clicked()
-{
-    ui->stackedWidget->slideInWidget(ui->pagePrincipale);
-}
-
 void MainWindow::on_abeMenuFeuilleBtnHelp_clicked()
 {
-    /* En attendant d'avoir avancé sur une nouvelle boite à propos, je vais ici appeler l'autre bouton aide, celui de la télécommande
-    ui->stackedWidget->slideInWidget(ui->pageApropos); */
-    on_btnInformation_clicked();
-//    on_btnFeuille_clicked();
+    ui->stackedWidget->slideInWidget(ui->pageAbout);
 }
 
 void MainWindow::slotMainWindowSetBorneSup(QString nombreLu)
@@ -855,4 +847,9 @@ void MainWindow::on_btnDebut_clicked()
     ui->btnAbandonner->setDisabled(false);
     restoreCases();
     restoreNbres();
+}
+
+void MainWindow::slotMainWindowShowMainPage()
+{
+    ui->stackedWidget->slideInWidget(ui->pagePrincipale);
 }

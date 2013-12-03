@@ -2064,46 +2064,7 @@ border-radius:5px;</string>
            </property>
           </widget>
          </widget>
-         <widget class="QWidget" name="pageApropos">
-          <widget class="QPushButton" name="pushButton">
-           <property name="geometry">
-            <rect>
-             <x>870</x>
-             <y>510</y>
-             <width>93</width>
-             <height>27</height>
-            </rect>
-           </property>
-           <property name="text">
-            <string>OK</string>
-           </property>
-          </widget>
-          <widget class="QLabel" name="label">
-           <property name="geometry">
-            <rect>
-             <x>170</x>
-             <y>90</y>
-             <width>581</width>
-             <height>311</height>
-            </rect>
-           </property>
-           <property name="font">
-            <font>
-             <family>Andika Basic</family>
-             <pointsize>20</pointsize>
-            </font>
-           </property>
-           <property name="text">
-            <string>Bientôt ici des informations et des liens concernant ce logiciel</string>
-           </property>
-           <property name="alignment">
-            <set>Qt::AlignCenter</set>
-           </property>
-           <property name="wordWrap">
-            <bool>true</bool>
-           </property>
-          </widget>
-         </widget>
+         <widget class="AbulEduAproposV1" name="pageAbout"/>
         </widget>
        </item>
       </layout>
@@ -2233,6 +2194,12 @@ border-radius:5px;</string>
    <class>AbulEduMenuFeuilleV1</class>
    <extends>QFrame</extends>
    <header>abuledumenufeuillev1.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>AbulEduAproposV1</class>
+   <extends>QWidget</extends>
+   <header>abuleduaproposv1.h</header>
    <container>1</container>
   </customwidget>
  </customwidgets>

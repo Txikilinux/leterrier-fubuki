@@ -32,7 +32,7 @@
 #include <QList>
 #include <QPushButton>
 #include <QApplication>
-#include "abuleduaproposv0.h"
+#include "abuleduaproposv1.h"
 #include "abuleduexercicev0.h"
 #include "abuledumessageboxv1.h"
 #include "abuleduinputbox.h"
@@ -130,8 +130,6 @@ private:
     QString m_lang;
     QList<QAction*> m_languesDisponibles;
 
-    AbulEduAproposV0 *m_monAide;
-
     /** Position de la souris pour gerer le deplacement de la fenetre */
     QPoint m_dragPosition;
     bool   m_isWindowMoving;
@@ -141,12 +139,10 @@ signals:
       * @param onglet : le numéro de l'onglet
       */
     void setindex(int onglet);
-    void toto();
 
 private slots:
     void on_btnInformation_clicked();
     void on_btnAbandonner_clicked();
-//    void on_cBoxSuite_activated(int index);
     void on_cBoxNiveau_activated(int index);
     void on_btnVerifier_clicked();
     void on_btnCase0_clicked();
@@ -187,22 +183,10 @@ private slots:
     void on_abeMenuFeuilleBtnNew_clicked();
     void on_abeMenuFeuilleBtnQuit_clicked();
     void on_abeMenuFeuilleBtnHelp_clicked();
-//    void on_btnFeuille_clicked();
-    void on_pushButton_clicked();
-//    void on_btnMinimized_clicked();
-//    void on_btnFullScreen_clicked();
     void slotMainWindowSetBorneSup(QString nombreLu);
     void slotMainWindowSetInCase(QString nombreLu);
     void on_btnDebut_clicked();
-//    void on_btnLanguages_clicked();
-//    void on_btnFr_clicked();
-//    void on_btnEn_clicked();
-//    void on_btnEs_clicked();
-//    void on_btnIt_clicked();
-//    void on_btnDe_clicked();
-//    void on_btnOc_clicked();
-//    void on_btnNl_clicked();
-//    void on_btnLangueAnnuler_clicked();
+    void slotMainWindowShowMainPage();
 };
 
 #endif // MAINWINDOW_H
