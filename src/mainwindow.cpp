@@ -786,7 +786,7 @@ void MainWindow::on_btnNombresZeroNeuf_clicked()
 void MainWindow::on_btnNombresAuChoix_clicked()
 {
     alea = 1;
-    AbulEduInputBox* inputBox = new AbulEduInputBox(trUtf8("Nombre maximum"),trUtf8("Choisis un nombre entre 1 et 34"));
+    AbulEduInputBox* inputBox = new AbulEduInputBox(trUtf8("Nombre maximum"),trUtf8("Choisis un nombre entre 1 et 34"),true,ui->pagePrincipale);
     inputBox->setWink();
     inputBox->show();
     /* Pour pouvoir vérifier que mon nombre est bien compris entre 1 et 34 il me faut un validateur
