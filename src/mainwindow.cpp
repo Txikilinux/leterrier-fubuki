@@ -43,6 +43,7 @@ MainWindow::MainWindow(QWidget *parent) :
 {
     //Langue
     QString locale = QLocale::system().name().section('_', 0, 0);
+    ui->setupUi(this);
 
     //Un 1er qtranslator pour prendre les traductions QT Systeme
     //c'est d'ailleur grace a ca qu'on est en RTL
@@ -58,7 +59,6 @@ MainWindow::MainWindow(QWidget *parent) :
     myappTranslator.load("leterrier-fubuki_" + locale, "lang");
     qApp->installTranslator(&myappTranslator);
 
-    ui->setupUi(this);
 
     fontBIG.setPointSize(30);
     fontMEDIUM.setPointSize(18);
