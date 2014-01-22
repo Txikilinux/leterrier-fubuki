@@ -15,17 +15,14 @@ TEMPLATE = app
 SOURCES += main.cpp \
     mainwindow.cpp \
     abuleduexercicev0.cpp \
-    abuleduaproposv0.cpp \
     abuleduinputbox.cpp
 
 HEADERS += version.h \
     mainwindow.h \
     abuleduexercicev0.h \
-    abuleduaproposv0.h \
     abuleduinputbox.h
 
-FORMS += mainwindow.ui \
-    abuleduaproposv0.ui
+FORMS += mainwindow.ui
 
 RESOURCES += Fubuki.qrc
 
