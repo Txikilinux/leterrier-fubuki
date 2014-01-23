@@ -202,7 +202,7 @@ void MainWindow::initFubuki()
         nomBtnNbre[i]->setFont(fontMEDIUM);
         nomBtnNbre[i]->setDisabled(false);
         nomBtnNbre[i]->setProperty("text", QString::number(casesInitial[i]));
-        qDebug() << "On affecte le texte " << casesInitial[i] << " a la case " << i;
+//        qDebug() << "On affecte le texte " << casesInitial[i] << " a la case " << i;
     }
     cases = casesInitial;
     // permuter cette liste
