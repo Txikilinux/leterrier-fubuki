@@ -35,10 +35,15 @@ int main(int argc, char *argv[])
 
     MainWindow w;
 #ifdef __ABULEDUTABLETTEV1__MODE__
+  QApplication::setStyle("plastique");
+  w.showFullScreen();
+#else
+  #ifdef Q_OS_ANDROID
     QApplication::setStyle("plastique");
     w.showFullScreen();
-#else
+  #else
     w.show();
+  #endif
 #endif
     return a.exec();
 }
