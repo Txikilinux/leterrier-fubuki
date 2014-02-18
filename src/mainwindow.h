@@ -170,12 +170,11 @@ private slots:
     void slotChangeLangue(QString lang);
     void on_btnNiveaux_clicked();
     void on_btnNiveauAnnuler_clicked();
+    void on_btnNiveauTresFacile_clicked();
     void on_btnNiveauFacile_clicked();
     void on_btnNiveauMoyen_clicked();
     void on_btnNiveauDifficile_clicked();
     void on_btnNiveauTresDifficile_clicked();
-    void on_btnNiveauDiabolique_clicked();
-    void on_btnNiveauInfernal_clicked();
     void on_btnNombres_clicked();
     void on_btnNombresZeroNeuf_clicked();
     void on_btnNombresAuChoix_clicked();

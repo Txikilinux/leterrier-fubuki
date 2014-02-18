@@ -173,14 +173,14 @@ void MainWindow::initFubuki()
     placement = false;
     // les nombres à manipuler
     casesInitial.clear();
-    if (alea == 0 && niveau < 5)
+    if (alea == 0 && niveau < 4)
     {
         casesInitial << 1 << 2 << 3 << 4 << 5 << 6 << 7 << 8 << 9;
         ui->lblIndicationNiveauNoir->setVisible(false);
         ui->frmBtnNombres->setVisible(true);
     }
     else {
-        if (niveau >= 5) {
+        if (niveau >= 4) {
             borneSup = 15 + rand() %20;
 //            ui->cBoxSuite->setDisabled(true);
             ui->btnNombres->setDisabled(true);
@@ -272,7 +272,7 @@ void MainWindow::initFubuki()
     // qDebug() << "casesInitial cases casesDonnees " << casesInitial << cases << casesDonnees;
 
     // réduire la taille des nombres déjà placés de btnNombres
-    if (niveau <= 4) {
+    if (niveau <= 3) {
         for (int i = 0; i < 9; i++) {
             if (isIn(i, casesDonnees)) {
                 int k = indexInCasesInitial(cases[i]);
@@ -319,15 +319,15 @@ bool isIn(int i, QList<int> s) {
 QString MainWindow::abeEvaluation() {
     if (((niveau == 0 || niveau == 1) && (2*nAides + nErreurs == 0)) ||
         ((niveau == 2 || niveau == 3) && (2*nAides + nErreurs <  3)) ||
-        ((niveau == 4 || niveau == 5) && (2*nAides + nErreurs <  5)))
+        ((niveau == 4) && (2*nAides + nErreurs <  5)))
        return "a";
     else if (((niveau == 0 || niveau == 1) && (2*nAides + nErreurs == 2)) ||
             ((niveau == 2 || niveau == 3) && (2*nAides + nErreurs <  5)) ||
-            ((niveau == 4 || niveau == 5) && (2*nAides + nErreurs <  7)))
+            ((niveau == 4) && (2*nAides + nErreurs <  7)))
        return "b";
     else if (((niveau == 0 || niveau == 1) && (2*nAides + nErreurs == 3)) ||
             ((niveau == 2 || niveau == 3) && (2*nAides + nErreurs <  6)) ||
-            ((niveau == 4 || niveau == 5) && (2*nAides + nErreurs <  8)))
+            ((niveau == 4) && (2*nAides + nErreurs <  8)))
        return "c";
     return "d";
 }
@@ -396,7 +396,7 @@ void MainWindow::on_btnCase7_clicked() { _btnCase(7); }
 void MainWindow::on_btnCase8_clicked() { _btnCase(8); }
 
 void MainWindow::_btnCase(int i) {
-    if (niveau > 4) {
+    if (niveau > 3) {
         if (nomBtnCase[i]->text() != "") {
             //le btnCase n'est pas vide, vider !
             nomBtnCase[i]->setText("");
@@ -419,11 +419,11 @@ void MainWindow::_btnCase(int i) {
     int k = indexInCasesInitial(nomBtnCase[i]->text().toInt());
     if (k >= 0) {
         // bouton déjà occupé : restaurer le btnNbre
-        if (niveau <= 4) restaurerBtnNbre(k);
+        if (niveau <= 3) restaurerBtnNbre(k);
         // effacer le bouton
         nomBtnCase[i]->setText("");
         actuelBtnCase = -1;
-        if (actuelBtnNbre >= 0 && niveau < 5) {
+        if (actuelBtnNbre >= 0 && niveau < 4) {
             // déposer actuelBtnNbre sur cette case
             nomBtnCase[i]->setStyleSheet("background:transparent;color : #d40000");
             nomBtnCase[i]->setProperty("text", QString::number(casesInitial[actuelBtnNbre]));
@@ -432,7 +432,7 @@ void MainWindow::_btnCase(int i) {
     } else if (actuelBtnNbre >= 0) {
         // déposer actuelBtnNbre sur cette case
         nomBtnCase[i]->setStyleSheet("background:transparent;color : #d40000");
-        if (niveau > 4)
+        if (niveau > 3)
             nomBtnCase[i]->setProperty("text", QString::number(actuelBtnNbre));
         else
             nomBtnCase[i]->setProperty("text", QString::number(casesInitial[actuelBtnNbre]));
@@ -458,7 +458,7 @@ void MainWindow::on_btnNbre8_clicked() { _btnNbre(8); }
 
 void MainWindow::_btnNbre(int i) {
     qDebug() << "MainWindow::_btnNbre(int i) on a clique sur " << i << casesInitial[i];
-    if (actuelBtnNbre >= 0 && niveau <= 4) {
+    if (actuelBtnNbre >= 0 && niveau <= 3) {
         restaurerBtnNbre(actuelBtnNbre);
     }
     nomBtnNbre[i]->setStyleSheet("background:transparent;color :#d40000");
@@ -489,7 +489,7 @@ void MainWindow::on_btnVerifier_clicked()
     for (int i = 0; i < 9; i++) {
         if (nomBtnCase[i]->text() != "") connus << i;
     }
-    if (connus.length() <= (4 - niveau) || (connus.length() == 0 && niveau > 4)) {
+    if (connus.length() <= (4 - niveau) || (connus.length() == 0 && niveau > 3)) {
         AbulEduMessageBoxV1* msg = new AbulEduMessageBoxV1(trUtf8("Vérification refusée"),trUtf8("Commence à remplir la grille !"),true,ui->pagePrincipale);
         msg->show();
         return;
@@ -521,7 +521,7 @@ void MainWindow::on_btnVerifier_clicked()
 
     // grille incomplète ; vérification en fonction du niveau
 
-    if (niveau < 5)
+    if (niveau < 4)
     {
     // vérification terme à terme si niveau < infernal
         int iFaute = -1;
@@ -678,7 +678,7 @@ void MainWindow::on_abeMenuFeuilleBtnNew_clicked()
 }
 
 void MainWindow::setInformation() {
-    if (niveau >4) {
+    if (niveau >3) {
         ui->btnInformation->setDisabled(true);
         return;
     }
@@ -733,44 +733,37 @@ void MainWindow::on_btnNombres_clicked()
     on_btnNiveauAnnuler_clicked();
 }
 
-void MainWindow::on_btnNiveauFacile_clicked()
+void MainWindow::on_btnNiveauTresFacile_clicked()
 {
     niveau = 0;
     ui->lblLevel->setPixmap(QPixmap(":/data/images/belt"+QString::number(niveau)));
     initFubuki();
 }
 
-void MainWindow::on_btnNiveauMoyen_clicked()
+void MainWindow::on_btnNiveauFacile_clicked()
 {
     niveau = 1;
     ui->lblLevel->setPixmap(QPixmap(":/data/images/belt"+QString::number(niveau)));
     initFubuki();
 }
 
-void MainWindow::on_btnNiveauDifficile_clicked()
+void MainWindow::on_btnNiveauMoyen_clicked()
 {
     niveau = 2;
     ui->lblLevel->setPixmap(QPixmap(":/data/images/belt"+QString::number(niveau)));
     initFubuki();
 }
 
-void MainWindow::on_btnNiveauTresDifficile_clicked()
+void MainWindow::on_btnNiveauDifficile_clicked()
 {
     niveau = 3;
     ui->lblLevel->setPixmap(QPixmap(":/data/images/belt"+QString::number(niveau)));
     initFubuki();
 }
 
-void MainWindow::on_btnNiveauDiabolique_clicked()
+void MainWindow::on_btnNiveauTresDifficile_clicked()
 {
     niveau = 4;
-    ui->lblLevel->setPixmap(QPixmap(":/data/images/belt"+QString::number(niveau)));
-    initFubuki();
-}
-
-void MainWindow::on_btnNiveauInfernal_clicked()
-{
-    niveau = 5;
     ui->lblLevel->setPixmap(QPixmap(":/data/images/belt"+QString::number(niveau)));
     initFubuki();
 }

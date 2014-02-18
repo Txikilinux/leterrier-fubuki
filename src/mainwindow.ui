@@ -159,7 +159,7 @@ border-bottom-left-radius: 5px;</string>
             <enum>QFrame::Raised</enum>
            </property>
            <layout class="QGridLayout" name="gridLayout_2">
-            <item row="11" column="0">
+            <item row="10" column="0">
              <widget class="AbulEduFlatBoutonV1" name="btnNiveauAnnuler">
               <property name="minimumSize">
                <size>
@@ -192,7 +192,7 @@ border-bottom-left-radius: 5px;</string>
              </widget>
             </item>
             <item row="5" column="0">
-             <widget class="AbulEduFlatBoutonV1" name="btnNiveauInfernal">
+             <widget class="AbulEduFlatBoutonV1" name="btnNiveauTresDifficile">
               <property name="minimumSize">
                <size>
                 <width>100</width>
@@ -219,12 +219,12 @@ border-bottom-left-radius: 5px;</string>
                <string notr="true"/>
               </property>
               <property name="text">
-               <string>Noire</string>
+               <string>Très difficile</string>
               </property>
              </widget>
             </item>
-            <item row="10" column="0">
-             <widget class="AbulEduFlatBoutonV1" name="btnNiveauFacile">
+            <item row="9" column="0">
+             <widget class="AbulEduFlatBoutonV1" name="btnNiveauTresFacile">
               <property name="minimumSize">
                <size>
                 <width>100</width>
@@ -252,44 +252,12 @@ border-bottom-left-radius: 5px;</string>
                <string notr="true">color:#e8e226;</string>
               </property>
               <property name="text">
-               <string>Jaune</string>
+               <string>Très facile</string>
               </property>
              </widget>
             </item>
-            <item row="9" column="0">
+            <item row="7" column="0">
              <widget class="AbulEduFlatBoutonV1" name="btnNiveauMoyen">
-              <property name="minimumSize">
-               <size>
-                <width>100</width>
-                <height>30</height>
-               </size>
-              </property>
-              <property name="maximumSize">
-               <size>
-                <width>100</width>
-                <height>30</height>
-               </size>
-              </property>
-              <property name="font">
-               <font>
-                <family>Andika Basic</family>
-                <weight>75</weight>
-                <bold>true</bold>
-               </font>
-              </property>
-              <property name="cursor">
-               <cursorShape>PointingHandCursor</cursorShape>
-              </property>
-              <property name="styleSheet">
-               <string notr="true">color:#f15c28;</string>
-              </property>
-              <property name="text">
-               <string>Orange</string>
-              </property>
-             </widget>
-            </item>
-            <item row="8" column="0">
-             <widget class="AbulEduFlatBoutonV1" name="btnNiveauDifficile">
               <property name="minimumSize">
                <size>
                 <width>100</width>
@@ -316,44 +284,12 @@ border-bottom-left-radius: 5px;</string>
                <string notr="true">color: green;</string>
               </property>
               <property name="text">
-               <string>Verte</string>
-              </property>
-             </widget>
-            </item>
-            <item row="7" column="0">
-             <widget class="AbulEduFlatBoutonV1" name="btnNiveauTresDifficile">
-              <property name="minimumSize">
-               <size>
-                <width>100</width>
-                <height>30</height>
-               </size>
-              </property>
-              <property name="maximumSize">
-               <size>
-                <width>100</width>
-                <height>30</height>
-               </size>
-              </property>
-              <property name="font">
-               <font>
-                <family>Andika Basic</family>
-                <weight>75</weight>
-                <bold>true</bold>
-               </font>
-              </property>
-              <property name="cursor">
-               <cursorShape>PointingHandCursor</cursorShape>
-              </property>
-              <property name="styleSheet">
-               <string notr="true">color: #107bfa;</string>
-              </property>
-              <property name="text">
-               <string>Bleue</string>
+               <string>Moyen</string>
               </property>
              </widget>
             </item>
             <item row="6" column="0">
-             <widget class="AbulEduFlatBoutonV1" name="btnNiveauDiabolique">
+             <widget class="AbulEduFlatBoutonV1" name="btnNiveauDifficile">
               <property name="minimumSize">
                <size>
                 <width>100</width>
@@ -380,7 +316,39 @@ border-bottom-left-radius: 5px;</string>
                <string notr="true">color:#85582d;</string>
               </property>
               <property name="text">
-               <string>Marron</string>
+               <string>Difficile</string>
+              </property>
+             </widget>
+            </item>
+            <item row="8" column="0">
+             <widget class="AbulEduFlatBoutonV1" name="btnNiveauFacile">
+              <property name="minimumSize">
+               <size>
+                <width>100</width>
+                <height>30</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>100</width>
+                <height>30</height>
+               </size>
+              </property>
+              <property name="font">
+               <font>
+                <family>Andika Basic</family>
+                <weight>75</weight>
+                <bold>true</bold>
+               </font>
+              </property>
+              <property name="cursor">
+               <cursorShape>PointingHandCursor</cursorShape>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">color:#f15c28;</string>
+              </property>
+              <property name="text">
+               <string>Facile</string>
               </property>
              </widget>
             </item>
