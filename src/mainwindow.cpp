@@ -509,7 +509,7 @@ void MainWindow::on_btnVerifier_clicked()
         ok = ok && nomBtnCase[2]->text().toInt()+nomBtnCase[5]->text().toInt()+nomBtnCase[8]->text().toInt() == ui->lblV2->text().toInt();
     if (ok)
     {
-        AbulEduMessageBoxV1* msg = new AbulEduMessageBoxV1(trUtf8("Félicitations"),trUtf8("Tu peux choisir une nouvelle grille..."),true,ui->pagePrincipale);
+        AbulEduMessageBoxV1* msg = new AbulEduMessageBoxV1(trUtf8("Félicitations"),trUtf8("Tu peux choisir une nouvelle grille en cliquant sur la feuille de cerisier ou en changeant de niveau..."),true,ui->pagePrincipale);
         msg->setWink();
         msg->show();
         setAbeLineLog("Complète la grille","", -1, 0 , abeEvaluation(), "", "", "", trUtf8("Vérification"));
@@ -619,12 +619,16 @@ void MainWindow::on_btnAbandonner_clicked()
 
     if (nErreurs > 0)
     {
-        AbulEduMessageBoxV1* msg = new AbulEduMessageBoxV1(trUtf8("Pas trouvé ?"),trUtf8("Voici un corrigé ! \n\nTu peux choisir une nouvelle grille..."),true,ui->pagePrincipale);
+        AbulEduMessageBoxV1* msg = new AbulEduMessageBoxV1(trUtf8("Pas trouvé ?"),trUtf8("Voici un corrigé ! \n\nTu peux choisir une nouvelle grille en cliquant sur la feuille de cerisier ou en changeant de niveau..."),true,ui->pagePrincipale);
+        msg->move(20,150);
+        msg->resize(400,100);
         msg->show();
     }
     else
     {
-        AbulEduMessageBoxV1* msg = new AbulEduMessageBoxV1(trUtf8("Félicitations"),trUtf8("Tu peux choisir une nouvelle grille..."),true,ui->pagePrincipale);
+        AbulEduMessageBoxV1* msg = new AbulEduMessageBoxV1(trUtf8("Félicitations"),trUtf8("Tu peux choisir une nouvelle grille en cliquant sur la feuille de cerisier ou en changeant de niveau..."),true,ui->pagePrincipale);
+        msg->move(20,150);
+        msg->resize(400,100);
         msg->setWink();
         msg->show();
     }
