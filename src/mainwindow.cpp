@@ -118,10 +118,13 @@ MainWindow::MainWindow(QWidget *parent) :
 
     setWindowFlags(Qt::CustomizeWindowHint);
 
+    /* Centrage fenetre avec gestion multi-ecrans */
     QDesktopWidget *widget = QApplication::desktop();
-    int desktop_width = widget->width();
-    int desktop_height = widget->height();
+    /* C'est ici qu'on récupère le uméro d'écran de l'appli ->screenNumber(this) */
+    int desktop_width  = widget->screen(widget->screenNumber(this))->width();
+    int desktop_height = widget->screen(widget->screenNumber(this))->height();
     this->move((desktop_width-this->width())/2, (desktop_height-this->height())/2);
+
 }
 
 MainWindow::~MainWindow()
