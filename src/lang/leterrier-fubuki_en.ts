@@ -4,17 +4,14 @@
 <context>
     <name>AbulEduAproposV0</name>
     <message>
-        <location filename="../abuleduaproposv0.ui" line="14"/>
         <source>A Propos du logiciel</source>
-        <translation>About</translation>
+        <translation type="obsolete">About</translation>
     </message>
     <message utf8="true">
-        <location filename="../abuleduaproposv0.ui" line="27"/>
         <source>Aide intégrée</source>
-        <translation>Software help desk</translation>
+        <translation type="obsolete">Software help desk</translation>
     </message>
     <message utf8="true">
-        <location filename="../abuleduaproposv0.ui" line="41"/>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;title&gt;Aide Calculette&lt;/title&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
@@ -25,7 +22,7 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:14pt; font-weight:600;&quot;&gt;Règle du jeux :&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:12pt; color:#000000;&quot;&gt;Complèter la grille de gauche avec  les nombres de la grille de droite de sorte que les sommes horizontales et verticales soient justes.&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+        <translation type="obsolete">&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;title&gt;Fubuki Help&lt;/title&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans&apos;; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
@@ -37,12 +34,10 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:12pt; color:#000000;&quot;&gt;Fill the left grid with numbers from right grid. Horizontal and vertical sums must be correct...&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../abuleduaproposv0.ui" line="66"/>
         <source>Ressources</source>
-        <translation>Resources</translation>
+        <translation type="obsolete">Resources</translation>
     </message>
     <message utf8="true">
-        <location filename="../abuleduaproposv0.ui" line="80"/>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;title&gt;Aide Calculette&lt;/title&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
@@ -53,7 +48,7 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;DejaVu Sans&apos;; font-size:11pt;&quot;&gt;Le flux RSS en provenance de libre pedagosite sera automatiquement téléchargé lors du lancement de l&apos;application, ne touchez à rien de cette fenêtre.&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;DejaVu Sans&apos;; font-size:11pt;&quot;&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;DejaVu Sans&apos;; font-size:11pt;&quot;&gt;Exemple: http://libre.pedagosite.net/search/leterrier-calculment&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+        <translation type="obsolete">&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;title&gt;Fubuki help&lt;/title&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans&apos;; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
@@ -65,12 +60,10 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;DejaVu Sans&apos;; font-size:11pt;&quot;&gt;Example: http://libre.pedagosite.net/search/leterrier-calculment&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message utf8="true">
-        <location filename="../abuleduaproposv0.ui" line="108"/>
         <source>Nouveautés</source>
-        <translation>News</translation>
+        <translation type="obsolete">News</translation>
     </message>
     <message utf8="true">
-        <location filename="../abuleduaproposv0.ui" line="119"/>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
@@ -81,7 +74,7 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;DejaVu Sans&apos;; font-size:11pt;&quot;&gt;Le flux RSS en provenance du redmine sera automatiquement téléchargé lors du lancement de l&apos;application, ne touchez à rien de cette fenêtre.&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;DejaVu Sans&apos;; font-size:11pt;&quot;&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;DejaVu Sans&apos;; font-size:11pt;&quot;&gt;Exemple: http://redmine.ryxeo.com/projects/leterrier-calculment/news&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+        <translation type="obsolete">&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans&apos;; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
@@ -93,12 +86,10 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;DejaVu Sans&apos;; font-size:11pt;&quot;&gt;Example: http://redmine.ryxeo.com/projects/leterrier-calculment/news&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../abuleduaproposv0.ui" line="141"/>
         <source>Forum</source>
-        <translation>Forum</translation>
+        <translation type="obsolete">Forum</translation>
     </message>
     <message utf8="true">
-        <location filename="../abuleduaproposv0.ui" line="149"/>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
@@ -109,7 +100,7 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;DejaVu Sans&apos;; font-size:11pt;&quot;&gt;Le flux RSS en provenance du forum abuledu sera automatiquement téléchargé lors du lancement de l&apos;application, ne touchez à rien de cette fenêtre.&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;DejaVu Sans&apos;; font-size:11pt;&quot;&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;DejaVu Sans&apos;; font-size:11pt;&quot;&gt;Exemple: http://forum.abuledu.org/rss/topic/leterrier-calculment/lang/fr&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+        <translation type="obsolete">&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans&apos;; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
@@ -121,18 +112,14 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;DejaVu Sans&apos;; font-size:11pt;&quot;&gt;Example: http://forum.abuledu.org/rss/topic/leterrier-calculment/lang/fr&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../abuleduaproposv0.ui" line="168"/>
-        <location filename="../abuleduaproposv0.cpp" line="50"/>
         <source>Posez votre question sur le forum des utilisateurs ...</source>
-        <translation>Ask your questions on user&apos;s forum...</translation>
+        <translation type="obsolete">Ask your questions on user&apos;s forum...</translation>
     </message>
     <message>
-        <location filename="../abuleduaproposv0.ui" line="184"/>
         <source>Contribuez</source>
-        <translation>Contribute</translation>
+        <translation type="obsolete">Contribute</translation>
     </message>
     <message utf8="true">
-        <location filename="../abuleduaproposv0.ui" line="192"/>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
@@ -151,7 +138,7 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;4. Traduisez ce logiciel dans d&apos;autres langues, pour celà proposez votre aide sur la liste dev@abuledu.org. Allez sur le site suivant pour vous y abonner: &lt;a href=&quot;http://listes.abuledu.org/wws/info/dev&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;http://listes.abuledu.org/wws/info/dev&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;5. Faites nous connaître auprès de vos amis, contacts et tout autour de vous, plus nous sommes nombreux et plus nos projets avanceront vite et bien.&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+        <translation type="obsolete">&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans&apos;; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
@@ -171,12 +158,10 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;5. Make us known to friends and collegues. Progress is dependent upon publicity. .&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message utf8="true">
-        <location filename="../abuleduaproposv0.ui" line="219"/>
         <source>À propos</source>
-        <translation>About</translation>
+        <translation type="obsolete">About</translation>
     </message>
     <message utf8="true">
-        <location filename="../abuleduaproposv0.ui" line="337"/>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
@@ -199,7 +184,7 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;DejaVu Sans&apos;; font-size:12pt; color:#000000;&quot;&gt;Crédits :&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;DejaVu Sans&apos;; font-size:12pt; color:#000000;&quot;&gt;O. pour m&apos;avoir donné l&apos;idée&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;DejaVu Sans&apos;; font-size:12pt; color:#000000;&quot;&gt;Et toute l&apos;équipe d&apos;AbulÉdu et de Ryxéo pour leur aide, leur soutien moral.&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+        <translation type="obsolete">&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans&apos;; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
@@ -222,113 +207,102 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;   - Jean-Louis Frucot &amp;lt;frucot.jeanlouis@free.fr&amp;gt; &lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../abuleduaproposv0.ui" line="390"/>
         <source>Fermer</source>
-        <translation>Close</translation>
+        <translation type="obsolete">Close</translation>
     </message>
     <message>
-        <location filename="../abuleduaproposv0.cpp" line="44"/>
         <source>A propos de</source>
-        <translation>Aout</translation>
+        <translation type="obsolete">Aout</translation>
     </message>
     <message>
-        <location filename="../abuleduaproposv0.cpp" line="113"/>
-        <source>&lt;center&gt;%1 %2&lt;/center&gt;</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location filename="../abuleduaproposv0.cpp" line="123"/>
         <source>&amp;Aide</source>
-        <translation>&amp;Help</translation>
+        <translation type="obsolete">&amp;Help</translation>
     </message>
     <message>
-        <location filename="../abuleduaproposv0.cpp" line="131"/>
         <source>Aide</source>
-        <translation>Help</translation>
+        <translation type="obsolete">Help</translation>
     </message>
     <message utf8="true">
-        <location filename="../abuleduaproposv0.cpp" line="141"/>
         <source>Aide intégrée...</source>
-        <translation>Software help desk...</translation>
+        <translation type="obsolete">Software help desk...</translation>
     </message>
     <message utf8="true">
-        <location filename="../abuleduaproposv0.cpp" line="148"/>
         <source>Ressources pédagogiques...</source>
-        <translation>Educational resources...</translation>
+        <translation type="obsolete">Educational resources...</translation>
     </message>
     <message utf8="true">
-        <location filename="../abuleduaproposv0.cpp" line="154"/>
         <source>Nouveautés...</source>
-        <translation>News...</translation>
+        <translation type="obsolete">News...</translation>
     </message>
     <message>
-        <location filename="../abuleduaproposv0.cpp" line="160"/>
         <source>Forum des utilisateurs...</source>
-        <translation>Users forum...</translation>
+        <translation type="obsolete">Users forum...</translation>
     </message>
     <message>
-        <location filename="../abuleduaproposv0.cpp" line="166"/>
         <source>Contribuez...</source>
-        <translation>Contribute...</translation>
+        <translation type="obsolete">Contribute...</translation>
     </message>
     <message utf8="true">
-        <location filename="../abuleduaproposv0.cpp" line="172"/>
         <source>À Propos de ce logiciel...</source>
-        <translation>About this software...</translation>
+        <translation type="obsolete">About this software...</translation>
     </message>
     <message>
-        <location filename="../abuleduaproposv0.cpp" line="210"/>
-        <location filename="../abuleduaproposv0.cpp" line="242"/>
-        <location filename="../abuleduaproposv0.cpp" line="453"/>
-        <location filename="../abuleduaproposv0.cpp" line="529"/>
         <source>Le site n&apos;est pas accessible</source>
-        <translation>Website is not accessible</translation>
+        <translation type="obsolete">Website is not accessible</translation>
     </message>
     <message utf8="true">
-        <location filename="../abuleduaproposv0.cpp" line="215"/>
-        <location filename="../abuleduaproposv0.cpp" line="247"/>
-        <location filename="../abuleduaproposv0.cpp" line="280"/>
         <source>Téléchargement en cours ... veuillez patienter.</source>
-        <translation>Download in progress... please wait.</translation>
+        <translation type="obsolete">Download in progress... please wait.</translation>
     </message>
     <message>
-        <location filename="../abuleduaproposv0.cpp" line="275"/>
-        <location filename="../abuleduaproposv0.cpp" line="391"/>
         <source>Le forum n&apos;est pas accessible</source>
-        <translation>Forum is not accessible</translation>
+        <translation type="obsolete">Forum is not accessible</translation>
     </message>
 </context>
 <context>
     <name>MainWindow</name>
     <message>
-        <location filename="../mainwindow.ui" line="32"/>
         <source>Fubuki du Terrier</source>
-        <translation>Fubuki from Le Terrier</translation>
+        <translation type="obsolete">Fubuki from Le Terrier</translation>
     </message>
     <message utf8="true">
         <source>Vérifier</source>
         <translation type="obsolete">Check</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="1794"/>
+        <location filename="../mainwindow.ui" line="1762"/>
         <source>Solution</source>
         <translation>Solution</translation>
     </message>
     <message>
+        <location filename="../mainwindow.ui" line="351"/>
         <source>Facile</source>
-        <translation type="obsolete">Easy</translation>
+        <translation>Easy</translation>
     </message>
     <message>
-        <source>Moyen</source>
-        <translation type="obsolete">Medium</translation>
-    </message>
-    <message>
-        <source>Difficile</source>
-        <translation type="obsolete">Hard</translation>
+        <location filename="../mainwindow.ui" line="32"/>
+        <source>Fubuki</source>
+        <translation></translation>
     </message>
     <message utf8="true">
+        <location filename="../mainwindow.ui" line="255"/>
+        <source>Très facile</source>
+        <translation>Very easy</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.ui" line="287"/>
+        <source>Moyen</source>
+        <translation>Medium</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.ui" line="319"/>
+        <source>Difficile</source>
+        <translation>Difficult</translation>
+    </message>
+    <message utf8="true">
+        <location filename="../mainwindow.ui" line="222"/>
         <source>Très difficile</source>
-        <translation type="obsolete">Very hard</translation>
+        <translation>Very difficult</translation>
     </message>
     <message>
         <source>Diabolique</source>
@@ -372,46 +346,40 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <location filename="../mainwindow.ui" line="190"/>
-        <location filename="../mainwindow.ui" line="2019"/>
+        <location filename="../mainwindow.ui" line="1987"/>
         <source>Annuler</source>
         <translation>Cancel</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="222"/>
         <source>Noire</source>
-        <translation>Black</translation>
+        <translation type="obsolete">Black</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="255"/>
         <source>Jaune</source>
-        <translation>Yellow</translation>
+        <translation type="obsolete">Yellow</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="287"/>
         <source>Orange</source>
-        <translation>Orange</translation>
+        <translation type="obsolete">Orange</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="319"/>
         <source>Verte</source>
-        <translation>Green</translation>
+        <translation type="obsolete">Green</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="351"/>
         <source>Bleue</source>
-        <translation>Blue</translation>
+        <translation type="obsolete">Blue</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="383"/>
         <source>Marron</source>
-        <translation>Brown</translation>
+        <translation type="obsolete">Brown</translation>
     </message>
     <message>
         <source>niveaux</source>
         <translation type="obsolete">levels</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="1578"/>
+        <location filename="../mainwindow.ui" line="1546"/>
         <source>Niveau</source>
         <translation>Level</translation>
     </message>
@@ -420,7 +388,7 @@ p, li { white-space: pre-wrap; }
         <translation type="obsolete">help</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="1652"/>
+        <location filename="../mainwindow.ui" line="1620"/>
         <source>Aide</source>
         <translation>Help</translation>
     </message>
@@ -429,7 +397,7 @@ p, li { white-space: pre-wrap; }
         <translation type="obsolete">beginning</translation>
     </message>
     <message utf8="true">
-        <location filename="../mainwindow.ui" line="1726"/>
+        <location filename="../mainwindow.ui" line="1694"/>
         <source>Début</source>
         <translation>Beginning</translation>
     </message>
@@ -442,17 +410,17 @@ p, li { white-space: pre-wrap; }
         <translation type="obsolete">numbers</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="1868"/>
+        <location filename="../mainwindow.ui" line="1836"/>
         <source>Nombres</source>
         <translation>Numbers</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="1955"/>
+        <location filename="../mainwindow.ui" line="1923"/>
         <source>Au choix</source>
         <translation>Choice</translation>
     </message>
     <message utf8="true">
-        <location filename="../mainwindow.ui" line="1987"/>
+        <location filename="../mainwindow.ui" line="1955"/>
         <source>0 à 9</source>
         <translation>0 to 9</translation>
     </message>
@@ -473,62 +441,56 @@ p, li { white-space: pre-wrap; }
         <translation type="obsolete">oc</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="2060"/>
+        <location filename="../mainwindow.ui" line="2028"/>
         <source>Clique directement dans les cases de la grille</source>
         <translation>Click straight on squares</translation>
     </message>
-    <message>
-        <location filename="../mainwindow.ui" line="2078"/>
-        <source>OK</source>
-        <translation></translation>
-    </message>
     <message utf8="true">
-        <location filename="../mainwindow.ui" line="2097"/>
         <source>Bientôt ici des informations et des liens concernant ce logiciel</source>
-        <translation>Details and links about this software soon available</translation>
+        <translation type="obsolete">Details and links about this software soon available</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="2168"/>
+        <location filename="../mainwindow.ui" line="2097"/>
         <source>&amp;Quitter</source>
         <translation>&amp;Quit</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="2171"/>
+        <location filename="../mainwindow.ui" line="2100"/>
         <source>Ctrl+Q</source>
         <translation>Ctrl+Q</translation>
     </message>
     <message utf8="true">
-        <location filename="../mainwindow.ui" line="2176"/>
+        <location filename="../mainwindow.ui" line="2105"/>
         <source>Aide intégrée...</source>
         <translation>Software help desk...</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="2179"/>
+        <location filename="../mainwindow.ui" line="2108"/>
         <source>F1</source>
         <translation>F1</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="2184"/>
+        <location filename="../mainwindow.ui" line="2113"/>
         <source>Contacter un auteur...</source>
         <translation>Get in touch with author...</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="2189"/>
+        <location filename="../mainwindow.ui" line="2118"/>
         <source>Traduire le logiciel...</source>
         <translation>Translate the software...</translation>
     </message>
     <message utf8="true">
-        <location filename="../mainwindow.ui" line="2194"/>
+        <location filename="../mainwindow.ui" line="2123"/>
         <source>À propos de ce logiciel...</source>
         <translation>About this software...</translation>
     </message>
     <message utf8="true">
-        <location filename="../mainwindow.ui" line="2197"/>
+        <location filename="../mainwindow.ui" line="2126"/>
         <source>À propos de ce logiciel</source>
         <translation>About this software</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="2205"/>
+        <location filename="../mainwindow.ui" line="2134"/>
         <source>Aide en ligne...</source>
         <translation>Online help...</translation>
     </message>
@@ -541,133 +503,145 @@ p, li { white-space: pre-wrap; }
         <translation type="obsolete">French</translation>
     </message>
     <message utf8="true">
-        <location filename="../mainwindow.cpp" line="163"/>
+        <location filename="../mainwindow.cpp" line="166"/>
         <source>de 1 à 9</source>
         <translation>from 1 to 9</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="165"/>
+        <location filename="../mainwindow.cpp" line="168"/>
         <source>entre 15 et %1</source>
         <translation>between 15 and %1</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="166"/>
+        <location filename="../mainwindow.cpp" line="169"/>
         <source>niveau %1</source>
         <translation>level %1</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="168"/>
+        <location filename="../mainwindow.cpp" line="171"/>
         <source>anticiper 6 totaux de 3 nombres</source>
         <translation>predict 6 results from 3 numbers</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="790"/>
+        <location filename="../mainwindow.cpp" line="515"/>
+        <location filename="../mainwindow.cpp" line="632"/>
+        <source>Tu peux choisir une nouvelle grille en cliquant sur la feuille de cerisier ou en changeant de niveau...</source>
+        <translation>You can now ask for a new grid, by clicking on the cherry blossom or by changing level...</translation>
+    </message>
+    <message utf8="true">
+        <location filename="../mainwindow.cpp" line="625"/>
+        <source>Voici un corrigé ! 
+
+Tu peux choisir une nouvelle grille en cliquant sur la feuille de cerisier ou en changeant de niveau...</source>
+        <translation>This is a solution ! 
+
+You can now ask for a new grid, by clicking on the cherry blossom or by changing level...</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="789"/>
         <source>Nombre maximum</source>
         <translation>Max number</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="410"/>
-        <location filename="../mainwindow.cpp" line="790"/>
+        <location filename="../mainwindow.cpp" line="413"/>
+        <location filename="../mainwindow.cpp" line="789"/>
         <source>Choisis un nombre entre 1 et 34</source>
         <translation>Choice a number between 1 and 34</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="410"/>
+        <location filename="../mainwindow.cpp" line="413"/>
         <source>Choisis un nombre</source>
         <translation>Choose a number</translation>
     </message>
     <message utf8="true">
-        <location filename="../mainwindow.cpp" line="494"/>
+        <location filename="../mainwindow.cpp" line="496"/>
         <source>Vérification refusée</source>
         <translation>Check denied</translation>
     </message>
     <message utf8="true">
-        <location filename="../mainwindow.cpp" line="494"/>
+        <location filename="../mainwindow.cpp" line="496"/>
         <source>Commence à remplir la grille !</source>
         <translation>Fill the grid first !</translation>
     </message>
     <message utf8="true">
-        <location filename="../mainwindow.cpp" line="513"/>
-        <location filename="../mainwindow.cpp" line="628"/>
+        <location filename="../mainwindow.cpp" line="515"/>
+        <location filename="../mainwindow.cpp" line="632"/>
         <source>Félicitations</source>
         <translation>Congratulations</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="513"/>
-        <location filename="../mainwindow.cpp" line="628"/>
         <source>Tu peux choisir une nouvelle grille...</source>
-        <translation>You can choose a new one...</translation>
+        <translation type="obsolete">You can choose a new one...</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="536"/>
-        <location filename="../mainwindow.cpp" line="555"/>
-        <location filename="../mainwindow.cpp" line="569"/>
+        <location filename="../mainwindow.cpp" line="538"/>
+        <location filename="../mainwindow.cpp" line="557"/>
+        <location filename="../mainwindow.cpp" line="571"/>
         <source>Une ou des erreurs ...</source>
         <translation>Error(s) ...</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="536"/>
+        <location filename="../mainwindow.cpp" line="538"/>
         <source>Par exemple le nombre : %1 
 
 Je te prie de corriger !</source>
         <translation>Number %1, for example. Please correct !</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="541"/>
-        <location filename="../mainwindow.cpp" line="575"/>
+        <location filename="../mainwindow.cpp" line="543"/>
+        <location filename="../mainwindow.cpp" line="577"/>
         <source>Pas d&apos;erreur !</source>
         <translation>No error !</translation>
     </message>
     <message utf8="true">
-        <location filename="../mainwindow.cpp" line="541"/>
-        <location filename="../mainwindow.cpp" line="575"/>
+        <location filename="../mainwindow.cpp" line="543"/>
+        <location filename="../mainwindow.cpp" line="577"/>
         <source>Continue à complèter la grille...</source>
         <translation>Carry on filling the grid...</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="555"/>
+        <location filename="../mainwindow.cpp" line="557"/>
         <source>Par exemple la ligne %1
 
 Je te prie de corriger !</source>
         <translation>Line %1 for example. Please correct !</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="569"/>
+        <location filename="../mainwindow.cpp" line="571"/>
         <source>Par exemple la colonne %1
 
 Je te prie de corriger !</source>
         <translation>Column %1 for example. Please correct !</translation>
     </message>
     <message utf8="true">
-        <location filename="../mainwindow.cpp" line="623"/>
+        <location filename="../mainwindow.cpp" line="625"/>
         <source>Pas trouvé ?</source>
         <translation>No idea ?</translation>
     </message>
     <message utf8="true">
-        <location filename="../mainwindow.cpp" line="623"/>
         <source>Voici un corrigé ! 
 
 Tu peux choisir une nouvelle grille...</source>
-        <translation>Here is a solution ! Choose a new grid...</translation>
+        <translation type="obsolete">Here is a solution ! Choose a new grid...</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="669"/>
+        <location filename="../mainwindow.cpp" line="675"/>
         <source>Choisis une nouvelle grille par le menu Feuille ou change de niveau.</source>
         <translation>Choose a new grid or change level.</translation>
     </message>
     <message utf8="true">
-        <location filename="../mainwindow.cpp" line="833"/>
-        <location filename="../mainwindow.cpp" line="844"/>
+        <location filename="../mainwindow.cpp" line="823"/>
+        <location filename="../mainwindow.cpp" line="834"/>
         <source>Problème</source>
         <translation>Problem</translation>
     </message>
     <message utf8="true">
-        <location filename="../mainwindow.cpp" line="833"/>
+        <location filename="../mainwindow.cpp" line="823"/>
         <source>Tu n&apos;as pas donné un nombre compris entre 1 et 34, on reste avec les nombres de 1 à 9...</source>
         <translation>Not matching number, we keep numbers from 1 to 9...</translation>
     </message>
     <message utf8="true">
-        <location filename="../mainwindow.cpp" line="844"/>
+        <location filename="../mainwindow.cpp" line="834"/>
         <source>Tu n&apos;as pas donné un nombre compris entre 1 et 34...</source>
         <translation>Not matching number...</translation>
     </message>
@@ -696,13 +670,13 @@ Tu peux choisir une nouvelle grille...</source>
 You can choose a new grid...</translation>
     </message>
     <message utf8="true">
-        <location filename="../mainwindow.ui" line="1504"/>
-        <location filename="../mainwindow.cpp" line="516"/>
-        <location filename="../mainwindow.cpp" line="539"/>
-        <location filename="../mainwindow.cpp" line="544"/>
-        <location filename="../mainwindow.cpp" line="558"/>
-        <location filename="../mainwindow.cpp" line="571"/>
-        <location filename="../mainwindow.cpp" line="578"/>
+        <location filename="../mainwindow.ui" line="1472"/>
+        <location filename="../mainwindow.cpp" line="518"/>
+        <location filename="../mainwindow.cpp" line="541"/>
+        <location filename="../mainwindow.cpp" line="546"/>
+        <location filename="../mainwindow.cpp" line="560"/>
+        <location filename="../mainwindow.cpp" line="573"/>
+        <location filename="../mainwindow.cpp" line="580"/>
         <source>Vérification</source>
         <translation>Checking</translation>
     </message>
@@ -763,33 +737,33 @@ Tu peux choisir une nouvelle grille...</source>
 You can choose a new grid...</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="632"/>
+        <location filename="../mainwindow.cpp" line="638"/>
         <source>Abandon</source>
         <translation>Cancel</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="648"/>
+        <location filename="../mainwindow.cpp" line="654"/>
         <source>Je propose le nombre ... %1</source>
         <translation>I suggest ... %1</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="648"/>
-        <location filename="../mainwindow.cpp" line="669"/>
+        <location filename="../mainwindow.cpp" line="654"/>
+        <location filename="../mainwindow.cpp" line="675"/>
         <source>Allez, je t&apos;aide...</source>
         <translation>I give you helping hand...</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="663"/>
+        <location filename="../mainwindow.cpp" line="669"/>
         <source>Information</source>
         <translation>Information</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="2210"/>
+        <location filename="../mainwindow.ui" line="2139"/>
         <source>&amp;Anglais</source>
         <translation>&amp;English</translation>
     </message>
     <message utf8="true">
-        <location filename="../mainwindow.ui" line="2215"/>
+        <location filename="../mainwindow.ui" line="2144"/>
         <source>&amp;Français</source>
         <translation>&amp;Français</translation>
     </message>
