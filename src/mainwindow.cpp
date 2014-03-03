@@ -44,6 +44,7 @@ MainWindow::MainWindow(QWidget *parent) :
     //Langue
     QString locale = QLocale::system().name().section('_', 0, 0);
     ui->setupUi(this);
+    ui->frmIcones->raise();
 
     //Un 1er qtranslator pour prendre les traductions QT Systeme
     //c'est d'ailleur grace a ca qu'on est en RTL
@@ -811,7 +812,7 @@ void MainWindow::on_abeMenuFeuilleBtnQuit_clicked()
 
 void MainWindow::on_abeMenuFeuilleBtnHelp_clicked()
 {
-    ui->stackedWidget->slideInWidget(ui->pageAbout);
+    ui->stackedWidget->abeStackedWidgetSlideInWidget(ui->pageAbout);
 }
 
 void MainWindow::slotMainWindowSetBorneSup(QString nombreLu)
@@ -851,5 +852,5 @@ void MainWindow::on_btnDebut_clicked()
 
 void MainWindow::slotMainWindowShowMainPage()
 {
-    ui->stackedWidget->slideInWidget(ui->pagePrincipale);
+    ui->stackedWidget->abeStackedWidgetSlideInWidget(ui->pagePrincipale);
 }
