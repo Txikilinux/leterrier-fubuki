@@ -158,6 +158,9 @@ void MainWindow::paintEvent(QPaintEvent *)
 
 void MainWindow::initFubuki()
 {
+    foreach(AbulEduMessageBoxV1* mbox,ui->pagePrincipale->findChildren<AbulEduMessageBoxV1*>()){
+        mbox->close();
+    }
     if(ui->frmNiveau->isVisible())
     {
         ui->frmNiveau->setVisible(false);
@@ -488,6 +491,9 @@ void MainWindow::restaurerBtnNbre(int i) {
 
 void MainWindow::on_btnVerifier_clicked()
 {
+    foreach(AbulEduMessageBoxV1* mbox,ui->pagePrincipale->findChildren<AbulEduMessageBoxV1*>()){
+        mbox->close();
+    }
     // vérifier que la grille est suffisamment remplie sinon return
     QList<int> connus;
     for (int i = 0; i < 9; i++) {
@@ -605,6 +611,9 @@ void MainWindow::on_cBoxNiveau_activated(int index)
 
 void MainWindow::on_btnAbandonner_clicked()
 {
+    foreach(AbulEduMessageBoxV1* mbox,ui->pagePrincipale->findChildren<AbulEduMessageBoxV1*>()){
+        mbox->close();
+    }
     for (int i = 0; i < 9; i++) {
         qDebug()<<"case "<<i<<" : "<<nomBtnCase[i]->text().toInt()<<" -> "<<cases[i];
         if (nomBtnCase[i]->text().toInt() != cases[i]) {
@@ -642,6 +651,9 @@ void MainWindow::on_btnAbandonner_clicked()
 
 void MainWindow::on_btnInformation_clicked()
 {
+    foreach(AbulEduMessageBoxV1* mbox,ui->pagePrincipale->findChildren<AbulEduMessageBoxV1*>()){
+        mbox->close();
+    }
     QList<int> inconnus;
     for (int i = 0; i < 9; i++) {
         if (nomBtnCase[i]->text() == "") inconnus << i;
@@ -844,6 +856,9 @@ void MainWindow::slotMainWindowSetInCase(QString nombreLu)
 
 void MainWindow::on_btnDebut_clicked()
 {
+    foreach(AbulEduMessageBoxV1* mbox,ui->pagePrincipale->findChildren<AbulEduMessageBoxV1*>()){
+        mbox->close();
+    }
     ui->btnVerifier->setDisabled(false);
     ui->btnAbandonner->setDisabled(false);
     restoreCases();
