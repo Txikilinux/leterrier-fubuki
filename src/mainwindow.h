@@ -125,6 +125,9 @@ private:
     /** Appelé au clic sur le bouton Début, cette méthode remet les nombres dans l'état du début de l'exercice */
     void restoreNbres();
 
+    QPushButton *findCaseWhereIs(int x);
+    QPushButton *findNbreWhereIs(int x);
+
     QTranslator qtTranslator;
     QTranslator myappTranslator;
     QString m_lang;

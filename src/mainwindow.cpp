@@ -385,6 +385,37 @@ void MainWindow::restoreNbres()
     }
 }
 
+QPushButton *MainWindow::findCaseWhereIs(int x)
+{
+    QPushButton* retour;
+    bool found = false;
+    int z = 0;
+    while(z < nomBtnCase.size() && !found){
+        if(nomBtnCase.at(z)->text().toInt() == x){
+            found = true;
+            retour = nomBtnCase.at(z);
+            qDebug()<<x<<" trouvé dans la case "<<z;
+        }
+        z++;
+    }
+    return retour;
+}
+
+QPushButton *MainWindow::findNbreWhereIs(int x)
+{
+    QPushButton* retour;
+    bool found = false;
+    int z = 0;
+    while(z < nomBtnNbre.size() && !found){
+        if(nomBtnNbre.at(z)->text().toInt() == x){
+            found = true;
+            retour = nomBtnNbre.at(z);
+        }
+        z++;
+    }
+    return retour;
+}
+
 int MainWindow::indexInCasesInitial(int inCasesDonnees) {
     for (int i = 0; i < 9; i++) {
         if (casesInitial[i] == inCasesDonnees) return i;
@@ -654,29 +685,60 @@ void MainWindow::on_btnInformation_clicked()
     foreach(AbulEduMessageBoxV1* mbox,ui->pagePrincipale->findChildren<AbulEduMessageBoxV1*>()){
         mbox->close();
     }
-    QList<int> inconnus;
-    for (int i = 0; i < 9; i++) {
-        if (nomBtnCase[i]->text() == "") inconnus << i;
+
+    qDebug()<<"cases";
+    foreach(int t,cases){
+        qDebug()<<t;
     }
+    QList<QPushButton*> faux;
+    for (int i = 0; i < 9; i++) {
+        if (!nomBtnCase[i]->text().isEmpty() && nomBtnCase[i]->text().toInt() != cases[i]) {
+            faux << nomBtnCase[i];
+        }
+    }
+    QList<QPushButton*> inconnus = faux;
+    for (int i = 0; i < 9; i++) {
+        qDebug()<<i<<" -> "<<nomBtnCase[i]->text();
+        if (nomBtnCase[i]->text() == "") inconnus << nomBtnCase[i];
+    }
+    qDebug()<<"Inconnus";
+    qDebug()<<inconnus;
+    qDebug()<<"faux";
+    qDebug()<<faux;
     // tirer l'un de ces nombres au hasard
     if(inconnus.size() > 0)
     {
+        QString alertMsg;
+        /* je tire un rang parmi les cases inconnues (vides ou fausses) */
         int iBtn = rand() % inconnus.length();
-        //qDebug() << "Je prends le " << iBtn << "ieme bouton inconnu : " << inconnus[iBtn];
-        //qDebug() << "AIDE : Je propose la btnCase " << inconnus[iBtn] << " de valeur " << cases[inconnus[iBtn]] << cases;
-        AbulEduMessageBoxV1* msg = new AbulEduMessageBoxV1(trUtf8("Allez, je t'aide..."),trUtf8("Je propose le nombre ... %1").arg(QString::number(cases[inconnus[iBtn]])),true,ui->pagePrincipale);
+        /* je récupère le numéro de bouton à ce rang */
+        int ind = inconnus.at(iBtn)->objectName().remove("btnCase").toInt();
+        /* je trouve le nombre qui doit se trouver à ce bouton */
+        int nbDonne = cases.at(ind);
+
+        qDebug()<<iBtn<<" donc "<<nbDonne;
+        if(faux.contains(inconnus[iBtn])){
+            alertMsg = trUtf8("Je te corrige le nombre ... %1").arg(QString::number(nbDonne));
+            qDebug() << "c'est un faux "<<alertMsg ;
+            inconnus[iBtn]->setText(QString::number(nbDonne));
+            inconnus.at(iBtn)->setStyleSheet("background:transparent;color : rgb(134,45,176);");
+            findCaseWhereIs(nbDonne)->setText("");
+        }
+        else {
+            alertMsg = trUtf8("Je propose le nombre ... %1").arg(QString::number(nbDonne));
+            inconnus.at(iBtn)->setText(QString::number(nbDonne));
+            inconnus.at(iBtn)->setStyleSheet("background:transparent;color : rgb(0,108,192);");
+            qDebug() << "C'est un inconnu "<<alertMsg ;
+            QPushButton* inPioche = findNbreWhereIs(nbDonne);
+            inPioche->setStyleSheet("background:transparent;color : #C02020");
+            inPioche->setFont(fontMINUS);
+            inPioche->setDisabled(true);
+        }
+        AbulEduMessageBoxV1* msg = new AbulEduMessageBoxV1(trUtf8("Allez, je t'aide..."),alertMsg,true,ui->pagePrincipale);
+        msg->move(20,150);
+        msg->resize(400,100);
         msg->setWink();
         msg->show();
-        nomBtnCase[inconnus[iBtn]]->setStyleSheet("background:transparent;color : #C02020");
-        //nomBtnCase[inconnus[iBtn]]->setFont(fontBIG);
-        nomBtnCase[inconnus[iBtn]]->setProperty("text", QString::number(cases[inconnus[iBtn]]));
-        nomBtnCase[inconnus[iBtn]]->setDisabled(true);
-        // rechercher la case correspondant au nombre donné
-        //qDebug() << "rechercher la case " << cases[inconnus[iBtn]];
-        int k = indexInCasesInitial(cases[inconnus[iBtn]]);
-        nomBtnNbre[k]->setStyleSheet("background:transparent;color : #C02020");
-        nomBtnNbre[k]->setFont(fontMINUS);
-        nomBtnNbre[k]->setDisabled(true);
 
         nAides++;
         setAbeLineLog("Complète la grille","", -1, 0 , "", "", "", "", trUtf8("Information"));
@@ -706,10 +768,10 @@ void MainWindow::setInformation() {
     for (int i = 0; i < 9; i++) {
         if (nomBtnCase[i]->text() == "") inconnus << i;
     }
-    if (inconnus.length() < 5)
-        ui->btnInformation->setDisabled(true);
-    else
-        ui->btnInformation->setDisabled(false);
+//    if (inconnus.length() < 5)
+//        ui->btnInformation->setDisabled(true);
+//    else
+//        ui->btnInformation->setDisabled(false);
 }
 
 void MainWindow::slotChangeLangue(QString lang)
