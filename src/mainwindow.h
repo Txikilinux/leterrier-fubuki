@@ -107,6 +107,8 @@ private:
     /** Liste des boutons contenant la pioche */
     QList <QPushButton *> nomBtnNbre;
 
+    QMap<int,QPushButton*> m_solution;
+
     QList<QPushButton*> caseCopy;
     QList<QPushButton> btnCopy;
 
@@ -125,7 +127,6 @@ private:
     /** Appelé au clic sur le bouton Début, cette méthode remet les nombres dans l'état du début de l'exercice */
     void restoreNbres();
 
-    QPushButton *findCaseWhereIs(int x);
     QPushButton *findNbreWhereIs(int x);
 
     QTranslator qtTranslator;

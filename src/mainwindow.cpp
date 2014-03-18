@@ -158,6 +158,7 @@ void MainWindow::paintEvent(QPaintEvent *)
 
 void MainWindow::initFubuki()
 {
+    m_solution.clear();
     foreach(AbulEduMessageBoxV1* mbox,ui->pagePrincipale->findChildren<AbulEduMessageBoxV1*>()){
         mbox->close();
     }
@@ -209,7 +210,6 @@ void MainWindow::initFubuki()
         nomBtnNbre[i]->setFont(fontMEDIUM);
         nomBtnNbre[i]->setDisabled(false);
         nomBtnNbre[i]->setProperty("text", QString::number(casesInitial[i]));
-//        qDebug() << "On affecte le texte " << casesInitial[i] << " a la case " << i;
     }
     cases = casesInitial;
     // permuter cette liste
@@ -218,6 +218,11 @@ void MainWindow::initFubuki()
         int a = cases[i];
         cases[i] = cases[j];
         cases[j] = a;
+    }
+    qDebug()<<cases;
+    for(int t = 0;t < 9;t++){
+        m_solution.insert(cases.at(t),nomBtnCase.at(t));
+        qDebug()<<cases.at(t)<<" dans "<<nomBtnCase.at(t)->objectName();
     }
     // sommer les lignes et afficher
     ligSomme.clear();
@@ -309,6 +314,7 @@ void MainWindow::initFubuki()
     ui->btnVerifier->setDisabled(false);
     ui->btnAbandonner->setDisabled(false);
 
+
 //    ui->btnNouveau->setDisabled(true);
 
     /* Creation d'une copie des cases */
@@ -383,22 +389,6 @@ void MainWindow::restoreNbres()
             btn->setProperty("used",true);
         }
     }
-}
-
-QPushButton *MainWindow::findCaseWhereIs(int x)
-{
-    QPushButton* retour;
-    bool found = false;
-    int z = 0;
-    while(z < nomBtnCase.size() && !found){
-        if(nomBtnCase.at(z)->text().toInt() == x){
-            found = true;
-            retour = nomBtnCase.at(z);
-            qDebug()<<x<<" trouvé dans la case "<<z;
-        }
-        z++;
-    }
-    return retour;
 }
 
 QPushButton *MainWindow::findNbreWhereIs(int x)
@@ -686,20 +676,18 @@ void MainWindow::on_btnInformation_clicked()
         mbox->close();
     }
 
-    qDebug()<<"cases";
-    foreach(int t,cases){
-        qDebug()<<t;
-    }
-    QList<QPushButton*> faux;
+    /* Je fais une liste des nombres qui sont dans une mauvaise case */
+    QMap<int,QPushButton*> faux;
     for (int i = 0; i < 9; i++) {
-        if (!nomBtnCase[i]->text().isEmpty() && nomBtnCase[i]->text().toInt() != cases[i]) {
-            faux << nomBtnCase[i];
+        if (!nomBtnCase[i]->text().isEmpty() && nomBtnCase[i]->text().toInt() != m_solution.key(nomBtnCase[i])) {
+            faux.insert(nomBtnCase[i]->text().toInt(),nomBtnCase[i]);
         }
     }
-    QList<QPushButton*> inconnus = faux;
+    /* Je fais une liste des nombres qui devraient être dans une case et n'y sont pas */
+    QList<int> inconnus;
     for (int i = 0; i < 9; i++) {
         qDebug()<<i<<" -> "<<nomBtnCase[i]->text();
-        if (nomBtnCase[i]->text() == "") inconnus << nomBtnCase[i];
+        if (nomBtnCase[i]->text() == "" || nomBtnCase[i]->text().toInt() != m_solution.key(nomBtnCase[i])) inconnus << m_solution.key(nomBtnCase[i]);
     }
     qDebug()<<"Inconnus";
     qDebug()<<inconnus;
@@ -711,28 +699,38 @@ void MainWindow::on_btnInformation_clicked()
         QString alertMsg;
         /* je tire un rang parmi les cases inconnues (vides ou fausses) */
         int iBtn = rand() % inconnus.length();
-        /* je récupère le numéro de bouton à ce rang */
-        int ind = inconnus.at(iBtn)->objectName().remove("btnCase").toInt();
         /* je trouve le nombre qui doit se trouver à ce bouton */
-        int nbDonne = cases.at(ind);
-
-        qDebug()<<iBtn<<" donc "<<nbDonne;
-        if(faux.contains(inconnus[iBtn])){
+        int nbDonne = inconnus.at(iBtn);
+        if(faux.keys().contains(nbDonne)){
+            /* S'il est dans les faux je dois l'effacer de là où il est et l'écrire au bon endroit */
             alertMsg = trUtf8("Je te corrige le nombre ... %1").arg(QString::number(nbDonne));
             qDebug() << "c'est un faux "<<alertMsg ;
-            inconnus[iBtn]->setText(QString::number(nbDonne));
-            inconnus.at(iBtn)->setStyleSheet("background:transparent;color : rgb(134,45,176);");
-            findCaseWhereIs(nbDonne)->setText("");
+            if(!m_solution.value(nbDonne)->text().isEmpty()){
+                QPushButton* inPioche = findNbreWhereIs(m_solution.value(nbDonne)->text().toInt());
+                inPioche->setStyleSheet("background:transparent;color : #d40000; font-weight: bold;");
+                inPioche->setFont(fontMEDIUM);
+                inPioche->setEnabled(true);
+            }
+            m_solution.value(nbDonne)->setText(QString::number(nbDonne));
+            m_solution.value(nbDonne)->setStyleSheet("background:transparent;color : rgb(134,45,176);");
+            faux.value(nbDonne)->setText("");
         }
         else {
+            /* Sinon je dois juste l'écrire au bon endroit */
             alertMsg = trUtf8("Je propose le nombre ... %1").arg(QString::number(nbDonne));
-            inconnus.at(iBtn)->setText(QString::number(nbDonne));
-            inconnus.at(iBtn)->setStyleSheet("background:transparent;color : rgb(0,108,192);");
+            if(!m_solution.value(nbDonne)->text().isEmpty()){
+                QPushButton* inPioche = findNbreWhereIs(m_solution.value(nbDonne)->text().toInt());
+                inPioche->setStyleSheet("background:transparent;color : #d40000; font-weight: bold;");
+                inPioche->setFont(fontMEDIUM);
+                inPioche->setEnabled(true);
+            }
+            m_solution.value(nbDonne)->setText(QString::number(nbDonne));
+            m_solution.value(nbDonne)->setStyleSheet("background:transparent;color : rgb(0,108,192);");
             qDebug() << "C'est un inconnu "<<alertMsg ;
             QPushButton* inPioche = findNbreWhereIs(nbDonne);
             inPioche->setStyleSheet("background:transparent;color : #C02020");
             inPioche->setFont(fontMINUS);
-            inPioche->setDisabled(true);
+            inPioche->setEnabled(false);
         }
         AbulEduMessageBoxV1* msg = new AbulEduMessageBoxV1(trUtf8("Allez, je t'aide..."),alertMsg,true,ui->pagePrincipale);
         msg->move(20,150);
