@@ -6,7 +6,7 @@
   * @author 2009-2010 André Connes <andre.connes@wanadoo.fr>
   * @author 2011 Jean-Louis Frucot <frucot.jeanlouis@free.fr>
   * @author 2011-2013 Eric Seigne <eric.seigne@ryxeo.com>
-  * @author 2012-2013 Philippe Cadaugade <philippe.cadaugade@ryxeo.com>
+  * @author 2012-2014 Philippe Cadaugade <philippe.cadaugade@ryxeo.com>
   * @author 2012-2013 Icham Sirat <icham.sirat@ryxeo.com>
   * @see The GNU Public License (GPL)
   *
