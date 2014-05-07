@@ -891,10 +891,11 @@ void MainWindow::slotMainWindowSetBorneSup(QString nombreLu)
 {
     bool ok;// = false;
     borneSup = nombreLu.toInt(&ok);
-    if (!ok || borneSup > 34){
+    if (!ok || borneSup > 34 || borneSup < 9){
         alea = 0;
-        AbulEduMessageBoxV1* msg = new AbulEduMessageBoxV1(trUtf8("Problème"),trUtf8("Tu n'as pas donné un nombre compris entre 1 et 34, on reste avec les nombres de 1 à 9..."),true,ui->pagePrincipale);
+        AbulEduMessageBoxV1* msg = new AbulEduMessageBoxV1(trUtf8("Problème"),trUtf8("Tu n'as pas donné un nombre compris entre 9 et 34, on reste avec les nombres de 1 à 9..."),true,ui->pagePrincipale);
         msg->show();
+        return;
     }
     initFubuki();
 }
