@@ -41,25 +41,26 @@ MainWindow::MainWindow(QWidget *parent) :
     AbulEduExerciceV0(parent),
     ui(new Ui::MainWindow)
 {
-    //Langue
-    QString locale = QLocale::system().name().section('_', 0, 0);
     ui->setupUi(this);
     ui->frmIcones->raise();
 
+    //La gestion des langues est dans abuleduapplicationv1 ...
+    //Langue
+//    QString locale = QLocale::system().name().section('_', 0, 0);
+
     //Un 1er qtranslator pour prendre les traductions QT Systeme
     //c'est d'ailleur grace a ca qu'on est en RTL
-    qtTranslator.load("qt_" + locale,
-                      QLibraryInfo::location(QLibraryInfo::TranslationsPath));
-    qApp->installTranslator(&qtTranslator);
+//    qtTranslator.load("qt_" + locale,
+//                      QLibraryInfo::location(QLibraryInfo::TranslationsPath));
+//    qApp->installTranslator(&qtTranslator);
 
     //Et un second qtranslator pour les traductions specifiques du logiciel
 //    if(! myappTranslator.load("leterrier-fubuki_"+locale, "lang")) {
 //        myappTranslator.load("leterrier-fubuki_en","lang");
 //    }
 
-    myappTranslator.load("leterrier-fubuki_" + locale, "lang");
-    qApp->installTranslator(&myappTranslator);
-
+//    myappTranslator.load("leterrier-fubuki_" + locale, "lang");
+//    qApp->installTranslator(&myappTranslator);
 
     fontBIG.setPointSize(30);
     fontMEDIUM.setPointSize(18);
