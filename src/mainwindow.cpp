@@ -759,18 +759,19 @@ void MainWindow::on_abeMenuFeuilleBtnNew_clicked()
 }
 
 void MainWindow::setInformation() {
+
     if (niveau >3) {
-        ui->btnInformation->setDisabled(true);
+        ui->btnInformation->setEnabled(false);
         return;
     }
+    else {
+        ui->btnInformation->setEnabled(true);
+    }
+
     QList<int> inconnus;
     for (int i = 0; i < 9; i++) {
         if (nomBtnCase[i]->text() == "") inconnus << i;
     }
-//    if (inconnus.length() < 5)
-//        ui->btnInformation->setDisabled(true);
-//    else
-//        ui->btnInformation->setDisabled(false);
 }
 
 void MainWindow::slotChangeLangue(QString lang)
