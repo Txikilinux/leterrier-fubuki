@@ -168,10 +168,12 @@ void MainWindow::initFubuki()
         ui->frmNiveau->setVisible(false);
         ui->btnNiveaux->setStyleSheet(ui->btnNiveaux->styleSheet().replace("border-radius:5px;background-color:#ffffff;","background-color:rgba(0,0,0,0);"));
     }
-    if (alea == 0)
+    if (alea == 0){
         setAbeExerciceName(trUtf8("de 1 à 9"));
-    else
+    }
+    else {
         setAbeExerciceName(trUtf8("entre 15 et %1").arg(QString::number(borneSup)));
+    }
     setAbeLevel(trUtf8("niveau %1").arg(QString::number(niveau)));
     setAbeNbTotalQuestions(1);
     setAbeSkill(trUtf8("anticiper 6 totaux de 3 nombres"));
@@ -192,10 +194,15 @@ void MainWindow::initFubuki()
         if (niveau >= 4) {
             borneSup = 15 + rand() %20;
 //            ui->cBoxSuite->setDisabled(true);
-            ui->btnNombres->setDisabled(true);
+            ui->btnNombres->setEnabled(false);
             ui->frmBtnNombres->setVisible(false);
             ui->lblIndicationNiveauNoir->setVisible(true);
 
+        }
+        else {
+            ui->btnNombres->setEnabled(true);
+            ui->frmBtnNombres->setVisible(true);
+            ui->lblIndicationNiveauNoir->setVisible(false);
         }
 
         casesInitial << borneSup;
@@ -223,7 +230,7 @@ void MainWindow::initFubuki()
     qDebug()<<cases;
     for(int t = 0;t < 9;t++){
         m_solution.insert(cases.at(t),nomBtnCase.at(t));
-        qDebug()<<cases.at(t)<<" dans "<<nomBtnCase.at(t)->objectName();
+//        qDebug()<<cases.at(t)<<" dans "<<nomBtnCase.at(t)->objectName();
     }
     // sommer les lignes et afficher
     ligSomme.clear();
