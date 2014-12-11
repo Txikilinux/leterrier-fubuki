@@ -192,7 +192,6 @@ void MainWindow::initFubuki()
     }
     else {
         if (niveau >= 4) {
-            borneSup = 15 + rand() %20;
 //            ui->cBoxSuite->setDisabled(true);
             ui->btnNombres->setEnabled(false);
             ui->frmBtnNombres->setVisible(false);
