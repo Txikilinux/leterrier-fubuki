@@ -13,7 +13,7 @@
 AppId={{F4866E24-2529-4516-8E45-474F72B4BCB7}
 AppName={#APPNAME}
 AppVersion=LAVERSION
-AppPublisher=RyXÃ©o SARL
+AppPublisher=RyXéo SARL
 AppPublisherURL=http://www.abuledu.org/leterrier/
 AppSupportURL=http://www.abuledu.org/leterrier/
 AppUpdatesURL=http://www.abuledu.org/leterrier/
