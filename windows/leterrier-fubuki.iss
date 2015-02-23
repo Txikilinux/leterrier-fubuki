@@ -44,7 +44,7 @@ Source: "../debian/*.desktop"; DestDir: "{app}"; Flags: ignoreversion
 ; Source: "../src/exemples/*.abe"; DestDir: "{app}/data"; Flags: ignoreversion recursesubdirs createallsubdirs
 ; Source: "../src/conf/*"; DestDir: "{app}/conf"; Flags: ignoreversion recursesubdirs createallsubdirs
 Source: "../src/lang/*.qm"; DestDir: "{app}/lang"; Flags: ignoreversion
-; passe sur le paquet abuledu-libs Source: "C:/code/qt-bin-package/*"; Excludes: "*.txt"; DestDir: "{app}"; Flags: ignoreversion recursesubdirs createallsubdirs
+Source: "C:/code/qt-bin-package/*"; Excludes: "*.txt"; DestDir: "{app}"; Flags: ignoreversion recursesubdirs createallsubdirs
 ; opencv
 ; Source: "C:/code/opencv/build/x86/mingw/bin/*.dll"; DestDir: "{app}"; Flags: ignoreversion recursesubdirs createallsubdirs
 ; pour alacarte > 1.0.8
