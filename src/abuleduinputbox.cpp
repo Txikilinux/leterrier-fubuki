@@ -1,6 +1,6 @@
 #include "abuleduinputbox.h"
 
-AbulEduInputBox::AbulEduInputBox(QString titre, QString texte,bool doYouWantToClose, QWidget *parent)
+AbulEduInputBox::AbulEduInputBox(const QString &titre, const QString &texte, bool doYouWantToClose, QWidget *parent)
     : AbulEduMessageBoxV1(titre, texte,doYouWantToClose,parent)
 
 {
