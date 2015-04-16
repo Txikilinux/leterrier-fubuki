@@ -3,10 +3,10 @@ bzr://redmine.ryxeo.com/code/leterrier-developpeu/abuleduapplicationv1 src/lib/a
 bzr://redmine.ryxeo.com/code/leterrier-developpeu/abuleduconstantesv1/ src/lib/abuleduconstantesv1 revid:icham.sirat@ryxeo.com-20140523133356-ckwptipjfomavv47
 bzr://redmine.ryxeo.com/code/leterrier-developpeu/abuledunetworkaccessmanagerv1/ src/lib/abuledunetworkaccessmanagerv1 revid:icham.sirat@ryxeo.com-20150319101818-o29ic4tk6hj3s7q2
 bzr://redmine.ryxeo.com/code/leterrier-developpeu/abuledumessageboxv1/ src/lib/abuledumessageboxv1 revid:icham.sirat@ryxeo.com-20150319101741-zfp2h2d1a0iah0lt
-bzr://redmine.ryxeo.com/code/leterrier-developpeu/abuleduidentitesv1/ src/lib/abuleduidentitesv1 revid:icham.sirat@ryxeo.com-20150319101454-gzcks4dz5cvo19im
+bzr://redmine.ryxeo.com/code/leterrier-developpeu/abuleduidentitesv1/ src/lib/abuleduidentitesv1 revid:icham.sirat@ryxeo.com-20150402074838-6xgl0mko0cib9h4d
 bzr://redmine.ryxeo.com/code/leterrier-developpeu/abuleduflatboutonv1/ src/lib/abuleduflatboutonv1 revid:icham.sirat@ryxeo.com-20150319101336-nuhca4k6ju7gkaut
 bzr://redmine.ryxeo.com/code/leterrier-developpeu/maia/ src/lib/maia revid:icham.sirat@ryxeo.com-20150319135437-sfyyk6to30dv5qeo
-bzr://redmine.ryxeo.com/code/leterrier-developpeu/abuledufilev1 src/lib/abuledufilev1 revid:icham.sirat@ryxeo.com-20150323101938-l9wp8b3tr829vh1r
+bzr://redmine.ryxeo.com/code/leterrier-developpeu/abuledufilev1 src/lib/abuledufilev1 revid:icham.sirat@ryxeo.com-20150409153450-c4r2sl5gfoku7v10
 bzr://redmine.ryxeo.com/code/leterrier-developpeu/abuledumessageboxv1 src/lib/abuledumessageboxv1 revid:icham.sirat@ryxeo.com-20150319101741-zfp2h2d1a0iah0lt
 bzr://redmine.ryxeo.com/code/leterrier-developpeu/abuledustackedwidgetv1 src/lib/abuledustackedwidgetv1 revid:icham.sirat@ryxeo.com-20150319154800-jg0e28iqww35qb1w
 bzr://redmine.ryxeo.com/code/leterrier-developpeu/abuledumenufeuillev1/ src/lib/abuledumenufeuillev1 revid:icham.sirat@ryxeo.com-20150319154502-uuct41itjmlu5jpv
