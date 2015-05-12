@@ -15,8 +15,8 @@ AbulEduInputBox::AbulEduInputBox(const QString &titre, const QString &texte, boo
     m_leInput->setMaximumWidth(150);
     frmAbeInputLayout->addWidget(m_leInput);
     frmAbeInputLayout->addSpacerItem(new QSpacerItem(10, 10, QSizePolicy::Minimum, QSizePolicy::Expanding));
-    QVBoxLayout* vbl = (QVBoxLayout*)abeMessageBoxGetMainFrame()->layout();
-    vbl->insertWidget(2,frmAbeInput);
+    QGridLayout* vbl = (QGridLayout*)abeMessageBoxGetMainFrame()->layout();
+    vbl->addWidget(frmAbeInput,2,0);
 }
 
 void AbulEduInputBox::on_btnOK_clicked()
