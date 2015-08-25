@@ -7,12 +7,13 @@ TEMPLATE = app
 SOURCES += main.cpp \
     mainwindow.cpp \
     abuleduexercicev0.cpp \
-    abuleduinputbox.cpp
-
+    abuleduinputbox.cpp \
+    abuledupixmapwidgetv1.cpp
 HEADERS += version.h \
     mainwindow.h \
     abuleduexercicev0.h \
-    abuleduinputbox.h
+    abuleduinputbox.h \
+    abuledupixmapwidgetv1.h
 
 FORMS += mainwindow.ui
 

@@ -34,6 +34,7 @@
 #include <QDesktopWidget>
 #include <QFontDatabase>
 #include "abuleduexercicev0.h"
+#include "abuleduloadinganimationv1.h"
 
 bool isIn(int i, QList<int> s);
 
@@ -42,8 +43,6 @@ MainWindow::MainWindow(QWidget *parent) :
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-    ui->frmIcones->raise();
-
     fontBIG.setPointSize(30);
     fontMEDIUM.setPointSize(18);
     fontMINUS.setPointSize(10);
@@ -66,6 +65,7 @@ MainWindow::MainWindow(QWidget *parent) :
     borneSup = 9;
     nErreurs = 0;
     nAides = 0;
+    m_baseRect = QRect();
     initFubuki();
 
     actuelBtnNbre = -1; /* pas de nombre sélectionné */
@@ -87,7 +87,6 @@ MainWindow::MainWindow(QWidget *parent) :
 
     /* Positionnement en dur puisque la hauteur de fenêtre "utile" est fixe */
     ui->frmNiveau->move(ui->frmIcones->x()-ui->frmNiveau->width()+8,ui->frmIcones->y()+21);
-    ui->frmChoixNombres->move(ui->frmIcones->x()-ui->frmChoixNombres->width()+8,ui->frmIcones->y()+128);
     ui->frmNiveau->setVisible(false);
     ui->frmChoixNombres->setVisible(false);
 
@@ -97,13 +96,91 @@ MainWindow::MainWindow(QWidget *parent) :
 
     setWindowFlags(Qt::CustomizeWindowHint);
 
-    /* Centrage fenetre avec gestion multi-ecrans */
-    QDesktopWidget *widget = QApplication::desktop();
-    /* C'est ici qu'on récupère le uméro d'écran de l'appli ->screenNumber(this) */
-    int desktop_width  = widget->screen(widget->screenNumber(this))->width();
-    int desktop_height = widget->screen(widget->screenNumber(this))->height();
-    this->move((desktop_width-this->width())/2, (desktop_height-this->height())/2);
+    setDimensionsWidgets();
+}
 
+void MainWindow::setDimensionsWidgets()
+{
+    qDebug()<<__PRETTY_FUNCTION__;
+    QString backgroundPath = ":/data/images/background";
+    /* Je mets ma MainWindow à la taille de mon écran */int desktop_width;
+    int desktop_height;
+#ifdef Q_OS_WIN
+    QDesktopWidget *widget = QApplication::desktop();
+    int desktop_width = widget->width();
+    int desktop_height = widget->height();
+#else
+    /* et prise en compte des multi ecrans sous linux */
+    desktop_width  = abeApp->desktop()->screen(abeApp->desktop()->screenNumber(this))->width();
+    desktop_height = abeApp->desktop()->screen(abeApp->desktop()->screenNumber(this))->height();
+#endif
+    resize(desktop_width,desktop_height);
+    /* Je calcule la largeur du dessin de fond pour pouvoir retailler mon menu feuille */
+    float pixmapRatio = QPixmap(backgroundPath).width() / (float) QPixmap(backgroundPath).height();
+    float widgetRatio = width() / (float) height();
+    QPixmap scaledPixmap;
+    if (pixmapRatio  > widgetRatio){
+        scaledPixmap = QPixmap(backgroundPath).scaledToWidth(width());
+    }
+    else{
+        scaledPixmap = QPixmap(backgroundPath).scaledToHeight(height());
+    }
+    ui->frmMenuFeuille->setFixedWidth(scaledPixmap.width());
+    int margin = (width()-scaledPixmap.width())/2;
+    float topRatio = 1;
+    if(QPixmap(":/abuledumenufeuillev1/abeMenuFeuillePrincipaleBackground").height() > 0){
+        topRatio = QPixmap(":/abuledumenufeuillev1/abeMenuFeuillePrincipaleBackground").width() / (float) QPixmap(":/abuledumenufeuillev1/abeMenuFeuillePrincipaleBackground").height();
+    }
+    if(topRatio > 0) {
+        ui->frmMenuFeuille->setFixedHeight(scaledPixmap.width()/topRatio);
+    }
+    /* Je cale alors le menu feuille */
+    ui->frmMenuFeuille->abeMenuFeuilleSetGap(width()*0.0198);
+    ui->frmMenuFeuille->abeMenuFeuilleMoveButtonsFrame(width()*0.0198,ui->frmMenuFeuille->height());
+    ui->centralWidget->abePixmapWidgetSetPixmap(backgroundPath);
+    ui->frmIcones->raise();
+
+    QString rouleauPath = ":/data/images/rouleau";
+    float rouleauRatio = QPixmap(rouleauPath).width() / (float) QPixmap(rouleauPath).height();
+    ui->frmCases->setFixedSize(scaledPixmap.height()*0.5*rouleauRatio,scaledPixmap.height()*0.5);
+    ui->frmCases->move(width()*0.5,height()*0.3);
+    ui->frmCases->abePixmapWidgetSetPixmap(rouleauPath);
+    QGridLayout* gl = (QGridLayout*) ui->frmCases->layout();
+    gl->setHorizontalSpacing(35);
+    gl->setVerticalSpacing(25);
+
+    QString stockPath = ":/data/images/stock";
+    float stockRatio = QPixmap(stockPath).width() / (float) QPixmap(stockPath).height();
+    ui->frmBtnNombres->setFixedSize(scaledPixmap.width()*0.4,scaledPixmap.width()*0.4/stockRatio);
+    ui->frmBtnNombres->move(ui->frmCases->x()-(ui->frmBtnNombres->width()-ui->frmCases->width())/2,ui->frmCases->y()-(ui->frmBtnNombres->height()*1.5));
+    ui->frmBtnNombres->abePixmapWidgetSetPixmap(stockPath);
+
+    QString beltPath = ":/data/images/belt0";
+    float beltRatio = QPixmap(beltPath).width() / (float) QPixmap(beltPath).height();
+
+    ui->frmIcones->setFixedSize(scaledPixmap.height()*0.8*beltRatio,scaledPixmap.height()*0.8);
+    ui->frmIcones->move(width()-ui->frmIcones->width()-margin*1.8,0);
+    ui->frmIcones->abePixmapWidgetSetPixmap(beltPath);
+
+    int x = ui->frmIcones->width()*0.4;
+    int y = ui->frmIcones->height()*0.15;
+    ui->btnVerifier->resize(ui->frmIcones->width()*0.5,ui->frmIcones->width()*0.6);
+    ui->btnVerifier->move(x,y);
+    y+=ui->btnVerifier->height();
+    ui->btnDebut->resize(ui->frmIcones->width()*0.5,ui->frmIcones->width()*0.55);
+    ui->btnDebut->move(x,y);
+    y+=ui->btnDebut->height()*1.15;
+    ui->btnNombres->resize(ui->frmIcones->width()*0.5,ui->frmIcones->width()*0.55);
+    ui->btnNombres->move(x,y);
+    y+=ui->btnNombres->height();
+    ui->btnNiveaux->resize(ui->frmIcones->width()*0.5,ui->frmIcones->width()*0.42);
+    ui->btnNiveaux->move(x,y);
+    y+=ui->btnNiveaux->height()*1.15;
+    ui->btnInformation->resize(ui->frmIcones->width()*0.5,ui->frmIcones->width()*0.6);
+    ui->btnInformation->move(x,y);
+    y+=ui->btnInformation->height();
+    ui->btnAbandonner->resize(ui->frmIcones->width()*0.5,ui->frmIcones->width()*0.55);
+    ui->btnAbandonner->move(x,y);
 }
 
 MainWindow::~MainWindow()
@@ -132,6 +209,12 @@ void MainWindow::paintEvent(QPaintEvent *)
         initFubuki();
     }
     m_isFirstFubuki = false;
+}
+
+void MainWindow::resizeEvent(QResizeEvent *)
+{
+
+
 }
 
 void MainWindow::initFubuki()
@@ -201,7 +284,7 @@ void MainWindow::initFubuki()
         cases[i] = cases[j];
         cases[j] = a;
     }
-    qDebug()<<cases;
+//    qDebug()<<cases;
     for(int t = 0;t < 9;t++){
         m_solution.insert(cases.at(t),nomBtnCase.at(t));
 //        qDebug()<<cases.at(t)<<" dans "<<nomBtnCase.at(t)->objectName();
@@ -608,14 +691,12 @@ void MainWindow::on_btnAbandonner_clicked()
     {
         AbulEduMessageBoxV1* msg = new AbulEduMessageBoxV1(trUtf8("Pas trouvé ?"),trUtf8("Voici un corrigé ! \n\nTu peux choisir une nouvelle grille en cliquant sur la feuille de cerisier ou en changeant de niveau..."),true,ui->pagePrincipale);
         msg->move(20,150);
-        msg->resize(400,100);
         msg->show();
     }
     else
     {
         AbulEduMessageBoxV1* msg = new AbulEduMessageBoxV1(trUtf8("Félicitations"),trUtf8("Tu peux choisir une nouvelle grille en cliquant sur la feuille de cerisier ou en changeant de niveau..."),true,ui->pagePrincipale);
         msg->move(20,150);
-        msg->resize(400,100);
         msg->setWink();
         msg->show();
     }
@@ -687,7 +768,6 @@ void MainWindow::on_btnInformation_clicked()
         }
         AbulEduMessageBoxV1* msg = new AbulEduMessageBoxV1(trUtf8("Allez, je t'aide..."),alertMsg,true,ui->pagePrincipale);
         msg->move(20,150);
-        msg->resize(400,100);
         msg->setWink();
         msg->show();
 
@@ -768,35 +848,40 @@ void MainWindow::on_btnNombres_clicked()
 void MainWindow::on_btnNiveauTresFacile_clicked()
 {
     niveau = 0;
-    ui->lblLevel->setPixmap(QPixmap(":/data/images/belt"+QString::number(niveau)));
+//    ui->lblLevel->setPixmap(QPixmap(":/data/images/belt"+QString::number(niveau)));
+    ui->frmIcones->abePixmapWidgetSetPixmap(":/data/images/belt"+QString::number(niveau));
     initFubuki();
 }
 
 void MainWindow::on_btnNiveauFacile_clicked()
 {
     niveau = 1;
-    ui->lblLevel->setPixmap(QPixmap(":/data/images/belt"+QString::number(niveau)));
+//    ui->lblLevel->setPixmap(QPixmap(":/data/images/belt"+QString::number(niveau)));
+    ui->frmIcones->abePixmapWidgetSetPixmap(":/data/images/belt"+QString::number(niveau));
     initFubuki();
 }
 
 void MainWindow::on_btnNiveauMoyen_clicked()
 {
     niveau = 2;
-    ui->lblLevel->setPixmap(QPixmap(":/data/images/belt"+QString::number(niveau)));
+//    ui->lblLevel->setPixmap(QPixmap(":/data/images/belt"+QString::number(niveau)));
+    ui->frmIcones->abePixmapWidgetSetPixmap(":/data/images/belt"+QString::number(niveau));
     initFubuki();
 }
 
 void MainWindow::on_btnNiveauDifficile_clicked()
 {
     niveau = 3;
-    ui->lblLevel->setPixmap(QPixmap(":/data/images/belt"+QString::number(niveau)));
+//    ui->lblLevel->setPixmap(QPixmap(":/data/images/belt"+QString::number(niveau)));
+    ui->frmIcones->abePixmapWidgetSetPixmap(":/data/images/belt"+QString::number(niveau));
     initFubuki();
 }
 
 void MainWindow::on_btnNiveauTresDifficile_clicked()
 {
     niveau = 4;
-    ui->lblLevel->setPixmap(QPixmap(":/data/images/belt"+QString::number(niveau)));
+//    ui->lblLevel->setPixmap(QPixmap(":/data/images/belt"+QString::number(niveau)));
+    ui->frmIcones->abePixmapWidgetSetPixmap(":/data/images/belt"+QString::number(niveau));
     initFubuki();
 }
 

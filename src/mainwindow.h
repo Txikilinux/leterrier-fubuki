@@ -52,9 +52,11 @@ public:
 protected:
     void changeEvent(QEvent *e);
     void paintEvent(QPaintEvent *);
+    void resizeEvent(QResizeEvent *);
 
 private:
     Ui::MainWindow *ui;
+
     /**
       niveau :
         facile (4 nombres sont donnés)
@@ -138,6 +140,11 @@ private:
     QPoint m_dragPosition;
     bool   m_isWindowMoving;
 
+    ///
+    /// \brief m_baseRect est le rectangle occupé par l'image de fond
+    ///
+    QRect m_baseRect;
+
 signals:
     /** Demande le positionnement de l'onglet de l'aide
       * @param onglet : le numéro de l'onglet
@@ -189,6 +196,7 @@ private slots:
     void slotMainWindowSetInCase(QString nombreLu);
     void on_btnDebut_clicked();
     void slotMainWindowShowMainPage();
+    void setDimensionsWidgets();
 };
 
 #endif // MAINWINDOW_H

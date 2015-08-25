@@ -1,6 +1,5 @@
 <RCC>
     <qresource prefix="/data/images">
-        <file alias="fermeture">data/images/fermer.png</file>
         <file>data/sonic_comic.ttf</file>
         <file alias="aide">data/images/aide.png</file>
         <file alias="background">data/images/fubuki-fond.jpg</file>
@@ -28,6 +27,5 @@
         <file alias="belt4">data/images/ceinture-noire.png</file>
         <file alias="belt1">data/images/ceinture-orange.png</file>
         <file alias="belt2">data/images/ceinture-verte.png</file>
-        <file alias="fondChiffre">data/images/fond-chiffres.png</file>
     </qresource>
 </RCC>
