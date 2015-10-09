@@ -34,6 +34,8 @@ int main(int argc, char *argv[])
     a.setAbeApplicationLongName(QObject::trUtf8(VER_PRODUCTNAME_STR));
 #if QT_VERSION >= 0x050200
     a.initCommandLineParser();
+#else
+    a.initLogger();
 #endif
 
     MainWindow w;
