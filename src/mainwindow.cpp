@@ -103,12 +103,13 @@ void MainWindow::setDimensionsWidgets()
 {
     qDebug()<<__PRETTY_FUNCTION__;
     QString backgroundPath = ":/data/images/background";
-    /* Je mets ma MainWindow à la taille de mon écran */int desktop_width;
+    /* Je mets ma MainWindow à la taille de mon écran */
+    int desktop_width;
     int desktop_height;
 #ifdef Q_OS_WIN
     QDesktopWidget *widget = QApplication::desktop();
-    int desktop_width = widget->width();
-    int desktop_height = widget->height();
+    desktop_width = widget->width();
+    desktop_height = widget->height();
 #else
     /* et prise en compte des multi ecrans sous linux */
     desktop_width  = abeApp->desktop()->screen(abeApp->desktop()->screenNumber(this))->width();
