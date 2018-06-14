@@ -6,3 +6,5 @@ ALACARTEDIR=/usr/share/abuledu-alacarte/data/profile1.applications
 if [ -f "${ALACARTEDIR}/${ICON}" ]; then
     rm -f ${ALACARTEDIR}/${ICON}
 fi
+
+#DEBHELPER#
